@@ -96,5 +96,5 @@ Organizzazione della Documentazione (Al termine del progetto dovrà essere redat
 - **Soluzioni adottate:** illustrazione delle soluzioni tecnologicamente più interessanti adottate da porre all’attenzione del docente per la valutazione (segnaliamo qualche funzione carina).
 
 # FAQ
-- **Scadenza del progetto?** una settimana dopo la fine del corso.
+- **Scadenza del progetto?** 10 giorni prima dell'appello di Giugno.
 - **Come avviene la valutazione effettiva?** c'è una tabella che ha il prof, sta sul pdf.
