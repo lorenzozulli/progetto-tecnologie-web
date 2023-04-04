@@ -6,6 +6,8 @@ Repository per il progetto di Tecnologie web di:
 * Lorenzo Zulli
 
 # Overview del Progetto
+(Quando ci sono i ... sono cose che possiamo implementare facoltativamente, ma quelle specificate vanno ovviamente implementate per forza)
+
 Obiettivo:
 
 Obiettivo del progetto è la realizzazione di un sito web per la pubblicizzazione di offerte promozionali (sconti,
