@@ -98,3 +98,4 @@ Organizzazione della Documentazione (Al termine del progetto dovrà essere redat
 # FAQ
 - **Scadenza del progetto?** 10 giorni prima dell'appello di Giugno.
 - **Come avviene la valutazione effettiva?** c'è una tabella che ha il prof, sta sul pdf.
+- **Quali sono i programmi da scaricare?** Li trovi nel pdf "Strumenti software" 
