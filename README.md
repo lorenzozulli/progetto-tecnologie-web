@@ -46,9 +46,9 @@ un codice univoco diverso per ciascun coupon;
 Relativamente all’accesso all’applicazione, si definisca una policy diversificata articolata nei seguenti livelli:
 - Livello 0: area pubblica, cioè disponibile con le informazioni fornite a tutti coloro che accedono al sito
 (quindi, anche agli utenti definiti nei livelli successivi). A questo livello si associ:
-- la visualizzazione delle informazioni generali sul sito, sulle aziende che offrono promozioni e la
+  - la visualizzazione delle informazioni generali sul sito, sulle aziende che offrono promozioni e la
 procedura di registrazione degli utenti;
-- la visualizzazione delle offerte promozionali e la relativa funzionalità di ricerca, senza la possibilità di emissione dei coupon.
+  - la visualizzazione delle offerte promozionali e la relativa funzionalità di ricerca, senza la possibilità di emissione dei coupon.
 
 - Livello 1: area riservata agli utenti registrati al sito, i quali possono:
   - modificare tutti i propri dati personali, inclusa la password di accesso;
