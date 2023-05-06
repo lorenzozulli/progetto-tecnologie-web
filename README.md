@@ -16,7 +16,9 @@ Il sito è gestito da una società che crea una vetrina per le aziende (produttr
 possono pubblicare le loro offerte riservate agli utenti registrati al sito. Questi ultimi possono visualizzare
 (anche come risultato di una ricerca) le offerte di interesse ed acquisire un coupon che abilita all’acquisto della
 promozione presso i negozi/centri delle aziende. Il sito non implementa alcuna attività di e-commerce.
-Specifiche
+
+### Specifiche
+
 L’applicazione Web da realizzare permetterà:
 1. la visualizzazione di informazioni generali sul sito e sui servizi offerti: modalità di accesso, funzionalità
 implementate, informazioni sulle aziende (nome, localizzazione, logo, ...), FAQ,...;
