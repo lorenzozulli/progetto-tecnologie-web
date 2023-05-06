@@ -1,5 +1,5 @@
---------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
-/*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
+/*-- File Name: style.css --*/
+/*-- import Files --*/
 
 @import url(animate.min.css);
 @import url(normalize.css);
@@ -13,7 +13,7 @@
 @import url(jquery-ui.css);
 @import url(nice-select.css);
 
-/*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
+/*-- skeleton --*/
 
 * {
     box-sizing: border-box !important;
@@ -550,13 +550,13 @@ a:hover {
 
 /* fashion section start */
 
-.fashion_section {
+.aziende_section {
     width: 100%;
     float: left;
     padding-bottom: 150px;
 }
 
-.fashion_taital {
+.aziende_taital {
     width: 100%;
     font-size: 40px;
     color: #30302e;
@@ -564,7 +564,7 @@ a:hover {
     font-weight: bold;
 }
 
-.fashion_section_2 {
+.aziende_section_2 {
     width: 100%;
     margin-top: 30px;
 }
@@ -810,6 +810,26 @@ a:hover {
 
 
 /* footer section start */
+
+/* Explanaition section start */
+
+.codes_explanation{
+    width: 100%;
+    background-color: #ffffff;
+    height: auto;
+    padding: 20px;
+    box-shadow: 0px 0 30px 10px #f0f0f0;
+    margin-bottom: 20px;
+}
+.prova{
+    width: 60%;
+    text-align: justify;
+    margin: auto;
+    padding: 10px;
+
+}
+
+/* Explanaition section end */
 
 
 /* footer section start */
