@@ -446,6 +446,7 @@ a:hover {
 }
 
 .buynow_bt a:hover {
+    text-decoration: none;
     background-color: #f26522;
     color: #ffffff;
 }
@@ -488,7 +489,7 @@ a:hover {
     height: auto;
     padding: 20px;
     box-shadow: 0px 0 30px 10px #f0f0f0;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 .shirt_text {
@@ -574,6 +575,7 @@ a:hover {
     padding: 20px;
     box-shadow: 0px 0 30px 10px #f0f0f0;
     margin-bottom: 20px;
+    float:left;
 }
 .prova{
     width: 60%;
