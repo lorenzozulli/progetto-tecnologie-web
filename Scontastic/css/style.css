@@ -182,7 +182,7 @@ button {
 .custom_menu ul {
     margin: 0px;
     padding: 0px;
-    display: inline-block;
+    display: flex;
 }
 
 .custom_menu li {
@@ -198,6 +198,7 @@ button {
 
 .custom_menu li a:hover {
     color: #f26522;
+    text-decoration: none;
 }
 
 
