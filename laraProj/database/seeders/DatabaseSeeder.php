@@ -63,6 +63,9 @@ class DatabaseSeeder extends Seeder {
                 'updated_at' => date("Y-m-d H:i:s")],
             ['name' => 'Mario', 'surname' => 'Rossi', 'email' => 'mario@rossi.it', 'username' => 'adminadmin',
                 'password' => Hash::make('adminadmin'), 'role' => 'admin', 'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")],
+            ['name' => 'Lorenzo', 'surname' => 'Zulli', 'email' => 'lorenzo@zulli.com', 'username' => 'ZulliLuPazz24',
+                'password' => Hash::make('ciaofiocco24'), 'role' => 'user', 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")]
         ]);
     }
