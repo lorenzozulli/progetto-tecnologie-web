@@ -69,15 +69,4 @@ class PublicController extends Controller
                         ->with('subCategories', $subCats)
                         ->with('products', $prods);
     }
-
-    public function index()
-    {
-    $menuItems = [
-            ['value' => '1', 'label' => 'Uomo'],
-            ['value' => '2', 'label' => 'Donna'],
-            ['value' => '3', 'label' => 'Altro']
-        ];
-    return view('index', compact('menuItems'));
-    }
-
 }

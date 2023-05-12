@@ -68,6 +68,12 @@ class DatabaseSeeder extends Seeder {
                 'password' => Hash::make('ciaofiocco24'), 'role' => 'user', 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")]
         ]);
+
+        DB::table('sex')->insert([
+            ['value' => '1', 'label' => 'Uomo'],
+            ['value' => '2', 'label' => 'Donna'],
+            ['value' => '3', 'label' => 'Altro']
+        ]);
     }
 
 }

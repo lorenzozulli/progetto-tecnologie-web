@@ -10,12 +10,9 @@
     <div class="container-contact">
         <div class="wrap-contact1">
             {{ Form::open(array('route' => 'login', 'class' => 'contact-form')) }}
-            
+                       
              <div  class="wrap-input">
-                 <p> Se non hai già un account <a  href="{{ route('register') }}">registrati</a></p>
-             </div>            
-             <div  class="wrap-input">
-                {{ Form::label('username', 'Nome Utente', ['class' => 'label-input']) }}
+                {{ Form::label('username', 'Username', ['class' => 'label-input']) }}
                 {{ Form::text('username', '', ['class' => 'input','id' => 'username']) }}
                 @if ($errors->first('username'))
                 <ul class="errors">
@@ -41,6 +38,10 @@
             <div class="container-form-btn">                
                 {{ Form::submit('Login', ['class' => 'form-btn1']) }}
             </div>
+
+            <div  class="wrap-input">
+                 <a  href="{{ route('register') }}">Se non hai già un account registrati</a>
+             </div> 
             
             {{ Form::close() }}
         </div>

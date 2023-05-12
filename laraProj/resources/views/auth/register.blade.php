@@ -37,20 +37,25 @@
             </div>
 
             <!--Sesso-->
-            <select  class="wrap-input">
+            <div  class="wrap-input">
                 {{ Form::label('sex', 'Sesso', ['class' => 'label-input']) }}
-                @foreach ($menuItems as $item)
-                    <option value="{{ $item['value'] }}">{{ $item['label-input'] }}</option>
-                @endforeach
-                @if ($errors->first('sesso'))
+                <br> 
+                {{ Form::select('Sesso', array('1' => 'Uomo', '2' => 'Donna', '3' => 'Altro')) }}
+            </div>
+            
+            <!--Età-->
+            <div  class="wrap-input">
+                {{ Form::label('eta', 'Età', ['class' => 'label-input']) }}
+                {{ Form::text('eta', '', ['class' => 'input','id' => 'eta']) }}
+                @if ($errors->first('email'))
                 <ul class="errors">
-                    @foreach ($errors->get('sesso') as $message)
+                    @foreach ($errors->get('email') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>
                 @endif
-            </select>
-            
+            </div>
+
             <!--Email-->
             <div  class="wrap-input">
                 {{ Form::label('email', 'Email', ['class' => 'label-input']) }}
@@ -111,6 +116,10 @@
             
             <div class="container-form-btn">                
                 {{ Form::submit('Registra', ['class' => 'form-btn1']) }}
+            </div>
+
+            <div class="already_logged">
+                <a href="{{ route('login') }}">Sei già registrato? clicca qui per loggare</a>
             </div>
             
             {{ Form::close() }}
