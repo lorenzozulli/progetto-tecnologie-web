@@ -458,7 +458,7 @@ a:hover {
 .label-input {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
-  color: #555555;
+  color: #111111;
   line-height: 1,5;
 }
 
@@ -466,10 +466,10 @@ a:hover {
   display: block;
   width: 90%; 
   background: #f2f2f2;
-  border-radius: 2px;
+  border-radius: 50px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
-  color: #686868;
+  color: #111111;
   line-height: 1.2;
   padding: 5px;
   -webkit-transition: all 0.4s;
@@ -505,9 +505,9 @@ a:hover {
 }
 
 .wrap-contact1 {
-  max-width: 300px;
-  background: #dbecf6;
-  border-radius: 2px;
+  max-width: 600px;
+  background: #80808080;
+  border-radius: 50px;
   padding: 30px 30px;
   position: relative;
 }

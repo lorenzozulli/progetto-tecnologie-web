@@ -5,7 +5,6 @@
 @section('content')
 <div class="static">
     <h3>Login</h3>
-    <p>Utilizza questa form per autenticarti al sito</p>
 
     <div class="container-contact">
         <div class="wrap-contact1">
