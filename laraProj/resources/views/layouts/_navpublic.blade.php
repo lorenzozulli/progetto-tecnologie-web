@@ -1,3 +1,32 @@
+<div class="wrapper">
+            <div class="header">
+                     <div class="logo"><a href="index.html"><img src="images/scontastic_draft.png"></a></div>
+            </div>
+</div>
+
+<div class="containt_main">
+                  <div id="mySidenav" class="sidenav">
+                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                     <a href="index.html">Home</a>
+                     <a href="fashion.html">Fashion</a>
+                     <a href="electronic.html">Electronic</a>
+                     <a href="jewellery.html">Jewellery</a>
+                  </div>
+                  <span class="toggle_icon" onclick="openNav()">
+                     <img src="images/toggle-icon.png">
+                  </span>
+                  <div class="header_box">
+                     <div class="login_menu">
+                        <ul>
+                           <li><a href="#">Aziende</a></li>
+                           <li><a href="#">FAQ</a></li>
+                           <li><a href="#">Account</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
 <ul>
     <li><a href="{{ route('catalog1') }}" title="Home">Catalogo</a></li>
     <li><a href="{{ route('who') }}" title="Il nostro profilo aziendale">Chi siamo</a></li>
