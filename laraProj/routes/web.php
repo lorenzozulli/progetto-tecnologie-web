@@ -37,12 +37,14 @@ Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
 Route::get('/user', [UserController::class, 'index'])
         ->name('user')->middleware('can:isUser');
 
-
 Route::view('/where', 'where')
         ->name('where');
 
 Route::view('/who', 'who')
         ->name('who');
+
+Route::view('/faq', 'faq')
+        ->name('faq');
 
 /*  Rotte aggiunte da Breeze
 

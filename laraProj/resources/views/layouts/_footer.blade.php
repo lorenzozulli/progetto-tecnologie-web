@@ -8,7 +8,7 @@
 <!-- FAQ section start -->
         <div class="FAQ_section">
             <div class="FAQ">
-                <p class="FAQ_text">You have any questions in mind? Click here: <a href="https://html.design">FAQ</a></p>
+                <p class="FAQ_text">You have any questions in mind? Click here: <a href="{{ route('faq') }}">FAQ</a></p>
             </div>
         </div>
 <!-- FAQ section end -->
