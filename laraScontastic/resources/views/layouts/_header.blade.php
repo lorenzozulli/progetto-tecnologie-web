@@ -1,14 +1,11 @@
 <header>
-    <!-- inizio sidenav -->
-    <div class="sidenav">
-        <img src="images/toggle_icon.png">
-        <a href="#">Videogames</a>
-        <a href="#">Abbigliamento</a>
-        <a href="#">Cucina</a>
-        <a href="#">Elettronica</a>
-    </div>
-    <!-- fine sidenav -->
-
+    <select class="category">
+        <option value="prova 1">Prova 1</option>
+        <option value="prova 1">Prova 1</option>
+        <option value="prova 1">Prova 1</option>
+        <option value="prova 1">Prova 1</option>
+        <option value="prova 1">Prova 1</option>
+    </select>
     <!-- inizio logo -->
     <img src="images/scontastic_draft.png">
     <!-- fine logo -->
