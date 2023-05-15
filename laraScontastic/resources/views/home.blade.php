@@ -35,39 +35,14 @@
       <!-- banner bg main end -->
 
         <!-- Aziende section start -->
-        <div class="aziende_section">
-            <div id="electronic_main_slider" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="container">
-                        <h1 class="aziende_title">Le nostre Aziende</h1>
-                        <div class="aziende_section_2">
-                        <div class="row">
-                                <div class="box_main">
-                                    <h4 class="shirt_text">Amazon</h4>
-                                    <div class="electronic_img"><img src="images/laptop-img.png"></div>
-                                    <div class="btn_main">
-                                    <div class="seemore_bt"><a href="https://www.amazon.it/">See More</a></div>                                
-                                </div>
-                            </div>
-                                <div class="box_main">
-                                    <h4 class="shirt_text">Nike</h4>
-                                    <div class="electronic_img"><img src="images/mobile-img.png"></div>
-                                    <div class="btn_main">
-                                    <div class="seemore_bt"><a href="https://www.nike.com/it/">See More</a></div>      
-                                </div>
-                           </div>
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Steam</h4>
-                                 <div class="electronic_img"><img src="images/computer-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="seemore_bt"><a href="https://store.steampowered.com/?l=italian">See More</a></div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+        <div class="carousel_wrapper">
+            <div class="card">
+               <a href="#" target="blank">
+               <img class="img" src="#">
+               <h1>Test</h1>
+               </a>
+            </div>
+        </div>
          <div class="buynow_bt"><a href="https://www.google.com/">Tutte le Aziende</a></div>
       </div>
       <!-- aziende section end -->
