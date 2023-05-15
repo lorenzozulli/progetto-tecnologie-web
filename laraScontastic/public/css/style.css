@@ -23,10 +23,16 @@ header{
 }
 
 .link_wrapper{
-    width: auto;
+    width: max-content;
     height: auto;
     margin: auto;
     float: left;
+    justify-content: space-between;
+}
+
+.link_wrapper li{
+  display: inline-block;
+  margin-right: 1rem;
 }
 
 .link_wrapper a{
