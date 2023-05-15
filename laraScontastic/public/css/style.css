@@ -4,9 +4,12 @@
 
 /* --- header section start --- */
 header{
-    height: 110px;
-    width: auto;
+    height: 110px; 
     background-color: #262626;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .search_bar{
@@ -24,7 +27,7 @@ header{
 
 /* --- footer section start ---  */
 footer{
-    height:500px;
+    height:auto;
     width: auto;
     margin:auto;
     background-color: #262626;
@@ -32,10 +35,8 @@ footer{
 }
 
 .image_logo{
-    height: auto;
-    width: auto;
-    display: flex;
-    float: left;
+    width: 100%;
+    text-align: center;
 }
 
 .faq a{
