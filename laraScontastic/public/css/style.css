@@ -7,6 +7,7 @@
 
 /* --- header section start --- */
 header{
+    width: auto;
     height: 110px; 
     background-color: #262626;
     display: flex;
@@ -169,6 +170,10 @@ header{
 .codes_explanation{
   margin: auto;
   width: 95%;
+}
+
+.codes_explanation p{
+  text-align: justify;
 }
 
 /*--- Codes explanation end ---*/

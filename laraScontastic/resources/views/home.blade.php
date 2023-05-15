@@ -55,7 +55,9 @@
         <div class="codes_explanation">
                <h1 class="title">Cosa sono i codici?</h1>
                <p>Nell'ambito del commercio i codici sconto servono da un lato alle aziende, che vogliono fidelizzare i loro clienti, e ai clienti per usufruire di vantaggi
-                   in ambito puramente monetario oppure di sconti di vario genere e tipologia.</p>
+                  in ambito puramente monetario oppure di sconti di vario genere e tipologia.<br>
+                  Un codice sconto è una stringa di caratteri, una sorta di password digitale, che, se inserita nell'apposito campo testuale fornito da ciascun negozio online in genere in fondo al carrello o alla pagina della cassa, ti permette di aggiudicarti certi benefit sulla tua spesa.<br>
+                  Questi benefici possono essere o degli sconti in percentuale sul totale del carrello, degli sconti a cifra fissa, un omaggio all'interno del pacco o le spese di spedizione gratuite.</p>
                <h3>Sconto in percentuale:</h3>
                <p>Sono una semplice riduzione di prezzo in percentuale sul costo originario dell'articolo</p>
                <h3>Sconto fisso:</h3>
