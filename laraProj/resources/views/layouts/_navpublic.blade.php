@@ -1,6 +1,6 @@
 <div class="wrapper">
             <div class="header">
-                     <div class="logo"><a href="index.html"><img src="images/scontastic_draft.png"></a></div>
+                     <div class="logo"><a href="{{ route('index')}}"><img src="images/scontastic_draft.png"></a></div>
             </div>
 </div>
 
