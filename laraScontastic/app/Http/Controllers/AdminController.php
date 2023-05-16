@@ -8,7 +8,7 @@ use App\Http\Requests\NewProductRequest;
 
 class AdminController extends Controller {
 
-    protected $_adminModel;
+ /*   protected $_adminModel;
 
     public function __construct() {
         $this->_adminModel = new Admin;
@@ -46,6 +46,6 @@ class AdminController extends Controller {
 
         return redirect()->action([AdminController::class, 'index']);
         ;
-    }
+    }*/
 
 }

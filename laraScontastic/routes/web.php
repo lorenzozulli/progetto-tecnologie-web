@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\StaffController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +41,8 @@ Route::post('/modifica-dati', [UserController::class, 'updateData'])
 Route::get('/user', [StaffController::class, 'index'])
     ->name('user')->middleware('can:isUser');
 
-Route::get('/modifica-dati', [StaffController::class, 'updateData'])
-->name('modifica-dati');
+Route::get('/modify-data', [StaffController::class, 'updateData'])
+->name('modify-data');
 
 Route::post('/user/aggiungi-promo', [StaffController::class, 'addPromo'])
 ->name('aggiungi-promo');
@@ -60,3 +64,6 @@ Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
 //rotta faq
 Route::view('faq', 'faq')
     ->name('faq');
+
+
+    require __DIR__ . '/auth.php';
