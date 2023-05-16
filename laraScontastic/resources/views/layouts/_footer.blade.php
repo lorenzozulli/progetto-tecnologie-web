@@ -1,7 +1,7 @@
 <footer>
     <!-- inizio logo -->
     <div class="image_logo">
-        <img src="images/scontastic_draft.png">
+        <a href="{{ route('home') }}"><img src="images/scontastic_draft.png"></a>
     </div>
     <!-- fine logo -->
 

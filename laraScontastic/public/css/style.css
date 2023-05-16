@@ -71,7 +71,7 @@ header{
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #808080;
     display: block;
     transition: 0.3s;
   }
@@ -139,7 +139,7 @@ header{
   float: left;
   font-size: 16px;
   color: #ffffff;
-  background-color: #252525;
+  background-color: #262626;
   text-align: center;
   padding: 10px 0px;
   border-radius: 50px;
