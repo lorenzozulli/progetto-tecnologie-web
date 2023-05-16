@@ -27,30 +27,82 @@
 
         <!-- Aziende carousel section start -->
          <div class="carousel">
-            <div class="carousel__item">
-               <a href="#" target="blank">
-                  <img class="img" src="images/mock.png">
-                  <h3>Test 1</h3>
-               </a>
-            </div>
+            <div class="item_wrapper">
+               <div class="carousel__item">
+                  <a href="#" target="blank">
+                     <img class="img" src="images/mock.png">
+                     <h3 class="title">Test 1</h3>
+                  </a>
+               </div>
 
-            <div class="carousel__item">
-               <a href="#" target="blank">
-                  <img class="img" src="images/mock.png">
-                  <h3>Test 2</h3>
-               </a>
-            </div>
+               <div class="carousel__item">
+                  <a href="#" target="blank">
+                     <img class="img" src="images/mock.png">
+                     <h3>Test 2</h3>
+                  </a>
+               </div>
 
-            <div class="carousel__item">
-               <a href="#" target="blank">
-                  <img class="img" src="images/mock.png">
-                  <h3>Test 3</h3>
-               </a>
+               <div class="carousel__item">
+                  <a href="#" target="blank">
+                     <img class="img" src="images/mock.png">
+                     <h3>Test 3</h3>
+                  </a>
+               </div>
+            </div>
+            <div class="item_wrapper">
+               <div class="carousel__item">
+                  <a href="#" target="blank">
+                     <img class="img" src="images/mock.png">
+                     <h3>Test 4</h3>
+                  </a>
+               </div>
+
+               <div class="carousel__item">
+                  <a href="#" target="blank">
+                     <img class="img" src="images/mock.png">
+                     <h3>Test 2</h3>
+                  </a>
+               </div>
+
+               <div class="carousel__item">
+                  <a href="#" target="blank">
+                     <img class="img" src="images/mock.png">
+                     <h3>Test 3</h3>
+                  </a>
+               </div>
+            </div>
+            <div class="item_wrapper">
+               <div class="carousel__item">
+                  <a href="#" target="blank">
+                     <img class="img" src="images/mock.png">
+                     <h3>Test 1</h3>
+                  </a>
+               </div>
+
+               <div class="carousel__item">
+                  <a href="#" target="blank">
+                     <img class="img" src="images/mock.png">
+                     <h3>Test 2</h3>
+                  </a>
+               </div>
+
+               <div class="carousel__item">
+                  <a href="#" target="blank">
+                     <img class="img" src="images/mock.png">
+                     <h3>Test 3</h3>
+                  </a>
+               </div>
             </div>
 
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
          </div>
+         <div class ="button_wrapper" style="text-align:center">
+            <span class="carousel__button" onclick="currentSlide(1)"></span>
+            <span class="carousel__button" onclick="currentSlide(2)"></span>
+            <span class="carousel__button" onclick="currentSlide(3)"></span>
+         </div>
+
          <script src="js/carousel.js"></script>
 
          <div class="bt"><a href="https://www.google.com/">Tutte le aziende</a></div>
@@ -105,6 +157,5 @@
                 @include('layouts/_footer')
         </div>
         <!-- footer section end -->
-        <script src="" async defer></script>
     </body>
 </html>
