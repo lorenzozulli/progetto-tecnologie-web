@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})
+    ->name('home');
 
 // Rotte relative alla pagina dell'azienda
 Route::get('/lista-aziende', [PublicController::class, 'showListaAziende'])

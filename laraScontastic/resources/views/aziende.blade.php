@@ -15,28 +15,9 @@
         </div>
         <!-- header section end-->
 
-        <!-- lista domande section start -->
-        <div class="domanda_card">
-            <h2>Domanda 1?</h2>
-            <p>Lorem ipsum dolor sid amet...</p>
+        <div id="menu">
+            <p>Ciao sono la pagina di un'azienda!</p>
         </div>
-
-        <div class="domanda_card">
-            <h2>Domanda 2?</h2>
-            <p>Lorem ipsum dolor sid amet...</p>
-        </div>
-
-        <div class="domanda_card">
-            <h2>Domanda 3?</h2>
-            <p>Lorem ipsum dolor sid amet...</p>
-        </div>
-
-        <div class="domanda_card">
-            <h2>Domanda 4?</h2>
-            <p>Lorem ipsum dolor sid amet...</p>
-        </div>
-        <!-- lista domande section end -->
-        
         <!-- footer section start -->
         <div id="menu">
                 @include('layouts/_footer')
