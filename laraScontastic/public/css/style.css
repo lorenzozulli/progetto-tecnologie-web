@@ -3,7 +3,7 @@
     overflow-y: none;
     overflow-x: auto;
     scroll-behavior: smooth;
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 /* --- header section start --- */
@@ -78,7 +78,7 @@ header{
   
   /* When you mouse over the navigation links, change their color */
   .sidenav a:hover {
-    color: #f1f1f1;
+    color: #FAFAFA;
   }
   
   /* Position and style the close button (top right corner) */
@@ -138,7 +138,7 @@ header{
   width: 100%;
   float: left;
   font-size: 16px;
-  color: #ffffff;
+  color: #FAFAFA;
   background-color: #262626;
   text-align: center;
   padding: 10px 0px;
@@ -151,7 +151,7 @@ header{
 .bt a:hover {
   text-decoration: none;
   background-color: #f26522;
-  color: #ffffff;
+  color: #FAFAFA;
 }
 /* --- button CSS end --- */
 
@@ -180,7 +180,7 @@ footer{
     width: auto;
     margin:auto;
     background-color: #262626;
-    text-decoration-color: #FFFFFF;
+    text-decoration-color: #FAFAFA;
 }
 
 .image_logo{
@@ -202,19 +202,71 @@ footer{
 .faq a:hover{
     text-decoration: underline;
 }
+
+.about{
+  width: 100%;
+  float: left;
+  color: #FAFAFA;
+  text-align: center;
+  font-size: 20px;
+  margin: 20px 0px;
+}
+
+.about a{
+  width: 100%;
+  color: #FAFAFA;
+  font-size: 20px;
+  margin: 20px 0px;
+}
+
+.about a:hover{
+  text-decoration: underline;
+}
 /* --- footer section end --- */
 
 /* --- carousel section start ---*/
-/* Slideshow container */
-.carousel_wrapper {
-  max-width: 1000px;
+.carousel {
   position: relative;
-  margin: auto;
 }
 
-/* Hide the images by default */
-.card {
+.carousel__item {
+  height: auto;
+  background-color: #FAFAFA;
+  padding: 1em;
+  font-weight: bold;
+  font-size: 2em;
+  color: #ffffff;
   display: none;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.carousel__item--selected {
+  display: block;
+}
+
+.carousel__nav {
+  width: 100%;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.carousel__button {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: #262626;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.6s ease;
+}
+
+.carousel__button--selected {
+  background: #F26522;
 }
 
 /* Next & previous buttons */
@@ -244,50 +296,4 @@ footer{
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #808080;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
 /* --- carousel section end ---*/
