@@ -1,4 +1,5 @@
 <header>
+    <!-- Script per la gestione della sidenav -->
     <script>
         /* Set the width of the side navigation to 250px */
         function openNav() {
@@ -10,6 +11,8 @@
         document.getElementById("mySidenav").style.width = "0";
         } 
     </script>
+
+        <!-- Inizio HTML della sidenav -->
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <h1 class="category">CATEGORIE</h1>
@@ -40,6 +43,7 @@
             <a href="#">Trasporti</a>
             <a href="#">Ristoranti</a>
         </div>
+        <!-- fine HTML della sidenav -->
 
     <!-- Use any element to open the sidenav -->
     <span onclick="openNav()"><img src="images/toggle_icon.png"></span>
