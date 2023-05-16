@@ -13,7 +13,7 @@
     <!-- inizio about -->
     <div class="about">
         <p>Progetto di Tecnologie Web di: 
-            <a href="#">Maicol Lanni</a>, 
+            <a href="https://github.com/Maremmoide">Maicol Lanni</a>, 
             <a href="https://github.com/MarioMaio98">Mario Maio</a>, 
             <a href="https://github.com/Lorenzo-Marrone">Lorenzo Marrone</a>, 
             <a href="https://github.com/lorenzozulli">Lorenzo Zulli</a>.</p>
