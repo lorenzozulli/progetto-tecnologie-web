@@ -60,7 +60,9 @@
         <ul>
             <li><a href="#">Aziende</a></li>
             <li><a href="{{ route('faq') }}">FAQ</a></li>
-            <li><a href="#">Account</a></li>
+            @guest
+            <li><a href="{{ route('login') }}">Account</a></li>
+            @endguest
         </ul>
     </div>
     <!-- fine link wrapper -->

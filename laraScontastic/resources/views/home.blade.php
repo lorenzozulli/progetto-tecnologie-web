@@ -67,14 +67,14 @@
 
             <div class="card">
                <a href="#" target="blank">
-                  <img class="img" src="images/mock.png">
+                  <img class="img" src="images/mock.png" style="width:100%">
                   <h3>Test</h3>
                </a>
             </div>
 
             <div class="card">
                <a href="#" target="blank">
-                  <img class="img" src="images/mock.png">
+                  <img class="img" src="images/mock.png" style="width:100%">
                   <h3>Test</h3>
                </a>
             </div>
