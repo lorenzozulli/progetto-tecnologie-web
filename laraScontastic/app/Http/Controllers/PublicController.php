@@ -11,7 +11,7 @@ class PublicController extends Controller
 {
 
    
-
+    
     public function showCategories($categoryId)
     {
         $products = Product->where('category_id', $categoryId)->get();
