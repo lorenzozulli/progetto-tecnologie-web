@@ -15,8 +15,8 @@
         </div>
         <!-- header section end-->
 
-        <div id="menu">
-            <p>Ciao sono la pagina di un'offerta!</p>
+        <div class="mega_container">
+            <p>Ciao sono un'offerta!</p>
         </div>
         <!-- footer section start -->
         <div id="menu">
