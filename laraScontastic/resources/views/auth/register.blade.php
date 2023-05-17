@@ -1,13 +1,11 @@
-@extends('layouts.public')
-
-@section('title', 'Registrazione')
-
-@section('content')
+<meta charset="utf-8">
+<title>"Scontastic: i migliori codici sconto in Italia</title>
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <div class="static">
-    <h3>Registrazione</h3>
 
     <div class="container-contact">
-        <div class="wrap-contact1">
+    <h3>Registrazione</h3>
+        <div class="wrap-contact">
             {{ Form::open(array('route' => 'register', 'class' => 'contact-form')) }}
 
             <!-- Nome -->
@@ -120,7 +118,7 @@
             </div>
 
             <!-- Link per il login -->
-            <div class="already_logged">
+            <div class="wrap-input">
                 <a href="{{ route('login') }}">Sei già registrato? clicca qui per loggare</a>
             </div>
             
@@ -129,4 +127,3 @@
     </div>
 
 </div>
-@endsection

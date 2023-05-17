@@ -60,14 +60,14 @@
                <div class="carousel__item">
                   <a href="#" target="blank">
                      <img class="img" src="images/mock.png">
-                     <h3>Test 2</h3>
+                     <h3>Test 5</h3>
                   </a>
                </div>
 
                <div class="carousel__item">
                   <a href="#" target="blank">
                      <img class="img" src="images/mock.png">
-                     <h3>Test 3</h3>
+                     <h3>Test 6</h3>
                   </a>
                </div>
             </div>
@@ -75,21 +75,21 @@
                <div class="carousel__item">
                   <a href="#" target="blank">
                      <img class="img" src="images/mock.png">
-                     <h3>Test 1</h3>
+                     <h3>Test 7</h3>
                   </a>
                </div>
 
                <div class="carousel__item">
                   <a href="#" target="blank">
                      <img class="img" src="images/mock.png">
-                     <h3>Test 2</h3>
+                     <h3>Test 8</h3>
                   </a>
                </div>
 
                <div class="carousel__item">
                   <a href="#" target="blank">
                      <img class="img" src="images/mock.png">
-                     <h3>Test 3</h3>
+                     <h3>Test 9</h3>
                   </a>
                </div>
             </div>

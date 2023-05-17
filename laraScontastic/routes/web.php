@@ -59,8 +59,6 @@ Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
 Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
     ->name('newproduct.store');
 
-
-
 //rotta faq
 Route::view('faq', 'faq')
     ->name('faq');

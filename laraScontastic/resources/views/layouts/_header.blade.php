@@ -48,7 +48,7 @@
     <!-- inizio link wrapper -->
     <div class="link_wrapper">
         <ul>
-            <li><a href="#">Aziende</a></li>
+            <li><a href="{{ route('lista-aziende') }}">Aziende</a></li>
             <li><a href="{{ route('faq') }}">FAQ</a></li>
             @guest
             <li><a href="{{ route('login') }}">Account</a></li>
