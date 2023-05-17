@@ -263,6 +263,7 @@ footer{
 .item_wrapper {
   width: 80%;
   margin: auto;
+  transition: 0.6s ease;
 }
 
 .carousel__item--selected {
