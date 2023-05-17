@@ -227,7 +227,6 @@ footer{
 /* --- carousel section start ---*/
 .carousel {
   position: relative;
-  background-color: #FAFAFA;
   color: #ffffff;
   animation-name: fade;
   animation-duration: 1.5s;
@@ -244,6 +243,11 @@ footer{
   float: left;
   margin: 20px;
   border-radius: 20px;
+}
+
+.carousel__item a {
+  color: #262626;
+  text-decoration: none;
 }
 
 .carousel__item:hover {
