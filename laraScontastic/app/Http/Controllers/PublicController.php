@@ -21,7 +21,7 @@ class PublicController extends Controller
     }
 
     public function showListaAziende(){
-        $listaAziende = Azienda::getAzienda();
+       /* $listaAziende = Azienda::getAzienda();*/
         return view ('lista_aziende');
     }
 
