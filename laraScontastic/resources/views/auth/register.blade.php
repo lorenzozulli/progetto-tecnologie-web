@@ -38,7 +38,7 @@
             <div  class="wrap-input">
                 {{ Form::label('sex', 'Sesso', ['class' => 'label-input']) }}
                 <br> 
-                {{ Form::select('Sesso', array('1' => 'Uomo', '2' => 'Donna', '3' => 'Altro')) }}
+                {{ Form::select('Sesso', array('M' => 'Maschio', 'F' => 'Femmina', 'O' => 'Altro')) }}
             </div>
             
             <!-- Età -->

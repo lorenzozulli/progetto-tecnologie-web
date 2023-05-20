@@ -42,7 +42,8 @@
     <!-- fine logo -->
 
     <!-- inizio searchbar -->
-    <input class="search_bar" type="text" placeholder="Cerca qui...">
+        <input class="search_bar" type="text" placeholder="Cerca qui...">
+        <button class="search_button">Cerca</button>
     <!-- fine searchbar -->
 
     <!-- inizio link wrapper -->
