@@ -4,19 +4,20 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Catalog;
+use App\Models\Resources\Offerta;
 use Illuminate\Support\Facades\Log;
 
 
 class PublicController extends Controller
 {
 
-   
-    
-    public function showCategories($categoryId)
-    {
-        $products = Product->where('category_id', $categoryId)->get();
-
-        // Restituisci la vista "category" con i dati dei prodotti
-        return view('category', ['products' => $products]);
+    //questa funzione mostra le offerte oppure puo mostrare l'offerta specifica. A seconda di come viene usato nella view
+    public function showOffer(){
+        $offerte = Offerta::getOffer();
+        //In questo caso, il metodo compact crea un array associativo chiamato 'offerte', con tutti gli elementi 
+        //presenti nella tabella "Offerta". 
+        return view('offerta', compact('offerte'));
     }
+
+   
 }

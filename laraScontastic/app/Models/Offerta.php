@@ -12,13 +12,16 @@ class Offerta extends  Model {
     protected $table = 'offerta';
     protected $primaryKey = 'offerId';
 
-    //questa funzione restituisce la descrizione dell'offerta
-    public function getDescription(){
-        //descrizione è definita nel db
-        $descrizione =$this->descrizione;
+    //questo metodo serve a prendere tutti gli attributi della tabella Offerta
+    //che verranno richiamati successivamente nel controller 
+   public function getOffer(){
+        $offerta = Offerta::all();
 
-        return $descrizione;
-    }
+        return $offerta;
+
+   }
+
+
 
     
 }
