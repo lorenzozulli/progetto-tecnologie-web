@@ -43,7 +43,7 @@
 
     <!-- inizio searchbar -->
         <input class="search_bar" type="text" placeholder="Cerca qui...">
-        <button class="search_button">Cerca</button>
+        <a href="{{ route('login') }}"><button class="search_button">Cerca</button></a>
     <!-- fine searchbar -->
 
     <!-- inizio link wrapper -->

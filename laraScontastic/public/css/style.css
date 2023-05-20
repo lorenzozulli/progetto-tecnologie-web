@@ -41,6 +41,11 @@ header{
   text-decoration: none;
 }
 
+.search_button a {
+  text-decoration: none;
+  color: #FAFAFA;
+}
+
 .search_button:hover{
   background-color: #F24500;
   border: 3px solid #F24500;
