@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Catalog;
 use App\Models\Resources\Offerta;
+use App\Models\Resources\Azienda;
 use Illuminate\Support\Facades\Log;
 
 
@@ -17,6 +18,11 @@ class PublicController extends Controller
         //In questo caso, il metodo compact crea un array associativo chiamato 'offerte', con tutti gli elementi 
         //presenti nella tabella "Offerta". 
         return view('offerta', compact('offerte'));
+    }
+
+    public function showListaAziende(){
+        $listaAziende = Azienda::getAzienda();
+        return view ('lista_aziende');
     }
 
    
