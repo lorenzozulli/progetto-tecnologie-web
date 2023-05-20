@@ -5,7 +5,6 @@
     scroll-behavior: smooth;
     box-sizing: border-box;
 }
-
 /* --- header section start --- */
 header{
     width:100%;
@@ -15,7 +14,6 @@ header{
     display: flex;
     align-items: center;
     padding: 0 20px;
-    margin: 0;
 }
 
 .search_bar{
