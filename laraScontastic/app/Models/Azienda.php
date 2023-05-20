@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Models\Resources;
+namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Azienda extends Model{
-    protected $table = 'azienda';
-
-    public function getAzienda(){
-        $azienda = Azienda::all();
-        return $azienda;
-    }
+class Azienda extends Model
+{
+    use HasFactory;
+    public $table = "aziende";
 }
