@@ -29,8 +29,11 @@ Route::get('/lista-aziende', [PublicController::class, 'showListaAziende'])
 Route::get('/lista-aziende/{azienda}', [PublicController::class, 'showAzienda'])
     ->name('{azienda}');
 
-Route::get('/offerta', [PublicController::class, 'showOffer'])
-->name('offerta');
+Route::get('/elenco_offerte', [PublicController::class, 'showOfferList'])
+->name('elenco-offerte');
+
+Route::get('lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
+->name('{offerta}');
 
 //Rotte relative all'utente di livello1 loggato
 
