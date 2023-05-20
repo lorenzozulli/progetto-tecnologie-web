@@ -22,50 +22,56 @@ Route::get('/', function () {
 })
     ->name('home');
 
-// Rotte relative alla pagina dell'azienda
+/* ---  Rotte relative alla pagina dell'azienda --- */
+
+// questa rotta mostra la lista di tutte le aziende
 Route::get('/lista-aziende', [PublicController::class, 'showListaAziende'])
     ->name('lista-aziende');
 
+
+// questa rotta mostra la pagina di un'azienda specifica
 Route::get('/lista-aziende/{azienda}', [PublicController::class, 'showAzienda'])
     ->name('{azienda}');
 
+
+// questa rotta mostra l'elenco di tutte le offerte [?]
 Route::get('/elenco_offerte', [PublicController::class, 'showOfferList'])
 ->name('elenco-offerte');
 
+
+// questa rotta mostra la pagina di un'offerta [?]
 Route::get('lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
 ->name('{offerta}');
 
-//Rotte relative all'utente di livello1 loggato
-
+/* --- Rotte relative allo User --- */
 Route::get('/user', [UserController::class, 'index'])
     ->name('user')->middleware('can:isUser');
 
 Route::post('/modifica-dati', [UserController::class, 'updateData'])
     ->name('modifica-dati');
 
-//Rotte relative all'utente di livello2 loggato
+/* --- Rotte relative allo Staff loggato --- */
 Route::get('/user', [StaffController::class, 'index'])
     ->name('user')->middleware('can:isUser');
 
 Route::get('/modify-data', [StaffController::class, 'updateData'])
-->name('modify-data');
+    ->name('modify-data');
 
 Route::post('/user/aggiungi-promo', [StaffController::class, 'addPromo'])
-->name('aggiungi-promo');
+    ->name('aggiungi-promo');
 
 Route::post('/user/modifica-promo', [StaffController::class, 'updatePromo'])
-->name('modifica-promo');
+    ->name('modifica-promo');
 
 
-//Rotte relative all'admin
-
+/* --- Rotte relative all'Admin loggato --- */
 Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
     ->name('newproduct');
 
 Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
     ->name('newproduct.store');
 
-//rotta faq
+/* --- Rotte relative alle FAQ --- */
 Route::view('faq', 'faq')
     ->name('faq');
 
