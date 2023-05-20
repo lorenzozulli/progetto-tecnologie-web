@@ -5,6 +5,9 @@
     scroll-behavior: smooth;
     box-sizing: border-box;
 }
+body{
+  margin: 0;
+}
 /* --- header section start --- */
 header{
     width:100%;
