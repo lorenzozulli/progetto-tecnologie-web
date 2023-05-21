@@ -13,11 +13,11 @@ class PublicController extends Controller
 {
 
     //questa funzione mostra le offerte oppure puo mostrare l'offerta specifica. A seconda di come viene usato nella view
-    public function showOffer(){
-        $offerte = Offerta::getOffer();
+    public function showOfferList(){
+        //$offerte = Offerta::getOffer();
         //In questo caso, il metodo compact crea un array associativo chiamato 'offerte', con tutti gli elementi 
         //presenti nella tabella "Offerta". 
-        return view('offerta', compact('offerte'));
+        return view('elenco_offerte');
     }
 
     public function showListaAziende(){
