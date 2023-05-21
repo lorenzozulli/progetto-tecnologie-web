@@ -42,8 +42,8 @@
     <!-- fine logo -->
 
     <!-- inizio searchbar -->
-        <input class="search_bar" type="text" placeholder="Cerca qui...">
-        <a href="{{ route('login') }}"><button class="search_button">Cerca</button></a>
+        {{ Form::text('search', 'cerca qui...', ['class' => 'search_bar']) }}
+        {{ Form::button('search', ['class' => 'search_button']) }}
     <!-- fine searchbar -->
 
     <!-- inizio link wrapper -->
