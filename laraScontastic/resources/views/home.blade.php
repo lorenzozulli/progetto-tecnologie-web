@@ -16,21 +16,21 @@
             <div class="item_wrapper">
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3 class="title">Test 1</h3>
                   </a>
                </div>
 
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 2</h3>
                   </a>
                </div>
 
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 3</h3>
                   </a>
                </div>
@@ -38,21 +38,21 @@
             <div class="item_wrapper">
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 4</h3>
                   </a>
                </div>
 
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 5</h3>
                   </a>
                </div>
 
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 6</h3>
                   </a>
                </div>
@@ -60,21 +60,21 @@
             <div class="item_wrapper">
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 7</h3>
                   </a>
                </div>
 
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 8</h3>
                   </a>
                </div>
 
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 9</h3>
                   </a>
                </div>

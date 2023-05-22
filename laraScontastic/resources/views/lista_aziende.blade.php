@@ -4,7 +4,7 @@
             <div class="mega_container">
                 <!-- inizio searchbar -->
                 <div class="search_menu">
-                    {{ Form::text('search', 'cerca aziende...', ['class' => 'search_bar']) }}
+                    {{ Form::text('search','', ['class' => 'search_bar', 'placeholder' => 'Cerca aziende...']) }}
                     {{ Form::button('search', ['class' => 'search_button']) }}
                 </div>
                 <!-- fine searchbar -->
