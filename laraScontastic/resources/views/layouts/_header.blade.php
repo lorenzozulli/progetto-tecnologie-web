@@ -42,7 +42,7 @@
     <!-- fine logo -->
 
     <!-- inizio searchbar -->
-        {{ Form::text('search', 'cerca qui...', ['class' => 'search_bar']) }}
+        {{ Form::text('search', 'cerca offerte...', ['class' => 'search_bar']) }}
         {{ Form::button('search', ['class' => 'search_button']) }}
     <!-- fine searchbar -->
 
