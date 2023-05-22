@@ -43,7 +43,7 @@
 
     <!-- inizio searchbar -->
     {{ Form::text('search','', ['class' => 'search_bar', 'placeholder' => 'Cerca offerte...']) }}
-        {{ Form::button('search', ['class' => 'search_button']) }}
+    {{ Form::button('search', ['class' => 'search_button']) }}
     <!-- fine searchbar -->
 
     <!-- inizio link wrapper -->
@@ -54,9 +54,7 @@
             @guest
             <li><a href="{{ route('login') }}">Account</a></li>
             @endguest
-            <!-- @if()  // da mostrare solo se l'utente è loggato
-            <li><a href="{{ route('logout') }}">LogOut</a></li>
-             @endif -->
+            <!-- Da aggiungere la parte per fare logout quanto l'utente è nella sua sessione -->
         </ul>
     </div>
     <!-- fine link wrapper -->
