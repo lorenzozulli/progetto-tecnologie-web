@@ -54,6 +54,9 @@
             @guest
             <li><a href="{{ route('login') }}">Account</a></li>
             @endguest
+            <!-- @if()  // da mostrare solo se l'utente è loggato
+            <li><a href="{{ route('logout') }}">LogOut</a></li>
+             @endif -->
         </ul>
     </div>
     <!-- fine link wrapper -->
