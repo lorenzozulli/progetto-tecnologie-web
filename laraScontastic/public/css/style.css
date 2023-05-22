@@ -468,6 +468,7 @@ footer{
 
 /* --- lista-aziende section start --- */
 .search_menu{
+  display: flex;
   padding-top: 20px;
   justify-content: space-between;
   align-items: center;
