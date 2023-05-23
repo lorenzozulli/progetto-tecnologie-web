@@ -2,108 +2,111 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        // Creazione tabella Utenti.
-        DB::table('utenti') -> insert([
+        DB::table('users') -> insert([
             [
-                'username' => 'adminadmin',
-                'password' => '6nKphd5o',
-                'nome' => 'NULL',
-                'cognome' => 'NULL',
-                'e-mail' => 'NULL',
-                'età' => 'NULL',
-                'sesso' => 'O',
-                'telefono' => 'NULL',
-                'livello' => '3',
+                'username' => 'mrossi1',
+                'nome' => 'Mario',
+                'cognome' => 'Rossi',
+                'eta' => 54,
+                'genere' => 'M',
+                'livello' => 1,
+                'password' => Hash::make('root'),
+                'telefono' => 1234567890,
+                'email' => 'mario@rossi.com',
             ],
             [
-                'username' => 'staffstaff',
-                'password' => '6nKphd5o',
-                'nome' => 'Silvio',
-                'cognome' => 'Berlusconi',
-                'e-mail' => 'silvio.berlusconi@gmail.com',
-                'età' => '86',
-                'sesso' => 'M',
-                'telefono' => '1234567890',
-                'livello' => '2',
-            ],
-            [
-                'username' => 'useruser',
-                'password' => '6nKphd5o',
-                'nome' => 'Vittorio',
-                'cognome' => 'Sgarbi',
-                'e-mail' => 'capra.capra@gmail.com',
-                'età' => '71',
-                'sesso' => 'M',
-                'telefono' => '2345678901',
-                'livello' => '1',
+                'username' => 'marco99',
+                'nome' => 'Marco',
+                'cognome' => 'Alessandrini',
+                'eta' => 98,
+                'genere' => 'M',
+                'livello' => 2,
+                'password' => Hash::make("ciao"),
+                'telefono' => '7832891231',
+                'email' => 'marcoaless99@gmail.com'
             ]
         ]);
 
-        //creazione tabella faqs.
+        // Creazione tabella Aziende.
+        DB::table('companies') -> insert([
+            [
+                'id' => 1,
+                //'managerUsername' => 'root',
+                'descrizione' => 'Servizio online di food delivery, supportato da più di 2500 ristoranti in tutta Italia',
+                'nome' => 'Just Eat',
+                'ragioneSociale' => 'Just Eat',
+                'tipologia' => 'Cibo e Ristorazione',
+                'logo' => NULL
+                
+            ],
+            [
+                'id' => 2,
+                //'managerUsername' => 'root',
+                'descrizione' => "É una società cinese impegnata nello sviluppo, produzione e commercializzazione di
+                                 prodotti, di sistemi e di soluzioni di rete e telecomunicazioni, smartphones ed
+                                 elettronica di consumo generale.",
+                'nome' => 'Huawei',
+                'ragioneSociale' => 'Huawei Tecnologies Corporation, Limited',
+                'tipologia' => 'Informatica',
+                'logo' => NULL
+
+            ]
+        ]);
+
+        // Creazione tabella Offerte
+        DB::table('offers') -> insert([
+            [
+                'id' => NULL,
+                'id_azienda' => 1,
+                'nome' => '30% di sconto per 2 ordini',
+                'oggetto' => 'Ottieni il 30% di sconto sul totale dei prossimi 2 ordini - Solo da Just Eat!',
+                'modalitaFruizione' => "Inserire il codice del coupon nella sezione Inserisci sconto al momento dell'ordine sull'app.",
+                'luogoFruizione' => "Utilizzabile solo sull'app Just Eat.",
+                'dataOraCreazione' => now(),
+                'dataOraScadenza' => '2024-01-01 10:15:00',
+                //'immagine' => NULL
+            ],
+            [
+                'id' => NULL,
+                'id_azienda' => 2,
+                'nome' => 'Huawei P60 a prezzo stracciato!',
+                'oggetto' => 'Ottieni il nuovo Huawei P60 scontato del 35%!',
+                'modalitaFruizione' => 'Mostrare il codice generato dal coupon alla cassa al momento del pagamento.',
+                'luogoFruizione' => 'Presso negozi e punti vendita certificati Huawei.',
+                'dataOraCreazione' => now(),
+                'dataOraScadenza' => '2024-01-01 10:15:00',
+                //'immagine' => NULL
+            ]
+        ]);
+
+        // Creazione tabella FAQs.
         DB::table('faqs') -> insert([
             [
-                'id_faq' => '1',
-                'domanda' => 'Domanda1?',
-                'risposta' => 'Risosta1!',
+                'id' => NULL,
+                //'usernameCreatore' => 'root',
+                'domanda' => 'domanda1',
+                'risposta' => 'risposta1'
             ],
             [
-                'id_faq' => '2',
-                'domanda' => 'Domanda2?',
-                'risposta' => 'Risosta2!',
+                'id' => NULL,
+                //'usernameCreatore' => 'root',
+                'domanda' => 'domanda2',
+                'risposta' => 'risposta2'
             ]
         ]);
-
-        //creazione tabella aziende.
-        DB::table('aziende') -> insert([
-            [
-                'id_azienda' => 'NULL',
-                'ragione_sociale' => 'Giast it',
-                'nome' => 'Giast it',
-                'categoria' => 'Cibo e Ristoranti',
-                'website' => 'www.giastit.com',
-                'descrizione' => 'Lorem ipsum...',
-                'logo' => 'azienda_logo',
-            ],
-            [
-                'id_azienda' => 'NULL',
-                'ragione_sociale' => 'Arco Industrie',
-                'nome' => 'Arco Industrie',
-                'categoria' => 'Casa',
-                'website' => 'www.arcoindustrie.it',
-                'descrizione' => 'Lorem ipsum...',
-                'logo' => 'azienda_logo',
-            ]
-            ]);
-
-        //creazione tabella offerte.
-        DB::table('offerte') -> insert([
-            [
-                'id_offerta' => 'NULL',
-                'data_di-scadenza' => '2024-01-01',
-                'tipologia' => 'Cibo',
-                'descrizione' => 'Lorem ipsum...',
-            ],
-            [
-                'id_offerta' => 'NULL',
-                'data_di-scadenza' => '2025-01-01',
-                'tipologia' => 'Casa',
-                'descrizione' => 'Lorem ipsum...',
-            ]
-            ]);
-
-
-
     }
 }

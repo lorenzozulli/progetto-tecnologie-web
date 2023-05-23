@@ -13,17 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        // Gli attributi hanno di default il vincolo NOT NULL
         Schema::create('faqs', function (Blueprint $table) {
-            //chiave primaria
-            $table->bigIncrements('id_faq')->primary();
+             // Primary key auto-incrementale della tabella.
+             $table->bigIncrements('id');
 
-            //altri attributi
-            $table->string('domanda', 100);
-            $table->string('risposta', 1000);
-
-
-            //Non so se dobbiamo aggiungere qualche chiave esterna che fa riferimento ad utenti
+             //$table->string('usernameCreatore', 30)->unsigned();
+             $table->string('domanda', 200)->unique();
+             $table->string('risposta', 200)->unique();
+ 
+             // definizione del vincolo di FK
+             //$table->foreign('usernameCreatore')->references('username')->on('users');
         });
     }
 

@@ -34,25 +34,28 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'surname' => ['required', 'string', 'max:255'],
-            'sex' => ['required', 'string'],
-            'age' => ['required', 'integer', 'max:3'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'cellphone' => ['required', 'string','max:10'],
             'username' => ['required', 'string', 'min:8', 'unique:users'],
+            'nome' => ['required', 'string', 'max:255'],
+            'cognome' => ['required', 'string', 'max:255'],
+            'età' => ['required', 'integer', 'max:3'],
+            'genere' => ['required', 'string'],
+            'livello' => ['required', 'integer'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'telefono' => ['required', 'string','max:10'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],         
         ]);
 
         $user = User::create([
-            'name' => $request->name,
-            'surname' => $request->surname,
-            'sex' => $request->sex,
-            'age' => $request->age,
-            'email' => $request->email,
-            'cellphone' =>$request->cellphone,
             'username' => $request->username,
+            'nome' => $request->nome,
+            'cognome' => $request->cognome,
+            'età' => $request->età,
+            'genere' => $request->genere,
+            'livello' =>$request->livello,
             'password' => Hash::make($request->password),
+            'telefono' =>$request->telefono,
+            'email' => $request->email,
+            
         ]);
 
         event(new Registered($user));
@@ -60,5 +63,6 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
+       
     }
 }
