@@ -4,7 +4,7 @@
         <!-- banner section start -->
         <div class="banner_bg">
          <div class="frame">
-            <h1>INIZIA ORA <br>LO SHOPPING</h1>
+            <h1>LA TUA DESTINAZIONE <br>PER I MIGLIORI AFFARI</h1>
             <div class="bt"><a href="{{ route ('elenco-offerte') }}">Compra adesso</a></div>
          </div>
          </div>
@@ -16,21 +16,21 @@
             <div class="item_wrapper">
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3 class="title">Test 1</h3>
                   </a>
                </div>
 
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 2</h3>
                   </a>
                </div>
 
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 3</h3>
                   </a>
                </div>
@@ -38,21 +38,21 @@
             <div class="item_wrapper">
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 4</h3>
                   </a>
                </div>
 
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 5</h3>
                   </a>
                </div>
 
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 6</h3>
                   </a>
                </div>
@@ -60,21 +60,21 @@
             <div class="item_wrapper">
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 7</h3>
                   </a>
                </div>
 
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 8</h3>
                   </a>
                </div>
 
                <div class="carousel__item">
                   <a href="#" target="blank">
-                     <img class="img" src="images/mock.png">
+                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3>Test 9</h3>
                   </a>
                </div>
@@ -107,28 +107,28 @@
                      Grazie ai codici sconto puoi infatti avere molteplici benefici, non soltanto economici, ma anche pratici. 
                      Per sfruttarli al meglio, tuttavia, è necessario conoscerne le differenze e capire come o quando applicarli in modo da ottenere il massimo risparmio. 
                      Di seguito andremo quindi ad analizzare le tipologie di coupon più diffuse, cosicché tu possa avere una panoramica completa delle opzioni a tua disposizione.<br></p>
-                  <h3>Codici sconto in percentuale:</h3>
+                  <h3>Codici sconto in percentuale</h3>
                   <p>Sono, senza dubbio, i coupon più comuni e conosciuti: si tratta infatti di una semplice riduzione di prezzo in percentuale sul costo originario dell'articolo.
                      Normalmente, si applicano sul prezzo o sulla tariffa di listino, ma in casi eccezionali potrebbero essere utilizzabili anche sugli articoli in saldo. 
                      Alcuni negozi, durante la procedura di acquisto, indicano inoltre l'importo in denaro corrispondente allo sconto applicato, in modo da offrirti un immediato riscontro del risparmio ottenuto mediante il coupon.<br></p>
-                  <h3>Coupon spedizione gratuita:</h3>
+                  <h3>Coupon spedizione gratuita</h3>
                   <p>Questo codice ti permette di eliminare le spese di spedizione dai tuoi acquisti online. 
                      Di solito è prevista una soglia di spesa minima che, in relazione all'importo dell'ordine, può renderne più o meno conveniente l'utilizzo. 
                      Se le soglie di spesa sono basse, infatti, la sua convenienza incrementa notevolmente, poiché ti consente di risparmiare le spese di spedizione anche sui piccoli acquisti. 
                      In caso di ordini più consistenti, invece, utilizzare uno di questi codici potrebbe essere addirittura superfluo, poiché molti negozi prevedono già delle soglie di spesa minima oltre le quali non occorre pagare la spedizione. 
                      In tal caso, dunque, meglio puntare su altre tipologie di codici sconto.<br></p>
-                  <h3>Coupon con sconto fisso:</h3>
+                  <h3>Coupon con sconto fisso</h3>
                   <p>I coupon con sconto fisso sono altrettanto diffusi, ma a differenza di quelli in percentuale, ti consentono di risparmiare soltanto l'importo specificato. 
                      Di frequente, questo genere di promozione è legata a una soglia di spesa minima che può essere notevolmente superiore all'importo del buono sconto. 
                      Pertanto, ti consigliamo di valutarne l'effettiva convenienza in relazione all'importo totale dell'ordine che intendi effettuare. 
                      In linea di massima, sui piccoli importi questo coupon è quasi sempre più conveniente del codice sconto in percentuale, che, a sua volta, può garantirti un risparmio maggiore sugli acquisti più costosi.<br></p>
-                  <h3>Codice sconto omaggio:</h3>
+                  <h3>Codice sconto omaggio</h3>
                   <p>Con questo codice puoi ottenere l'invio di un omaggio a corredo dei tuoi acquisti. 
                      In genere si tratta di piccoli gadget o campioncini gratuiti, ma in molti casi potresti anche ottenere degli omaggi ben più sostanziosi. 
                      Pensa, ad esempio, alle classiche promozioni "3x2", grazie alle quali puoi ricevere un prodotto gratis (in formato standard) semplicemente inserendo il codice sconto abbinato all'offerta durante la procedura d'acquisto. 
                      Tali coupon, inoltre, possono rivelarsi davvero vantaggiosi quando effettui degli ordini cumulativi, che, a seconda delle condizioni d'utilizzo del buono, potrebbero consentirti di ricevere più di un prodotto omaggio con una singola transazione. 
                      In ogni caso, prima di usare un coupon omaggio ti consigliamo di leggere attentamente il regolamento della promozione, in modo da essere certo della sua effettiva convenienza rispetto ai classici codici sconto in percentuale o ad importo fisso.<br></p>
-                  <h3>Codici sconto prevendita:</h3>
+                  <h3>Codici sconto prevendita</h3>
                   <p>Sono generalmente proposti in occasione del lancio di nuovi prodotti, in particolare nel settore della tecnologia e dell'informatica. 
                      Di solito, vengono offerti dai produttori (attraverso i propri canali di vendita) o dai grandi negozi online incaricati come rivenditori ufficiali dalle stesse aziende produttrici. 
                      Nello specifico, tali coupon non sono poi molto diversi da quelli fissi o in percentuale, ma a differenza di quest'ultimi, determinano il costo finale dell'articolo e non lo sconto applicato. 

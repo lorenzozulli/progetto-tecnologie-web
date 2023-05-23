@@ -48,6 +48,7 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
+<<<<<<< HEAD
             'host' => env('DB_HOST', '127.0.0.1'),
             //'host' => '$HOST',
             'port' => env('DB_PORT', '3306'),
@@ -57,6 +58,13 @@ return [
             //'username' => '$USER',
             'password' => env('DB_PASSWORD', ''),
             //'password' => '$PASSWORD',
+=======
+            'host' => '$HOST',
+            'port' => env('DB_PORT', '3306'),
+            'database' => '$DB',
+            'username' => '$USER',
+            'password' => '$PASSWORD',
+>>>>>>> 5deaeabf7113b16f2fa91bb10557b5ddcc9d1f29
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

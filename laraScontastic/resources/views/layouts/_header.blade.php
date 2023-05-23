@@ -42,8 +42,8 @@
     <!-- fine logo -->
 
     <!-- inizio searchbar -->
-        {{ Form::text('search', 'cerca qui...', ['class' => 'search_bar']) }}
-        {{ Form::button('search', ['class' => 'search_button']) }}
+    {{ Form::text('search','', ['class' => 'search_bar', 'placeholder' => 'Cerca offerte...']) }}
+    {{ Form::button('search', ['class' => 'search_button']) }}
     <!-- fine searchbar -->
 
     <!-- inizio link wrapper -->
@@ -54,6 +54,7 @@
             @guest
             <li><a href="{{ route('login') }}">Account</a></li>
             @endguest
+            <!-- Da aggiungere la parte per fare logout quanto l'utente è nella sua sessione -->
         </ul>
     </div>
     <!-- fine link wrapper -->
