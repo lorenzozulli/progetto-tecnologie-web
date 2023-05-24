@@ -17,12 +17,12 @@ return new class extends Migration
              // Primary key auto-incrementale della tabella.
              $table->bigIncrements('id');
 
-             //$table->string('usernameCreatore', 30)->unsigned();
-             $table->string('domanda', 200)->unique();
-             $table->string('risposta', 200)->unique();
+             //$table->string('username')->unsigned();
+             $table->string('domanda')->unique();
+             $table->string('risposta')->unique();
  
              // definizione del vincolo di FK
-             //$table->foreign('usernameCreatore')->references('username')->on('users');
+             //$table->foreign('username')->references('username')->on('users');
         });
     }
 

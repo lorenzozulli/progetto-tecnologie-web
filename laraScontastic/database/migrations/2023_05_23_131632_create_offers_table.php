@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigIncrements('id');
 
             $table->bigInteger('id_azienda')->unsigned();    // foreign key -> punta a Aziende(id)
-            $table->string('nome', 70);
+            $table->string('nome');
             $table->text('oggetto');
 
             $table->text('modalitaFruizione');
