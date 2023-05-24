@@ -10,90 +10,47 @@
          </div>
          <!-- banner section end -->
       <!-- banner bg main end -->
-
+      
         <!-- Aziende carousel section start -->
+        
+       
          <div class="carousel">
+        
+         
             <div class="item_wrapper">
+            
                <div class="carousel__item">
-                  <a href="#" target="blank">
+             
+            
+               <a href="#">
                      <img class="img" src="images/loghi-aziende/non_disponibile.png">
-                     <h3 class="title">Test 1</h3>
+                     <h3 class="title">ciao</h3>
                   </a>
+                
+                  
                </div>
-
-               <div class="carousel__item">
-                  <a href="#" target="blank">
-                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
-                     <h3>Test 2</h3>
-                  </a>
-               </div>
-
-               <div class="carousel__item">
-                  <a href="#" target="blank">
-                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
-                     <h3>Test 3</h3>
-                  </a>
-               </div>
+               
+               
             </div>
-            <div class="item_wrapper">
-               <div class="carousel__item">
-                  <a href="#" target="blank">
-                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
-                     <h3>Test 4</h3>
-                  </a>
-               </div>
-
-               <div class="carousel__item">
-                  <a href="#" target="blank">
-                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
-                     <h3>Test 5</h3>
-                  </a>
-               </div>
-
-               <div class="carousel__item">
-                  <a href="#" target="blank">
-                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
-                     <h3>Test 6</h3>
-                  </a>
-               </div>
-            </div>
-            <div class="item_wrapper">
-               <div class="carousel__item">
-                  <a href="#" target="blank">
-                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
-                     <h3>Test 7</h3>
-                  </a>
-               </div>
-
-               <div class="carousel__item">
-                  <a href="#" target="blank">
-                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
-                     <h3>Test 8</h3>
-                  </a>
-               </div>
-
-               <div class="carousel__item">
-                  <a href="#" target="blank">
-                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
-                     <h3>Test 9</h3>
-                  </a>
-               </div>
-            </div>
-
+            
+           
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
          </div>
+      
          <div class ="button_wrapper" style="text-align:center">
             <span class="carousel__button" onclick="currentSlide(1)"></span>
             <span class="carousel__button" onclick="currentSlide(2)"></span>
             <span class="carousel__button" onclick="currentSlide(3)"></span>
          </div>
-
+         
          <script src="js/carousel.js"></script>
 
          <div class="bt"><a href="{{ route('lista-aziende') }}">Tutte le aziende</a></div>
+         
       <!-- aziende carousel section end -->
-
+    
         <!-- codes explanation section start -->
         <div class="codes_explanation">
                <h1 class="title">Cosa sono i codici?</h1>

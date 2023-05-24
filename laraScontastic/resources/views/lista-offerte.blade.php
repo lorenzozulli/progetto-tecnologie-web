@@ -21,8 +21,6 @@
                         </div>
                     </div>
                     @endforeach
-                    <!--Paginazione-->
-                    @include('pagination.paginator', ['paginator' => $offer])
                     @endisset()
             </div>
         <!-- lista offerte section end -->

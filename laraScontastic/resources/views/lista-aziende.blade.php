@@ -1,5 +1,6 @@
 @extends('layouts/base')
 @section('content')
+
         <!-- lista aziende section start -->
             <div class="mega_container">
                 <!-- inizio searchbar per azienda -->
@@ -41,4 +42,5 @@
                 </div>
             </div>
         <!-- lista aziende section end -->
+        
 @endsection
