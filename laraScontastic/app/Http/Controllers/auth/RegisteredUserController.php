@@ -19,7 +19,7 @@ class RegisteredUserController extends Controller
      * @return \Illuminate\View\View
      */
     public function create()
-    {
+    {   
         return view('auth.register');
     }
 
@@ -32,37 +32,36 @@ class RegisteredUserController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
-    {
+    {   
+
         $request->validate([
             'username' => ['required', 'string', 'min:8', 'unique:users'],
-            'nome' => ['required', 'string', 'max:255'],
+            'nome' => ['required', 'string'],
             'cognome' => ['required', 'string', 'max:255'],
-            'età' => ['required', 'integer', 'max:3'],
+            'eta' => ['required', 'integer'],
             'genere' => ['required', 'string'],
-            'livello' => ['required', 'integer'],
+            'livello' => [1],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'telefono' => ['required', 'string','max:10'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],         
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],     
         ]);
-
         $user = User::create([
             'username' => $request->username,
             'nome' => $request->nome,
             'cognome' => $request->cognome,
-            'età' => $request->età,
+            'eta' => $request->eta,
             'genere' => $request->genere,
-            'livello' =>$request->livello,
+            //'livello' =>$request->livello,
             'password' => Hash::make($request->password),
             'telefono' =>$request->telefono,
             'email' => $request->email,
-            
         ]);
-
+        
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect(RouteServiceProvider::USER);
        
     }
 }

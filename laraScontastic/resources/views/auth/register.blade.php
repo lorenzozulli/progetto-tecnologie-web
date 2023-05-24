@@ -10,11 +10,11 @@
 
             <!-- Nome -->
             <div  class="wrap-input">
-                {{ Form::label('name', 'Nome', ['class' => 'label-input']) }}
-                {{ Form::text('name', '', ['class' => 'input', 'id' => 'name']) }}
-                @if ($errors->first('name'))
+                {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
+                {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome']) }}
+                @if ($errors->first('nome'))
                 <ul class="errors">
-                    @foreach ($errors->get('name') as $message)
+                    @foreach ($errors->get('nome') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>
@@ -23,11 +23,11 @@
 
             <!-- Cognome -->
             <div  class="wrap-input">
-                {{ Form::label('surname', 'Cognome', ['class' => 'label-input']) }}
-                {{ Form::text('surname', '', ['class' => 'input', 'id' => 'surname']) }}
-                @if ($errors->first('surname'))
+                {{ Form::label('cognome', 'Cognome', ['class' => 'label-input']) }}
+                {{ Form::text('cognome', '', ['class' => 'input', 'id' => 'cognome']) }}
+                @if ($errors->first('cognome'))
                 <ul class="errors">
-                    @foreach ($errors->get('surname') as $message)
+                    @foreach ($errors->get('cognome') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>
@@ -36,18 +36,18 @@
 
             <!-- Sesso -->
             <div  class="wrap-input">
-                {{ Form::label('sex', 'Sesso', ['class' => 'label-input']) }}
+                {{ Form::label('genere', 'Genere', ['class' => 'label-input']) }}
                 <br> 
-                {{ Form::select('Sesso', array('M' => 'Maschio', 'F' => 'Femmina', 'O' => 'Altro')) }}
+                {{ Form::select('genere', array('M' => 'Maschio', 'F' => 'Femmina', 'O' => 'Altro')) }}
             </div>
             
             <!-- Età -->
             <div  class="wrap-input">
                 {{ Form::label('eta', 'Età', ['class' => 'label-input']) }}
                 {{ Form::text('eta', '', ['class' => 'input','id' => 'eta']) }}
-                @if ($errors->first('email'))
+                @if ($errors->first('eta'))
                 <ul class="errors">
-                    @foreach ($errors->get('email') as $message)
+                    @foreach ($errors->get('eta') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>
@@ -69,11 +69,11 @@
 
             <!-- Telefono -->
             <div  class="wrap-input">
-                {{ Form::label('cellphone', 'Telefono', ['class' => 'label-input']) }}
-                {{ Form::text('cellphone', '', ['class' => 'input', 'id' => 'cellphone']) }}
-                @if ($errors->first('cellphone'))
+                {{ Form::label('telefono', 'Telefono', ['class' => 'label-input']) }}
+                {{ Form::text('telefono', '', ['class' => 'input', 'id' => 'telefono']) }}
+                @if ($errors->first('telefono'))
                 <ul class="errors">
-                    @foreach ($errors->get('cellphone') as $message)
+                    @foreach ($errors->get('telefono') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>

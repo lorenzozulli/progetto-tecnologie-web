@@ -51,20 +51,17 @@
         <ul>
             <li><a href="{{ route('lista-aziende') }}">Aziende</a></li>
             <li><a href="{{ route('faq') }}">FAQ</a></li>
-            @can('isUser')
-            <li><a href="{{ route('user') }}">User</a></li>
-            @endcan
-            @can('isStaff')
-            <li><a href="{{ route('staff') }}">Staff</a></li>
-            @endcan
-            @can('isAdmin')
-            <li><a href="{{ route('admin') }}">Admin</a></li>
-            @endcan
             @guest
             <li><a href="{{ route('login') }}">Account</a></li>
             @endguest
             @auth
-            <li><a href="{{ route('logout') }}">Logout</a></li>
+            <li><a href="{{ route('user') }}">Account</a></li>
+            <li>
+            <li><a href="" class="highlight" title="Esci dal sito" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
             @endauth
         </ul>
     </div>
