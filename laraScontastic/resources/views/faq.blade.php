@@ -2,9 +2,9 @@
 @section('content')
         <!-- lista domande section start -->
             <div style="min-height:100px" class="mega_container">
-                <p>test1</p>
+             <h1 style="text-align:center"> FAQ </h1>
              @isset($faqs)
-                <p>test2</p>
+               
                 @foreach($faqs as $faq)
                 <div class="domanda_card">
                     <h2 class="domanda">Domanda: {{$faq->domanda}}</h2>
