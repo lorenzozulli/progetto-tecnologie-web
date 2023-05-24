@@ -12,24 +12,33 @@
                     @isset($companies)
                     @foreach ($companies as $company)
                     <div class="prod">
-                        <div class="prod-bgtop">
+                       
+                       <!-- <div class="prod-bgtop">
                             <div class="prod-bgbtm">
                                 <div class="oneitem">
                                     <div class="image">
-                                        @include('helpers/productImg', ['attrs' => 'imagefrm', 'imgFile' => $companies->image])
+                                       
                                     </div>
                                     <div class="info">
-                                        <h1 class="title">Nome: {{ $companies->nome }}</h1>
-                                        <p class="meta">Descrizione: {{ $companies->descrizione }}</p>
+                                        <h1 class="title">Nome: {{ $company->nome }}</h1>
+                                        <p class="meta">Descrizione: {{ $company->descrizione }}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>-->
+                    <div class="carousel__item">
+                        <a href="{{route('azienda', $company->nome )}}">
+                            <img class="img" src="images/loghi-aziende/non_disponibile.png">
+                                <div class="info">
+                                    <h1 class="title">{{ $company->nome }}</h1>
+                                    
+                                </div>
+                        </a>
                     </div>
                     @endforeach
-                    <!--Paginazione-->
-                    @include('pagination.paginator', ['paginator' => $companies])
                     @endisset()
+                </div>
             </div>
         <!-- lista aziende section end -->
 @endsection
