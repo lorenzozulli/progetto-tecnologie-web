@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Catalog;
-use App\Models\Resources\Offerta;
-use App\Models\Resources\Azienda;
+use App\Models\Faq;
 use Illuminate\Support\Facades\Log;
 
 
@@ -23,6 +21,13 @@ class PublicController extends Controller
     public function showListaAziende(){
        /* $listaAziende = Azienda::getAzienda();*/
         return view ('lista-aziende');
+    }
+
+    public function showFaq(){
+        $faqs= Faq::all();
+       
+        return view('faq')
+        ->with('faqs', $faqs);
     }
 
    

@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StaffController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,7 +69,7 @@ Route::post('/user/modifica-promo', [StaffController::class, 'updatePromo'])
 
 /* --- Rotte relative all'Admin loggato --- */
 Route::get('/admin', [AdminController::class, 'index'])
-    ->name('admin')->middleware('can:isUser');
+    ->name('admin')->middleware('auth');
 Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
     ->name('newproduct');
 
@@ -76,7 +77,7 @@ Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
     ->name('newproduct.store');
 
 /* --- Rotte relative alle FAQ --- */
-Route::view('faq', 'faq')
+Route::get('faq', [PublicController::class, 'showFaq'])
     ->name('faq');
 
 
