@@ -28,7 +28,7 @@
                         </div>
                     </div>-->
                     <div class="carousel__item">
-                        <a href="{{route('azienda', $company->nome )}}" target="blank">
+                        <a href="{{route('azienda', $company->nome )}}">
                             <img class="img" src="images/loghi-aziende/non_disponibile.png">
                                 <div class="info">
                                     <h1 class="title">{{ $company->nome }}</h1>
@@ -38,6 +38,7 @@
                     </div>
                     @endforeach
                     @endisset()
+                </div>
             </div>
         <!-- lista aziende section end -->
 @endsection
