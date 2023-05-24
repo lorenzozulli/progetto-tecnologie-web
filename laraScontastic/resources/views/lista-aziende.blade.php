@@ -28,7 +28,7 @@
                         </div>
                     </div>-->
                     <div class="carousel__item">
-                        <a href="#" target="blank">
+                        <a href="{{route('azienda', $company->nome )}}" target="blank">
                             <img class="img" src="images/loghi-aziende/non_disponibile.png">
                                 <div class="info">
                                     <h1 class="title">{{ $company->nome }}</h1>

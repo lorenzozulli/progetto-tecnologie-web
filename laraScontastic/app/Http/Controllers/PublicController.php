@@ -34,5 +34,12 @@ class PublicController extends Controller
         ->with('faqs', $faqs);
     }
 
+    public function showCompany($nome){
+        $company = Company::where('nome', $nome)->first();
+        //dd($company);
+        return view ('azienda', ['company'=>$company]);
+
+    }
+
    
 }
