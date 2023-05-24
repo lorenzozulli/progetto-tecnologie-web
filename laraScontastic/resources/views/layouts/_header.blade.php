@@ -51,10 +51,21 @@
         <ul>
             <li><a href="{{ route('lista-aziende') }}">Aziende</a></li>
             <li><a href="{{ route('faq') }}">FAQ</a></li>
+            @can('isUser')
+            <li><a href="{{ route('user') }}">User</a></li>
+            @endcan
+            @can('isStaff')
+            <li><a href="{{ route('staff') }}">Staff</a></li>
+            @endcan
+            @can('isAdmin')
+            <li><a href="{{ route('admin') }}">Admin</a></li>
+            @endcan
             @guest
             <li><a href="{{ route('login') }}">Account</a></li>
             @endguest
-            <!-- Da aggiungere la parte per fare logout quanto l'utente è nella sua sessione -->
+            @auth
+            <li><a href="{{ route('logout') }}">Logout</a></li>
+            @endauth
         </ul>
     </div>
     <!-- fine link wrapper -->

@@ -45,14 +45,16 @@ Route::get('lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
 
 /* --- Rotte relative allo User --- */
 Route::get('/user', [UserController::class, 'index'])
-    ->name('user')->middleware('can:isUser');
+    ->name('user');
+    // ->middleware('can:isUser');
 
 Route::post('/modifica-dati', [UserController::class, 'updateData'])
     ->name('modifica-dati');
 
 /* --- Rotte relative allo Staff loggato --- */
 Route::get('/staff', [StaffController::class, 'index'])
-    ->name('staff')->middleware('can:isUser');
+    ->name('staff');
+    // ->middleware('can:isUser');
 
 Route::get('/modify-data', [StaffController::class, 'updateData'])
     ->name('modify-data');

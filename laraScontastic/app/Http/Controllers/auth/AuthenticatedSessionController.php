@@ -36,8 +36,7 @@ class AuthenticatedSessionController extends Controller {
 //        return redirect()->intended(RouteServiceProvider::HOME);
 
         $livello = auth()->user()->livello;
-        switch ($livello) {
-                       
+        switch ($livello) {                       
             case 1: return redirect()->route('user');
                 break;   
             case 2: return redirect()->route('staff');
