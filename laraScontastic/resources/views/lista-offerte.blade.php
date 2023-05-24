@@ -1,8 +1,29 @@
 @extends('layouts/base')
 @section('content')
-        <!-- elenco offerte section start -->
+        <!-- lista offerte section start -->
             <div class="mega_container">
-                <p>ciao sono la pagina della lista delle offerte</p>
+                <div id="content">
+                    @isset($offers)
+                    @foreach ($offers as $offer)
+                    <div class="prod">
+                        <div class="prod-bgtop">
+                            <div class="prod-bgbtm">
+                                <div class="oneitem">
+                                    <div class="image">
+                                        @include('helpers/productImg', ['attrs' => 'imagefrm', 'imgFile' => $offer->image])
+                                    </div>
+                                    <div class="info">
+                                        <h1 class="title">Nome: {{ $offer->nome }}</h1>
+                                        <p class="meta">Descrizione: {{ $offer->oggetto }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    <!--Paginazione-->
+                    @include('pagination.paginator', ['paginator' => $offer])
+                    @endisset()
             </div>
-        <!-- elenco offerte section end -->
+        <!-- lista offerte section end -->
 @endsection

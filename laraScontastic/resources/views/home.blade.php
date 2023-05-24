@@ -5,7 +5,7 @@
         <div class="banner_bg">
          <div class="frame">
             <h1>LA TUA DESTINAZIONE <br>PER I MIGLIORI AFFARI</h1>
-            <div class="bt"><a href="{{ route ('elenco-offerte') }}">Compra adesso</a></div>
+            <div class="bt"><a href="{{ route ('lista-offerte') }}">Compra adesso</a></div>
          </div>
          </div>
          <!-- banner section end -->

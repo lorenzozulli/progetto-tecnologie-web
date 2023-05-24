@@ -35,13 +35,13 @@ Route::get('/lista-aziende/{azienda}', [PublicController::class, 'showAzienda'])
 
 
 // questa rotta mostra l'elenco di tutte le offerte [?]
-Route::get('/elenco_offerte', [PublicController::class, 'showOfferList'])
-->name('elenco-offerte');
+Route::get('/lista-offerte', [PublicController::class, 'showOfferList'])
+    ->name('lista-offerte');
 
 
 // questa rotta mostra la pagina di un'offerta [?]
-Route::get('elenco-offerte/{offerta}', [PublicController::class, 'showOffer'])
-->name('{offerta}');
+Route::get('lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
+    ->name('{offerta}');
 
 /* --- Rotte relative allo User --- */
 Route::get('/user', [UserController::class, 'index'])
@@ -65,6 +65,8 @@ Route::post('/user/modifica-promo', [StaffController::class, 'updatePromo'])
 
 
 /* --- Rotte relative all'Admin loggato --- */
+Route::get('/admin', [AdminController::class, 'index'])
+    ->name('admin')->middleware('can:isUser');
 Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
     ->name('newproduct');
 

@@ -36,8 +36,19 @@ class DatabaseSeeder extends Seeder
                 'genere' => 'M',
                 'livello' => 2,
                 'password' => Hash::make("ciao"),
-                'telefono' => '7832891231',
+                'telefono' => 7832891231,
                 'email' => 'marcoaless99@gmail.com'
+            ],
+            [
+                'username' => 'maremmoide',
+                'nome' => 'Maicol',
+                'cognome' => 'Lanni',
+                'eta' => 22,
+                'genere' => 'M',
+                'livello' => 3,
+                'password' => Hash::make("maremmoide"),
+                'telefono' => 1234567890,
+                'email' => 'maremmoide@gmail.com'
             ]
         ]);
 

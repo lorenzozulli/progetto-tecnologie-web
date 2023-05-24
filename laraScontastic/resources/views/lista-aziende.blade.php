@@ -8,7 +8,28 @@
                     {{ Form::button('search', ['class' => 'search_button']) }}
                 </div>
                 <!-- fine searchbar per azienda -->
-                    <p>Ciao voglio rappresentare la lista delle aziende</p>
+                <div id="content">
+                    @isset($companies)
+                    @foreach ($companies as $company)
+                    <div class="prod">
+                        <div class="prod-bgtop">
+                            <div class="prod-bgbtm">
+                                <div class="oneitem">
+                                    <div class="image">
+                                        @include('helpers/productImg', ['attrs' => 'imagefrm', 'imgFile' => $companies->image])
+                                    </div>
+                                    <div class="info">
+                                        <h1 class="title">Nome: {{ $companies->nome }}</h1>
+                                        <p class="meta">Descrizione: {{ $companies->descrizione }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    <!--Paginazione-->
+                    @include('pagination.paginator', ['paginator' => $companies])
+                    @endisset()
             </div>
         <!-- lista aziende section end -->
 @endsection

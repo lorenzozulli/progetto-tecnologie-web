@@ -17,12 +17,12 @@ class PublicController extends Controller
         //$offerte = Offerta::getOffer();
         //In questo caso, il metodo compact crea un array associativo chiamato 'offerte', con tutti gli elementi 
         //presenti nella tabella "Offerta". 
-        return view('elenco_offerte');
+        return view('lista-offerte');
     }
 
     public function showListaAziende(){
        /* $listaAziende = Azienda::getAzienda();*/
-        return view ('lista_aziende');
+        return view ('lista-aziende');
     }
 
    
