@@ -75,6 +75,42 @@ class DatabaseSeeder extends Seeder
                 'tipologia' => 'Informatica',
                 'logo' => NULL
 
+            ],
+            [
+                'id' => 3,
+                //'managerUsername' => 'root',
+                'descrizione' => "É una società cinese impegnata nello sviluppo, produzione e commercializzazione di
+                                 prodotti, di sistemi e di soluzioni di rete e telecomunicazioni, smartphones ed
+                                 elettronica di consumo generale.",
+                'nome' => 'Huawei',
+                'ragioneSociale' => 'Huawei Tecnologies Corporation, Limited',
+                'tipologia' => 'Informatica',
+                'logo' => NULL
+
+            ],
+            [
+                'id' => 4,
+                //'managerUsername' => 'root',
+                'descrizione' => "É una società cinese impegnata nello sviluppo, produzione e commercializzazione di
+                                 prodotti, di sistemi e di soluzioni di rete e telecomunicazioni, smartphones ed
+                                 elettronica di consumo generale.",
+                'nome' => 'Huawei',
+                'ragioneSociale' => 'Huawei Tecnologies Corporation, Limited',
+                'tipologia' => 'Informatica',
+                'logo' => NULL
+
+            ],
+            [
+                'id' => 5,
+                //'managerUsername' => 'root',
+                'descrizione' => "É una società cinese impegnata nello sviluppo, produzione e commercializzazione di
+                                 prodotti, di sistemi e di soluzioni di rete e telecomunicazioni, smartphones ed
+                                 elettronica di consumo generale.",
+                'nome' => 'Huawei',
+                'ragioneSociale' => 'Huawei Tecnologies Corporation, Limited',
+                'tipologia' => 'Informatica',
+                'logo' => NULL
+
             ]
         ]);
 

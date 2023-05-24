@@ -273,7 +273,7 @@ footer{
   float: left;
   margin: 10px;
   border-radius: 20px;
-  display: flex;
+  display: block;
 }
 
 .carousel__item a {

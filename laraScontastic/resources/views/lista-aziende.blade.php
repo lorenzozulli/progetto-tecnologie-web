@@ -31,8 +31,8 @@
                         <a href="#" target="blank">
                             <img class="img" src="images/loghi-aziende/non_disponibile.png">
                                 <div class="info">
-                                    <h1 class="title">Nome: {{ $company->nome }}</h1>
-                                    <p class="meta">Descrizione: {{ $company->descrizione }}</p>
+                                    <h1 class="title">{{ $company->nome }}</h1>
+                                    
                                 </div>
                         </a>
                     </div>
