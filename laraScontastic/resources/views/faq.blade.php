@@ -1,26 +1,17 @@
 @extends('layouts/base')
 @section('content')
         <!-- lista domande section start -->
-            <div class="mega_container">
+            <div style="min-height:100px" class="mega_container">
+                <p>test1</p>
+             @isset($faqs)
+                <p>test2</p>
+                @foreach($faqs as $faq)
                 <div class="domanda_card">
-                    <h2>Domanda 1?</h2>
-                    <p>Lorem ipsum dolor sid amet...</p>
+                    <h2 class="domanda">Domanda: {{$faq->domanda}}</h2>
+                    <p class="risposta">Risposta: {{$faq->risposta}}</p>
                 </div>
-
-                <div class="domanda_card">
-                    <h2>Domanda 2?</h2>
-                    <p>Lorem ipsum dolor sid amet...</p>
-                </div>
-
-                <div class="domanda_card">
-                    <h2>Domanda 3?</h2>
-                    <p>Lorem ipsum dolor sid amet...</p>
-                </div>
-
-                <div class="domanda_card">
-                    <h2>Domanda 4?</h2>
-                    <p>Lorem ipsum dolor sid amet...</p>
-                </div>
+                @endforeach
+              @endisset()
             </div>
         <!-- lista domande section end -->
 @endsection
