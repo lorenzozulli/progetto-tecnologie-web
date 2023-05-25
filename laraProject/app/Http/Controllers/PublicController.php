@@ -37,7 +37,11 @@ class PublicController extends Controller
         $company = Company::where('nome', $nome)->first();
         //dd($company);
         return view ('azienda', ['company'=>$company]);
+    }
 
+    public function showOffer($nome){
+        $offer = Offer::where('nome', $nome)->first();
+        return view ('offerta', ['offer'=>$offer]);
     }
 
    
