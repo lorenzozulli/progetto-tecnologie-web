@@ -6,6 +6,7 @@
                     @isset($offers)
                     @foreach ($offers as $offer)
                     <div class="prod">
+                        <a href="{{route('offerta', $offer->nome)}}">
                         <div class="prod-bgtop">
                             <div class="prod-bgbtm">
                                 <div class="oneitem">
