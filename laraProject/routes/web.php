@@ -41,11 +41,7 @@ Route::get('/lista-offerte', [PublicController::class, 'showOfferList'])
 
 
 // questa rotta mostra la pagina di un'offerta [?]
-<<<<<<< HEAD
-Route::get('lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
-=======
 Route::get('lista-offerte/{nome}', [PublicController::class, 'showOffer'])
->>>>>>> 8ed3743545f8b4f69d612b2c3410b054a5437637
     ->name('offerta');
 
 /* --- Rotte relative allo User --- */
