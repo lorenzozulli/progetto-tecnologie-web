@@ -42,12 +42,12 @@ Route::get('/lista-offerte', [PublicController::class, 'showOfferList'])
 
 // questa rotta mostra la pagina di un'offerta [?]
 Route::get('lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
-    ->name('{offerta}');
+    ->name('offerta');
 
 /* --- Rotte relative allo User --- */
 Route::get('/user', [UserController::class, 'index'])
     ->name('user');
-    //->middleware('can:isUser');
+    // ->middleware('can:isUser');
 
 Route::post('/modifica-dati', [UserController::class, 'updateData'])
     ->name('modifica-dati');
