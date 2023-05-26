@@ -31,7 +31,7 @@ Route::get('/lista-aziende', [PublicController::class, 'showListaAziende'])
 
 
 // questa rotta mostra la pagina di un'azienda specifica
-Route::get('/azienda/{nome}', [PublicController::class, 'showCompany'])
+Route::get('/{azienda}', [PublicController::class, 'showCompany'])
     ->name('azienda');
 
 
