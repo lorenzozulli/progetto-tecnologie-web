@@ -36,7 +36,7 @@ Route::get('/{azienda}', [PublicController::class, 'showCompany'])
 
 
 // questa rotta mostra l'elenco di tutte le offerte
-Route::get('/lista-offerte', [PublicController::class, 'showOfferList'])
+Route::get('/lista-offerte', [PublicController::class, 'showListaOfferte'])
     ->name('lista-offerte');
 
 

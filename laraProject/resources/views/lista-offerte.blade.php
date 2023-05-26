@@ -1,25 +1,19 @@
-@extends('layouts/base')
+@extends('layouts.base')
 @section('content')
         <!-- lista offerte section start -->
             <div class="mega_container">
                 <div id="content">
                     @isset($offers)
                     @foreach ($offers as $offer)
-                    <div class="prod">
-                        <a href="{{route('offerta', $offer->nome)}}">
-                        <div class="prod-bgtop">
-                            <div class="prod-bgbtm">
-                                <div class="oneitem">
-                                    <div class="image">
-                                        @include('helpers/productImg', ['attrs' => 'imagefrm', 'imgFile' => $offer->image])
-                                    </div>
-                                    <div class="info">
-                                        <h1 class="title">Nome: {{ $offer->nome }}</h1>
-                                        <p class="meta">Descrizione: {{ $offer->oggetto }}</p>
-                                    </div>
+                    <div class="lista_prodotti">
+                    <div class="carousel__item">
+                        <a href="{{route('offerta', $offers->nome )}}">
+                            <img class="img" src="images/loghi-aziende/non_disponibile.png">
+                                <div class="info">
+                                    <h1 class="title">{{ $offer->nome }}</h1>
                                 </div>
-                            </div>
-                        </div>
+                        </a>
+                        </div>                    
                     </div>
                     @endforeach
                     @endisset()

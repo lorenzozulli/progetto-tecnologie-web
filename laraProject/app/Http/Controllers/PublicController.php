@@ -13,15 +13,16 @@ class PublicController extends Controller
 {
 
     //questa funzione mostra le offerte oppure puo mostrare l'offerta specifica. A seconda di come viene usato nella view
-    public function showOfferList(){
+    public function showListaOfferte(){
         $offers = Offer::all();
-         
+
         return view('lista-offerte')->with('offers', $offers);
       
     }
 
     public function showListaAziende(){
         $companies = Company::all();
+
         return view ('lista-aziende')
         ->with('companies', $companies);
     }
