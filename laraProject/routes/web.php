@@ -57,7 +57,10 @@ Route::get('/staff', [StaffController::class, 'index'])
     ->name('staff');
     // ->middleware('can:isUser');
 
-Route::get('/modify-data', [StaffController::class, 'updateData'])
+Route::get('/profile', [StaffController::class, 'showData'])
+    ->name('profile');
+
+Route::post('/modify-data', [StaffController::class, 'updateData'])
     ->name('modify-data');
 
 Route::post('/user/aggiungi-promo', [StaffController::class, 'addPromo'])
