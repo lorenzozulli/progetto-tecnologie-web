@@ -49,8 +49,8 @@ Route::get('/user', [UserController::class, 'index'])
     ->name('user');
     // ->middleware('can:isUser');
 
-Route::post('/modifica-dati', [UserController::class, 'updateData'])
-    ->name('modifica-dati');
+Route::get('/modifica-user', [UserController::class, 'updateData'])
+    ->name('modifica-user');
 
 /* --- Rotte relative allo Staff loggato --- */
 Route::get('/staff', [StaffController::class, 'index'])
