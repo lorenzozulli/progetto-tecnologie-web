@@ -3,10 +3,19 @@
         <!-- user section start -->
         <div class="mega_container">
             <h3>Area User</h3>
-            <p>Benvenuto {{ Auth::user()->nome }} {{ Auth::user()->cognome }}
-            {{ Auth::user()->livello }}
-            </p>
-            <p>Seleziona la funzione da attivare</p>
+            <div class="page">
+                <p>Benvenuto<br>
+                    Username: {{ Auth::user()->username}}<br>
+                    Nome: {{ Auth::user()->nome }}<br>
+                    Cognome: {{ Auth::user()->cognome }}<br>
+                    Eta: {{ Auth::user()->eta }}<br>
+                    Genere: {{ Auth::user()->genere }}<br>
+                    Livello: {{ Auth::user()->livello }}<br>
+                    Telefono: {{ Auth::user()->telefono }}<br>
+                    E-mail: {{ Auth::user()->email }}<br>
+                </p>
+                <h3>Clicca <a href="{{ route('modifica-user') }}">qui</a> per modificare il tuo profilo</h3>
+            </div>
         </div>
         <!-- user section end -->
 @endsection
