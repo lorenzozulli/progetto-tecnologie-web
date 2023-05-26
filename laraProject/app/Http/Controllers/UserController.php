@@ -8,6 +8,8 @@ class UserController extends Controller {
         return view('profiles.user');
     }
 
-    public function updateData(){}
+    public function updateData(){
+    return view('profiles.management.modifica-user');
+    }
 
 }
