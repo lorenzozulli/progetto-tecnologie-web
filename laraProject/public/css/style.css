@@ -207,7 +207,7 @@ header{
 /* --- footer section start ---  */
 footer{
     height:auto;
-    width: auto;
+    width: 100%;
     margin:auto;
     background-color: #262626;
     text-decoration-color: #FAFAFA;
@@ -472,5 +472,8 @@ footer{
   padding-top: 20px;
   justify-content: space-between;
   align-items: center;
+}
+.lista_prodotti{
+  float: left;
 }
 /* --- lista-aziende section end --- */

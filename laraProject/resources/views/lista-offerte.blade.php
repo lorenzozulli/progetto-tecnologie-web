@@ -23,6 +23,7 @@
                     </div>
                     @endforeach
                     @endisset()
+                </div>
             </div>
         <!-- lista offerte section end -->
 @endsection

@@ -15,25 +15,14 @@
         
        
          <div class="carousel">
-        
-         
             <div class="item_wrapper">
-            
                <div class="carousel__item">
-             
-            
                <a href="#">
                      <img class="img" src="images/loghi-aziende/non_disponibile.png">
                      <h3 class="title">ciao</h3>
-                  </a>
-                
-                  
-               </div>
-               
-               
-            </div>
-            
-           
+                  </a>     
+               </div>   
+            </div>  
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
             

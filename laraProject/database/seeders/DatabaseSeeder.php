@@ -79,12 +79,11 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 3,
                 //'managerUsername' => 'root',
-                'descrizione' => "É una società cinese impegnata nello sviluppo, produzione e commercializzazione di
-                                 prodotti, di sistemi e di soluzioni di rete e telecomunicazioni, smartphones ed
-                                 elettronica di consumo generale.",
-                'nome' => 'Huawei',
-                'ragioneSociale' => 'Huawei Tecnologies Corporation, Limited',
-                'tipologia' => 'Informatica',
+                'descrizione' => "Società che sfrutta i bambini per fare le scarpe migliori al mondo (circa)
+                                il loro nome deriva da una dea Greca della \"vittoria\"",
+                'nome' => 'Nike',
+                'ragioneSociale' => 'Nike, Inc.',
+                'tipologia' => 'Abbigliamento',
                 'logo' => NULL
 
             ],
@@ -94,20 +93,8 @@ class DatabaseSeeder extends Seeder
                 'descrizione' => "É una società cinese impegnata nello sviluppo, produzione e commercializzazione di
                                  prodotti, di sistemi e di soluzioni di rete e telecomunicazioni, smartphones ed
                                  elettronica di consumo generale.",
-                'nome' => 'Huawei',
-                'ragioneSociale' => 'Huawei Tecnologies Corporation, Limited',
-                'tipologia' => 'Informatica',
-                'logo' => NULL
-
-            ],
-            [
-                'id' => 5,
-                //'managerUsername' => 'root',
-                'descrizione' => "É una società cinese impegnata nello sviluppo, produzione e commercializzazione di
-                                 prodotti, di sistemi e di soluzioni di rete e telecomunicazioni, smartphones ed
-                                 elettronica di consumo generale.",
-                'nome' => 'Huawei',
-                'ragioneSociale' => 'Huawei Tecnologies Corporation, Limited',
+                'nome' => 'Xiaomi',
+                'ragioneSociale' => 'XIAOMI TECHNOLOGY ITALY S.R.L.',
                 'tipologia' => 'Informatica',
                 'logo' => NULL
 
@@ -117,7 +104,7 @@ class DatabaseSeeder extends Seeder
         // Creazione tabella Offerte
         DB::table('offers') -> insert([
             [
-                'id' => NULL,
+                'id' => 1,
                 'id_azienda' => 1,
                 'nome' => '30% di sconto per 2 ordini',
                 'oggetto' => 'Ottieni il 30% di sconto sul totale dei prossimi 2 ordini - Solo da Just Eat!',
@@ -128,7 +115,7 @@ class DatabaseSeeder extends Seeder
                 //'immagine' => NULL
             ],
             [
-                'id' => NULL,
+                'id' => 2,
                 'id_azienda' => 2,
                 'nome' => 'Huawei P60 a prezzo stracciato!',
                 'oggetto' => 'Ottieni il nuovo Huawei P60 scontato del 35%!',
@@ -143,13 +130,13 @@ class DatabaseSeeder extends Seeder
         // Creazione tabella FAQs.
         DB::table('faqs') -> insert([
             [
-                'id' => NULL,
+                'id' => 1,
                 //'usernameCreatore' => 'root',
                 'domanda' => 'domanda1',
                 'risposta' => 'risposta1'
             ],
             [
-                'id' => NULL,
+                'id' => 2,
                 //'usernameCreatore' => 'root',
                 'domanda' => 'domanda2',
                 'risposta' => 'risposta2'
