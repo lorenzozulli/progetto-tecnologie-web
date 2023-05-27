@@ -487,6 +487,8 @@ footer{
 /* --- pagination section start --- */
 #pagination {
 	text-align :center;
+  width: 100%;
+  margin: 24px auto 24px auto;
 }
 
 #pagination a {
