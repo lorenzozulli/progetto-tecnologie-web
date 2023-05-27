@@ -1,5 +1,6 @@
 @extends('layouts/base')
 @section('content')
+
     <!-- modifica User section start -->
     <div class="mega_container">
         <p>ciao sono la pagina di modifica di un utente di tipo user</p>
@@ -7,8 +8,9 @@
     <div class="container-contact">
     <h3>Modifica</h3>
         <div class="wrap-contact">
+            
             {{ Form::open(array('route' => 'modifica-user', 'class' => 'contact-form')) }}
-
+            
             <!-- Nome -->
             <div  class="wrap-input">
                 {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
@@ -23,7 +25,7 @@
             </div>
 
             <!-- Cognome -->
-            <div  class="wrap-input">
+            <div  class="wrap-input">   
                 {{ Form::label('cognome', 'Cognome', ['class' => 'label-input']) }}
                 {{ Form::text('cognome', '', ['class' => 'input', 'id' => 'cognome', 'placeholder' => Auth::user()->cognome]) }}
                 @if ($errors->first('cognome'))
@@ -81,7 +83,7 @@
                 @endif
             </div>
 
-            <!-- Username 
+            <!-- Username -->
             <div  class="wrap-input">
                 {{ Form::label('username', 'username', ['class' => 'label-input']) }}
                 {{ Form::text('username', '', ['class' => 'input','id' => 'username']) }}
@@ -92,7 +94,7 @@
                     @endforeach
                 </ul>
                 @endif
-            </div> -->
+            </div>
 
             <!-- Password -->
             <div  class="wrap-input">
@@ -119,10 +121,13 @@
                 
                 
             </div>
+        
             
             {{ Form::close() }}
+            
             
         </div>
     </div>
     <!-- modifica User section end -->
+
 @endsection

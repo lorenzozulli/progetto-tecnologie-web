@@ -9,7 +9,12 @@ class UserController extends Controller {
     }
 
     public function updateData(){
+        
     return view('profiles.management.modifica-user');
     }
+
+    public function store(){
+        return view('profiles.user');
+        }
 
 }

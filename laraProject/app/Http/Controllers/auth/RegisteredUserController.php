@@ -56,7 +56,7 @@ class RegisteredUserController extends Controller
             'telefono' =>$request->telefono,
             'email' => $request->email,
         ]);
-        
+
         event(new Registered($user));
 
         Auth::login($user);
