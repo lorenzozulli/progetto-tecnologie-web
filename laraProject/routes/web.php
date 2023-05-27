@@ -31,7 +31,7 @@ Route::get('/lista-aziende', [PublicController::class, 'showListaAziende'])
 
 
 // questa rotta mostra la pagina di un'azienda specifica
-Route::get('/{azienda}', [PublicController::class, 'showCompany'])
+Route::get('/lista-aziende/{azienda}', [PublicController::class, 'showCompany'])
     ->name('azienda');
 
 
@@ -41,7 +41,7 @@ Route::get('/lista-offerte', [PublicController::class, 'showListaOfferte'])
 
 
 // questa rotta mostra la pagina di un'offerta
-Route::get('/{offerta}', [PublicController::class, 'showOffer'])
+Route::get('/lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
     ->name('offerta');
 
 /* --- Rotte relative allo User --- */

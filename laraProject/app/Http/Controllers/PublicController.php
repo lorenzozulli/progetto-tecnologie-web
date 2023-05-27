@@ -43,6 +43,7 @@ class PublicController extends Controller
 
     public function showOffer($nome){
         $offer = Offer::where('nome', $nome)->first();
+        //dd($offer);
         return view ('offerta', ['offer'=>$offer]);
     }
 

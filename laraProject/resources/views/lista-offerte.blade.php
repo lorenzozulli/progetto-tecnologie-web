@@ -6,7 +6,7 @@
                     @isset($offers)
                     @foreach ($offers as $offer)
                     <div class="lista_prodotti">
-                         <a href="{{route('offerta', $offers->nome )}}">
+                         <a href="{{route('offerta', $offer->nome )}}">
                             <img class="img" src="images/loghi-aziende/non_disponibile.png">
                                 <div class="info">
                                     <h1 class="title">{{ $offer->nome }}</h1>
