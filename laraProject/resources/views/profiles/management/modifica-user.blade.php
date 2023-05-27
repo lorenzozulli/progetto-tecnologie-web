@@ -8,7 +8,8 @@
     <h3>Modifica</h3>
         <div class="wrap-contact">
             {{ Form::open(array('route' => 'modifica-user', 'class' => 'contact-form')) }}
-
+            @csrf
+            @method('PUT')
             <!-- Nome -->
             <div  class="wrap-input">
                 {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
