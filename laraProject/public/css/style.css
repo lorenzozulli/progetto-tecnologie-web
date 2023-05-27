@@ -478,6 +478,18 @@ footer{
 }
 /* --- lista-aziende section end --- */
 
+/* --- --- */
 .info{
   max-width: 300px;
 }
+/* --- --- */
+
+/* --- pagination section start --- */
+#pagination {
+	text-align :center;
+}
+
+#pagination a {
+	border-bottom:none
+}
+/* --- pagination section end --- */

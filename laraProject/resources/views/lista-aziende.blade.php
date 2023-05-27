@@ -23,6 +23,10 @@
                         </div>                    
                     </div>
                     @endforeach
+
+                    <!--Paginazione-->
+                    @include('pagination.paginator', ['paginator' => $companies])
+
                     @endisset()
                 </div>
         </div>
