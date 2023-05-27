@@ -1,11 +1,11 @@
-@extends('layouts/base')
+@extends('layouts.base')
 @section('content')
       <div class="mega_container">
         <!-- banner section start -->
         <div class="banner_bg">
          <div class="frame">
             <h1>LA TUA DESTINAZIONE <br>PER I MIGLIORI AFFARI</h1>
-            <div class="bt"><a href="{{ route('lista-offerte') }}">Compra adesso</a></div>
+            <div class="bt"><a href="{{ route('lista-offerte') }}">Tutte le offerte</a></div>
          </div>
          </div>
          <!-- banner section end -->
@@ -16,12 +16,7 @@
        
          <div class="carousel">
             <div class="item_wrapper">
-               <div class="carousel__item">
-               <a href="#">
-                     <img class="img" src="images/loghi-aziende/non_disponibile.png">
-                     <h3 class="title">ciao</h3>
-                  </a>     
-               </div>   
+               
             </div>  
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>

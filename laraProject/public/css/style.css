@@ -273,7 +273,7 @@ footer{
   float: left;
   margin: 10px;
   border-radius: 20px;
-  display: block;
+  display: flex;
 }
 
 .carousel__item a {
@@ -473,7 +473,11 @@ footer{
   justify-content: space-between;
   align-items: center;
 }
-.lista_prodotti{
+.prodotto_card{
   float: left;
 }
 /* --- lista-aziende section end --- */
+
+.info{
+  max-width: 300px;
+}

@@ -84,4 +84,4 @@ Route::get('faq', [PublicController::class, 'showFaq'])
     ->name('faq');
 
 
-    require __DIR__ . '/auth.php';
+require __DIR__ . '/auth.php';
