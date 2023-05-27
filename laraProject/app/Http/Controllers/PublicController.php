@@ -16,7 +16,8 @@ class PublicController extends Controller
     public function showListaOfferte(){
         $offers = Offer::all();
 
-        return view('lista-offerte')->with('offers', $offers);
+        return view('lista-offerte')
+        ->with('offers', $offers);
       
     }
 

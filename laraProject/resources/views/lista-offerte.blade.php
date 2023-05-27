@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts/base')
 @section('content')
         <!-- lista offerte section start -->
             <div class="mega_container">
