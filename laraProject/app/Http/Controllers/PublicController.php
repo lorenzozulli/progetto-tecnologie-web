@@ -15,7 +15,7 @@ class PublicController extends Controller
 
     //questa funzione mostra le offerte oppure puo mostrare l'offerta specifica. A seconda di come viene usato nella view
     public function showListaOfferte(){
-        $offers = Offer::select()->paginate(3);
+        $offers = Offer::select()->paginate(3); // da aggiornare a 12
 
         return view('lista-offerte')
         ->with('offers', $offers);
@@ -23,7 +23,7 @@ class PublicController extends Controller
     }
 
     public function showListaAziende(){
-        $companies = Company::select()->paginate(3);
+        $companies = Company::select()->paginate(3); // da aggiornare a 12
 
         return view ('lista-aziende')
         ->with('companies', $companies);
