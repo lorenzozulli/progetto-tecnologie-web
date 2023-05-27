@@ -4,7 +4,15 @@
         <div class="mega_container">
             <h3>Area User</h3>
             <div class="page">
+                @if(Auth::user()->genere == 'M')
                 <p>Benvenuto<br>
+                @endif
+                @if(Auth::user()->genere == 'F')
+                <p>Benvenuta<br>
+                @endif
+                @if(Auth::user()->genere == 'A')
+                <p>Benvenut*<br>
+                @endif
                     Username: {{ Auth::user()->username}}<br>
                     Nome: {{ Auth::user()->nome }}<br>
                     Cognome: {{ Auth::user()->cognome }}<br>

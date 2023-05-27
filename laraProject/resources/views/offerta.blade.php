@@ -19,8 +19,10 @@
 
                 <div class="the_other_stuff">
                     <h1><a href="('lista-offerte')">Acquisici</a> il coupon come</h1>
-                    <p> Nome: {{-- Auth::user()->nome --}} </p>
-                    <p> Cognome: {{-- Auth::user()->cognome --}} </p>
+                    @auth
+                    <p> Nome: {{ Auth::user()->nome }} </p>
+                    <p> Cognome: {{ Auth::user()->cognome }} </p>
+                    @endauth
                     <!-- da mettere il nome e il cognome dell'utente -->
                     <h1>Il coupon scade il: {{$offer->dataOraScadenza}}</h1>
                     <!-- inserire la data di scadenza -->
