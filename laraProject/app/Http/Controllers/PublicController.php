@@ -50,11 +50,8 @@ class PublicController extends Controller
 
     public function showListaAziendePerTipologia($tipologia){
         $companies = Company::where('tipologia', $tipologia)->paginate(3); // da aggiornare a 12
-
-        return view('tipologia')
-        ->with('companies', $companies);
-      
-    }
-
-   
+        // dd($companies);
+        return view('lista-aziende')
+        ->with('companies', $companies);     
+    }   
 }
