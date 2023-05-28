@@ -3,6 +3,8 @@
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\ModifiedUserController;
+use App\Http\Controllers\Auth\ModifiedStaffController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -18,6 +20,10 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    // questa rotta rimanda alla giusta vista: user, staff, admin
+    Route::get('/account', [AuthenticatedSessionController::class, 'rimanda'])
+            ->name('account');
+
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 
@@ -25,4 +31,9 @@ Route::middleware('auth')->group(function () {
             ->name('modifica-user');
 
     Route::post('modifica-user', [ModifiedUserController::class, 'store']);
+
+    Route::get('/modifica-staff', [ModifiedStaffController::class, 'update'])
+            ->name('modifica-staff');
+    
+    Route::post('modifica-staff', [ModifiedStaffController::class, 'store']);
 });

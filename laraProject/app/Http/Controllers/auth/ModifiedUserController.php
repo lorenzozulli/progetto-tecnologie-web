@@ -65,7 +65,7 @@ class ModifiedUserController extends Controller {
                
         $user->save();
 
-        return redirect()->back()->with('success', 'Informazioni modificate con successo!');
+        return redirect('user')->with('success', 'Informazioni modificate con successo!');
     }
 
 }

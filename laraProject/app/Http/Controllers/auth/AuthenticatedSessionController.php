@@ -47,6 +47,30 @@ class AuthenticatedSessionController extends Controller {
         }
     }
 
+    public function rimanda() {
+        //$request->authenticate();
+
+        //$request->session()->regenerate();
+
+        /**
+         * Redirezione su diverse Home Page in base alla classe d'utenza.
+         */
+//        return redirect()->intended(RouteServiceProvider::HOME);
+
+        $livello = auth()->user()->livello;
+        switch ($livello) {                       
+            case 1: return redirect()->route('user'); 
+                break;   
+            case 2: return redirect()->route('staff');
+                break;   
+            case 3: return redirect()->route('admin');
+                break;                
+            default: return redirect('/');
+        }
+    }
+
+    
+
     /**
      * Destroy an authenticated session.
      *

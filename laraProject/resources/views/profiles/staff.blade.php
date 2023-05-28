@@ -22,7 +22,7 @@
                 Telefono: {{ Auth::user()->telefono }}<br>
                 E-mail: {{ Auth::user()->email }}<br>
                 </p>
-                <h3>Clicca <a href="{{ route('modifica-user') }}">qui</a> per modificare il tuo profilo</h3>
+                <h3>Clicca <a href="{{ route('modifica-staff') }}">qui</a> per modificare il tuo profilo</h3>
             </div>
         </div>
         <!-- staff section end -->

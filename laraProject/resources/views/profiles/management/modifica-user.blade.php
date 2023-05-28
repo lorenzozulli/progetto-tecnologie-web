@@ -10,12 +10,12 @@
         <div class="wrap-contact">
             
             {{ Form::open(array('route' => 'modifica-user', 'class' => 'contact-form')) }}
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD
             
 =======
             @csrf
             @method('PUT')
->>>>>>> 3e1f850e9323bb0418b32a860a2a7f9c83735710
+>>>>>>> 3e1f850e9323bb0418b32a860a2a7f9c83735710 -->
             <!-- Nome -->
             <div  class="wrap-input">
                 {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
@@ -90,7 +90,7 @@
 
             <!-- Username -->
             <div  class="wrap-input">
-                {{ Form::label('username', 'username', ['class' => 'label-input']) }}
+                {{ Form::label('username', 'Username', ['class' => 'label-input']) }}
                 {{ Form::text('username', '', ['class' => 'input','id' => 'username']) }}
                 @if ($errors->first('username'))
                 <ul class="errors">
@@ -120,11 +120,9 @@
                 {{ Form::password('password_confirmation', ['class' => 'input', 'id' => 'password-confirm']) }}
             </div>
             
-            <!-- Bottone di registrazione -->
+            <!-- Bottone di modifica -->
             <div class="container-form-btn">                
                 {{ Form::submit('Modifica Dati', ['class' => 'form-btn1']) }}
-                
-                
             </div>
         
             

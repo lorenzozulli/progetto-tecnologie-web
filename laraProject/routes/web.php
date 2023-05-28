@@ -53,23 +53,13 @@ Route::get('/user', [UserController::class, 'index'])
     ->name('user');
     // ->middleware('can:isUser');
 
-    
-
-/*Route::get('/modifica-user', [UserController::class, 'updateData'])
-    ->name('modifica-user');
-
-Route::post('/modifica-user', [UserController::class, 'store']);*/
-
 /* --- Rotte relative allo Staff loggato --- */
 Route::get('/staff', [StaffController::class, 'index'])
     ->name('staff');
     // ->middleware('can:isUser');
 
-Route::get('/profile', [StaffController::class, 'showData'])
-    ->name('profile');
-
-Route::post('/modify-data', [StaffController::class, 'updateData'])
-    ->name('modify-data');
+//Route::get('/profile', [StaffController::class, 'showData'])
+  //  ->name('profile');
 
 Route::post('/user/aggiungi-promo', [StaffController::class, 'addPromo'])
     ->name('aggiungi-promo');

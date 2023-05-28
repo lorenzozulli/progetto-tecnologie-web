@@ -14,7 +14,8 @@ class StaffController extends Controller
         return view('profiles.staff');
     }
 
-    public function showData(){
+
+    /* public function showData(){
     
         $user = Auth::user();
         if ($user->livello === 2){
@@ -22,8 +23,9 @@ class StaffController extends Controller
             return view('staff-data', ['user'=>$staffData]);
         }
     }
+
     //la variabile $request viene passata come parametro al metodo e rappresenta la richiesta fatta al server
-    public function updateData(Request $request)
+   public function updateData(Request $request)
     {
       
         $user  = Auth::user();
@@ -35,7 +37,7 @@ class StaffController extends Controller
         $user->update($data);
 
         return redirect()->back()->with('staff', 'Dati staff aggiornati con successo.');}
-    }
+    }*/
      
 
     public function addPromo()

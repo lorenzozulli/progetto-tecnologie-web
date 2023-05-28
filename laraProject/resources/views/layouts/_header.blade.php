@@ -32,10 +32,10 @@
             <li><a href="{{ route('lista-aziende') }}">Aziende</a></li>
             <li><a href="{{ route('faq') }}">FAQ</a></li>
             @guest
-            <li><a href="{{ route('login') }}">Account</a></li>
+                <li><a href="{{ route('login') }}">Account</a></li>
             @endguest
             @auth
-            <li><a href="{{ route('user') }}">Account</a></li>
+                <li><a href="{{ route('account') }}">Account</a></li>
             <li>
             <li><a href="" class="highlight" title="Esci dal sito" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
