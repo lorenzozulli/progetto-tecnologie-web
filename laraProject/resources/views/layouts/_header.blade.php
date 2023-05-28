@@ -7,8 +7,8 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <h1 class="category">CATEGORIE</h1>
             @isset($companies)
-            <a href="{{route('tipologia', $companies->tipologia)}}">Elettronica e informatica</a>
-            <a href="#">Abbigliamento e Accessori</a>
+            <a href="{{ route('tipologia', [$company => 'Informatica']) }}">Elettronica e informatica</a>
+            <!--<a href="#">Abbigliamento e Accessori</a>
             <a href="#">Scarpe</a>
             <a href="#">Voli</a>
             <a href="#">Vacanze e Hotel</a>
@@ -32,7 +32,7 @@
             <a href="#">Concerti, Cinema e Cultura</a>
             <a href="#">Idee Regalo e Gift Card</a>
             <a href="#">Trasporti</a>
-            <a href="#">Ristoranti</a>
+            <a href="#">Ristoranti</a>-->
             @endisset()
         </div>
         <!-- fine HTML della sidenav -->

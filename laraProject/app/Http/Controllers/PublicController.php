@@ -48,10 +48,10 @@ class PublicController extends Controller
         return view ('offerta', ['offer'=>$offer]);
     }
 
-    public function showListaAziendePerCategoria($tipologia){
-        $companies = Offer::where('tipologia', $tipologia)->paginate(3); // da aggiornare a 12
+    public function showListaAziendePerTipologia($tipologia){
+        $companies = Company::where('tipologia', $tipologia)->paginate(3); // da aggiornare a 12
 
-        return view('lista-aziende')
+        return view('tipologia')
         ->with('companies', $companies);
       
     }

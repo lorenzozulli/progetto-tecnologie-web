@@ -35,7 +35,7 @@ Route::get('/lista-aziende/{azienda}', [PublicController::class, 'showCompany'])
     ->name('azienda');
 
 // questa rotta mostra tutte le aziende della tipologia specificata
-Route::get('/lista-aziende/{tipologia}', [PublicController::class, 'showListaAziendePerCategoria'])
+Route::get('/lista-aziende/{tipologia}', [PublicController::class, 'showListaAziendePerTipologia'])
     ->name('tipologia');
 
 
