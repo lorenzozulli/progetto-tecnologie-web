@@ -12,7 +12,7 @@
                             @if($company->logo == NULL)
                             <img class="img" src="{{ asset('images/loghi-aziende/non_disponibile.png') }}">
                             @else
-                            <img class="img" src="{{ asset('images/loghi-aziende'. base64_decode($logo)) }}">
+                            <img src="data:image/png/jpeg;base64,{{ base64_encode($tuple['logo']) }}" alt="Immagine Offerta">
                             @endif
                             <div class="info">
                                 <h1 class="title_carousel_item">{{ $company->nome }}</h1>

@@ -1,4 +1,3 @@
-
 <header>
     <!-- Script per la gestione della sidenav -->
     <script src="{{ asset('js/sidenav.js') }}"></script>

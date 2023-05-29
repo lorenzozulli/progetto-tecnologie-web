@@ -35,10 +35,12 @@
                     @endif
                 </div>
                 
+                <!-- Bottone di login -->
                 <div class="container-form-btn">                
                     {{ Form::submit('Login', ['class' => 'form-btn1']) }}
                 </div>
 
+                <!-- Reindirizzamento per registrarsi nell'evenienza -->
                 <div  class="wrap-input">
                     <a  href="{{ route('register') }}">Non hai un account? registrati</a>
                 </div> 

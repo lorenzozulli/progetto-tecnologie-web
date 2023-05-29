@@ -15,9 +15,11 @@
         </div>
         <!-- header section end-->
 
+        <!-- Content section start -->
         <div id="menu">
             @yield('content')
         </div>
+        <!-- Content section end -->
 
         <!-- footer section start -->
         <div id="menu">
