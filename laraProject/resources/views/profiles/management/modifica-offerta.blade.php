@@ -39,7 +39,7 @@
                 <!-- Modalita di Fruizione -->
                 <div  class="wrap-input">
                     {{ Form::label('modalitaFruizione', 'Modalita di Fruizione', ['class' => 'label-input']) }}
-                    {{ Form::text('modalitaFruizione', ['class' => 'input', 'id' => 'modalitaFruizione']) }}
+                    {{ Form::text('modalitaFruizione', '', ['class' => 'input', 'id' => 'modalitaFruizione']) }}
                     @if ($errors->first('modalitaFruizione'))
                     <ul class="errors">
                         @foreach ($errors->get('modalitaFruizione') as $message)
@@ -52,7 +52,7 @@
                 <!-- Luogo di Fruizione -->
                 <div  class="wrap-input">
                     {{ Form::label('luogoFruizione', 'Luogo di Fruizione', ['class' => 'label-input']) }}
-                    {{ Form::text('luogoFruizione', ['class' => 'input', 'id' => 'luogoFruizione']) }}
+                    {{ Form::text('luogoFruizione', '',['class' => 'input', 'id' => 'luogoFruizione']) }}
                     @if ($errors->first('luogoFruizione'))
                     <ul class="errors">
                         @foreach ($errors->get('luogoFruizione') as $message)
