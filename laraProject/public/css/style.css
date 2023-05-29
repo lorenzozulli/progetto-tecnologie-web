@@ -271,7 +271,7 @@ footer{
   background-color: #ffffff;
   height: auto;
   padding: 20px;
-  box-shadow: 0px 0 30px 10px #f0f0f0;
+  box-shadow: 0px 0 3px 1px #f0f0f0;
   float: left;
   margin: 10px;
   border-radius: 20px;
@@ -287,7 +287,7 @@ footer{
   width: auto;
   background-color: #ffffff;
   height: auto;
-  box-shadow: 0px 0 30px 10px #f0f0f0;
+  box-shadow: 0px 0 3px 1px #f0f0f0;
   float: left;
   position: relative;
   top: -8px;
