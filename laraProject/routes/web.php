@@ -64,8 +64,7 @@ Route::get('/staff', [StaffController::class, 'index'])
 Route::post('/user/aggiungi-promo', [StaffController::class, 'addPromo'])
     ->name('aggiungi-promo');
 
-Route::post('/user/modifica-promo', [StaffController::class, 'updatePromo'])
-    ->name('modifica-promo');
+
 
 
 /* --- Rotte relative all'Admin loggato --- */

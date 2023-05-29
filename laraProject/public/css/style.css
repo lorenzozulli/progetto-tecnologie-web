@@ -521,5 +521,26 @@ footer{
   top: -20px;
 }
 
+.domanda_card{
+  width: 80%;
+  background-color: #ffffff;
+  border-color: #111;
+  border: 3px solid;
+  border-radius: 20px;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 12px;
+}
+
+.domanda_card .risposta {
+  font-size: 16px;
+  line-height: 1.4;
+}
+.domanda_card .domanda {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
 
 /* --- dashboards section end --- */

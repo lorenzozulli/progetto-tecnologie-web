@@ -27,7 +27,6 @@
                         
                         <!--Paginazione-->
                         @include('pagination.paginator', ['paginator' => $offers])
-
                     @endisset()                   
                 </div>
             </div>

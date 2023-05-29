@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\ModifiedUserController;
 use App\Http\Controllers\Auth\ModifiedStaffController;
+use App\Http\Controllers\StaffController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -36,4 +37,10 @@ Route::middleware('auth')->group(function () {
             ->name('modifica-staff');
     
     Route::post('modifica-staff', [ModifiedStaffController::class, 'store']);
+
+    Route::get('/staff/modifica-offerta', [StaffController::class, 'updatePromo'])
+                ->name('modifica-offerta');
+
+        Route::post('/staff/modifica-offerta', [StaffController::class, 'store']);
+
 });
