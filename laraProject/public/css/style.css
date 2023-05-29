@@ -331,6 +331,12 @@ footer{
   background: #F26522;
 }
 
+.modifiche{
+  inline-size:50px;
+  block-size:50px;
+  display: block;
+}
+
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
