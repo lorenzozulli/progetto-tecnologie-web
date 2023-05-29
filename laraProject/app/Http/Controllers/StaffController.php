@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\NewProductRequest;
-use App\Models\User;
+
 use App\Models\Offer;
+
+use App\Models\User;
+
 
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Request;
@@ -55,6 +58,14 @@ class StaffController extends Controller
     public function storePromo(NewProductRequest $request)
     {   
         /*$request->validate([ 
+
+    public function updatePromo() {
+        return view('profiles.management.modifica-offerta');*/
+    }
+
+    public function store(Request $request, $id){
+    
+        $request->validate([ // Secondo Errore
             'nome' => ['required', 'string'],
             'oggetto' => ['required', 'string'],
             'modalitaFruizione' => ['required', 'string'],
@@ -62,29 +73,38 @@ class StaffController extends Controller
             'id_azienda' => ['required', 'integer'],
         ]);
 
-        $offer = Offer::where('id_azienda', $request->id_azienda)->first();
+        //$offer = Offer::where('id_azienda', $request->id_azienda)->first();
 
-        $offer = Offer::create([
-            'nome' => $request->nome,
-        ]);
+        //$offer = new Offer;
 
-        $offer->save();
-
-        return redirect('staff')->with('success', 'Informazioni inviate con successo!');*/
-
-
-        
-
-        $offer = new Offer;
-        $offer = Offer::where('id_azienda', $request->id_azienda)->first();
-
+        //$offer->fill($request->validated());
+        $offer = Offer::findOrFail($id);
         $offer->fill($request->validated());
-
         $offer->save();
 
         return redirect('staff')->with('success', 'Informazioni inviate con successo!');
+       // dd($request);
+    
+       /*$offer = Offer::create(); 
+        // Modifica delle informazioni dell'offerta
+        if ($request->input('nome') != null) {
+            $offer->nome = $request->input('nome');
+        }
+        if ($request->input('oggetto') != null) {
+            $offer->oggetto = $request->input('oggetto');
+        }
+        if ($request->input('modalitaFruizione') != null) {
+            $offer->modalitaFruizione = $request->input('modalitaFruizione');
+        }
+        if ($request->input('luogoFruizione') != null) {
+            $offer->luogoFruizione = $request->input('luogoFruizione');
+        }
+        if ($request->input('id_azienda') != null) {
+            $offer->id_azienda = $request->input('id_azienda');
+        }*/        
     }
 
+     
      
 
     public function deletePromo($id)
@@ -97,6 +117,7 @@ class StaffController extends Controller
         return redirect()->route('lista-offerte');
     }
     
+
 
 
 }

@@ -9,6 +9,7 @@ class Offer extends Model
 {
     use HasFactory;
 
+
     protected $table='offers';
     public $timestamps = false;
 
@@ -22,4 +23,7 @@ class Offer extends Model
         'dataOraCreazione',
         'dataOraScadenza',
     ];
+
+    
+
 }
