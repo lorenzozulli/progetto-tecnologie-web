@@ -4,7 +4,7 @@
             <div class="mega_container">
             <h1 style="text-align:center"> LISTA OFFERTE </h1>
             @if(Auth::user()->livello == 2)
-                <p>Aggiungi offerta<br>
+                <h3><a href="{{ route('aggiunta-offerta') }}">Aggiungi Offerta</a></h3>
             @endif
                 <div id="content">
                     @isset($offers)

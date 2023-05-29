@@ -60,9 +60,11 @@ Route::get('/staff', [StaffController::class, 'index'])
 
 //Route::get('/profile', [StaffController::class, 'showData'])
   //  ->name('profile');
+Route::get('/staff/aggiunta-offerta', [StaffController::class, 'addPromo'])
+  ->name('aggiunta-offerta');
 
-Route::post('/user/aggiungi-promo', [StaffController::class, 'addPromo'])
-    ->name('aggiungi-promo');
+Route::post('/staff/aggiunta-offerta', [StaffController::class, 'storePromo'])
+    ->name('aggiunta-offerta.store');
 
 
 

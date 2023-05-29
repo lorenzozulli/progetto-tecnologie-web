@@ -10,12 +10,7 @@
         <div class="wrap-contact">
             
             {{ Form::open(array('route' => 'modifica-user', 'class' => 'contact-form')) }}
-<!-- <<<<<<< HEAD
-            
-=======
-            @csrf
-            @method('PUT')
->>>>>>> 3e1f850e9323bb0418b32a860a2a7f9c83735710 -->
+
             <!-- Nome -->
             <div  class="wrap-input">
                 {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}

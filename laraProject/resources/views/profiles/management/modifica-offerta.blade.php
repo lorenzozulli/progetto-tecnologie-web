@@ -9,6 +9,7 @@
         <h3>Modifica Offerta</h3>
             <div class="wrap-contact">
                 {{ Form::open(array('route' => 'modifica-offerta', 'class' => 'contact-form')) }}
+
                 <!-- Nome -->
                 <div  class="wrap-input">
                     {{ Form::label('nome', 'Nome Offerta', ['class' => 'label-input']) }}
@@ -35,7 +36,6 @@
                     @endif
                 </div>
 
-                <!-- Primo Errore-->
                 <!-- Modalita di Fruizione -->
                 <div  class="wrap-input">
                     {{ Form::label('modalitaFruizione', 'Modalita di Fruizione', ['class' => 'label-input']) }}
@@ -52,10 +52,24 @@
                 <!-- Luogo di Fruizione -->
                 <div  class="wrap-input">
                     {{ Form::label('luogoFruizione', 'Luogo di Fruizione', ['class' => 'label-input']) }}
+                    
                     {{ Form::text('luogoFruizione', '',['class' => 'input', 'id' => 'luogoFruizione']) }}
                     @if ($errors->first('luogoFruizione'))
                     <ul class="errors">
                         @foreach ($errors->get('luogoFruizione') as $message)
+                        <li>{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </div>
+
+                <!-- id azienda -->
+                <div  class="wrap-input">
+                    {{ Form::label('id_azienda', 'ID Azienda', ['class' => 'label-input']) }}
+                    {{ Form::text('id_azienda', '',['class' => 'input', 'id' => 'id_azienda']) }}
+                    @if ($errors->first('id_azienda'))
+                    <ul class="errors">
+                        @foreach ($errors->get('id_azienda') as $message)
                         <li>{{ $message }}</li>
                         @endforeach
                     </ul>
