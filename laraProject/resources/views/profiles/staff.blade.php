@@ -1,5 +1,6 @@
 @extends('layouts/base')
 @section('content')
+
         <!-- staff section start -->
         <div class="mega_container">
             <h3 class="page_title">Area Staff</h3>
