@@ -26,7 +26,7 @@ return new class extends Migration
 
             // inserisco come data di default la data corrente, nel caso questo valore non dovesse essere riempito
             $table->dateTime('dataOraCreazione')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->dateTime('dataOraScadenza');
+            $table->dateTime('dataOraScadenza')->default(DB::raw('CURRENT_TIMESTAMP'));
 
             // definizione dei vincoli della FK
             $table->foreign('id_azienda')->references('id')->on('companies');

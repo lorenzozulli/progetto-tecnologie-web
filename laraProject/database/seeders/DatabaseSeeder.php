@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        /*
         DB::table('users') -> insert([
             [
                 'username' => 'mrossi1',
@@ -99,7 +100,7 @@ class DatabaseSeeder extends Seeder
                 'logo' => NULL
 
             ]
-        ]);
+        ]);*/
 
         // Creazione tabella Offerte
         DB::table('offers') -> insert([
