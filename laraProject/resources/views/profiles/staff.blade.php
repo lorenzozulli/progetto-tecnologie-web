@@ -2,17 +2,18 @@
 @section('content')
         <!-- staff section start -->
         <div class="mega_container">
-            <h3>Area Staff</h3>
+            <h3 class="page_title">Area Staff</h3>
             <div class="page">
                 @if(Auth::user()->genere == 'M')
-                <p>Benvenuto<br>
+                <h3>Benvenuto</h3><br>
                 @endif
                 @if(Auth::user()->genere == 'F')
-                <p>Benvenuta<br>
+                <h3>Benvenuta</h3><br>
                 @endif
                 @if(Auth::user()->genere == 'A')
-                <p>Benvenut*<br>
+                <h3>Benvenut*</h3><br>
                 @endif
+                <p>
                 Username: {{ Auth::user()->username}}<br>
                 Nome: {{ Auth::user()->nome }}<br>
                 Cognome: {{ Auth::user()->cognome }}<br>
@@ -24,7 +25,6 @@
                 </p>
                 <h3>Clicca <a href="{{ route('modifica-staff') }}">qui</a> per modificare il tuo profilo</h3>
                 <h3>Clicca <a href="{{ route('lista-offerte') }}">qui</a> per gestire le promozioni</h3>
-
             </div>
         </div>
         <!-- staff section end -->

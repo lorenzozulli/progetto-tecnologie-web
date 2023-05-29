@@ -2,16 +2,16 @@
 @section('content')
         <!-- user section start -->
         <div class="mega_container">
-            <h3>Area User</h3>
+            <h3 class="page_title">Area User</h3>
             <div class="page">
                 @if(Auth::user()->genere == 'M')
-                <p>Benvenuto<br>
+                <h3>Benvenuto</h3><br>
                 @endif
                 @if(Auth::user()->genere == 'F')
-                <p>Benvenuta<br>
+                <h3>Benvenuta</h3><br>
                 @endif
                 @if(Auth::user()->genere == 'A')
-                <p>Benvenut*<br>
+                <h3>Benvenut*</h3><br>
                 @endif
                     Username: {{ Auth::user()->username}}<br>
                     Nome: {{ Auth::user()->nome }}<br>
