@@ -7,7 +7,9 @@
         <h3>Login</h3>
             <div class="wrap-contact">
                 {{ Form::open(array('route' => 'login', 'class' => 'contact-form')) }}
-                        
+
+
+                <!-- Username -->        
                 <div  class="wrap-input">
                     {{ Form::label('username', 'Username', ['class' => 'label-input']) }}
                     {{ Form::text('username', '', ['class' => 'input','id' => 'username']) }}
@@ -20,6 +22,7 @@
                     @endif
                 </div>
                 
+                <!-- Password -->
                 <div  class="wrap-input">
                     {{ Form::label('password', 'Password', ['class' => 'label-input']) }}
                     {{ Form::password('password', ['class' => 'input', 'id' => 'password']) }}

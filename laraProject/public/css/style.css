@@ -496,6 +496,10 @@ footer{
   bottom: 12px;
   text-transform: uppercase;
 }
+
+.errors{
+  color:#FAFAFA;
+}
 /* --- --- */
 
 /* --- pagination section start --- */

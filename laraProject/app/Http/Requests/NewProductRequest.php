@@ -36,7 +36,6 @@ class NewProductRequest extends FormRequest {
             'modalitaFruizione' => 'required',
             'luogoFruizione' => 'required',
             'dataOraScadenza' => 'required',
-            //'dataOraCreazione' => '',
         ];
     }
 
