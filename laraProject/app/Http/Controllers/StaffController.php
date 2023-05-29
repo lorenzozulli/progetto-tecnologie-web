@@ -54,17 +54,18 @@ class StaffController extends Controller
     }
 
     public function store(Request $request){
-        
+    
         $request->validate([ // Secondo Errore
             'nome' => ['required', 'string'],
-            'oggetto' => ['required', 'text'],
-            'modalitaFruizione' => ['required', 'text'],
-            'luogoFruizione' => ['required', 'text'],
+            'oggetto' => ['required', 'string'],
+            'modalitaFruizione' => ['required', 'string'],
+            'luogoFruizione' => ['required', 'string'],
+            'id_azienda' => ['required', 'integer']
         ]);
-
-        $offer = Offer::create([
-            'nome' => $request->nome,
-        ]); 
+   
+       // dd($request);
+    
+       $offer = Offer::create(); 
         // Modifica delle informazioni dell'offerta
         if ($request->input('nome') != null) {
             $offer->nome = $request->input('nome');
@@ -78,6 +79,9 @@ class StaffController extends Controller
         if ($request->input('luogoFruizione') != null) {
             $offer->luogoFruizione = $request->input('luogoFruizione');
         }
+        if ($request->input('id_azienda') != null) {
+            $offer->id_azienda = $request->input('id_azienda');
+        }
 
         $offer->save();
 
@@ -86,8 +90,16 @@ class StaffController extends Controller
 
      
 
-    public function deletePromo()
+    public function deletePromo($id)
     {
-        
+        //dd($request);
+        $offer = Offer::findOrFail($id);
+        //dd($offer);
+        $offer->delete();
+       
+        return redirect()->route('lista-offerte');
     }
+    
+
+
 }
