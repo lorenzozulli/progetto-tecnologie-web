@@ -16,7 +16,7 @@
                                     <div class="info">
                                         <h3 class="title_carousel_item">{{ $offer->nome }}</h3>
                                         @if(Auth::user()->livello == 2)
-                                        <a href="{{ route('home') }}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
+                                        <a href="{{ route('modifica-offerta') }}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
                                         <a href="{{ route('home') }}"><img class="modifiche" src="{{ asset('images/delete.png') }}"></a>
                                         @endif   
                                     </div>
