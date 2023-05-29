@@ -18,7 +18,7 @@
                             {{--@if(logo == NULL)--}}
                             <!--<img class="img" src="images/loghi-aziende/non_disponibile.png">-->
                             {{--@else--}}
-                            <img class="img" src="{{ asset('../public/loghi-aziende/'.$post->image) }}">
+                            <!--<img class="img" src="{{-- asset('../public/loghi-aziende/'.$post->image) --}}">-->
                             {{--@endif--}}
                                 <div class="info">
                                     <h1 class="title_carousel_item">{{ $company->nome }}</h1>
