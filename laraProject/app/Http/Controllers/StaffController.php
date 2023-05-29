@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Request;
 
 class StaffController extends Controller
@@ -45,9 +46,43 @@ class StaffController extends Controller
     
     }
 
-    public function updatePromo()
-    { }
+    public function updatePromo() {
+        return view('profiles.management.modifica-offerta');
+    }
+
+    public function store(Request $request){
+        
+        $request->validate([ // Secondo Errore
+            'nome' => ['required', 'string'],
+            'oggetto' => ['required', 'text'],
+            'modalitaFruizione' => ['required', 'text'],
+            'luogoFruizione' => ['required', 'text'],
+        ]);
+
+        $offer = Auth::offer(); 
+        // Modifica delle informazioni dell'offerta
+        if ($request->input('nome') != null) {
+            $offer->username = $request->input('nome');
+        }
+        if ($request->input('oggetto') != null) {
+            $offer->oggetto = $request->input('oggetto');
+        }
+        if ($request->input('modalitaFruizione') != null) {
+            $offer->modalitaFruizione = $request->input('modalitaFruizione');
+        }
+        if ($request->input('luogoFruizione') != null) {
+            $offer->luogoFruizione = $request->input('luogoFruizione');
+        }
+
+        $offer->save();
+
+        return redirect('staff')->with('success', 'Informazioni modificate con successo!');
+    }
+
+     
 
     public function deletePromo()
-    { }
+    {
+        
+    }
 }
