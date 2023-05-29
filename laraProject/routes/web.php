@@ -66,6 +66,10 @@ Route::post('/user/aggiungi-promo', [StaffController::class, 'addPromo'])
     ->name('aggiungi-promo');
 
 
+    Route::delete('/delete-promo/{id}', [StaffController::class, 'deletePromo'])
+        ->name('delete-promo');
+
+
 
 
 /* --- Rotte relative all'Admin loggato --- */

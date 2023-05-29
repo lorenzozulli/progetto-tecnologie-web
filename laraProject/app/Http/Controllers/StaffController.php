@@ -90,10 +90,16 @@ class StaffController extends Controller
 
      
 
-    public function deletePromo()
+    public function deletePromo($id)
     {
-       // $offer= Offer::wh
-       // $offer->destroy();
-        return redirect('staff')->with('success', 'promo eliminata con successo!');
+        //dd($request);
+        $offer = Offer::findOrFail($id);
+        //dd($offer);
+        $offer->delete();
+       
+        return redirect()->route('lista-offerte');
     }
+    
+
+
 }
