@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Offer;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Request;
@@ -61,10 +62,12 @@ class StaffController extends Controller
             'luogoFruizione' => ['required', 'text'],
         ]);
 
-        $offer = Auth::offer(); 
+        $offer = Offer::create([
+            'nome' => $request->nome,
+        ]); 
         // Modifica delle informazioni dell'offerta
         if ($request->input('nome') != null) {
-            $offer->username = $request->input('nome');
+            $offer->nome = $request->input('nome');
         }
         if ($request->input('oggetto') != null) {
             $offer->oggetto = $request->input('oggetto');

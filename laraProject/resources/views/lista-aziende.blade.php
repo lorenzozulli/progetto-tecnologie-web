@@ -15,14 +15,14 @@
                     <div class="prodotto_card">
                     <div class="carousel__item">
                         <a href="{{route('azienda', $company->nome )}}">
-                            {{--@if(logo == NULL)--}}
-                            <!--<img class="img" src="images/loghi-aziende/non_disponibile.png">-->
-                            {{--@else--}}
-                            <!--<img class="img" src="{{-- asset('../public/loghi-aziende/'.$post->image) --}}">-->
-                            {{--@endif--}}
-                                <div class="info">
-                                    <h1 class="title_carousel_item">{{ $company->nome }}</h1>
-                                </div>
+                            @if($company->logo == NULL)
+                            <img class="img" src="{{ asset('images/loghi-aziende/non_disponibile.png') }}">
+                            @else
+                            <img class="img" src="{{ asset('images/loghi-aziende'. base64_decode($logo) }}">
+                            @endif
+                            <div class="info">
+                                <h1 class="title_carousel_item">{{ $company->nome }}</h1>
+                            </div>
                         </a>
                         </div>                    
                     </div>

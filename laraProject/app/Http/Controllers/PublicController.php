@@ -53,5 +53,5 @@ class PublicController extends Controller
         // dd($companies);
         return view('lista-aziende')
         ->with('companies', $companies);     
-    }   
+    }
 }
