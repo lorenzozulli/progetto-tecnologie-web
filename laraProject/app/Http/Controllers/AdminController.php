@@ -42,4 +42,8 @@ class AdminController extends Controller {
         ;
     }
 
+    public function getGo(Request $request){
+        $company->logo = $request->file('logo')->openFile()->fread($request->file('logo')->getSize());
+    }
+
 }

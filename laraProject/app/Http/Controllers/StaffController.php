@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Http\Requests\NewProductRequest;
+=======
+use App\Models\Offer;
+>>>>>>> 2be8f0acf0bcd406fb11ed47a4fd8a6762e359c5
 use App\Models\User;
 use App\Models\Offer;
 
@@ -52,13 +56,24 @@ class StaffController extends Controller
     
     }
 
+<<<<<<< HEAD
     public function storePromo(NewProductRequest $request)
     {   
         /*$request->validate([ 
+=======
+    public function updatePromo() {
+        return view('profiles.management.modifica-offerta');
+    }
+
+    public function store(Request $request){
+    
+        $request->validate([ // Secondo Errore
+>>>>>>> 2be8f0acf0bcd406fb11ed47a4fd8a6762e359c5
             'nome' => ['required', 'string'],
             'oggetto' => ['required', 'string'],
             'modalitaFruizione' => ['required', 'string'],
             'luogoFruizione' => ['required', 'string'],
+<<<<<<< HEAD
             'id_azienda' => ['required', 'integer'],
         ]);
 
@@ -67,6 +82,30 @@ class StaffController extends Controller
         $offer = Offer::create([
             'nome' => $request->nome,
         ]);
+=======
+            'id_azienda' => ['required', 'integer']
+        ]);
+   
+       // dd($request);
+    
+       $offer = Offer::create(); 
+        // Modifica delle informazioni dell'offerta
+        if ($request->input('nome') != null) {
+            $offer->nome = $request->input('nome');
+        }
+        if ($request->input('oggetto') != null) {
+            $offer->oggetto = $request->input('oggetto');
+        }
+        if ($request->input('modalitaFruizione') != null) {
+            $offer->modalitaFruizione = $request->input('modalitaFruizione');
+        }
+        if ($request->input('luogoFruizione') != null) {
+            $offer->luogoFruizione = $request->input('luogoFruizione');
+        }
+        if ($request->input('id_azienda') != null) {
+            $offer->id_azienda = $request->input('id_azienda');
+        }
+>>>>>>> 2be8f0acf0bcd406fb11ed47a4fd8a6762e359c5
 
         $offer->save();
 
@@ -85,6 +124,23 @@ class StaffController extends Controller
         return redirect('staff')->with('success', 'Informazioni inviate con successo!');
     }
 
+<<<<<<< HEAD
+=======
+     
+
+    public function deletePromo($id)
+    {
+        //dd($request);
+        $offer = Offer::findOrFail($id);
+        //dd($offer);
+        $offer->delete();
+       
+        return redirect()->route('lista-offerte');
+    }
+    
+
+
+>>>>>>> 2be8f0acf0bcd406fb11ed47a4fd8a6762e359c5
 }
 
 

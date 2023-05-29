@@ -80,8 +80,7 @@
                 <div class="container-form-btn">                
                     {{ Form::submit('Modifica Offerta', ['class' => 'form-btn1']) }}
                 </div>
-        
-            
+              
                 {{ Form::close() }}
             </div>
         </div>        

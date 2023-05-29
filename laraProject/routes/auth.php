@@ -44,4 +44,9 @@ Route::middleware('auth')->group(function () {
 
         Route::post('/staff/modifica-offerta', [ModifiedOfferController::class, 'store']);
 
+     /*   Route::get('/delete-promo', [StaffController::class, 'deletePromo'])
+                ->name('delete-promo');     */
+
+        
+
 });
