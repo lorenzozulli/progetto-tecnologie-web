@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StaffController;
 
@@ -75,6 +76,8 @@ Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
 
 Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
     ->name('newproduct.store');
+
+
 
 /* --- Rotte relative alle FAQ --- */
 Route::get('faq', [PublicController::class, 'showFaq'])
