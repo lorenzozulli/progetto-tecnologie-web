@@ -2,7 +2,7 @@
 @section('content')
         <!-- lista domande section start -->
             <div style="min-height:100px" class="mega_container">
-             <h1 style="text-align:center"> FAQ </h1>
+             <h1 class="page_title"> FAQ </h1>
              @isset($faqs)
                 @foreach($faqs as $faq)
                 <div class="domanda_card">

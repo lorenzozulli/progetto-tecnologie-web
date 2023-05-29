@@ -1,7 +1,7 @@
 
 <header>
     <!-- Script per la gestione della sidenav -->
-    <script src="js/sidenav.js"></script>
+    <script src="{{ asset('js/sidenav.js') }}"></script>
 
         <!-- Inizio HTML della sidenav -->
         <div id="mySidenav" class="sidenav">
@@ -16,9 +16,9 @@
         <!-- fine HTML della sidenav -->
 
     <!-- Use any element to open the sidenav -->
-    <span onclick="openNav()"><img src="images/toggle_icon.png"></span>
+    <span onclick="openNav()"><img src="{{ asset('images/toggle_icon.png') }}"></span>
     <!-- inizio logo -->
-    <a href="{{ route('home') }}"><img src="images/scontastic_draft.png"></a>
+    <a href="{{ route('home') }}"><img src="{{ asset('images/scontastic_draft.png') }}"></a>
     <!-- fine logo -->
 
     <!-- inizio searchbar -->
