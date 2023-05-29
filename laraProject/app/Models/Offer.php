@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Offer extends Model
 {
     use HasFactory;
-<<<<<<< HEAD
 
     protected $table='offers';
     public $timestamps = false;
@@ -23,7 +22,4 @@ class Offer extends Model
         'dataOraCreazione',
         'dataOraScadenza',
     ];
-=======
-    public $timestamps = false;
->>>>>>> 2be8f0acf0bcd406fb11ed47a4fd8a6762e359c5
 }
