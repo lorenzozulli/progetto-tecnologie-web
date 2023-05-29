@@ -2,7 +2,7 @@
 @section('content')
         <!-- user section start -->
         <div class="mega_container">
-            <h3 class="page_title">Area User</h3>
+            <h1 class="page_title">Area User</h1>
             <div class="page">
                 @if(Auth::user()->genere == 'M')
                 <h3>Benvenuto</h3><br>
