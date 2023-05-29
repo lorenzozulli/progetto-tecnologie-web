@@ -18,6 +18,7 @@ class StaffController extends Controller
 {
     //protected $role = User::where
 
+    // Ritorna la dashboard dell'utente Staff
     public function index()
     {
         return view('profiles.staff');

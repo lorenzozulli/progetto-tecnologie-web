@@ -33,8 +33,6 @@ class AuthenticatedSessionController extends Controller {
         /**
          * Redirezione su diverse Home Page in base alla classe d'utenza.
          */
-//        return redirect()->intended(RouteServiceProvider::HOME);
-
         $livello = auth()->user()->livello;
         switch ($livello) {                       
             case 1: return redirect()->route('user'); 
@@ -55,8 +53,6 @@ class AuthenticatedSessionController extends Controller {
         /**
          * Redirezione su diverse Home Page in base alla classe d'utenza.
          */
-//        return redirect()->intended(RouteServiceProvider::HOME);
-
         $livello = auth()->user()->livello;
         switch ($livello) {                       
             case 1: return redirect()->route('user'); 

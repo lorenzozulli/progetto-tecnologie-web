@@ -19,10 +19,12 @@ class ModifiedStaffController extends Controller {
       }
      */
 
+    // Modifica del profilo Staff
     public function update() {
         return view('profiles.management.modifica-staff');
     }
 
+    // Salva l'utente che ha fatto modifiche al profilo
     public function store(Request $request) {
         $request->validate([
             'nome' => ['required', 'string'],

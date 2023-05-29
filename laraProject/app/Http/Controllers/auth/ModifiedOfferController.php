@@ -8,10 +8,12 @@ use Illuminate\Http\Request;
 
 class ModifiedOfferController extends Controller
 {
+    // Modifica un'Offerta già esistente
     public function updatePromo() {
         return view('profiles.management.modifica-offerta');
     }
 
+    // Salva un'Offerta modificata
     public function store(Request $request){
         $request->validate([ 
             'nome' => ['required', 'string'],
@@ -46,7 +48,7 @@ class ModifiedOfferController extends Controller
     }
 
      
-
+    // Elimina un'Offerta esistente
     public function deletePromo()
     {
         
