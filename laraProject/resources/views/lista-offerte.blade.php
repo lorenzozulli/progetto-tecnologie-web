@@ -8,22 +8,23 @@
             @endif
                 <div id="content">
                     @isset($offers)
-                        @foreach ($offers as $offer)
-                        <div class="prodotto_card">
-                            <div class="carousel__item">
-                                <a href="{{route('offerta', $offer->nome )}}">
-                                    <img class="img" src="images/loghi-aziende/non_disponibile.png">
-                                        <div class="info">
-                                            <h3 class="title_carousel_item">{{ $offer->nome }}</h3>                                    
-                                        </div>
+                    @foreach ($offers as $offer)
+                    <div class="prodotto_card">
+                        <div class="carousel__item">
+                            <a href="{{route('offerta', $offer->nome )}}">
+                                <img class="img" src="images/loghi-aziende/non_disponibile.png">
+                                    <div class="info">
+                                        <h3 class="title_carousel_item">{{ $offer->nome }}</h3>
                                         @if(Auth::user()->livello == 2)
-                                            <a href="{{ route('modifica-offerta')}}"> <img src="images/edit.png" style="inline-size:50px;block-size:50px"/></a>
-                                            <a href="{{ route('home') }}"><img src="images/delete.png" style="inline-size:50px;block-size:50px"/></a>
-                                        @endif
-                                </a>
-                            </div>                        
-                        </div>
-                        @endforeach                        
+                                        <a href="{{ route('modifica-offerta') }}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
+                                        <a href="{{ route('home') }}"><img class="modifiche" src="{{ asset('images/delete.png') }}"></a>
+                                        @endif   
+                                    </div>
+                            </a>
+                        </div>                      
+                    </div>
+                    @endforeach
+                        
                         <!--Paginazione-->
                         @include('pagination.paginator', ['paginator' => $offers])
                     @endisset()                   
