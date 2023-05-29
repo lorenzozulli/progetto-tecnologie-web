@@ -55,12 +55,31 @@ class StaffController extends Controller
     
     }
 
-    public function storePromo(NewProductRequest $request)
-    {   
-        /*$request->validate([ 
 
-    public function updatePromo() {
-        return view('profiles.management.modifica-offerta');*/
+    public function storePromo(Request $request)
+    {   
+        $request->validate([
+            'nome' => ['required', 'string'],
+            'oggetto' => ['required', 'string'],
+            //'id_azienda' => ['required', 'integer'],
+            'modalitaFruizione' => ['required', 'string'],
+            'luogoFruizione' => ['required', 'string'],
+            'dataOraScadenza' => ['required', 'string'],
+           
+        ]);
+    
+        $offer = new Offer();
+        $offer->nome = $request->input('nome');
+        $offer->oggetto = $request->input('oggetto');
+       // $offer->id_azienda = $request->input('id_azienda');
+        $offer->modalitaFruizione = $request->input('modalitaFruizione');
+        $offer->luogoFruizione = $request->input('luogoFruizione');
+        $offer->dataOraScadenza = $request->input('dataOraScadenza');
+        // Assegna i valori degli altri campi
+    
+        $offer->save();
+    
+        return redirect('/')->with('success', 'Nuova offerta memorizzata con successo!');
     }
 
     public function store(Request $request, $id){
@@ -71,7 +90,11 @@ class StaffController extends Controller
             'modalitaFruizione' => ['required', 'string'],
             'luogoFruizione' => ['required', 'string'],
             'id_azienda' => ['required', 'integer'],
+           
+
+
         ]);
+
 
         //$offer = Offer::where('id_azienda', $request->id_azienda)->first();
 

@@ -83,7 +83,9 @@
             </div>
             
             <!-- Bottone di aggiunta -->
-            <div class="container-form-btn">                
+            <div class="container-form-btn">    
+            <!--<form action="{{ route('aggiunta-offerta')}}" method="POST">  -->
+                        
                 {{ Form::submit('Aggiungi', ['class' => 'form-btn1']) }}
             </div>
         
