@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use App\Http\Requests\NewProductRequest;
-=======
+
 use App\Models\Offer;
->>>>>>> 2be8f0acf0bcd406fb11ed47a4fd8a6762e359c5
+
 use App\Models\User;
-use App\Models\Offer;
+
 
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Request;
@@ -56,39 +55,39 @@ class StaffController extends Controller
     
     }
 
-<<<<<<< HEAD
+
     public function storePromo(NewProductRequest $request)
     {   
         /*$request->validate([ 
-=======
+
     public function updatePromo() {
-        return view('profiles.management.modifica-offerta');
+        return view('profiles.management.modifica-offerta');*/
     }
 
-    public function store(Request $request){
+    public function store(Request $request, $id){
     
         $request->validate([ // Secondo Errore
->>>>>>> 2be8f0acf0bcd406fb11ed47a4fd8a6762e359c5
             'nome' => ['required', 'string'],
             'oggetto' => ['required', 'string'],
             'modalitaFruizione' => ['required', 'string'],
             'luogoFruizione' => ['required', 'string'],
-<<<<<<< HEAD
+
             'id_azienda' => ['required', 'integer'],
         ]);
 
-        $offer = Offer::where('id_azienda', $request->id_azienda)->first();
+        //$offer = Offer::where('id_azienda', $request->id_azienda)->first();
 
-        $offer = Offer::create([
-            'nome' => $request->nome,
-        ]);
-=======
-            'id_azienda' => ['required', 'integer']
-        ]);
-   
+        //$offer = new Offer;
+
+        //$offer->fill($request->validated());
+        $offer = Offer::findOrFail($id);
+        $offer->fill($request->validated());
+        $offer->save();
+
+        return redirect('staff')->with('success', 'Informazioni inviate con successo!');
        // dd($request);
     
-       $offer = Offer::create(); 
+       /*$offer = Offer::create(); 
         // Modifica delle informazioni dell'offerta
         if ($request->input('nome') != null) {
             $offer->nome = $request->input('nome');
@@ -104,28 +103,8 @@ class StaffController extends Controller
         }
         if ($request->input('id_azienda') != null) {
             $offer->id_azienda = $request->input('id_azienda');
-        }
->>>>>>> 2be8f0acf0bcd406fb11ed47a4fd8a6762e359c5
-
-        $offer->save();
-
-        return redirect('staff')->with('success', 'Informazioni inviate con successo!');*/
-
-
-        ///////////////////////////////////////////////////////////////////////////////////////////
-
-        $offer = new Offer;
-        $offer = Offer::where('id_azienda', $request->id_azienda)->first();
-
-        $offer->fill($request->validated());
-
-        $offer->save();
-
-        return redirect('staff')->with('success', 'Informazioni inviate con successo!');
+        }*/        
     }
-
-<<<<<<< HEAD
-=======
      
 
     public function deletePromo($id)
@@ -140,7 +119,7 @@ class StaffController extends Controller
     
 
 
->>>>>>> 2be8f0acf0bcd406fb11ed47a4fd8a6762e359c5
+
 }
 
 
