@@ -43,4 +43,6 @@ Route::middleware('auth')->group(function () {
 
         Route::post('/staff/modifica-offerta', [StaffController::class, 'store']);
 
+        
+
 });
