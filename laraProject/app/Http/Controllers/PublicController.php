@@ -8,6 +8,7 @@ use App\Models\Offer;
 use App\Models\Company;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpFoundation\Request;
 
 
 class PublicController extends Controller
@@ -15,7 +16,7 @@ class PublicController extends Controller
 
     //questa funzione mostra le offerte oppure puo mostrare l'offerta specifica. A seconda di come viene usato nella view
     public function showListaOfferte(){
-        $offers = Offer::select()->paginate(3); // da aggiornare a 12
+        $offers = Offer::select()->paginate(12);
 
         return view('lista-offerte')
         ->with('offers', $offers);
@@ -23,7 +24,7 @@ class PublicController extends Controller
     }
 
     public function showListaAziende(){
-        $companies = Company::select()->paginate(3); // da aggiornare a 12
+        $companies = Company::select()->paginate(12);
 
         return view ('lista-aziende')
         ->with('companies', $companies);
@@ -49,9 +50,22 @@ class PublicController extends Controller
     }
 
     public function showListaAziendePerTipologia($tipologia){
-        $companies = Company::where('tipologia', $tipologia)->paginate(3); // da aggiornare a 12
+        $companies = Company::where('tipologia', $tipologia)->paginate(12);
         // dd($companies);
         return view('lista-aziende')
         ->with('companies', $companies);     
+    }
+
+    public function searchOffer(Request $request){
+        $query = $request->input('query');
+        $offers = Offer::where('nome', 'LIKE', '%' .$query. '%')->paginate(12);
+        return view('lista-offerte', ['Offerte' => $offers, 'searchQuery' => $query]);
+    }
+
+    public function searchCompany(Request $request)
+    {
+        $query = $request->input('query');
+        $companies = Company::where('nome', 'LIKE', '%' .$query. '%')->paginate(12);
+        return view('lista-aziende', ['Aziende' => $companies, 'searchQuery' => $query]);
     }
 }

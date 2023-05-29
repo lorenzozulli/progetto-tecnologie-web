@@ -476,10 +476,10 @@ footer{
 
 /* --- lista-aziende section start --- */
 .search_menu{
+  width: 65%;
   display: flex;
   padding-top: 20px;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: left;
 }
 .prodotto_card{
   float: left;

@@ -3,12 +3,6 @@
         <!-- lista aziende section start -->
         <div class="mega_container">
         <h1 style="text-align:center"> LISTA AZIENDE </h1>
-            <!-- inizio searchbar per azienda -->
-                <div class="search_menu">
-                    {{ Form::text('search','', ['class' => 'search_bar', 'placeholder' => 'Cerca aziende...']) }}
-                    {{ Form::button('search', ['class' => 'search_button']) }}
-                </div>
-            <!-- fine searchbar per azienda -->
                 <div id="content">
                     @isset($companies)
                     @foreach ($companies as $company)
