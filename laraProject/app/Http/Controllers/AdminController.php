@@ -107,7 +107,7 @@ class AdminController extends Controller {
             'ragioneSociale' => $request->ragioneSociale,
             'tipologia' => $request->tipologia,
             //'livello' =>$request->livello,
-            'logo' =>$request->logo,
+            //'logo' =>$request->logo,
         ]);
 
         return redirect()->route('lista-aziende');

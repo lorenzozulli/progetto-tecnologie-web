@@ -22,7 +22,8 @@
                             <div class="info">
                                 <h1 class="title_carousel_item">{{ $company->nome }}</h1>
                             </div>
-                            @if(Auth::user()->livello == 3)                               
+                            @if(Auth::user()->livello == 3)
+                            
                                 <form action="{{ route('delete-azienda',  $company['id'])}}" method="POST">
                                     @csrf
                                     @method('DELETE')
