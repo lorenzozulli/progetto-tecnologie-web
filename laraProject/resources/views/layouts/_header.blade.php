@@ -6,9 +6,11 @@
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <h1 class="category">CATEGORIE</h1>
-            {{--@foreach($companies as $company)--}}
-            <a href="{{-- route('tipologia', $company->tipologia) --}}">{{--$company->tipologia--}}</a>
-            {{--@endforeach--}}
+            @isset($$companies)
+            @foreach($companies as $company)
+            <a href="{{ route('tipologia', $company->tipologia) }}">$company->tipologia</a>
+            @endforeach
+            @endisset()
         </div>
         <!-- fine HTML della sidenav -->
 
