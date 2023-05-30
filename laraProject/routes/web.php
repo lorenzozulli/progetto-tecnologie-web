@@ -72,7 +72,7 @@ Route::get('/staff/aggiunta-offerta', [StaffController::class, 'addPromo'])
   ->name('aggiunta-offerta');
 
 Route::post('/staff/aggiunta-offerta', [StaffController::class, 'storePromo'])
-    ->name('aggiunta-offerta.store');
+    ->name('aggiunta-offerta');
 
 
 Route::delete('/delete-promo/{id}', [StaffController::class, 'deletePromo'])

@@ -22,6 +22,7 @@ class Offer extends Model
         'luogoFruizione',
         'dataOraCreazione',
         'dataOraScadenza',
+        'id_azienda',
     ];
 
     
