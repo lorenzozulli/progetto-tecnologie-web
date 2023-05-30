@@ -37,7 +37,7 @@ class ModifiedUserController extends Controller {
             'telefono' => ['required', 'string','max:10'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],     
         ]);
-
+        
         $user = Auth::user();
         // Modifica delle informazioni dell'utente
         if ($request->input('username') != null) {
@@ -64,9 +64,9 @@ class ModifiedUserController extends Controller {
         if ($request->input('email') != null) {
             $user->email = $request->input('email');
         }
-               
+         
         $user->save();
-
+         
         return redirect('user')->with('success', 'Informazioni modificate con successo!');
     }
 

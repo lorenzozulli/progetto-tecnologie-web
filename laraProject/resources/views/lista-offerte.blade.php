@@ -16,7 +16,7 @@
                                     <div class="info">
                                         <h3 class="title_carousel_item">{{ $offer->nome }}</h3>
                                         @if(Auth::user()->livello == 2)
-                                            <a href="{{ route('modifica-offerta', $offer['id']) }}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
+                                            <a href="{{ route('modifica-offerta', $offer->id) }}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
                                      
                                         
                                             <form action="{{ route('delete-promo',  $offer['id'])}}" method="POST">

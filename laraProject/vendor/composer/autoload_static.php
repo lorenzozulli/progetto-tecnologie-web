@@ -551,6 +551,7 @@ class ComposerStaticInit727770d63e74cecd31e9ecf477db73de
         'App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Auth/LoginRequest.php',
         'App\\Http\\Requests\\NewProductRequest' => __DIR__ . '/../..' . '/app/Http/Requests/NewProductRequest.php',
         'App\\Models\\Company' => __DIR__ . '/../..' . '/app/Models/Company.php',
+        'App\\Models\\Coupon' => __DIR__ . '/../..' . '/app/Models/Coupon.php',
         'App\\Models\\Faq' => __DIR__ . '/../..' . '/app/Models/Faq.php',
         'App\\Models\\Offer' => __DIR__ . '/../..' . '/app/Models/Offer.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',

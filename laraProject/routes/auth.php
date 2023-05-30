@@ -39,10 +39,7 @@ Route::middleware('auth')->group(function () {
     
     Route::post('modifica-staff', [ModifiedStaffController::class, 'store']);
 
-    Route::get('/staff/modifica-offerta', [ModifiedOfferController::class, 'updatePromo'])
-                ->name('modifica-offerta');
-
-        Route::post('/staff/modifica-offerta', [ModifiedOfferController::class, 'store']);
+    
 
      /*   Route::get('/delete-promo', [StaffController::class, 'deletePromo'])
                 ->name('delete-promo');     */

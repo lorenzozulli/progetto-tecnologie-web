@@ -26,6 +26,7 @@ return array(
     'App\\Http\\Requests\\Auth\\LoginRequest' => $baseDir . '/app/Http/Requests/Auth/LoginRequest.php',
     'App\\Http\\Requests\\NewProductRequest' => $baseDir . '/app/Http/Requests/NewProductRequest.php',
     'App\\Models\\Company' => $baseDir . '/app/Models/Company.php',
+    'App\\Models\\Coupon' => $baseDir . '/app/Models/Coupon.php',
     'App\\Models\\Faq' => $baseDir . '/app/Models/Faq.php',
     'App\\Models\\Offer' => $baseDir . '/app/Models/Offer.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',

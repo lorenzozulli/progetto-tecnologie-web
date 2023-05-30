@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Offer;
+use App\Models\User;
+use App\Models\Coupon;
+
 class UserController extends Controller {
 
     // Ritorna la dashboard dell'utente di tipo User
@@ -15,7 +19,17 @@ class UserController extends Controller {
     }
 
     //Creazione coupon
-    public function creaCoupon($userId){
-        
+    public function creaCoupon($id, $username){
+        $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        $randomString = substr(str_shuffle($characters), 0, 10);
+        $control = Offer::where('id', $id)->first();
+        $user = User::where('username', $username)->first();
+        //dd($randomString);
+        $coupon = new Coupon;
+        $coupon->user = $user->username;
+        $coupon->id = $control->id;
+        $coupon->codice = bcrypt($randomString);
+
+        $coupon->save();
     }
 }

@@ -61,10 +61,18 @@ Route::get('/user', [UserController::class, 'index'])
     ->name('user');
     // ->middleware('can:isUser');
 
+Route::get('/coupon-acquisito/{userId}/{id}', [UserController::class, 'creaCoupon'])
+->name('coupon-acquisito');
+
 /* --- Rotte relative allo Staff loggato --- */
 Route::get('/staff', [StaffController::class, 'index'])
     ->name('staff');
     // ->middleware('can:isUser');
+
+    Route::get('/staff/modifica-offerta/', [ModifiedOfferController::class, 'updatePromo'])
+    ->name('modifica-offerta');
+
+        Route::post('/staff/modifica-offerta/', [ModifiedOfferController::class, 'store']);
 
 //Route::get('/profile', [StaffController::class, 'showData'])
   //  ->name('profile');

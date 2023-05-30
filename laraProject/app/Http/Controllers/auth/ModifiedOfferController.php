@@ -14,7 +14,7 @@ class ModifiedOfferController extends Controller
     }
 
     // Salva un'Offerta modificata
-    public function store(Request $request){
+    public function store(Request $request, $id){
         $request->validate([ 
             'nome' => ['required', 'string'],
             'oggetto' => ['required', 'string'],
@@ -23,8 +23,9 @@ class ModifiedOfferController extends Controller
             'id_azienda' => ['required', 'integer'],
         ]);
 
-        $offer = Offer::where('id_azienda', $request->id_azienda)->first();
-        
+        $offer = Offer::where('id', $id);
+        dd($id);
+       // dd($request);
         // Modifica delle informazioni dell'offerta
         if ($request->input('id_azienda') != null) {
             $offer->id_azienda = $request->input('id_azienda');

@@ -9,7 +9,7 @@
         <h3>Modifica Offerta</h3>
             <div class="wrap-contact">
                 {{ Form::open(array('route' => 'modifica-offerta', 'class' => 'contact-form')) }}
-
+                @method('GET')
                 <!-- Nome -->
                 <div  class="wrap-input">
                     {{ Form::label('nome', 'Nome Offerta', ['class' => 'label-input']) }}

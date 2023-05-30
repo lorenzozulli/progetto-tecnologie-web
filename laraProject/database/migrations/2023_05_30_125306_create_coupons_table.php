@@ -19,7 +19,7 @@ return new class extends Migration
 
 
             $table->string('codice')->primary()->unique();
-            
+            $table->string('user');
             $table->foreign('id')->references('id')->on('offers')
                 ->onDelete('cascade')->onUpdate('cascade');
         });
