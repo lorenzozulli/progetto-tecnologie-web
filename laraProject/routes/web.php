@@ -61,6 +61,9 @@ Route::get('/cerca-aziende', [PublicController::class, 'searchOfferForCompany'])
 Route::get('/user', [UserController::class, 'index'])
     ->name('user');
     // ->middleware('can:isUser');
+    Route::get('/lista-user', [UserController::class, 'showUser'])
+    ->name('lista-user');
+    //rotta che mostra la lista di utenti
 
 /* --- Rotte relative allo Staff  --- */
 // Mostra la pagina dell'utente di tipo Staff
@@ -81,11 +84,10 @@ Route::post('/staff/aggiunta-offerta', [StaffController::class, 'storePromo'])
 Route::delete('/delete-promo/{id}', [StaffController::class, 'deletePromo'])
         ->name('delete-promo');
 
-Route::get('/elimina-utente}', [AdminController::class, 'show'])
-        ->name('elimina-utente');
+// Permette di cancellare un'utente       
 
-// Permette di cancellare un'utente
-Route::delete('/elimina-utente/{username}', [AdminController::class, 'deleteUser']);
+Route::delete('/elimina-utente/{username}', [AdminController::class, 'deleteUser'])
+        ->name('elimina-utente');
 
 
 
@@ -104,6 +106,7 @@ Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
 Route::delete('/delete-azienda/{id}', [AdminController::class, 'deleteAzienda'])
         ->name('delete-azienda');
 
+        //questa rotta aggiunge un'azienda
 Route::get('/admin/aggiunta-azienda', [AdminController::class, 'createAzienda'])
     ->name('aggiunta-azienda');
 

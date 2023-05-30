@@ -60,8 +60,11 @@ class AdminController extends Controller {
 
     public function deleteUser($username)
     {
+        //dd($username);
         $user = User::FindOrFail($username);
+        //dd($user);
         $user->delete();
+
         return redirect()->route('admin');
     }
 
