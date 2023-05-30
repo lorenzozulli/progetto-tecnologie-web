@@ -13,4 +13,9 @@ class UserController extends Controller {
     public function updateData(){
         return view('profiles.management.modifica-user');
     }
+
+    //Creazione coupon
+    public function creaCoupon($userId){
+        
+    }
 }
