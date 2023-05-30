@@ -26,7 +26,7 @@
                                 <form action="{{ route('delete-azienda',  $company['id'])}}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="modifiche" onclick="return confirm('Sei sicuro di voler eliminare questa azienda?')" ><img src="{{ asset('images/delete.png') }}"></button>
+                                    <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questa azienda?')" ><img  class="modifiche" src="{{ asset('images/delete.png') }}"></button>
                                 </form>
                             @endif
                         </a>
