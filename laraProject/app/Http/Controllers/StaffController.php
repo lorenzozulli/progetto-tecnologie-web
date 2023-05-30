@@ -141,8 +141,10 @@ class StaffController extends Controller
         return redirect()->route('lista-offerte');
     }
     
+    public function showOffer()
+    { 
 
-
+    }
 
 }
 

@@ -32,6 +32,7 @@
     @method('GET')
         {{ Form::text('search','', ['class' => 'search_bar', 'placeholder' => 'Cerca aziende...']) }}
         {{ Form::submit('search', ['class' => 'search_button']) }}
+    {{ Form::close() }}
     </div>
     <!-- fine searchbars -->
 
@@ -50,7 +51,6 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
                 </form>
-            </li>
             @endauth
         </ul>
     </div>
