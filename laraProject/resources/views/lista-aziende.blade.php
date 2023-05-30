@@ -13,11 +13,10 @@
                     <div class="carousel__item">
                         <a href="{{route('azienda', $company->nome )}}">
 
-                            @if($company->logo == "")
-                            <img class="img" src="{{ asset('images/loghi-aziende/non_disponibile.png') }}">
-                            @else
+                            
+                            
                             <img src="{{ asset($company->logo) }}" alt="Immagine Azienda">
-                            @endif
+                            
 
                             <div class="info">
                                 <h1 class="title_carousel_item">{{ $company->nome }}</h1>
