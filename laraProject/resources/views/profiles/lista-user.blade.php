@@ -7,7 +7,7 @@
                 <div id="content">
                     @isset($users)
                     @foreach ($users as $user)
-                    
+                    @if($user->livello == 1)
                     <div class="prodotto_card">
                     <div class="carousel__item">
                         <a href="{{route('lista-user')}}">
@@ -26,6 +26,7 @@
                         </a>
                         </div>                    
                     </div>
+                    @endif
                     @endforeach
 
                     <!--Paginazione-->
