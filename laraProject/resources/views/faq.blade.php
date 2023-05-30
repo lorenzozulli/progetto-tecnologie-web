@@ -1,4 +1,4 @@
-@extends('layouts/base')
+@extends('layouts.base')
 @section('content')
         <!-- lista domande section start -->
             <div style="min-height:100px" class="mega_container">

@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
                 'telefono' => 1234567890,
                 'email' => 'maremmoide@gmail.com'
             ]
-        ]);S
+        ]);
 
         // Creazione tabella Aziende.
         DB::table('companies') -> insert([
@@ -126,8 +126,8 @@ class DatabaseSeeder extends Seeder
                 'dataOraScadenza' => '2024-01-01 10:15:00',
                 //'immagine' => NULL
             ]
-        ]);/*
-
+        ]);
+        /*
         // Creazione tabella FAQs.
         DB::table('faqs') -> insert([
             [
@@ -144,4 +144,5 @@ class DatabaseSeeder extends Seeder
             ]
         ]);
     }*/
-    }}
+    }
+}

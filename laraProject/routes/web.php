@@ -27,44 +27,46 @@ Route::get('/', function () {
 
 /* ---  Rotte relative alla pagina dell'azienda --- */
 
-// questa rotta mostra la lista di tutte le aziende
+// Mostra la lista di tutte le aziende
 Route::get('/lista-aziende', [PublicController::class, 'showListaAziende'])
     ->name('lista-aziende');
 
 
-// questa rotta mostra la pagina di un'azienda specifica
+// Mostra la pagina dell'azienda selezionata
 Route::get('/lista-aziende/{azienda}', [PublicController::class, 'showCompany'])
     ->name('azienda');
 
-// questa rotta mostra tutte le aziende della tipologia specificata
+// Mostra tutte le aziende della tipologia specificata
 Route::get('/lista-azienda/{tipologia}', [PublicController::class, 'showListaAziendePerTipologia'])
     ->name('tipologia');
 
-
-// questa rotta mostra l'elenco di tutte le offerte
+// Mostra l'elenco di tutte le offerte
 Route::get('/lista-offerte', [PublicController::class, 'showListaOfferte'])
     ->name('lista-offerte');
 
-
-// questa rotta mostra la pagina di un'offerta
+// Mostra la pagina dell'offerta selezionata
 Route::get('/lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
     ->name('offerta');
 
-Route::get('/cerca-offerte', [PublicController::class, 'searchOffer'])
-    ->name('searchOffer');
+// Mostra le offerte che hanno un determinato nome o una determinata descrizione
+Route::get('/cerca-offerte', [PublicController::class, 'searchOfferForNameOrDescription'])
+    ->name('cerca-offerte');
 
-Route::get('/cerca-aziende', [PublicController::class, 'searchCompany'])
-    ->name('searchCompany');
+// Mostra tutte le offerte dell'azienda specificata
+Route::get('/cerca-aziende', [PublicController::class, 'searchOfferForCompany'])
+    ->name('cerca-aziende');
 
 /* --- Rotte relative allo User --- */
+// Mostra la pagina dell'utente di tipo User
 Route::get('/user', [UserController::class, 'index'])
     ->name('user');
     // ->middleware('can:isUser');
+    Route::get('/lista-user', [UserController::class, 'showUser'])
+    ->name('lista-user');
+    //rotta che mostra la lista di utenti
 
-Route::get('/coupon-acquisito/{userId}/{id}', [UserController::class, 'creaCoupon'])
-->name('coupon-acquisito');
-
-/* --- Rotte relative allo Staff loggato --- */
+/* --- Rotte relative allo Staff  --- */
+// Mostra la pagina dell'utente di tipo Staff
 Route::get('/staff', [StaffController::class, 'index'])
     ->name('staff');
     // ->middleware('can:isUser');
@@ -76,20 +78,21 @@ Route::get('/staff', [StaffController::class, 'index'])
 
 //Route::get('/profile', [StaffController::class, 'showData'])
   //  ->name('profile');
+// Apre la form per l'aggiunta di un'offerta
 Route::get('/staff/aggiunta-offerta', [StaffController::class, 'addPromo'])
   ->name('aggiunta-offerta');
 
 Route::post('/staff/aggiunta-offerta', [StaffController::class, 'storePromo'])
     ->name('aggiunta-offerta');
 
-
+// Permette di cancellare un'offerta
 Route::delete('/delete-promo/{id}', [StaffController::class, 'deletePromo'])
         ->name('delete-promo');
 
-Route::get('/elimina-utente}', [AdminController::class, 'show'])
-        ->name('elimina-utente');
+// Permette di cancellare un'utente       
 
-Route::delete('/elimina-utente/{username}', [AdminController::class, 'deleteUser']);
+Route::delete('/elimina-utente/{username}', [AdminController::class, 'deleteUser'])
+        ->name('elimina-utente');
 
 
 
@@ -106,8 +109,9 @@ Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
     ->name('gestisci-staff');
 
 Route::delete('/delete-azienda/{id}', [AdminController::class, 'deleteAzienda'])
-    ->name('delete-azienda');
+        ->name('delete-azienda');
 
+        //questa rotta aggiunge un'azienda
 Route::get('/admin/aggiunta-azienda', [AdminController::class, 'createAzienda'])
     ->name('aggiunta-azienda');
 
@@ -121,4 +125,5 @@ Route::get('faq', [PublicController::class, 'showFaq'])
     ->name('faq');
 
 
+/* --- Inclusione delle rotte di auth.php --- */
 require __DIR__ . '/auth.php';

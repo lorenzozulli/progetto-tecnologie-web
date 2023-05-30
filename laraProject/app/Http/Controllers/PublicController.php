@@ -62,16 +62,24 @@ class PublicController extends Controller
     }
     
     // Ricerca di un'Offerta
-    public function searchOffer(Request $request){
-        $query = $request->input('query');
-        $offers = Offer::where('nome', 'LIKE', '%' .$query. '%')->paginate(12);
-        return view('lista-offerte', ['Offerte' => $offers, 'searchQuery' => $query]);
+    public function searchOfferForNameOrDescription(Request $request){
+        if($request->search){
+            $searchProducts = Offer::where(function ($query) use ($request) {
+                $query->where('nome', 'LIKE', '%' . $request->search . '%')
+                      ->orWhere('oggetto', 'LIKE', '%' . $request->search . '%');
+            })
+            ->paginate(12);
+
+            return view('cerca-offerta', compact('searchProducts'));
+        }else{
+            return redirect()->back()->with('message', 'Empty search!');
+        }
+
     }
 
     // Ricerca di un'Azienda
-    public function searchCompany(Request $request){
-        $query = $request->input('query');
-        $companies = Company::where('nome', 'LIKE', '%' .$query. '%')->paginate(12);
-        return view('lista-aziende', ['Aziende' => $companies, 'searchQuery' => $query]);
+    public function searchOfferForCompany($id){
+            $searchProducts = Company::with('offerte')->find($id);
+            return view('cerca-azienda', compact('searchProducts'));
     }
 }

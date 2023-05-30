@@ -22,7 +22,7 @@
                                             <form action="{{ route('delete-promo',  $offer['id'])}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="modifiche" onclick="return confirm('Sei sicuro di voler eliminare questa offerta?')" ><img src="{{ asset('images/delete.png') }}"></button>
+                                            <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questa offerta?')" ><img class="modifiche" src="{{ asset('images/delete.png') }}"></button>
                                             </form>
                                         @endif   
                                     </div>

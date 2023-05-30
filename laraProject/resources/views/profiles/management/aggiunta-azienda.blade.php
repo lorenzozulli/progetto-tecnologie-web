@@ -6,7 +6,7 @@
     <div class="container-contact">
     <h3>Aggiunta Azienda</h3>
         <div class="wrap-contact">
-            {{ Form::open(array('route' => 'aggiunta-azienda', 'class' => 'contact-form')) }}
+            {{ Form::open(array('route' => 'aggiunta-azienda', 'class' => 'contact-form', 'enctype'=>'multipart/form-data')) }}
 
             <!-- Nome -->
             <div  class="wrap-input">
@@ -74,8 +74,10 @@
             </div>
             
             <!-- Bottone di aggiunta -->
-            <div class="container-form-btn">                
-                {{ Form::submit('Aggiunta', ['class' => 'form-btn1']) }}
+            <div class="container-form-btn">   
+                             
+                {{ Form::submit('Aggiunta', ['class' => 'form-btn1'])}}
+
             </div>
             
             {{ Form::close() }}

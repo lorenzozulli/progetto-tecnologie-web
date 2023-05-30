@@ -60,8 +60,11 @@ class AdminController extends Controller {
 
     public function deleteUser($username)
     {
+        //dd($username);
         $user = User::FindOrFail($username);
+        //dd($user);
         $user->delete();
+
         return redirect()->route('admin');
     }
 
@@ -97,19 +100,28 @@ class AdminController extends Controller {
             'descrizione' => ['required', 'string', 'max:255'],
             'ragioneSociale' => ['required', 'string'],
             'tipologia' => ['required', 'string'],
-            //'livello' => ['integer'],
-            'logo' => ['required', 'string'],   
+            'logo' => ['nullable', 'string'],   
         ]);
-        
+        //dd($request);
+
+        //$logo = $request->file('logo') ? $request->file('logo')->store('images/loghi-aziende', 'public') : 'images/loghi-aziende/non_disponibile.png';
+        if ($request->logo) {
+            $logo = $request->logo;
+        } else {
+            $logo = 'images/loghi-aziende/non_disponibile.png';
+        }
+        //dd($logo);
+
         Company::create([
             'nome' => $request->nome,
             'descrizione' => $request->descrizione,
             'ragioneSociale' => $request->ragioneSociale,
             'tipologia' => $request->tipologia,
-            //'livello' =>$request->livello,
-            'logo' =>$request->logo,
+            'logo' =>$logo,
+            
         ]);
 
+        //dd($request);
         return redirect()->route('lista-aziende');
        
     }
