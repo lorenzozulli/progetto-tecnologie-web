@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Http\Requests\NewProductRequest;
 use App\Models\User;
+use App\Models\Company;
 
 class AdminController extends Controller {
 
@@ -61,6 +62,16 @@ class AdminController extends Controller {
         $user = User::FindOrFail($username);
         $user->delete();
         return redirect()->route('admin');
+    }
+
+    public function deleteAzienda($id)
+    {
+        //dd($request);
+        $company = Company::findOrFail($id);
+        //dd($offer);
+        $company->delete();
+       
+        return redirect()->route('lista-aziende');
     }
 
 }
