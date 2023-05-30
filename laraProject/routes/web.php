@@ -65,7 +65,7 @@ Route::get('/user', [UserController::class, 'index'])
     ->name('lista-user');
     //rotta che mostra la lista di utenti
 
-    Route::get('/coupon-acquisito/{userId}/{id}', [UserController::class, 'creaCoupon'])
+    Route::get('/coupon-acquisito/{id}/{userId}', [UserController::class, 'creaCoupon'])
     ->name('coupon-acquisito');
 
 /* --- Rotte relative allo Staff  --- */
@@ -102,7 +102,7 @@ Route::delete('/elimina-utente/{username}', [AdminController::class, 'deleteUser
 /* --- Rotte relative all'Admin loggato --- */
 Route::get('/admin', [AdminController::class, 'index'])
     ->name('admin')->middleware('auth');
-    
+
 Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
     ->name('newproduct');
 
