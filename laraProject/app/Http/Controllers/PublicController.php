@@ -69,8 +69,7 @@ class PublicController extends Controller
     }
 
     // Ricerca di un'Azienda
-    public function searchCompany(Request $request)
-    {
+    public function searchCompany(Request $request){
         $query = $request->input('query');
         $companies = Company::where('nome', 'LIKE', '%' .$query. '%')->paginate(12);
         return view('lista-aziende', ['Aziende' => $companies, 'searchQuery' => $query]);
