@@ -142,7 +142,9 @@ class StaffController extends Controller
     }
     
     public function showOffer()
+    { 
 
+    }
 
 }
 
