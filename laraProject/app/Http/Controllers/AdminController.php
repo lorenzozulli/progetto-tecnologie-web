@@ -92,33 +92,25 @@ class AdminController extends Controller {
     {   
 
         $request->validate([
-            'username' => ['required', 'string', 'min:8', 'unique:users'],
             'nome' => ['required', 'string'],
-            'cognome' => ['required', 'string', 'max:255'],
-            'eta' => ['required', 'integer'],
-            'genere' => ['required', 'string'],
+            'descrizione' => ['required', 'string', 'max:255'],
+            'ragioneSociale' => ['required', 'integer'],
+            'tipologia' => ['required', 'string'],
             //'livello' => ['integer'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'telefono' => ['required', 'string','max:10'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],     
+            'logo' => ['required', 'string'],   
         ]);
-        $user = User::create([
-            'username' => $request->username,
+        $company = Company::create([
             'nome' => $request->nome,
-            'cognome' => $request->cognome,
-            'eta' => $request->eta,
-            'genere' => $request->genere,
+            'descrizione' => $request->descrizione,
+            'ragioneSociale' => $request->ragioneSociale,
+            'tipologia' => $request->tipologia,
             //'livello' =>$request->livello,
-            'password' => Hash::make($request->password),
-            'telefono' =>$request->telefono,
-            'email' => $request->email,
+            'logo' =>$request->logo,
         ]);
 
-        event(new Registered($user));
+        event(new Registered($company));
 
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::USER);
+        return redirect()->route('lista-aziende');
        
     }
 
