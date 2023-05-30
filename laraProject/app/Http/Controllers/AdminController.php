@@ -98,7 +98,7 @@ class AdminController extends Controller {
             'ragioneSociale' => ['required', 'string'],
             'tipologia' => ['required', 'string'],
             //'livello' => ['integer'],
-            'logo' => ['required', 'string'],   
+            //'logo' => ['required', 'string'],   
         ]);
         
         Company::create([
