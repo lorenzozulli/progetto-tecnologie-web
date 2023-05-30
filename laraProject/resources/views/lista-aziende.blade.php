@@ -4,7 +4,7 @@
         <div class="mega_container">
         <h1 style="text-align:center"> LISTA AZIENDE </h1>
             @if(Auth::user()->livello == 3)
-                
+                <h3><a href="{{ route('aggiunta-azienda') }}">Aggiungi Azienda</a></h3>
             @endif
                 <div id="content">
                     @isset($companies)
@@ -21,7 +21,7 @@
                                 <h1 class="title_carousel_item">{{ $company->nome }}</h1>
                             </div>
                             @if(Auth::user()->livello == 3)
-                                     
+                                    
                                         
                                 <form action="{{ route('delete-azienda',  $company['id'])}}" method="POST">
                                     @csrf

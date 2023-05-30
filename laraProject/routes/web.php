@@ -100,6 +100,11 @@ Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
 Route::delete('/delete-azienda/{id}', [AdminController::class, 'deleteAzienda'])
     ->name('delete-azienda');
 
+Route::get('/admin/aggiunta-azienda', [AdminController::class, 'createAzienda'])
+    ->name('aggiunta-azienda');
+
+Route::post('aggiunta-azienda', [AdminController::class, 'storeAzienda']);
+
 
 
 /* --- Rotte relative alle FAQ --- */
