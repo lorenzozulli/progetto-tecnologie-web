@@ -65,6 +65,9 @@ Route::get('/user', [UserController::class, 'index'])
     ->name('lista-user');
     //rotta che mostra la lista di utenti
 
+    Route::get('/coupon-acquisito/{userId}/{id}', [UserController::class, 'creaCoupon'])
+    ->name('coupon-acquisito');
+
 /* --- Rotte relative allo Staff  --- */
 // Mostra la pagina dell'utente di tipo Staff
 Route::get('/staff', [StaffController::class, 'index'])
