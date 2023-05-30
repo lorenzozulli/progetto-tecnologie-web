@@ -51,10 +51,10 @@ Route::get('/lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
     ->name('offerta');
 
 Route::get('/cerca-offerte', [PublicController::class, 'searchOffer'])
-    ->name('searchOffer');
+    ->name('cerca-offerte');
 
 Route::get('/cerca-aziende', [PublicController::class, 'searchCompany'])
-    ->name('searchCompany');
+    ->name('cerca-aziende');
 
 /* --- Rotte relative allo User --- */
 Route::get('/user', [UserController::class, 'index'])

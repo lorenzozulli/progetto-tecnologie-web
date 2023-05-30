@@ -22,17 +22,15 @@
 
     <!-- inizio searchbars -->
     <div class="search_menu">
-    {{ Form::open(array('route' => 'searchOffer', 'class' => 'search_menu')) }}
-    @method('GET')
-        {{ Form::text('search','', ['class' => 'search_bar', 'placeholder' => 'Cerca offerte...']) }}
-        {{ Form::submit('search', ['class' => 'search_button']) }}
-    {{ Form::close() }}
+        <form action="{{ url('cerca-offerte') }}" method="GET" class="search_item">
+            <input id="search" type="text" name="search" value="" placeholder="Cerca offerte..." class="search_bar"/>
+            <button type="submit" class="search_button" value="search"/>Search</button>
+        </form>
 
-    {{ Form::open(array('route' => 'searchCompany', 'class' => 'search_menu')) }}
-    @method('GET')
-        {{ Form::text('search','', ['class' => 'search_bar', 'placeholder' => 'Cerca aziende...']) }}
-        {{ Form::submit('search', ['class' => 'search_button']) }}
-    {{ Form::close() }}
+        <form action="{{ url('cerca-aziende') }}" method="GET" class="search_item">
+            <input id="search" type="text" name="search" value="" placeholder="Cerca aziende..." class="search_bar"/>
+            <button type="submit" class="search_button" value="search"/>Search</button>
+        </form>
     </div>
     <!-- fine searchbars -->
 
