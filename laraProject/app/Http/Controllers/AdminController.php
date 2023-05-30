@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Http\Requests\NewProductRequest;
 use App\Models\User;
 use App\Models\Company;
+use Symfony\Component\HttpFoundation\Request;
 
 class AdminController extends Controller {
 
@@ -94,12 +95,13 @@ class AdminController extends Controller {
         $request->validate([
             'nome' => ['required', 'string'],
             'descrizione' => ['required', 'string', 'max:255'],
-            'ragioneSociale' => ['required', 'integer'],
+            'ragioneSociale' => ['required', 'string'],
             'tipologia' => ['required', 'string'],
             //'livello' => ['integer'],
             'logo' => ['required', 'string'],   
         ]);
-        $company = Company::create([
+        
+        Company::create([
             'nome' => $request->nome,
             'descrizione' => $request->descrizione,
             'ragioneSociale' => $request->ragioneSociale,
@@ -107,8 +109,6 @@ class AdminController extends Controller {
             //'livello' =>$request->livello,
             'logo' =>$request->logo,
         ]);
-
-        event(new Registered($company));
 
         return redirect()->route('lista-aziende');
        

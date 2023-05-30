@@ -48,14 +48,14 @@ class StaffController extends Controller
         return redirect()->back()->with('staff', 'Dati staff aggiornati con successo.');}
     }*/
      
-
+    //aggiunta promozione
     public function addPromo()
     {
         return view('profiles.management.aggiunta-offerta');
     
     }
 
-
+    //aggiunta promozione
     public function storePromo(Request $request)
     {   
         $request->validate([
