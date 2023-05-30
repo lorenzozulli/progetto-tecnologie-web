@@ -64,9 +64,9 @@ class PublicController extends Controller
     // Ricerca di un'Offerta
     public function searchOffer(Request $request){
         if($request->search){
-
             $searchProducts = Offer::where('nome', 'LIKE','%'.$request->search.'%')->paginate(12);
-                return view('cerca-offerta', compact('searchProducts'));
+            $searchProducts = Offer::where('oggetto', 'LIKE','%'.$request->search.'%')->paginate(12);
+            return view('cerca-offerta', compact('searchProducts'));
         }else{
             return redirect()->back()->with('message', 'Empty search!');
         }
