@@ -50,6 +50,12 @@ Route::get('/lista-offerte', [PublicController::class, 'showListaOfferte'])
 Route::get('/lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
     ->name('offerta');
 
+Route::get('/cerca-offerte', [PublicController::class, 'searchOffer'])
+    ->name('searchOffer');
+
+Route::get('/cerca-aziende', [PublicController::class, 'searchCompany'])
+    ->name('searchCompany');
+
 /* --- Rotte relative allo User --- */
 Route::get('/user', [UserController::class, 'index'])
     ->name('user');
@@ -69,9 +75,13 @@ Route::post('/staff/aggiunta-offerta', [StaffController::class, 'storePromo'])
     ->name('aggiunta-offerta');
 
 
-    Route::delete('/delete-promo/{id}', [StaffController::class, 'deletePromo'])
+Route::delete('/delete-promo/{id}', [StaffController::class, 'deletePromo'])
         ->name('delete-promo');
 
+Route::get('/elimina-utente}', [AdminController::class, 'show'])
+        ->name('elimina-utente');
+
+Route::delete('/elimina-utente/{username}', [AdminController::class, 'deleteUser']);
 
 
 
@@ -83,6 +93,12 @@ Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
 
 Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
     ->name('newproduct.store');
+
+    Route::get('/admin/gestisci-staff', [AdminController::class, 'showStaff'])
+    ->name('gestisci-staff');
+
+Route::delete('/delete-azienda/{id}', [AdminController::class, 'deleteAzienda'])
+    ->name('delete-azienda');
 
 
 

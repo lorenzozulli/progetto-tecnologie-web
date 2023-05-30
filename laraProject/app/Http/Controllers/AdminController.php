@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Http\Requests\NewProductRequest;
+use App\Models\User;
+use App\Models\Company;
 
 class AdminController extends Controller {
 
    protected $_adminModel;
 
+   // Ritorna la dashboard di tipo Admin
     public function index() {
         return view('profiles.admin');
     }
@@ -42,8 +45,33 @@ class AdminController extends Controller {
         ;
     }
 
-    public function getGo(Request $request){
+    /*public function getGo(Request $request){
         $company->logo = $request->file('logo')->openFile()->fread($request->file('logo')->getSize());
+    }*/
+
+    public function show() {
+        return view('profiles.lista-user');
+    }
+
+    public function showStaff() {
+        return view('lista-staff');
+    }
+
+    public function deleteUser($username)
+    {
+        $user = User::FindOrFail($username);
+        $user->delete();
+        return redirect()->route('admin');
+    }
+
+    public function deleteAzienda($id)
+    {
+        //dd($request);
+        $company = Company::findOrFail($id);
+        //dd($offer);
+        $company->delete();
+       
+        return redirect()->route('lista-aziende');
     }
 
 }
