@@ -64,7 +64,7 @@ class StaffController extends Controller
           //  'id_azienda' => ['required', 'int'],
             'modalitaFruizione' => ['required', 'string'],
             'luogoFruizione' => ['required', 'string'],
-            'dataOraScadenza' => ['required', 'date'],
+            'dataOraScadenza' => ['required', 'string'],
            
         ]);
     
