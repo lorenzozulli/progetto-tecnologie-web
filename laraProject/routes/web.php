@@ -99,6 +99,7 @@ Route::delete('/elimina-utente/{username}', [AdminController::class, 'deleteUser
 /* --- Rotte relative all'Admin loggato --- */
 Route::get('/admin', [AdminController::class, 'index'])
     ->name('admin')->middleware('auth');
+    
 Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
     ->name('newproduct');
 
