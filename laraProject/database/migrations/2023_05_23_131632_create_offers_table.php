@@ -29,7 +29,9 @@ return new class extends Migration
             $table->dateTime('dataOraScadenza')->default(DB::raw('CURRENT_TIMESTAMP'));
 
             // definizione dei vincoli della FK
-            $table->foreign('id_azienda')->references('id')->on('companies');
+           
+            $table->foreign('id_azienda')->references('id')->on('companies')
+                ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

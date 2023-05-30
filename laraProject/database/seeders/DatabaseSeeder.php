@@ -129,7 +129,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Creazione tabella FAQs.
-        DB::table('faqs') -> insert([
+        /*DB::table('faqs') -> insert([
             [
                 'id' => 1,
                 //'usernameCreatore' => 'root',
@@ -143,5 +143,5 @@ class DatabaseSeeder extends Seeder
                 'risposta' => 'risposta2'
             ]
         ]);
-    }
-}
+    }*/
+    }}

@@ -61,23 +61,24 @@ class StaffController extends Controller
         $request->validate([
             'nome' => ['required', 'string'],
             'oggetto' => ['required', 'string'],
-            //'id_azienda' => ['required', 'integer'],
+          //  'id_azienda' => ['required', 'int'],
             'modalitaFruizione' => ['required', 'string'],
             'luogoFruizione' => ['required', 'string'],
-            'dataOraScadenza' => ['required', 'string'],
+            'dataOraScadenza' => ['required', 'date'],
            
         ]);
     
-        $offer = new Offer();
-        $offer->nome = $request->input('nome');
-        $offer->oggetto = $request->input('oggetto');
-       // $offer->id_azienda = $request->input('id_azienda');
-        $offer->modalitaFruizione = $request->input('modalitaFruizione');
-        $offer->luogoFruizione = $request->input('luogoFruizione');
-        $offer->dataOraScadenza = $request->input('dataOraScadenza');
-        // Assegna i valori degli altri campi
+
+        Offer::create([
+            'nome' => $request->nome,
+            'oggetto' => $request->oggetto,
+            'id_azienda' => $request->id_azienda,
+            'modalitaFruizione' => $request->modalitaFruizione,
+            'luogoFruizione' => $request->luogoFruizione,
+            'dataOraScadenza' => $request->dataOraScadenza,
+        ]);
     
-        $offer->save();
+    
     
         return redirect('/')->with('success', 'Nuova offerta memorizzata con successo!');
     }

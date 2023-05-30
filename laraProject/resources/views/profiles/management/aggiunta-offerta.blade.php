@@ -9,7 +9,7 @@
     <h3>Aggiunta</h3>
         <div class="wrap-contact">
             
-            {{ Form::open(array('route' => 'aggiunta-offerta', 'class' => 'contact-form')) }}
+            {{ Form::open(['route' => 'aggiunta-offerta']) }}
 
             <!-- Nome -->
             <div  class="wrap-input">
@@ -41,6 +41,7 @@
             <div  class="wrap-input">
                 {{ Form::label('id_azienda', 'ID Azienda', ['class' => 'label-input']) }}
                 {{ Form::text('id_azienda', '', ['class' => 'input','id' => 'id_azienda']) }}
+                
             </div>
             
             <!-- modalitaFruizione -->
@@ -84,9 +85,10 @@
             
             <!-- Bottone di aggiunta -->
             <div class="container-form-btn">    
-            <!--<form action="{{ route('aggiunta-offerta')}}" method="POST">  -->
+           
+
                         
-                {{ Form::submit('Aggiungi', ['class' => 'form-btn1']) }}
+            {{ Form::submit('Aggiungi', ['class' => 'form-btn1']) }}
             </div>
         
             {{ Form::close() }}
