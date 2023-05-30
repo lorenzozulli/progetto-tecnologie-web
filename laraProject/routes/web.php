@@ -69,9 +69,13 @@ Route::post('/staff/aggiunta-offerta', [StaffController::class, 'storePromo'])
     ->name('aggiunta-offerta.store');
 
 
-    Route::delete('/delete-promo/{id}', [StaffController::class, 'deletePromo'])
+Route::delete('/delete-promo/{id}', [StaffController::class, 'deletePromo'])
         ->name('delete-promo');
 
+Route::get('/elimina-utente}', [AdminController::class, 'show'])
+        ->name('elimina-utente');
+
+Route::delete('/elimina-utente/{username}', [AdminController::class, 'deleteUser']);
 
 
 
@@ -83,6 +87,9 @@ Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
 
 Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
     ->name('newproduct.store');
+
+    Route::get('/admin/gestisci-staff', [AdminController::class, 'showStaff'])
+    ->name('gestisci-staff'); 
 
 
 

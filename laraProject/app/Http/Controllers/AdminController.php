@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Http\Requests\NewProductRequest;
+use App\Models\User;
 
 class AdminController extends Controller {
 
@@ -42,8 +43,23 @@ class AdminController extends Controller {
         ;
     }
 
-    public function getGo(Request $request){
+    /*public function getGo(Request $request){
         $company->logo = $request->file('logo')->openFile()->fread($request->file('logo')->getSize());
+    }*/
+
+    public function show() {
+        return view('profiles.lista-user');
+    }
+
+    public function showStaff() {
+        return view('lista-staff');
+    }
+
+    public function deleteUser($username)
+    {
+        $user = User::FindOrFail($username);
+        $user->delete();
+        return redirect()->route('admin');
     }
 
 }

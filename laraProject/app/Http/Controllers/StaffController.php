@@ -56,7 +56,7 @@ class StaffController extends Controller
     }
 
 
-    public function storePromo(Request $request)
+    public function storePromo(Request $request, $id)
     {   
         $request->validate([
             'nome' => ['required', 'string'],
@@ -68,15 +68,16 @@ class StaffController extends Controller
            
         ]);
     
-        $offer = new Offer();
+        /*$offer = new Offer();
         $offer->nome = $request->input('nome');
         $offer->oggetto = $request->input('oggetto');
        // $offer->id_azienda = $request->input('id_azienda');
         $offer->modalitaFruizione = $request->input('modalitaFruizione');
         $offer->luogoFruizione = $request->input('luogoFruizione');
-        $offer->dataOraScadenza = $request->input('dataOraScadenza');
+        $offer->dataOraScadenza = $request->input('dataOraScadenza');*/
         // Assegna i valori degli altri campi
-    
+        $offer = Offer::findOrFail($id);
+        $offer->fill($request->validated());
         $offer->save();
     
         return redirect('/')->with('success', 'Nuova offerta memorizzata con successo!');
@@ -89,7 +90,7 @@ class StaffController extends Controller
             'oggetto' => ['required', 'string'],
             'modalitaFruizione' => ['required', 'string'],
             'luogoFruizione' => ['required', 'string'],
-            'id_azienda' => ['required', 'integer'],
+            //'id_azienda' => ['required', 'integer'],
            
 
 
