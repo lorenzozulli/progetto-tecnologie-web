@@ -18,7 +18,9 @@
                 <!-- coupon section end -->
 
                 <div class="the_other_stuff">
+                    @if(Auth::user()->livello == 1)
                     <h1><a href="('lista-offerte')">Acquisici</a> il coupon come</h1>
+                    @endif
                     @auth
                     <p> Nome: {{ Auth::user()->nome }} </p>
                     <p> Cognome: {{ Auth::user()->cognome }} </p>
