@@ -1,4 +1,3 @@
-
 <header>
     <!-- Script per la gestione della sidenav -->
     <script src="{{ asset('js/sidenav.js') }}"></script>
@@ -21,10 +20,20 @@
     <a href="{{ route('home') }}"><img src="{{ asset('images/scontastic_draft.png') }}"></a>
     <!-- fine logo -->
 
-    <!-- inizio searchbar -->
-    {{ Form::text('search','', ['class' => 'search_bar', 'placeholder' => 'Cerca offerte...']) }}
-    {{ Form::button('search', ['class' => 'search_button']) }}
-    <!-- fine searchbar -->
+    <!-- inizio searchbars -->
+    <div class="search_menu">
+    {{ Form::open(array('route' => 'searchOffer', 'class' => 'search_menu')) }}
+    @method('GET')
+        {{ Form::text('search','', ['class' => 'search_bar', 'placeholder' => 'Cerca offerte...']) }}
+        {{ Form::submit('search', ['class' => 'search_button']) }}
+    {{ Form::close() }}
+
+    {{ Form::open(array('route' => 'searchCompany', 'class' => 'search_menu')) }}
+    @method('GET')
+        {{ Form::text('search','', ['class' => 'search_bar', 'placeholder' => 'Cerca aziende...']) }}
+        {{ Form::submit('search', ['class' => 'search_button']) }}
+    </div>
+    <!-- fine searchbars -->
 
     <!-- inizio link wrapper -->
     <div class="link_wrapper">

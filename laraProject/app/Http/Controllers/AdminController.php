@@ -10,6 +10,7 @@ class AdminController extends Controller {
 
    protected $_adminModel;
 
+   // Ritorna la dashboard di tipo Admin
     public function index() {
         return view('profiles.admin');
     }

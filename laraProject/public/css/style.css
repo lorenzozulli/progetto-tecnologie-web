@@ -271,7 +271,7 @@ footer{
   background-color: #ffffff;
   height: auto;
   padding: 20px;
-  box-shadow: 0px 0 30px 10px #f0f0f0;
+  box-shadow: 0px 0 3px 1px #f0f0f0;
   float: left;
   margin: 10px;
   border-radius: 20px;
@@ -287,7 +287,7 @@ footer{
   width: auto;
   background-color: #ffffff;
   height: auto;
-  box-shadow: 0px 0 30px 10px #f0f0f0;
+  box-shadow: 0px 0 3px 1px #f0f0f0;
   float: left;
   position: relative;
   top: -8px;
@@ -476,10 +476,10 @@ footer{
 
 /* --- lista-aziende section start --- */
 .search_menu{
+  width: 65%;
   display: flex;
   padding-top: 20px;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: left;
 }
 .prodotto_card{
   float: left;
@@ -495,6 +495,10 @@ footer{
   text-align: center;
   bottom: 12px;
   text-transform: uppercase;
+}
+
+.errors{
+  color:#FAFAFA;
 }
 /* --- --- */
 

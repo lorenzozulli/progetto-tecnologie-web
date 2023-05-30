@@ -50,6 +50,12 @@ Route::get('/lista-offerte', [PublicController::class, 'showListaOfferte'])
 Route::get('/lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
     ->name('offerta');
 
+Route::get('/cerca-offerte', [PublicController::class, 'searchOffer'])
+    ->name('searchOffer');
+
+Route::get('/cerca-aziende', [PublicController::class, 'searchCompany'])
+    ->name('searchCompany');
+
 /* --- Rotte relative allo User --- */
 Route::get('/user', [UserController::class, 'index'])
     ->name('user');

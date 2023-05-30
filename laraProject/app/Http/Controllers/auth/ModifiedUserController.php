@@ -19,10 +19,12 @@ class ModifiedUserController extends Controller {
       }
      */
 
+    // Modifica del profilo User
     public function update() {
         return view('profiles.management.modifica-user');
     }
 
+    // Salva l'utente che ha fatto modifiche al profilo
     public function store(Request $request) {
         $request->validate([
             'username' => ['required', 'string', 'min:8', 'unique:users'],
