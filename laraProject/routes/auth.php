@@ -26,7 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/account', [AuthenticatedSessionController::class, 'rimanda'])
             ->name('account');
 
-    Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
+    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 
     Route::get('/modifica-user', [ModifiedUserController::class, 'update'])
