@@ -98,7 +98,7 @@ class AdminController extends Controller {
             'ragioneSociale' => ['required', 'string'],
             'tipologia' => ['required', 'string'],
             //'livello' => ['integer'],
-            //'logo' => ['required', 'string'],   
+            'logo' => ['required', 'string'],   
         ]);
         
         Company::create([
@@ -107,7 +107,7 @@ class AdminController extends Controller {
             'ragioneSociale' => $request->ragioneSociale,
             'tipologia' => $request->tipologia,
             //'livello' =>$request->livello,
-            //'logo' =>$request->logo,
+            'logo' =>$request->logo,
         ]);
 
         return redirect()->route('lista-aziende');
