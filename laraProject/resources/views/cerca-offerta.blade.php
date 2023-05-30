@@ -1,8 +1,8 @@
-@extends('layouts/base')
+@extends('layouts.base')
 @section('content')
         <!-- lista offerte section start -->
             <div class="mega_container">
-                <h1 class="page_title"> "Risultati di ricerca"</h1>
+                <h1 class="page_title">"Risultati di ricerca"</h1>
                 <div id="content">
                     @foreach ($searchProducts as $offer)
                     <div class="prodotto_card">

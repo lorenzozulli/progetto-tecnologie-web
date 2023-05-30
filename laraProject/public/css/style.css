@@ -20,8 +20,8 @@ header{
 }
 
 .search_menu{
-  width: 65%;
-  float: left;
+  width: 50%;
+  align-items: center;
 }
 .search_item{
   width: max-content;
