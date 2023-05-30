@@ -6,11 +6,9 @@
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <h1 class="category">CATEGORIE</h1>
-            @isset($companies)
-            @foreach($companies as $company)
-            <a href="{{ route('tipologia', $company->tipologia) }}">{{$company->tipologia}}</a>
-            @endforeach
-            @endisset()
+            {{--@foreach($companies as $company)--}}
+            <a href="{{-- route('tipologia', $company->tipologia) --}}">{{--$company->tipologia--}}</a>
+            {{--@endforeach--}}
         </div>
         <!-- fine HTML della sidenav -->
 
@@ -23,12 +21,12 @@
     <!-- inizio searchbars -->
     <div class="search_menu">
         <form action="{{ url('cerca-offerte') }}" method="GET" class="search_item">
-            <input id="search" type="text" name="search" value="" placeholder="Cerca offerte..." class="search_bar"/>
+            <input id="search" type="text" name="search" value="" placeholder="Cerca offerte per nome o descrizione..." class="search_bar"/>
             <button type="submit" class="search_button" value="search"/>Search</button>
         </form>
 
         <form action="{{ url('cerca-aziende') }}" method="GET" class="search_item">
-            <input id="search" type="text" name="search" value="" placeholder="Cerca aziende..." class="search_bar"/>
+            <input id="search" type="text" name="search" value="" placeholder="Cerca offerte per azienda..." class="search_bar"/>
             <button type="submit" class="search_button" value="search"/>Search</button>
         </form>
     </div>
