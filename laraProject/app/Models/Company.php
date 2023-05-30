@@ -9,6 +9,19 @@ class Company extends Model
 {
     use HasFactory;
 
+    protected $table='companies';
+    public $timestamps = false;
+
+    protected $primaryKey = 'id';
+
+    protected $fillable = [
+        'nome',
+        'descrizione',
+        'ragioneSociale',
+        'tipologia',
+        'logo',
+    ];
+
     public function getTopCats() {
         return Company::where('parId', 0)->get();
     }

@@ -14,8 +14,8 @@
                         <a href="{{route('azienda', $company->nome )}}">
                             @if($company->logo == NULL)
                             <img class="img" src="{{ asset('images/loghi-aziende/non_disponibile.png') }}">
-                            @else
-                            <img src="{{-- asset('images/loghi-aziende'.$company->logo --}}" alt="Immagine Azienda">
+                            <!-- @else
+                            <img src="data:image/png/jpeg;base64,{{ base64_encode($tuple['logo']) }}" alt="Immagine Azienda"> -->
                             @endif
                             <div class="info">
                                 <h1 class="title_carousel_item">{{ $company->nome }}</h1>
