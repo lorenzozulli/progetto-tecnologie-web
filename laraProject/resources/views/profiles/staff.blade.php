@@ -25,7 +25,7 @@
                 E-mail: {{ Auth::user()->email }}<br>
                 </p>
                 <h3>Clicca <a href="{{ route('modifica-staff') }}">qui</a> per modificare il tuo profilo</h3>
-                <h3>Clicca <a href="{{ route('lista-offerte') }}">qui</a> per gestire le promozioni</h3>
+                <h3>Clicca <a href="{{ route('tabella-offerte') }}">qui</a> per gestire le promozioni</h3>
               
             </div>
         </div>

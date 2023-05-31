@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Http\Requests\NewProductRequest;
+use App\Models\Faq;
 use App\Models\User;
 use App\Models\Company;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,35 +22,6 @@ class AdminController extends Controller {
    // Ritorna la dashboard di tipo Admin
     public function index() {
         return view('profiles.admin');
-    }
-
-    public function addProduct() {
-        $prodCats = $this->_adminModel->getProdsCats()->pluck('name', 'catId');
-        return view('product.insert')
-                        ->with('cats', $prodCats);
-    }
-
-    public function storeProduct(NewProductRequest $request) {
-
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = $image->getClientOriginalName();
-        } else {
-            $imageName = NULL;
-        }
-
-        $product = new Product;
-        $product->fill($request->validated());
-        $product->image = $imageName;
-        $product->save();
-
-        if (!is_null($imageName)) {
-            $destinationPath = public_path() . '/images/products';
-            $image->move($destinationPath, $imageName);
-        };
-
-        return redirect()->action([AdminController::class, 'index']);
-        ;
     }
 
     /*public function getGo(Request $request){
@@ -189,6 +161,36 @@ class AdminController extends Controller {
         //dd($user);
         
         return view ('staff-view', ['user'=>$user])->with('success');
+    }
+    
+
+public function createFaq()
+    {    
+        return view('profiles.management.tabella-faq');
+    }
+    public function storeFaq(Request $request)
+    {   
+            $request->validate([
+            'domanda' => ['required', 'string', 'max:255'],
+            'risposta' => ['required', 'string'],
+           
+             ]);
+        
+        Faq::create([
+            'domanda' => $request->domanda,
+            'risposta' => $request->risposta,
+            
+        ]);
+
+        return redirect()->route('tabella-faq');
+       
+    }
+
+    public function deleteFaq($id)
+    {    
+        $faq= Faq::findOrFail($id);
+        $faq->delete();
+        return redirect()->route('tabella-faq');
     }
 
 }

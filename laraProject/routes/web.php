@@ -52,6 +52,14 @@ Route::get('/lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
 Route::get('/cerca-offerte', [PublicController::class, 'searchOffers'])
     ->name('cerca-offerte');
 
+Route::get('/cerca-aziende', [PublicController::class, 'searchCompany'])
+    ->name('cerca-aziende');
+
+
+// questa rotta mostra la tabella delle offerte
+Route::get('/tabella-offerte', [StaffController::class,'showTabellaOfferte' ])
+->name('tabella-offerte');
+
 /* --- Rotte relative allo User --- */
 // Mostra la pagina dell'utente di tipo User
 Route::get('/user', [UserController::class, 'index'])
@@ -72,10 +80,10 @@ Route::get('/staff', [StaffController::class, 'index'])
 
 
 
-    Route::get('/staff/modifica-offerta/', [ModifiedOfferController::class, 'updatePromo'])
+ Route::get('/staff/modifica-offerta/', [ModifiedOfferController::class, 'updatePromo'])
     ->name('modifica-offerta');
 
-        Route::post('/staff/modifica-offerta/', [ModifiedOfferController::class, 'store']);
+Route::post('/staff/modifica-offerta/', [ModifiedOfferController::class, 'store']);
 
 //Route::get('/profile', [StaffController::class, 'showData'])
   //  ->name('profile');
@@ -101,11 +109,6 @@ Route::delete('/elimina-utente/{username}', [AdminController::class, 'deleteUser
 Route::get('/admin', [AdminController::class, 'index'])
     ->name('admin')->middleware('auth');
 
-Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
-    ->name('newproduct');
-
-Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
-    ->name('newproduct.store');
 // rotte che gestiscono lo staff
     //Route::get('/admin/gestisci-staff', [AdminController::class, 'showStaff'])
     //->name('gestisci-staff');
@@ -137,6 +140,16 @@ Route::get('(/admin/staffView/{user}', [AdminController::class, 'viewStaff'])
 Route::get('faq', [PublicController::class, 'showFaq'])
     ->name('faq');
 
+Route::get('crea-faq',[AdminController::class, 'createFaq'])
+    ->name('crea-faq');
+    
+Route::post('/faq', [AdminController::class, 'storeFaq']);
+    
+Route::delete('/delete-faq/{id}', [AdminController::class, 'deleteFaq'])
+    ->name('delete-faq');
+    
+Route::get('/staff/modifica-faq', [AdminController::class, 'updateFaq'])
+    ->name('modifica-faq'); 
 
 /* --- Inclusione delle rotte di auth.php --- */
 require __DIR__ . '/auth.php';
