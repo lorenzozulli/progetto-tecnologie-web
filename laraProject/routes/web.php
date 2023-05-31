@@ -5,6 +5,7 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ModifiedOfferController;
+use App\Http\Controllers\ModifiedCompanyController;
 use App\Http\Controllers\Auth\ModifiedStaffController;
 use App\Http\Controllers\Auth\ModifiedUserController;
 use App\Http\Controllers\UserController;
@@ -161,6 +162,12 @@ Route::middleware('can:isAdmin')->group(function(){
         ->name('aggiunta-azienda');
     
     Route::post('/aggiunta-azienda', [AdminController::class, 'storeAzienda']);
+
+    // Permette all'admin di modificare un'azienda
+    Route::get('/modifica-azienda/{company}', [ModifiedCompanyController::class, 'updatePromo'])
+        ->name('modifica-azienda');
+
+    Route::post('/modifica-azienda/{company}', [ModifiedCompanyController::class, 'store']);
 
     // Permette di eliminare un'azienda
     Route::delete('/delete-azienda/{id}', [AdminController::class, 'deleteAzienda'])

@@ -22,6 +22,8 @@
                                 <h1 class="title_carousel_item">{{ $company->nome }}</h1>
                             </div>
                             @if(Auth::user()->livello == 3)
+
+                                <a href="{{ route('modifica-azienda', $company->id) }}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
                             
                                 <form action="{{ route('delete-azienda',  $company['id'])}}" method="POST">
                                     @csrf

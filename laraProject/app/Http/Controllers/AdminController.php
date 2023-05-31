@@ -85,7 +85,6 @@ class AdminController extends Controller {
         ]);
         //dd($request);
 
-        //$logo = $request->file('logo') ? $request->file('logo')->store('images/loghi-aziende', 'public') : 'images/loghi-aziende/non_disponibile.png';
         if ($request->logo) {
             $logo = $request->logo;
         } else {
