@@ -24,9 +24,16 @@
                 @guest
                     <li><a href="{{ route('login') }}">Account</a></li>
                 @endguest
+                @can('isUser')
+                    <li><a href="{{ route('user') }}">Account</a></li>
+                @endcan
+                @can('isStaff')
+                    <li><a href="{{ route('staff') }}">Account</a></li>
+                @endcan
+                @can('isAdmin')
+                    <li><a href="{{ route('admin') }}">Account</a></li>
+                @endcan
                 @auth
-                    <li><a href="{{ route('account') }}">Account</a></li>
-                <li>
                 <li><a href="" class="highlight" title="Esci dal sito" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
