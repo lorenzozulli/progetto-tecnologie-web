@@ -34,6 +34,9 @@
                     <h1>Descrizione</h1>
                     <p> {{$offer->modalitaFruizione}}
                     <!-- da inserire la descrizione del coupon-->
+                    @error('error')
+                    <span style="color: red">{{ $message }}</span>
+                    @enderror
                 </div>
             </div>
         <!-- offerta section end -->
