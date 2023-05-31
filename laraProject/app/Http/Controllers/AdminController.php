@@ -147,6 +147,7 @@ class AdminController extends Controller {
             'telefono' =>$request->telefono,
             'email' => $request->email,
         ]);
+    
 
         event(new Registered($user));
 
@@ -182,6 +183,8 @@ public function createFaq()
             'risposta' => $request->risposta,
             
         ]);
+
+        
 
         return redirect()->route('aggiunta-faq');
        

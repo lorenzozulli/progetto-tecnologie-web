@@ -1,7 +1,7 @@
 @extends('layouts/base')
 @section('content')
 
-    <!-- modifica User section start -->
+    <!-- modifica Faq section start -->
     <div class="mega_container">
         <p>ciao sono la pagina di aggiunta di una faq</p>
     </div>
@@ -11,91 +11,43 @@
             
             {{ Form::open(['route' => 'aggiunta-faq']) }}
 
-            <!-- Nome -->
+            <!-- Domanda -->
             <div  class="wrap-input">
-                {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
-                {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome']) }}
-                @if ($errors->first('nome'))
+                {{ Form::label('domanda', 'Domanda', ['class' => 'label-input']) }}
+                {{ Form::text('domanda', '', ['class' => 'input', 'id' => 'domanda']) }}
+                @if ($errors->first('domanda'))
                 <ul class="errors">
-                    @foreach ($errors->get('nome') as $message)
+                    @foreach ($errors->get('domanda') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>
                 @endif
             </div>
 
-            <!-- Oggetto -->
+            <!-- Risposta -->
             <div  class="wrap-input">   
-                {{ Form::label('oggetto', 'Oggetto', ['class' => 'label-input']) }}
-                {{ Form::text('oggetto', '', ['class' => 'input', 'id' => 'oggetto']) }}
-                @if ($errors->first('oggetto'))
+                {{ Form::label('risposta', 'Risposta', ['class' => 'label-input']) }}
+                {{ Form::text('risposta', '', ['class' => 'input', 'id' => 'oggetto']) }}
+                @if ($errors->first('risposta'))
                 <ul class="errors">
-                    @foreach ($errors->get('oggetto') as $message)
+                    @foreach ($errors->get('risposta') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>
                 @endif
             </div>
-
-            <!-- Id Azienda -->
-            <div  class="wrap-input">
-                {{ Form::label('id_azienda', 'ID Azienda', ['class' => 'label-input']) }}
-                {{ Form::text('id_azienda', '', ['class' => 'input','id' => 'id_azienda']) }}
-                
-            </div>
-            
-            <!-- modalitaFruizione -->
-            <div  class="wrap-input">
-                {{ Form::label('modalitaFruizione', 'Modalità Fruizione', ['class' => 'label-input']) }}
-                {{ Form::text('modalitaFruizione', '', ['class' => 'input','id' => 'modalitaFruizione']) }}
-                @if ($errors->first('modalitaFruizione'))
-                <ul class="errors">
-                    @foreach ($errors->get('modalitaFruizione') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
-
-            <!-- luogoFruizione -->
-            <div  class="wrap-input">
-                {{ Form::label('luogoFruizione', 'Luogo Fruizione', ['class' => 'label-input']) }}
-                {{ Form::text('luogoFruizione', '', ['class' => 'input','id' => 'luogoFruizione']) }}
-                @if ($errors->first('luogoFruizione'))
-                <ul class="errors">
-                    @foreach ($errors->get('luogoFruizione') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
-
-            <!-- dataOraScadenza -->
-            <div  class="wrap-input">
-                {{ Form::label('dataOraScadenza', 'Data Ora Scadenza', ['class' => 'label-input']) }}
-                {{ Form::text('dataOraScadenza', '', ['class' => 'input', 'id' => 'dataOraScadenza']) }}
-                @if ($errors->first('dataOraScadenza'))
-                <ul class="errors">
-                    @foreach ($errors->get('dataOraScadenza') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
-            
+             
             <!-- Bottone di aggiunta -->
             <div class="container-form-btn">    
            
 
-                        
-            {{ Form::submit('Aggiungi', ['class' => 'form-btn1']) }}
-            </div>
-        
-            {{ Form::close() }}
-            
+           {{ Form::submit('Aggiungi', ['class' => 'form-btn1']) }}
+           </div>
+       
+           {{ Form::close() }}
+           
             
         </div>
-    </div>
     <!-- modifica User section end -->
 
 @endsection
