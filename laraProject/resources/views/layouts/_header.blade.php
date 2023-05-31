@@ -26,11 +26,9 @@
                 @endguest
                 @can('isUser')
                     <li><a href="{{ route('user') }}">Account</a></li>
-                @endcan
-                @can('isStaff')
+                @elsecan('isStaff')
                     <li><a href="{{ route('staff') }}">Account</a></li>
-                @endcan
-                @can('isAdmin')
+                @elsecan('isAdmin')
                     <li><a href="{{ route('admin') }}">Account</a></li>
                 @endcan
                 @auth
