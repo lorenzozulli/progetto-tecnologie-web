@@ -188,7 +188,7 @@ class AdminController extends Controller {
         $user = User::where('username', $username)->first();
         //dd($user);
         
-        return view ('staff-view', ['username'=>$user]);
+        return view ('staff-view', ['user'=>$user])->with('success');
     }
 
 }
