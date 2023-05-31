@@ -59,8 +59,8 @@ Route::get('/user', [UserController::class, 'index'])
     // ->middleware('can:isUser');
     Route::get('/lista-user', [UserController::class, 'showUser'])
     ->name('lista-user');
-    //rotta che mostra la lista di utenti
 
+    //rotta che mostra la lista di utenti
     Route::get('/coupon-acquisito/{id}/{userId}', [UserController::class, 'creaCoupon'])
     ->name('coupon-acquisito');
 
@@ -106,12 +106,10 @@ Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
 
 Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
     ->name('newproduct.store');
-// rotte che gestiscono lo staff
-    //Route::get('/admin/gestisci-staff', [AdminController::class, 'showStaff'])
-    //->name('gestisci-staff');
+// rotta che fa vedere una lista con tutti i membri dello staff
     Route::get('/admin/lista-staff', [AdminController::class, 'showStaff'])
         ->name('lista-staff');
-
+//rotta che consente di eliminare una azienda
 Route::delete('/delete-azienda/{id}', [AdminController::class, 'deleteAzienda'])
         ->name('delete-azienda');
 
@@ -121,7 +119,7 @@ Route::get('/admin/aggiunta-azienda', [AdminController::class, 'createAzienda'])
 
 Route::post('/admin/aggiunta-azienda', [AdminController::class, 'storeAzienda'])
     ->name('aggiunta-azienda');
-
+//questa rotta aggiunge un membro dello staff
 Route::get('/admin/aggiunta-staff', [AdminController::class, 'createStaff'])
     ->name('aggiunta-staff');
 

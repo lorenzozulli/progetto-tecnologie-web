@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->string('username')->primary();
+            $table->string('username')->primary()->unique();
 
             $table->string('nome');
             $table->string('cognome');
@@ -24,8 +24,8 @@ return new class extends Migration
             $table->integer('livello')->default(1);
             $table->string('password');
 
-            $table->string('telefono', 10);
-            $table->string('email');
+            $table->string('telefono', 10)->unique();
+            $table->string('email')->unique();
         });
     }
 

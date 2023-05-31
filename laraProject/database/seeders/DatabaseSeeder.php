@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        /*
+        
         DB::table('users') -> insert([
             [
                 'username' => 'mrossi1',
@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
                 'genere' => 'M',
                 'livello' => 1,
                 'password' => Hash::make('root'),
-                'telefono' => 1234567890,
+                'telefono' => 1234567891,
                 'email' => 'mario@rossi.com',
             ],
             [
@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'maremmoide@gmail.com'
             ]
         ]);
-
+/*
         // Creazione tabella Aziende.
         DB::table('companies') -> insert([
             [
@@ -100,7 +100,7 @@ class DatabaseSeeder extends Seeder
                 'logo' => NULL
 
             ]
-        ]);*/
+        ]);
 
         // Creazione tabella Offerte
         DB::table('offers') -> insert([
@@ -127,7 +127,7 @@ class DatabaseSeeder extends Seeder
                 //'immagine' => NULL
             ]
         ]);
-        /*
+        
         // Creazione tabella FAQs.
         DB::table('faqs') -> insert([
             [

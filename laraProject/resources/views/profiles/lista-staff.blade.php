@@ -17,14 +17,14 @@
                             <div class="info">
                                 <h1 class="title_carousel_item">{{ $user->username }}</h1>
                             </div>
-                            @if(Auth::user()->livello == 3)
+
+                            <a href="{{ url('/modifica-staff/'.$user->username.'/'.Auth::user()->livello) }}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
                             
                                 <form action="{{ route('elimina-utente',  $user['username'])}}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questo utente?')" ><img  class="modifiche" src="{{ asset('images/delete.png') }}"></button>
                                 </form>
-                            @endif
                         </a>
                         </div>                    
                     </div>

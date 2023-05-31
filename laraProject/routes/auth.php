@@ -34,10 +34,11 @@ Route::middleware('auth')->group(function () {
 
     Route::post('modifica-user', [ModifiedUserController::class, 'store']);
 
-    Route::get('/modifica-staff', [ModifiedStaffController::class, 'update'])
+                //consente di modificare un membro dello staff
+    Route::get('/modifica-staff/{username}/{livello}', [ModifiedStaffController::class, 'update'])
             ->name('modifica-staff');
     
-    Route::post('modifica-staff', [ModifiedStaffController::class, 'store']);
+    Route::post('modifica-staff/{username}/{livello}', [ModifiedStaffController::class, 'store']);
 
     
 
