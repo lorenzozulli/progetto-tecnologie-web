@@ -148,7 +148,7 @@ Route::post('/faq', [AdminController::class, 'storeFaq']);
 Route::delete('/delete-faq/{id}', [AdminController::class, 'deleteFaq'])
     ->name('delete-faq');
     
-Route::get('/staff/modifica-faq', [AdminController::class, 'updateFaq'])
+Route::get('/modifica-faq', [AdminController::class, 'updateFaq'])
     ->name('modifica-faq'); 
 
 /* --- Inclusione delle rotte di auth.php --- */
