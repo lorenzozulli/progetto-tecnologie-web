@@ -4,7 +4,7 @@
             <div class="mega_container">
                 <h1 class="page_title">"Risultati di ricerca"</h1>
                 <div id="content">
-                    @foreach ($searchProducts as $offer)
+                    @forelse($Offerte as $offer)
                     <div class="prodotto_card">
                         <div class="carousel__item">
                             <a href="{{route('offerta', $offer->nome )}}">
@@ -15,7 +15,9 @@
                             </a>
                         </div>                      
                     </div>
-                    @endforeach                
+                    @empty
+                    <h1 class="page_title">Nessuna offerta trovata!</h1>
+                    @endforelse          
                 </div>
             </div>
         <!-- lista offerte section end -->

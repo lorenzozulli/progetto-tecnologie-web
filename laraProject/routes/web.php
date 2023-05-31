@@ -49,12 +49,8 @@ Route::get('/lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
     ->name('offerta');
 
 // Mostra le offerte che hanno un determinato nome o una determinata descrizione
-Route::get('/cerca-offerte', [PublicController::class, 'searchOfferForNameOrDescription'])
+Route::get('/cerca-offerte', [PublicController::class, 'searchOffers'])
     ->name('cerca-offerte');
-
-// Mostra tutte le offerte dell'azienda specificata
-Route::get('/cerca-aziende', [PublicController::class, 'searchOfferForCompany'])
-    ->name('cerca-aziende');
 
 /* --- Rotte relative allo User --- */
 // Mostra la pagina dell'utente di tipo User
