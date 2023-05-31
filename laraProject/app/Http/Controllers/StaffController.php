@@ -138,7 +138,7 @@ class StaffController extends Controller
         //dd($offer);
         $offer->delete();
        
-        return redirect()->route('lista-offerte');
+        return redirect()->route('tabella-offerte');
     }
     
     public function showOffer()
@@ -148,8 +148,8 @@ class StaffController extends Controller
      
     public function showtabellaOfferte()
     {   
-       $offerte= Offer::all();
-       return view('profiles.management.tabella-offerte', compact('offerte'));
+       $Offerte= Offer::all();
+       return view('profiles.management.tabella-offerte', compact('Offerte') );
     }
 }
 

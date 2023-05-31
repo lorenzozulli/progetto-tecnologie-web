@@ -15,7 +15,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($faqs as $faq)
+        @foreach ($Faqs as $faq)
             <tr>
                 <td>{{ $faq->id }}</td>
                 <td>{{ $faq->domanda}}</td>
