@@ -163,6 +163,7 @@ class AdminController extends Controller {
         return view ('staff-view', ['user'=>$user])->with('success');
     }
     
+    
 
 public function createFaq()
     {    
@@ -192,5 +193,10 @@ public function createFaq()
         $faq->delete();
         return redirect()->route('tabella-faq');
     }
-
+   
+    public function showtabellaFaq()
+    {   
+       $Faqs= Faq::all();
+       return view('profiles.management.tabella-faq', compact('Faqs') );
+    }
 }

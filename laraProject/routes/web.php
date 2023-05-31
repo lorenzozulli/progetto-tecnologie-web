@@ -136,8 +136,8 @@ Route::get('(/admin/staffView/{user}', [AdminController::class, 'viewStaff'])
 
 
 /* --- Rotte relative alle FAQ --- */
-Route::get('faq', [PublicController::class, 'showFaq'])
-    ->name('faq');
+Route::get('tabella-faq', [AdminController::class, 'showTabellaFaq'])
+    ->name('tabella-faq');
 
 Route::get('crea-faq',[AdminController::class, 'createFaq'])
     ->name('crea-faq');
@@ -149,6 +149,9 @@ Route::delete('/delete-faq/{id}', [AdminController::class, 'deleteFaq'])
     
 Route::get('/modifica-faq', [AdminController::class, 'updateFaq'])
     ->name('modifica-faq'); 
+
+    Route::get('faq', [PublicController::class, 'showFaq'])
+    ->name('faq');
 
 /* --- Inclusione delle rotte di auth.php --- */
 require __DIR__ . '/auth.php';
