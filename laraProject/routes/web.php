@@ -60,6 +60,8 @@ Route::get('/cerca-offerte', [PublicController::class, 'searchOffers'])
 Route::get('faq', [PublicController::class, 'showFaq'])
     ->name('faq');
 
+   
+
  /**
  * ROTTE DI LIVELLO 1
  */
@@ -132,6 +134,19 @@ Route::middleware('can:isAdmin')->group(function(){
         ->name('crea-faq');
     
     Route::post('crea-faq', [AdminController::class, 'storeFaq']);
+
+    // Permette di visuallizare la tabella delle faqs
+    Route::get('tabella-faq', [AdminController::class, 'showTabellaFaq'])
+        ->name('tabella-faq');
+
+    // Permette di aggiungere una faq 
+    Route::get('aggiunta-faq',[AdminController::class, 'createFaq'])
+        ->name('aggiunta-faq');
+
+    Route::post('aggiunta-faq',[AdminController::class, 'storeFaq']);
+
+    // Permette di visuallizare una singola faq
+    Route::post('/faq', [AdminController::class, 'storeFaq']);
     
     // Permette di eliminare una faq
     Route::delete('/delete-faq/{id}', [AdminController::class, 'deleteFaq'])
