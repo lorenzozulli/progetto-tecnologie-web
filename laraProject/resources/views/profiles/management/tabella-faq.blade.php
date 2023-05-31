@@ -21,8 +21,8 @@
                 <td>{{ $faq->domanda}}</td>
                 <td>{{ $faq->risposta }}</td>
                 <td>
-                    <a href="{{-- --}}">Modifica</a>
-                    <form action="{{-- --}}" method="POST"> 
+                    <a href="{{route('modifica-faq')}}">Modifica</a>
+                    <form action="{{route('delete-faq', $faq->id)}}" method="POST"> 
                          @csrf
                          @method('DELETE')
                          <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questa faq?')" ><img class="modifiche" src="{{ asset('images/delete.png') }}"></button>

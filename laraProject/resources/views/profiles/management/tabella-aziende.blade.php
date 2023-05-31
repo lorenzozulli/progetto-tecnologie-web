@@ -25,8 +25,8 @@
                 <td>{{ $company->ragioneSociale }}</td>
                 <td>{{ $company->tipologia}}</th>
                 <td>
-                    <a href="{{--  --}}">Modifica</a>
-                    <form action="{{-- --}}" method="POST"> 
+                    <a href="{{-- --)}}">Modifica</a>
+                    <form action="{{route('delete-azienda', $company->id)}}" method="POST"> 
                          @csrf
                          @method('DELETE')
                          <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questa azienda?')" ><img class="modifiche" src="{{ asset('images/delete.png') }}"></button>

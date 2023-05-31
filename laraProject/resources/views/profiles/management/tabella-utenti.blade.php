@@ -31,8 +31,8 @@
                 <td>{{ $user->telefono }}</th>
                 <td>{{ $user->email }}</th>
                 <td>
-                    @if ($user->livello === '3')
-                    <!-- Mostra solo al profilo admin -->
+                    @if ($user->livello === '1')
+                    <!-- Per il profilo di livello 1 -->
                     <form action="{{-- --}}" method="POST"> 
                          @csrf
                          @method('DELETE')
@@ -41,14 +41,14 @@
                          </button>
                    </form>
                    @else
-                   <!-- Mostra solo al profilo staff -->
-                   <a href= "{{--  --}}">Modifica</a>
-                   <a href= "{{--  --}}">Cancella</a>
+                   <!-- Per il profilo di livello 2 -->
+                   <a href= "{{-- --)}}">Modifica</a>
+                   <a href= "{{route('elimina-utente'), $user->username}}">Cancella</a>
                    @if ($user->livello === '2')
                        <form action="{{-- --}}" method="POST">
                           @csrf
                           @method('DELETE')
-                          <button type="submit"> Crea offerta<button>
+                          <button type="submit">  <button>
                        </form>
                    @endif
                    @endif

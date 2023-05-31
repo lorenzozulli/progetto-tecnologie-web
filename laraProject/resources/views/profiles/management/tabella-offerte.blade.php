@@ -28,8 +28,8 @@
                 <td>{{ $offer->dataOraCreazione}}</th>
                 <td>{{ $offer->dataOraScadenza}}</th>
                 <td>
-                    <a href="{{ route('modifica-offerte , $offer ->id) }}">Modifica</a>
-                    <form action="{{-- route('delete-promo',$offer ->id) --}}" method="DELETE"> 
+                    <a href="{{ route('modifica-offerte') }}">Modifica</a>
+                    <form action="{{ route('delete-promo',$offer ->id) }}" method="DELETE"> 
                          @csrf
                          {{--@method('DELETE')--}}
                          <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questa offerta?')" ><img class="modifiche" src="{{ asset('images/delete.png') }}"></button>
