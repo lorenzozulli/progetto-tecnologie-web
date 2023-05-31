@@ -148,8 +148,8 @@ class StaffController extends Controller
      
     public function showtabellaOfferte()
     {   
-       $offerte= Offer::all();
-       return view('profiles.management.tabella-offerte', compact('offerte'));
+       $Offerte= Offer::all();
+       return view('profiles.management.tabella-offerte', compact('Offerte') );
     }
 }
 
