@@ -48,10 +48,17 @@ class UserController extends Controller
             ->where('id', $control->id)
             ->first();
         if ($existingCoupon) {
-            return redirect('user')
+            return redirect()->back()
                 ->withErrors(["error" => "Hai già un coupon per questa offerta!"]);
         }
         $coupon->save();
         return view('profiles.coupon-acquisito', ['coupon' => $coupon])->with('success');
+    }
+
+    public function showCoupon($username){
+        $user = User::where('user', $username)->first();
+        $coupon = Coupon::all();
+
+        return;
     }
 }
