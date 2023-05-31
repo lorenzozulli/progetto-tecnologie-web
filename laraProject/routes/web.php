@@ -63,9 +63,9 @@ Route::get('/tabella-offerte', [StaffController::class,'showTabellaOfferte' ])
 /* --- Rotte relative allo User --- */
 // Mostra la pagina dell'utente di tipo User
 Route::get('/user', [UserController::class, 'index'])
-    ->name('user');
-    // ->middleware('can:isUser');
-    Route::get('/lista-user', [UserController::class, 'showUser'])
+    ->name('user')->middleware('can:isUser');
+
+Route::get('/lista-user', [UserController::class, 'showUser'])
     ->name('lista-user');
     //rotta che mostra la lista di utenti
 
@@ -75,8 +75,7 @@ Route::get('/user', [UserController::class, 'index'])
 /* --- Rotte relative allo Staff  --- */
 // Mostra la pagina dell'utente di tipo Staff
 Route::get('/staff', [StaffController::class, 'index'])
-    ->name('staff');
-    // ->middleware('can:isUser');
+    ->name('staff')->middleware('can:isStaff');
 
 
 
@@ -107,7 +106,7 @@ Route::delete('/elimina-utente/{username}', [AdminController::class, 'deleteUser
 
 /* --- Rotte relative all'Admin loggato --- */
 Route::get('/admin', [AdminController::class, 'index'])
-    ->name('admin')->middleware('auth');
+    ->name('admin')->middleware('can:isAdmin');
 
 // rotte che gestiscono lo staff
     //Route::get('/admin/gestisci-staff', [AdminController::class, 'showStaff'])
