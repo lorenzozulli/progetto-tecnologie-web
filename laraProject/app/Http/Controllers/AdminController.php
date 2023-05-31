@@ -167,9 +167,10 @@ class AdminController extends Controller {
 
 public function createFaq()
     {    
-        return view('profiles.management.tabella-faq');
+        return view('profiles.management.aggiunta-faq');
     }
     public function storeFaq(Request $request)
+
     {   
             $request->validate([
             'domanda' => ['required', 'string', 'max:255'],
@@ -183,7 +184,7 @@ public function createFaq()
             
         ]);
 
-        return redirect()->route('tabella-faq');
+        return redirect()->route('aggiunta-faq');
        
     }
 
