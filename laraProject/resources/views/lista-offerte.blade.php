@@ -11,7 +11,7 @@
                     @foreach ($offers as $offer)
                     <div class="prodotto_card">
                         <div class="carousel__item">
-                            <a href="{{route('offerta', $offer->nome )}}">
+                            <a href="{{route('offerta', $offer->nome)}}">
                                 <img class="img" src="images/loghi-aziende/non_disponibile.png">
                                     <div class="info">
                                         <h3 class="title_carousel_item">{{ $offer->nome }}</h3>

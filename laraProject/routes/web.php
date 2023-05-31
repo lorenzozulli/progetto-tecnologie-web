@@ -74,6 +74,8 @@ Route::get('/staff', [StaffController::class, 'index'])
     ->name('staff');
     // ->middleware('can:isUser');
 
+
+
     Route::get('/staff/modifica-offerta/', [ModifiedOfferController::class, 'updatePromo'])
     ->name('modifica-offerta');
 
@@ -108,9 +110,11 @@ Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
 
 Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
     ->name('newproduct.store');
-
-    Route::get('/admin/gestisci-staff', [AdminController::class, 'showStaff'])
-    ->name('gestisci-staff');
+// rotte che gestiscono lo staff
+    //Route::get('/admin/gestisci-staff', [AdminController::class, 'showStaff'])
+    //->name('gestisci-staff');
+    Route::get('/admin/lista-staff', [AdminController::class, 'showStaff'])
+        ->name('lista-staff');
 
 Route::delete('/delete-azienda/{id}', [AdminController::class, 'deleteAzienda'])
         ->name('delete-azienda');
@@ -121,6 +125,15 @@ Route::get('/admin/aggiunta-azienda', [AdminController::class, 'createAzienda'])
 
 Route::post('/admin/aggiunta-azienda', [AdminController::class, 'storeAzienda'])
     ->name('aggiunta-azienda');
+
+Route::get('/admin/aggiunta-staff', [AdminController::class, 'createStaff'])
+    ->name('aggiunta-staff');
+
+Route::post('/admin/aggiunta-staff', [AdminController::class, 'storeStaff']);
+
+//Visualizza un determinato membro della staff
+Route::get('(/admin/staffView/{user}', [AdminController::class, 'viewStaff'])
+    ->name('staffView');
 
 
 
