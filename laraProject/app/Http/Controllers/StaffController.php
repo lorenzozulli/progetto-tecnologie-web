@@ -138,7 +138,7 @@ class StaffController extends Controller
         //dd($offer);
         $offer->delete();
        
-        return redirect()->route('lista-offerte');
+        return redirect()->route('tabella-offerte');
     }
     
     public function showOffer()

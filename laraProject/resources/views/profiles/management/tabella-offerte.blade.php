@@ -3,7 +3,7 @@
         <!-- tabella offerte section start -->
         <div class="mega_container">
             <h2>tabella offerte</h2>
-        
+            <h3><a href="{{ route('aggiunta-offerta') }}">Aggiungi Offerta</a></h3>
         <!-- tabella offerte per il profilo staff -->    
         <table class="tabella">
                 <thead>
