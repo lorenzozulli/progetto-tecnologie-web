@@ -56,12 +56,11 @@ class PublicController extends Controller
     // Mostra soltanto le Aziende della tipologia specificata
     public function showListaAziendePerTipologia($tipologia){
         $companies = Company::where('tipologia', $tipologia)->paginate(12);
-        // dd($companies);
-        return view('lista-aziende')
-        ->with('companies', $companies);     
+
+        return view('lista-aziende', compact('companies'));
     }
     
-    // Ricerca di un'Offerta
+    // Barra di ricerca, ricerca offerte sia per nome e descrizione, che per azienda
     public function searchOffers(Request $request)
     {
         $query = Offer::query();
