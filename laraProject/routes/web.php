@@ -63,8 +63,7 @@ Route::get('/tabella-offerte', [StaffController::class,'showTabellaOfferte' ])
 /* --- Rotte relative allo User --- */
 // Mostra la pagina dell'utente di tipo User
 Route::get('/user', [UserController::class, 'index'])
-    ->name('user');
-    // ->middleware('can:isUser');
+    ->name('user')->middleware('can:isUser');
     Route::get('/lista-user', [UserController::class, 'showUser'])
     ->name('lista-user');
     //rotta che mostra la lista di utenti
