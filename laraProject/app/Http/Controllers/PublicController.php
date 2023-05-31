@@ -62,24 +62,37 @@ class PublicController extends Controller
     }
     
     // Ricerca di un'Offerta
-    public function searchOfferForNameOrDescription(Request $request){
-        if($request->search){
-            $searchProducts = Offer::where(function ($query) use ($request) {
-                $query->where('nome', 'LIKE', '%' . $request->search . '%')
-                      ->orWhere('oggetto', 'LIKE', '%' . $request->search . '%');
-            })
-            ->paginate(12);
+    public function searchOffers(Request $request)
+    {
+        $query = Offer::query();
+        $viewData = Array();
 
-            return view('cerca-offerta', compact('searchProducts'));
-        }else{
-            return redirect()->back()->with('message', 'Empty search!');
+        $companyQuery = $request->input("search_company");
+        $offerQuery = $request->input("search_offer");
+
+        if ($companyQuery != null)
+        {
+            $query->select("offers.*")
+                    ->join("companies", "offers.id_azienda", "=", "companies.id")
+                    ->where("companies.nome", "LIKE", "%" . $companyQuery . "%");
+
+            $viewData['CompanyQuery'] = $companyQuery;
         }
 
-    }
+        if ($offerQuery != null)
+        {
+            $query = $query->where(function($query) use ($offerQuery) {
+                $query->where('offers.nome', 'LIKE', '%' . $offerQuery . '%')
+                    ->orWhere('offers.oggetto', 'LIKE', '%' . $offerQuery . '%');
+            });
 
-    // Ricerca di un'Azienda
-    public function searchOfferForCompany($id){
-            $searchProducts = Company::with('offerte')->find($id);
-            return view('cerca-azienda', compact('searchProducts'));
-    }
+            $viewData['offerQuery'] = $offerQuery;
+        }
+
+        //$offerList = $query->where('dataOraScadenza', '>', now())->paginate(12);
+        $offerList = $query->paginate(12);
+        $viewData['Offerte'] = $offerList;
+
+        return view("cerca-offerta", $viewData);
+}
 }

@@ -24,7 +24,4 @@ class Offer extends Model
         'dataOraScadenza',
         'id_azienda',
     ];
-
-    
-
 }
