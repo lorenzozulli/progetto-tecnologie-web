@@ -309,6 +309,11 @@ footer{
   top: -8px;
 }
 
+.carousel_img{
+  inline-size:300px;
+  block-size:300px;
+  display: block;
+}
 .item_wrapper {
   width: 75%;
   margin: auto;
