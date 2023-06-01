@@ -5,7 +5,7 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ModifiedOfferController;
-use App\Http\Controllers\ModifiedCompanyController;
+use App\Http\Controllers\Auth\ModifiedCompanyController;
 use App\Http\Controllers\Auth\ModifiedStaffController;
 use App\Http\Controllers\Auth\ModifiedUserController;
 use App\Http\Controllers\UserController;
