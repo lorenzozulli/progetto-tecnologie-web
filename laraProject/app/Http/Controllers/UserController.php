@@ -6,7 +6,6 @@ namespace App\Http\Controllers;
 use App\Models\Offer;
 use App\Models\Coupon;
 use App\Models\User;
-use App\Models\Company;
 
 class UserController extends Controller
 {

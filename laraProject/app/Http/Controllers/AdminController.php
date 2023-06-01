@@ -85,7 +85,6 @@ class AdminController extends Controller {
         ]);
         //dd($request);
 
-        //$logo = $request->file('logo') ? $request->file('logo')->store('images/loghi-aziende', 'public') : 'images/loghi-aziende/non_disponibile.png';
         if ($request->logo) {
             $logo = $request->logo;
         } else {
@@ -148,6 +147,7 @@ class AdminController extends Controller {
             'telefono' =>$request->telefono,
             'email' => $request->email,
         ]);
+    
 
         event(new Registered($user));
 
@@ -167,9 +167,10 @@ class AdminController extends Controller {
 
 public function createFaq()
     {    
-        return view('profiles.management.tabella-faq');
+        return view('profiles.management.aggiunta-faq');
     }
     public function storeFaq(Request $request)
+
     {   
             $request->validate([
             'domanda' => ['required', 'string', 'max:255'],
@@ -183,7 +184,9 @@ public function createFaq()
             
         ]);
 
-        return redirect()->route('tabella-faq');
+        
+
+        return redirect()->route('aggiunta-faq');
        
     }
 

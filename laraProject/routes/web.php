@@ -5,6 +5,9 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ModifiedOfferController;
+use App\Http\Controllers\ModifiedCompanyController;
+use App\Http\Controllers\Auth\ModifiedStaffController;
+use App\Http\Controllers\Auth\ModifiedUserController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StaffController;
 
@@ -20,138 +23,181 @@ use App\Http\Controllers\StaffController;
 |
 */
 
+/**
+ * ROTTE DI LIVELLO 0
+ */
+
+ // Redirect alla homepage
 Route::get('/', function () {
     return view('home');
 })
     ->name('home');
 
-/* ---  Rotte relative alla pagina dell'azienda --- */
-
 // Mostra la lista di tutte le aziende
 Route::get('/lista-aziende', [PublicController::class, 'showListaAziende'])
     ->name('lista-aziende');
-
 
 // Mostra la pagina dell'azienda selezionata
 Route::get('/lista-aziende/{azienda}', [PublicController::class, 'showCompany'])
     ->name('azienda');
 
-// Mostra tutte le aziende della tipologia specificata
+// Mostra le aziende per tipologia
 Route::get('/lista-azienda/{tipologia}', [PublicController::class, 'showListaAziendePerTipologia'])
     ->name('tipologia');
 
-// Mostra l'elenco di tutte le offerte
+// Mostra la pagina con la lista di tutte le offerte
 Route::get('/lista-offerte', [PublicController::class, 'showListaOfferte'])
     ->name('lista-offerte');
 
-// Mostra la pagina dell'offerta selezionata
+// Mostra la pagina dell'azienda selezionata
 Route::get('/lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
     ->name('offerta');
 
-// Mostra le offerte che hanno un determinato nome o una determinata descrizione
+// Effettua la ricerca delle offerte
 Route::get('/cerca-offerte', [PublicController::class, 'searchOffers'])
     ->name('cerca-offerte');
 
-Route::get('/cerca-aziende', [PublicController::class, 'searchCompany'])
-    ->name('cerca-aziende');
-
-
-// questa rotta mostra la tabella delle offerte
-Route::get('/tabella-offerte', [StaffController::class,'showTabellaOfferte' ])
-->name('tabella-offerte');
-
-/* --- Rotte relative allo User --- */
-// Mostra la pagina dell'utente di tipo User
-Route::get('/user', [UserController::class, 'index'])
-    ->name('user')->middleware('can:isUser');
-
-Route::get('/lista-user', [UserController::class, 'showUser'])
-    ->name('lista-user');
-    //rotta che mostra la lista di utenti
-
-    Route::get('/coupon-acquisito/{id}/{userId}', [UserController::class, 'creaCoupon'])
-    ->name('coupon-acquisito');
-
-/* --- Rotte relative allo Staff  --- */
-// Mostra la pagina dell'utente di tipo Staff
-Route::get('/staff', [StaffController::class, 'index'])
-    ->name('staff')->middleware('can:isStaff');
-
-
-
- Route::get('/staff/modifica-offerta/', [ModifiedOfferController::class, 'updatePromo'])
-    ->name('modifica-offerta');
-
-Route::post('/staff/modifica-offerta/{id}', [ModifiedOfferController::class, 'store']);
-
-//Route::get('/profile', [StaffController::class, 'showData'])
-  //  ->name('profile');
-// Apre la form per l'aggiunta di un'offerta
-Route::get('/staff/aggiunta-offerta', [StaffController::class, 'addPromo'])
-  ->name('aggiunta-offerta');
-
-Route::post('/staff/aggiunta-offerta', [StaffController::class, 'storePromo'])
-    ->name('aggiunta-offerta');
-
-// Permette di cancellare un'offerta
-Route::delete('/delete-promo/{id}', [StaffController::class, 'deletePromo'])
-        ->name('delete-promo');
-
-// Permette di cancellare un'utente       
-
-Route::delete('/elimina-utente/{username}', [AdminController::class, 'deleteUser'])
-        ->name('elimina-utente');
-
-
-
-/* --- Rotte relative all'Admin loggato --- */
-Route::get('/admin', [AdminController::class, 'index'])
-    ->name('admin')->middleware('can:isAdmin');
-
-// rotte che gestiscono lo staff
-    //Route::get('/admin/gestisci-staff', [AdminController::class, 'showStaff'])
-    //->name('gestisci-staff');
-    Route::get('/admin/lista-staff', [AdminController::class, 'showStaff'])
-        ->name('lista-staff');
-
-Route::delete('/delete-azienda/{id}', [AdminController::class, 'deleteAzienda'])
-        ->name('delete-azienda');
-
-        //questa rotta aggiunge un'azienda
-Route::get('/admin/aggiunta-azienda', [AdminController::class, 'createAzienda'])
-    ->name('aggiunta-azienda');
-
-Route::post('/admin/aggiunta-azienda', [AdminController::class, 'storeAzienda'])
-    ->name('aggiunta-azienda');
-
-Route::get('/admin/aggiunta-staff', [AdminController::class, 'createStaff'])
-    ->name('aggiunta-staff');
-
-Route::post('/admin/aggiunta-staff', [AdminController::class, 'storeStaff']);
-
-//Visualizza un determinato membro della staff
-Route::get('(/admin/staffView/{user}', [AdminController::class, 'viewStaff'])
-    ->name('staffView');
-
-
-
-/* --- Rotte relative alle FAQ --- */
-Route::get('tabella-faq', [AdminController::class, 'showTabellaFaq'])
-    ->name('tabella-faq');
-
-Route::get('crea-faq',[AdminController::class, 'createFaq'])
-    ->name('crea-faq');
-    
-Route::post('/faq', [AdminController::class, 'storeFaq']);
-    
-Route::delete('/delete-faq/{id}', [AdminController::class, 'deleteFaq'])
-    ->name('delete-faq');
-    
-Route::get('/modifica-faq', [AdminController::class, 'updateFaq'])
-    ->name('modifica-faq'); 
-
-    Route::get('faq', [PublicController::class, 'showFaq'])
+// Mostra la pagina delle faq
+Route::get('faq', [PublicController::class, 'showFaq'])
     ->name('faq');
 
-/* --- Inclusione delle rotte di auth.php --- */
+   
+
+ /**
+ * ROTTE DI LIVELLO 1
+ */
+Route::middleware('can:isUser')->group(function(){
+
+    // Mostra la dashboard dell'utente di tipo User
+    Route::get('/user', [UserController::class, 'index'])
+        ->name('user');
+
+    // Permette all'utente di modificare le proprie credenziali
+    Route::get('/modifica-user', [ModifiedUserController::class, 'update'])
+        ->name('modifica-user');
+
+    Route::post('modifica-user', [ModifiedUserController::class, 'store']);
+
+    // Permette all'utente di acquisire il coupon
+    Route::get('/coupon-acquisito/{id}/{userId}', [UserController::class, 'creaCoupon'])
+        ->name('coupon-acquisito');
+
+});
+
+ /**
+ * ROTTE DI LIVELLO 2
+ */
+Route::middleware('can:isStaff')->group(function(){
+
+    // Mostra la dashboard dell'utente di tipo Staff
+    Route::get('/staff', [StaffController::class, 'index'])
+        ->name('staff');
+
+    // Permette all'utente di modificare le proprie credenziali
+    Route::get('/modifica-staff', [ModifiedStaffController::class, 'update'])
+        ->name('modifica-staff');
+
+    Route::post('modifica-staff', [ModifiedStaffController::class, 'store']);
+
+    // Permette la visualizzazione della tabella delle offerte
+    Route::get('/tabella-offerte', [StaffController::class,'showTabellaOfferte' ])
+        ->name('tabella-offerte');
+
+    // Permette all'utente di modificare un'offerta
+    Route::get('/modifica-offerta', [ModifiedOfferController::class, 'updatePromo'])
+        ->name('modifica-offerta');
+Route::post('/staff/modifica-offerta/{id}', [ModifiedOfferController::class, 'store']);
+Route::post('/staff/modifica-offerta/', [ModifiedOfferController::class, 'store']);
+
+    // Permette l'aggiunta di un'offerta
+    Route::get('/aggiunta-offerta', [StaffController::class, 'addPromo'])
+        ->name('aggiunta-offerta');
+
+    Route::post('/aggiunta-offerta', [StaffController::class, 'storePromo']);
+
+    // Permette l'elminazione di un'offerta
+    Route::delete('/delete-promo/{id}', [StaffController::class, 'deletePromo'])
+        ->name('delete-promo');
+
+});
+
+ /**
+ * ROTTE DI LIVELLO 3
+ */
+Route::middleware('can:isAdmin')->group(function(){
+
+    // Mostra la dashboard dell'utente di tipo Admin
+    Route::get('/admin', [AdminController::class, 'index'])
+        ->name('admin');
+
+    // Permette la creazione di una faq
+    Route::get('crea-faq',[AdminController::class, 'createFaq'])
+        ->name('crea-faq');
+    
+    Route::post('crea-faq', [AdminController::class, 'storeFaq']);
+
+    // Permette di visuallizare la tabella delle faqs
+    Route::get('tabella-faq', [AdminController::class, 'showTabellaFaq'])
+        ->name('tabella-faq');
+
+    // Permette di aggiungere una faq 
+    Route::get('aggiunta-faq',[AdminController::class, 'createFaq'])
+        ->name('aggiunta-faq');
+
+    Route::post('aggiunta-faq',[AdminController::class, 'storeFaq']);
+
+    // Permette di visuallizare una singola faq
+    Route::post('/faq', [AdminController::class, 'storeFaq']);
+    
+    // Permette di eliminare una faq
+    Route::delete('/delete-faq/{id}', [AdminController::class, 'deleteFaq'])
+        ->name('delete-faq');
+    
+    // Permette di modificare una faq
+    Route::get('/modifica-faq', [AdminController::class, 'updateFaq'])
+        ->name('modifica-faq'); 
+
+    // Permette di aggiungere un'azienda
+    Route::get('/aggiunta-azienda', [AdminController::class, 'createAzienda'])
+        ->name('aggiunta-azienda');
+    
+    Route::post('/aggiunta-azienda', [AdminController::class, 'storeAzienda']);
+
+    // Permette all'admin di modificare un'azienda
+    Route::get('/modifica-azienda/{company}', [ModifiedCompanyController::class, 'updatePromo'])
+        ->name('modifica-azienda');
+
+    Route::post('/modifica-azienda/{company}', [ModifiedCompanyController::class, 'store']);
+
+    // Permette di eliminare un'azienda
+    Route::delete('/delete-azienda/{id}', [AdminController::class, 'deleteAzienda'])
+        ->name('delete-azienda');
+
+    // Mostra la lista di tutti gli utenti di tipo User
+    Route::get('/lista-user', [UserController::class, 'showUser'])
+        ->name('lista-user');
+
+    // Mostra la lista di tutti gli utenti di tipo Staff
+    Route::get('/lista-staff', [AdminController::class, 'showStaff'])
+        ->name('lista-staff');
+
+    // Permette di eliminare un utente di tipo User o Staff
+    Route::delete('/elimina-utente/{username}', [AdminController::class, 'deleteUser'])
+        ->name('elimina-utente');
+
+    // Permette di creare un utente di tipo Staff
+    Route::get('/aggiunta-staff', [AdminController::class, 'createStaff'])
+        ->name('aggiunta-staff');
+
+    Route::post('/aggiunta-staff', [AdminController::class, 'storeStaff']);
+
+    // ???
+    Route::get('(/staffView/{user}', [AdminController::class, 'viewStaff'])
+        ->name('staffView');
+
+});
+
+/**
+ *  Per avere il collegamento con le rotte del file auth.php
+ */
 require __DIR__ . '/auth.php';
