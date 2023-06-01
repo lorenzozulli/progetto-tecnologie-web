@@ -14,7 +14,7 @@ class ModifiedCompanyController extends Controller
 
         $azienda = Company::where('id', $company)->first();
         //dd($azienda);
-        return view('profiles.management.modifica-azienda', ['id'=>$company]);
+        return view('profiles.management.modifica-azienda', ['id'=>$azienda]);
     }
 
     // Salva un'azienda modificata

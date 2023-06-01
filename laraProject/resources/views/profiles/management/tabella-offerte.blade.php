@@ -42,8 +42,8 @@
                     </tr>
                 @endforeach
               
-                </tbody>
-            </table>
+            </tbody>
+        </table>
 
         </div>
         <!-- tabella offerte section end -->
