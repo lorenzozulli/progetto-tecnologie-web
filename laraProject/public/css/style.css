@@ -555,6 +555,28 @@ footer{
   margin-bottom: 5px;
 }
 
+/* Tabelle section start */
+
+table {
+  border: 2px solid #000; /*contorno tabella */
+  background-color: #000000; /*righe e colonne tabella */
+}
+
+th {
+  background-color: #ffc493; /*backgrounf header tabella*/ 
+  color: rgb(0, 0, 0);
+}
+tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+tr {
+  background-color: #ffecd0;
+}
+
+
+
+
 
 /* --- dashboards section end --- */
 
