@@ -106,8 +106,8 @@ Route::middleware('can:isStaff')->group(function(){
     // Permette all'utente di modificare un'offerta
     Route::get('/modifica-offerta', [ModifiedOfferController::class, 'updatePromo'])
         ->name('modifica-offerta');
-
-    Route::post('/modifica-offerta', [ModifiedOfferController::class, 'store']);
+Route::post('/staff/modifica-offerta/{id}', [ModifiedOfferController::class, 'store']);
+Route::post('/staff/modifica-offerta/', [ModifiedOfferController::class, 'store']);
 
     // Permette l'aggiunta di un'offerta
     Route::get('/aggiunta-offerta', [StaffController::class, 'addPromo'])
