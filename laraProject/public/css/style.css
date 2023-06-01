@@ -9,6 +9,9 @@
 /* Seleziona il tag body */
 body{
   margin: 0; /* Per evitare che si creano dei bordini strani*/
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 /* --- header section start --- */
 /* Seleziona l'header */
@@ -206,6 +209,7 @@ header{
 }
 .mega_container{
     margin: auto;
+    min-height: 700px;
     width: 80%;
     background-color: #FAFAFA;
 }
@@ -313,6 +317,7 @@ footer{
   inline-size:300px;
   block-size:300px;
   display: block;
+  height: auto;
 }
 .item_wrapper {
   width: 75%;
