@@ -201,6 +201,9 @@ header{
 /* --- button CSS end --- */
 
 /*--- Mega container CSS start ---*/
+#content{
+  min-height: 100%;
+}
 .mega_container{
     margin: auto;
     width: 80%;

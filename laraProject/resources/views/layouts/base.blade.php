@@ -10,19 +10,19 @@
     </head>
     <body>
         <!-- header section start-->
-        <div id="menu">
+        <div id="header">
             @include('layouts/_header')
         </div>
         <!-- header section end-->
 
         <!-- Content section start -->
-        <div id="menu">
+        <div id="content">
             @yield('content')
         </div>
         <!-- Content section end -->
 
         <!-- footer section start -->
-        <div id="menu">
+        <div id="footer">
             @include('layouts/_footer')
         </div>
         <!-- footer section end -->
