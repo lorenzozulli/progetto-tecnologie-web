@@ -2,7 +2,7 @@
 @section('content')
         <!-- tabella utenti section start -->
         <div class="mega_container">
-            <h2>tabella utenti</h2>
+        <h1 class="page_title">"Tabella Utenti"</h1>
         
         <!-- tabella utenti-->    
 <table>

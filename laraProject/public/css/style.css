@@ -573,6 +573,7 @@ footer{
 table {
   border: 2px solid #000; /*contorno tabella */
   background-color: #000000; /*righe e colonne tabella */
+  margin-bottom: 12px;
 }
 
 th {
