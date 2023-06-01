@@ -155,8 +155,10 @@ Route::middleware('can:isAdmin')->group(function(){
         ->name('delete-faq');
     
     // Permette di modificare una faq
-    Route::get('/modifica-faq', [AdminController::class, 'updateFaq'])
+    Route::get('/modifica-faq/{id}', [AdminController::class, 'updateFaq'])
         ->name('modifica-faq'); 
+
+    Route::post('/modifica-faq/{id}', [AdminController::class, 'storeFaqs']);
 
     // Permette di aggiungere un'azienda
     Route::get('/aggiunta-azienda', [AdminController::class, 'createAzienda'])

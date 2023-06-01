@@ -15,7 +15,7 @@
 
                             
                             
-                            <img src="{{ asset($company->logo) }}" alt="Immagine Azienda">
+                            <img class="carousel_img" src="{{ asset($company->logo) }}" alt="Immagine Azienda">
                             
 
                             <div class="info">

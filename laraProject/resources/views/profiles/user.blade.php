@@ -22,7 +22,9 @@
                     Telefono: {{ Auth::user()->telefono }}<br>
                     E-mail: {{ Auth::user()->email }}<br>
                 </p>
+                @can('isUser')
                 <h3>Clicca <a href="{{ route('modifica-user') }}">qui</a> per modificare il tuo profilo</h3>
+                @endcan
             </div>
         </div>
         <!-- user section end -->

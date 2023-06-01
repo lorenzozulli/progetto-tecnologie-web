@@ -202,4 +202,35 @@ public function createFaq()
        $Faqs= Faq::all();
        return view('profiles.management.tabella-faq', compact('Faqs') );
     }
+
+    public function updateFaq($id)
+    {       
+        //$idFaq = Faq::where('id' == $id)->first();
+        return view('profiles.management.modifica-faq', ['id'=>$id]);
+    }
+
+    public function storeFaqs(Request $request, $id)
+
+    {   
+            $request->validate([
+            'domanda' => ['required', 'string', 'max:255'],
+            'risposta' => ['required', 'string'],
+           
+             ]);
+        
+       $idFaq = Faq::where('id', $id)->first();
+       if($request->input('domanda')!=null){
+       $idFaq-> domanda =$request->input('domanda');
+
+    }
+        
+      if($request->input('risposta')!=null){
+      $idFaq-> risposta =$request->input('risposta');
+
+    }
+       $idFaq-> save(); 
+    
+     return redirect('admin')->with('success', 'faq modificata con successo!');
+       
+    }
 }
