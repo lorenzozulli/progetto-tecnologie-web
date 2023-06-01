@@ -288,14 +288,12 @@ footer{
 }
 .carousel__item {
   width: auto;
+  max-width: 360px;
   background-color: #ffffff;
-  height: auto;
   padding: 20px;
   box-shadow: 0px 0 3px 1px #f0f0f0;
-  float: left;
   margin: 10px;
   border-radius: 20px;
-  display: flex;
 }
 
 .carousel__item a {
@@ -314,10 +312,10 @@ footer{
 }
 
 .carousel_img{
-  inline-size:300px;
-  block-size:300px;
-  display: block;
-  height: auto;
+  width: 280px;
+  height:280px;
+  object-fit: scale-down;
+  margin-bottom: 18px;
 }
 .item_wrapper {
   width: 75%;
