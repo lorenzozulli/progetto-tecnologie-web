@@ -9,12 +9,14 @@ use Illuminate\Http\Request;
 class ModifiedOfferController extends Controller
 {
     // Modifica un'Offerta già esistente
-    public function updatePromo() {
-        return view('profiles.management.modifica-offerta');
+    public function updatePromo($idOfferta) {
+        $id = Offer::where('id', $idOfferta)->first();
+        return view('profiles.management.modifica-offerta', ['id'=>$id]);
     }
 
     // Salva un'Offerta modificata
     public function store(Request $request, $id){
+        //dd($id);
         $request->validate([ 
             'nome' => ['required', 'string'],
             'oggetto' => ['required', 'string'],
@@ -23,8 +25,8 @@ class ModifiedOfferController extends Controller
             'id_azienda' => ['required', 'integer'],
         ]);
 
-        $offer = Offer::where('id', $id);
-        dd($id);
+        $offer = Offer::where('id', $id)->first();
+        //dd($id);
        // dd($request);
         // Modifica delle informazioni dell'offerta
         if ($request->input('id_azienda') != null) {
@@ -42,9 +44,9 @@ class ModifiedOfferController extends Controller
         if ($request->input('luogoFruizione') != null) {
             $offer->luogoFruizione = $request->input('luogoFruizione');
         }   
-
+        //dd($offer);
         $offer->save();
-
+        //dd($offer);
         return redirect('staff')->with('success', 'Informazioni modificate con successo!');
     }
 
