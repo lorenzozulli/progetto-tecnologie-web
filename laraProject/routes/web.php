@@ -82,7 +82,7 @@ Route::get('/staff', [StaffController::class, 'index'])
  Route::get('/staff/modifica-offerta/', [ModifiedOfferController::class, 'updatePromo'])
     ->name('modifica-offerta');
 
-Route::post('/staff/modifica-offerta/', [ModifiedOfferController::class, 'store']);
+Route::post('/staff/modifica-offerta/{id}', [ModifiedOfferController::class, 'store']);
 
 //Route::get('/profile', [StaffController::class, 'showData'])
   //  ->name('profile');

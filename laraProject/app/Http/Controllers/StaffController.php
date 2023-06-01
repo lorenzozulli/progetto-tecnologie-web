@@ -91,22 +91,25 @@ class StaffController extends Controller
             'modalitaFruizione' => ['required', 'string'],
             'luogoFruizione' => ['required', 'string'],
             'id_azienda' => ['required', 'integer'],
-           
+           ]);
 
 
-        ]);
-
+           Offer::where('id', $id)->update(
+            [ 'nome' => $request->nome,
+            'oggetto' => $request->oggetto,
+            'id_azienda' => $request->id_azienda,
+            'modalitaFruizione' => $request->modalitaFruizione,
+            'luogoFruizione' => $request->luogoFruizione,
+            'dataOraScadenza' => $request->dataOraScadenza,]);
 
         //$offer = Offer::where('id_azienda', $request->id_azienda)->first();
 
         //$offer = new Offer;
 
         //$offer->fill($request->validated());
-        $offer = Offer::findOrFail($id);
-        $offer->fill($request->validated());
-        $offer->save();
+       
 
-        return redirect('staff')->with('success', 'Informazioni inviate con successo!');
+        return redirect('')->with('success', 'Informazioni inviate con successo!');
        // dd($request);
     
        /*$offer = Offer::create(); 
