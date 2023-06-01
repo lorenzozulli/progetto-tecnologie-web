@@ -571,17 +571,17 @@ footer{
 /* Tabelle section start */
 
 table {
-  border: 2px solid #000; /*contorno tabella */
-  background-color: #000000; /*righe e colonne tabella */
+  border: 2px solid #262626; /*contorno tabella */
+  background-color: #262626; /*righe e colonne tabella */
   margin-bottom: 12px;
 }
 
 th {
   background-color: #ffc493; /*backgrounf header tabella*/ 
-  color: rgb(0, 0, 0);
+  color: #262626;
 }
 tr:nth-child(even) {
-  background-color: #ffffff;
+  background-color: #FAFAFA;
 }
 
 tr {
