@@ -3,9 +3,9 @@
         <!-- lista offerte section start -->
             <div class="mega_container">
             <h1 style="text-align:center"> LISTA OFFERTE </h1>
-            @if(Auth::user()->livello == 2)
+            @can('isStaff')
                 <h3><a href="{{ route('aggiunta-offerta') }}">Aggiungi Offerta</a></h3>
-            @endif
+            @endcan
                 <div id="content">
                     @isset($offers)
                     @foreach ($offers as $offer)
@@ -15,7 +15,7 @@
                                 <img class="carousel_img" src="images/loghi-aziende/non_disponibile.png">
                                     <div class="info">
                                         <h3 class="title_carousel_item">{{ $offer->nome }}</h3>
-                                        @if(Auth::user()->livello == 2)
+                                        @can('isStaff')
                                             <a href="{{ route('modifica-offerta', $offer->id) }}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
                                      
                                         
@@ -24,7 +24,7 @@
                                             @method('DELETE')
                                             <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questa offerta?')" ><img class="modifiche" src="{{ asset('images/delete.png') }}"></button>
                                             </form>
-                                        @endif   
+                                        @endcan   
                                     </div>
                             </a>
                         </div>                      
