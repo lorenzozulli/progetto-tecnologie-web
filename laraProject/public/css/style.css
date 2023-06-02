@@ -9,6 +9,9 @@
 /* Seleziona il tag body */
 body{
   margin: 0; /* Per evitare che si creano dei bordini strani*/
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 /* --- header section start --- */
 /* Seleziona l'header */
@@ -206,6 +209,7 @@ header{
 }
 .mega_container{
     margin: auto;
+    min-height: 700px;
     width: 80%;
     background-color: #FAFAFA;
 }
@@ -284,14 +288,12 @@ footer{
 }
 .carousel__item {
   width: auto;
+  max-width: 360px;
   background-color: #ffffff;
-  height: auto;
   padding: 20px;
   box-shadow: 0px 0 3px 1px #f0f0f0;
-  float: left;
   margin: 10px;
   border-radius: 20px;
-  display: flex;
 }
 
 .carousel__item a {
@@ -310,9 +312,10 @@ footer{
 }
 
 .carousel_img{
-  inline-size:300px;
-  block-size:300px;
-  display: block;
+  width: 280px;
+  height:280px;
+  object-fit: scale-down;
+  margin-bottom: 18px;
 }
 .item_wrapper {
   width: 75%;
@@ -562,6 +565,29 @@ footer{
   font-size: 18px;
   margin-bottom: 5px;
 }
+
+/* Tabelle section start */
+
+table {
+  border: 2px solid #262626; /*contorno tabella */
+  background-color: #262626; /*righe e colonne tabella */
+  margin-bottom: 12px;
+}
+
+th {
+  background-color: #ffc493; /*backgrounf header tabella*/ 
+  color: #262626;
+}
+tr:nth-child(even) {
+  background-color: #FAFAFA;
+}
+
+tr {
+  background-color: #ffecd0;
+}
+
+
+
 
 
 /* --- dashboards section end --- */

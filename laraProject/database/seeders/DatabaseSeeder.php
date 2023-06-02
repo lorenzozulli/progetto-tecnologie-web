@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Huawei',
                 'ragioneSociale' => 'Huawei Tecnologies Corporation, Limited',
                 'tipologia' => 'Informatica',
-                'logo' => '/images/loghi-aziende/huawei.png'
+                'logo' => '/images/loghi-aziende/huawei.png',
 
             ],
             [
@@ -90,7 +90,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Nike',
                 'ragioneSociale' => 'Nike, Inc.',
                 'tipologia' => 'Abbigliamento',
-                'logo' => '/images/loghi-aziende/nike.png'
+                'logo' => '/images/loghi-aziende/nike.png',
 
             ],
             [
@@ -101,7 +101,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Xiaomi',
                 'ragioneSociale' => 'Xiaomi Inc.',
                 'tipologia' => 'Informatica',
-                'logo' => 'images/loghi-aziende/xiaomi.png'
+                'logo' => 'images/loghi-aziende/xiaomi.png',
 
             ],
             [
@@ -111,7 +111,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Asus',
                 'ragioneSociale' => 'ASUSTeK Computer Inc.',
                 'tipologia' => 'Informatica',
-                'logo' => 'images/loghi-aziende/asus.png'
+                'logo' => 'images/loghi-aziende/asus.png',
 
             ],
             [
@@ -129,7 +129,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Prozis',
                 'ragioneSociale' => 'Prozis.com, S.A.',
                 'tipologia' => 'Nutrizione sportiva',
-                'logo' => 'images/loghi-aziende/xiaomi.png'
+                'logo' => 'images/loghi-aziende/prozis.png',
 
             ],
             [
@@ -162,7 +162,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Epic Games',
                 'ragioneSociale' => 'Epic Games, Inc.',
                 'tipologia' => 'Informatica',
-                'logo' => 'images/loghi-aziende/epic_games.jpg'
+                'logo' => 'images/loghi-aziende/epic_games.jpg',
 
             ],
             [
@@ -175,7 +175,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Adidas',
                 'ragioneSociale' => 'Adidas Italy S.P.A.',
                 'tipologia' => 'Abbigliamento',
-                'logo' => 'images/loghi-aziende/adidas.jpg'
+                'logo' => 'images/loghi-aziende/adidas.jpg',
 
             ],
             [
@@ -185,7 +185,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Amazon',
                 'ragioneSociale' => 'Amazon.com, Inc.',
                 'tipologia' => 'Informatica',
-                'logo' => 'images/loghi-aziende/amazon.png'
+                'logo' => 'images/loghi-aziende/amazon.png',
 
             ],
             [
@@ -199,7 +199,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Microsoft',
                 'ragioneSociale' => 'Microsoft Corporation',
                 'tipologia' => 'Informatica',
-                'logo' => 'images/loghi-aziende/microsoft.png'
+                'logo' => 'images/loghi-aziende/microsoft.png',
 
             ],
             [
@@ -209,7 +209,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Vans',
                 'ragioneSociale' => 'VF INTERNATIONAL S.A.G.L.',
                 'tipologia' => 'Abbigliamento',
-                'logo' => 'images/loghi-aziende/vans.png'
+                'logo' => 'images/loghi-aziende/vans.png',
 
             ],
         ]);
@@ -225,7 +225,6 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => "Utilizzabile solo sull'app Just Eat.",
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
-                //'immagine' => NULL
             ],
             [
                 'id' => 2,
@@ -236,25 +235,147 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Huawei.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
-                //'immagine' => NULL
-            ]
+            ],
+            [
+                'id' => 3,
+                'id_azienda' => 3,
+                'nome' => 'Nike huarache al 50% di sconto!',
+                'oggetto' => 'Ottieni le scarpe a metà prezzo!',
+                'modalitaFruizione' => 'Mostrare il codice generato dal coupon alla cassa al momento del pagamento.',
+                'luogoFruizione' => 'Presso negozi e punti vendita certificati Nike.',
+                'dataOraCreazione' => now(),
+                'dataOraScadenza' => '2024-01-01 10:15:00',
+            ],
+            [
+                'id' => 4,
+                'id_azienda' => 4,
+                'nome' => 'Xiaomi 13 Ultra a prezzo stracciato!',
+                'oggetto' => 'Ottieni il nuovo Xiaomi 13 Ultra con uno sconto di 300€ alla cassa!',
+                'modalitaFruizione' => 'Mostrare il codice generato dal coupon alla cassa al momento del pagamento.',
+                'luogoFruizione' => 'Presso negozi e punti vendita certificati Xiaomi.',
+                'dataOraCreazione' => now(),
+                'dataOraScadenza' => '2024-01-01 10:15:00',
+            ],
+            [
+                'id' => 5,
+                'id_azienda' => 5,
+                'nome' => 'Asus ROG Flow Z13 scontatissimo!',
+                'oggetto' => 'Ottieni questo top di gamma scontato del 25%!',
+                'modalitaFruizione' => 'Mostrare il codice generato dal coupon alla cassa al momento del pagamento.',
+                'luogoFruizione' => 'Presso negozi e punti vendita certificati Asus.',
+                'dataOraCreazione' => now(),
+                'dataOraScadenza' => '2024-01-01 10:15:00',
+            ],
+            [
+                'id' => 6,
+                'id_azienda' => 6,
+                'nome' => 'Preparato per brownie Zero 400 g senza costi di spedizione!',
+                'oggetto' => 'Ottieni il prodotto senza costi di spedizione!',
+                'modalitaFruizione' => 'Inserire il codice generato dal coupon al momento del pagamento.',
+                'luogoFruizione' => 'Sito prozis.com',
+                'dataOraCreazione' => now(),
+                'dataOraScadenza' => '2024-01-01 10:15:00',
+            ],
+            [
+                'id' => 7,
+                'id_azienda' => 7,
+                'nome' => 'BESTÅ a metà prezzo!',
+                'oggetto' => 'Ottieni Mobile TV con ante, bianco/Lappviken bianco, 180x42x38 cm scontato!',
+                'modalitaFruizione' => 'Mostrare il codice generato dal coupon alla cassa al momento del pagamento.',
+                'luogoFruizione' => 'Presso negozi e punti vendita certificati Ikea.',
+                'dataOraCreazione' => now(),
+                'dataOraScadenza' => '2024-01-01 10:15:00',
+            ],
+            [
+                'id' => 8,
+                'id_azienda' => 8,
+                'nome' => 'Sconto sul nuovo processore Intel!',
+                'oggetto' => 'Ottieni Processore Intel Core i9-13900KS scontato del 35%!',
+                'modalitaFruizione' => 'Mostrare il codice generato dal coupon alla cassa al momento del pagamento.',
+                'luogoFruizione' => 'Presso negozi e punti vendita certificati Intel.',
+                'dataOraCreazione' => now(),
+                'dataOraScadenza' => '2024-01-01 10:15:00',
+            ],
+            [
+                'id' => 9,
+                'id_azienda' => 9,
+                'nome' => '1000 V-bucks a 3€!',
+                'oggetto' => 'Ottieni il prodotto ad un prezzo bassissimo!',
+                'modalitaFruizione' => 'Inserire il codice generato dal coupon al momento del pagamento.',
+                'luogoFruizione' => 'Sito epicgames.com',
+                'dataOraCreazione' => now(),
+                'dataOraScadenza' => '2024-01-01 10:15:00',
+            ],
+            [
+                'id' => 10,
+                'id_azienda' => 10,
+                'nome' => 'Scarpe Ultraboost Light al 15%!',
+                'oggetto' => 'Ottieni queste scarpe perfette per le tue corse!',
+                'modalitaFruizione' => 'Mostrare il codice generato dal coupon alla cassa al momento del pagamento.',
+                'luogoFruizione' => 'Presso negozi e punti vendita certificati Adidas.',
+                'dataOraCreazione' => now(),
+                'dataOraScadenza' => '2024-01-01 10:15:00',
+            ],
+            [
+                'id' => 11,
+                'id_azienda' => 11,
+                'nome' => 'Amazon Echo dot al 75% di sconto!',
+                'oggetto' => 'Ottieni Echo Dot (5ª generazione, modello 2022) | Altoparlante Bluetooth intelligente con integrazione Alexa | Antracite ad un prezzo stracciato!',
+                'modalitaFruizione' => 'Inserire il codice generato dal coupon al momento del pagamento.',
+                'luogoFruizione' => 'Sito amazon.com',
+                'dataOraCreazione' => now(),
+                'dataOraScadenza' => '2024-01-01 10:15:00',
+            ],
+            [
+                'id' => 12,
+                'id_azienda' => 12,
+                'nome' => 'Surface pro 9 al 40%!',
+                'oggetto' => 'Ottieni questo prodotto con questo sconto gigantesco!',
+                'modalitaFruizione' => 'Mostrare il codice generato dal coupon alla cassa al momento del pagamento.',
+                'luogoFruizione' => 'Presso negozi e punti vendita certificati Microsoft.',
+                'dataOraCreazione' => now(),
+                'dataOraScadenza' => '2024-01-01 10:15:00',
+            ],
+            [
+                'id' => 13,
+                'id_azienda' => 13,
+                'nome' => 'Scarpe Old Skool in 3x2!',
+                'oggetto' => 'Compra 3 paia di scarpe ma pagane solamente 2!',
+                'modalitaFruizione' => 'Mostrare il codice generato dal coupon alla cassa al momento del pagamento.',
+                'luogoFruizione' => 'Presso negozi e punti vendita certificati Vans.',
+                'dataOraCreazione' => now(),
+                'dataOraScadenza' => '2024-01-01 10:15:00',
+            ],
         ]);
         
         // Tabella FAQs.
         DB::table('faqs') -> insert([
             [
                 'id' => 1,
-                //'usernameCreatore' => 'root',
-                'domanda' => 'domanda1',
-                'risposta' => 'risposta1'
+
+                'domanda' => 'Come posso acquisire un Coupon?',
+                'risposta' => 'Acquisire un coupon è; semplicissimo: dalla lista delle offerte cerca l\' offerta che ti interessa di più,
+                               Dopodiché; clicca su "acquisici" e li avrai a disposizione il tuo coupon pronto ad essere riscattato dove
+                               specificato dal luogo di fruizione.'
             ],
             [
                 'id' => 2,
-                //'usernameCreatore' => 'root',
-                'domanda' => 'domanda2',
-                'risposta' => 'risposta2'
-            ]
+                'domanda' => 'Se ho gi&agrave; un coupon per un\'offerta posso acquisirlo di nuovo?',
+                'risposta' => 'No, un utente registrato può acquisire solo un coupon per offerta',
+            ],
+            [
+                'id' => 3,
+                'domanda' => 'I coupon durano all\'infinito?',
+                'risposta' => 'No, la data di scadenza è; specificata nella pagina stessa del coupon.'
+            ],
+            [
+                'id' => 4,
+                'domanda' => 'Ho inserito il codice ma non funziona. Cosa devo fare?',
+                'risposta' => 'Ricontrolla i termini e le condizioni indicate sulla pagina del codice sconto: forse ti sei perso un passaggio importante.
+                               L\'offerta potrebbe anche non funzionare per un problema tecnico o perché è stata sospesa dallo store. Può capitare, ogni
+                               giorno lavoriamo per assicurarti il massimo del risparmio, ma qualcosa può sfuggirci. Segnalaci il problema tramite la richiesta
+                               informazioni e cercheremo di risolverlo assieme a te!',
+            ],
         ]);
     }
     }
-}
