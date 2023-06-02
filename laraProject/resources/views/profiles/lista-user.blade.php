@@ -9,21 +9,22 @@
                     @foreach ($users as $user)
                     @if($user->livello == 1)
                     <div class="prodotto_card">
-                    <div class="carousel__item">
-                        <a href="{{route('lista-user')}}">
+                        <div class="carousel__item">
 
+                            <a href="{{route('contaCoupon', $user->username)}}">
+                        
                             <div class="info">
                                 <h1 class="title_carousel_item">{{ $user->username }}</h1>
                             </div>
                             @if(Auth::user()->livello == 3)
                             
-                                <form action="{{ route('elimina-utente',  $user['username'])}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questo utente?')" ><img  class="modifiche" src="{{ asset('images/delete.png') }}"></button>
-                                </form>
+                            <form action="{{ route('elimina-utente',  $user['username'])}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questo utente?')" ><img  class="modifiche" src="{{ asset('images/delete.png') }}"></button>
+                            </form>
                             @endif
-                        </a>
+                            </a>
                         </div>                    
                     </div>
                     @endif
@@ -35,5 +36,5 @@
                     @endisset()
                 </div>
         </div>
-        <!-- lista aziende section end -->
+        <!-- lista utenti 1 section end -->
 @endsection

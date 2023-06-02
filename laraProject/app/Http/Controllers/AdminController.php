@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Http\Requests\NewProductRequest;
 use App\Models\Faq;
+use App\Models\Coupon;
 use App\Models\User;
 use App\Models\Company;
 use Symfony\Component\HttpFoundation\Request;
@@ -233,4 +234,18 @@ public function createFaq()
      return redirect('admin')->with('success', 'faq modificata con successo!');
        
     }
-}
+
+    public function contaCoupon($user){
+        //questa funzione riporta il numero di cupon acquisiti da un detereminato utente
+        $couponSpecifico = Coupon::where('user', $user)->get();
+        $coupon_count = count($couponSpecifico);
+        echo $user." ha acquisito ".$coupon_count." coupon.";
+        
+
+        // questa funzione riporta il numero totali di cupon acquisiti da tutti gli utenti
+        /*$couponList= Coupon::all();
+        $coupon_count = count($couponList);
+        echo "In totale sono stati acquisiti ".$coupon_count." coupon.";*/
+       
+    }
+} 

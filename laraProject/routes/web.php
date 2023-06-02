@@ -204,6 +204,9 @@ Route::middleware('can:isAdmin')->group(function(){
     Route::get('(/staffView/{user}', [AdminController::class, 'viewStaff'])
         ->name('staffView');
 
+    Route::get('(/contaCoupon/{user}', [AdminController::class, 'contaCoupon'])
+        ->name('contaCoupon');
+
 });
 
 /**
