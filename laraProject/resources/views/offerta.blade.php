@@ -18,12 +18,13 @@
                 <!-- coupon section end -->
 
                 <div class="the_other_stuff">
-                    @if(Auth::user()->livello == 1)
+                    
+                   @can('isUser')
                     <h1><a class="btn" onclick="event.preventDefault(); document.getElementById('save-cp').submit();" href="">Acquisici
                     <form id="save-cp" action="{{ url('/coupon-acquisito/'.$offer['id'].'/'.Auth::user()->username) }}" method="GET">
                             {{ csrf_field() }}
                         </form></a> il coupon come</h1>
-                    @endif
+                    @endcan
                     @auth
                     <p> Nome: {{ Auth::user()->nome }} </p>
                     <p> Cognome: {{ Auth::user()->cognome }} </p>
