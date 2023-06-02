@@ -2,7 +2,7 @@
 @section('content')
         <!-- tabella aziende section start -->
         <div class="mega_container">
-            <h2>tabella aziende</h2>
+        <h1 class="page_title">"Tabella Aziende"</h1>
         
         <!-- tabella delle aziende -->    
 <table>

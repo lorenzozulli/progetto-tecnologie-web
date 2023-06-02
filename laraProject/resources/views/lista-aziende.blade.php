@@ -3,9 +3,9 @@
         <!-- lista aziende section start -->
         <div class="mega_container">
         <h1 class="page_title">Lista Aziende</h1>
-            {{--@if(Auth::user()->livello == 3)--}}
+            @if(Auth::user()->livello == 3)
                 <h3><a href="{{ route('aggiunta-azienda') }}">Aggiungi Azienda</a></h3>
-            {{--@endif--}}
+            @endif
                 <div id="content">
                     @isset($companies)
                     @foreach ($companies as $company)
