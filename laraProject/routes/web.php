@@ -61,7 +61,10 @@ Route::get('/cerca-offerte', [PublicController::class, 'searchOffers'])
 Route::get('faq', [PublicController::class, 'showFaq'])
     ->name('faq');
 
-   
+Route::get('/search', [PublicController::class, 'search'])
+    ->name('search');
+
+
 
  /**
  * ROTTE DI LIVELLO 1

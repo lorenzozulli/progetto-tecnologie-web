@@ -94,4 +94,18 @@ class PublicController extends Controller
 
         return view("cerca-offerta", $viewData);
 }
+
+public function search(Request $request)
+    {
+        // Ottieni i dati di ricerca dalla richiesta
+        $query = $request->input('query');
+
+        // Effettua la logica di ricerca e ottieni i risultati
+        $results = Offer::where('nome', 'like', "%$query%")
+                        ->orWhere('oggetto', 'like', "%$query%")
+                        ->get();
+
+        // Restituisci solo i dati di ricerca come risposta JSON
+        return response()->json($results);
+    }
 }
