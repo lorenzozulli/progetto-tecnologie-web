@@ -216,6 +216,8 @@ Route::middleware('can:isAdmin')->group(function(){
     Route::get('(/contaCoupon/{user}', [AdminController::class, 'contaCoupon'])
         ->name('contaCoupon');
 
+    Route::get('coupon-emessi', [AdminController::class, 'contatoreCoupon'])
+        ->name('coupon-emessi');
 });
 
 /**

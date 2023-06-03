@@ -248,4 +248,12 @@ public function createFaq()
         echo "In totale sono stati acquisiti ".$coupon_count." coupon.";*/
        
     }
+
+    public function contatoreCoupon(){
+        $coupons = Coupon::all();
+        $nCoupon = count($coupons); 
+
+        return  $nCoupon;
+
+    }
 } 
