@@ -11,8 +11,9 @@
                 <h3>Clicca <a href="{{ route('lista-user') }}">qui</a> per eliminare gli utenti</h3>
                 <h3>Clicca <a href="{{ route('lista-staff') }}">qui</a> per gestire i membri dello staff</h3>
                 <h3>Clicca <a href="{{ route('tabella-faq') }}">qui</a> per gestire le faq</h3>
-                <h3><a href="{{ route('statistiche') }}">Statistiche:</a></h3>
-                <p>Numero totale coupon emessi:</p>
+                <h3>Statistiche:</h3>
+                
+                <div> <p id="n_coupon">-</p></div>
             </div>
         </div>
         <!-- admin section end -->
