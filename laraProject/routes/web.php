@@ -193,7 +193,7 @@ Route::middleware('can:isAdmin')->group(function(){
     Route::get('/lista-staff', [AdminController::class, 'showStaff'])
         ->name('lista-staff');
 
-        // Permette all'utente di modificare le proprie credenziali
+        // Permette all'utente di modificare le credenziali di un membro dello staff
     Route::get('/modifica-staff/{username}/{livello}', [ModifiedStaffController::class, 'update'])
         ->name('modifica-staff');
 

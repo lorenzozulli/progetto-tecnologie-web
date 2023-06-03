@@ -8,6 +8,8 @@ use App\Models\Faq;
 use App\Models\Coupon;
 use App\Models\User;
 use App\Models\Company;
+use Illuminate\Support\Facades\DB;
+use SebastianBergmann\CodeCoverage\Report\Text;
 use Symfony\Component\HttpFoundation\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -15,6 +17,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Symfony\Component\Mime\Message;
 
 class AdminController extends Controller {
 
@@ -76,7 +79,6 @@ class AdminController extends Controller {
      */
     public function storeAzienda(Request $request)
     {   
-
         $request->validate([
             'nome' => ['required', 'string'],
             'descrizione' => ['required', 'string', 'max:255'],
@@ -107,6 +109,7 @@ class AdminController extends Controller {
        
     }
 
+    //crea un membro dello staff
     public function createStaff()
     {   
         return view('profiles.management.aggiunta-staff');
@@ -148,7 +151,6 @@ class AdminController extends Controller {
             'telefono' =>$request->telefono,
             'email' => $request->email,
         ]);
-    
 
         event(new Registered($user));
 
@@ -165,7 +167,7 @@ class AdminController extends Controller {
     }
     
     
-
+//crea una FAQ
 public function createFaq()
     {    
         return view('profiles.management.aggiunta-faq');
@@ -184,11 +186,7 @@ public function createFaq()
             'risposta' => $request->risposta,
             
         ]);
-
-        
-
         return redirect()->route('aggiunta-faq');
-       
     }
 
     public function deleteFaq($id)
@@ -204,6 +202,7 @@ public function createFaq()
        return view('profiles.management.tabella-faq', compact('Faqs') );
     }
 
+    //modifica le FAQ
     public function updateFaq($id)
     {       
         //$idFaq = Faq::where('id' == $id)->first();
@@ -211,41 +210,40 @@ public function createFaq()
     }
 
     public function storeFaqs(Request $request, $id)
-
     {   
-            $request->validate([
-            'domanda' => ['required', 'string', 'max:255'],
-            'risposta' => ['required', 'string'],
-           
-             ]);
+        $request->validate([
+        'domanda' => ['nullable', 'string', 'max:255', 'unique:faqs'],
+        'risposta' => ['nullable', 'string', 'unique:faqs'],
+        ]);
         
-       $idFaq = Faq::where('id', $id)->first();
-       if($request->input('domanda')!=null){
-       $idFaq-> domanda =$request->input('domanda');
+        $idFaq = Faq::where('id', $id)->first();
 
-    }
+        if ($request->input('domanda') != null) {
+        $idFaq-> domanda =$request->input('domanda');    
+        } else {
+            $idFaq->domanda = $idFaq->domanda;
+        }
         
-      if($request->input('risposta')!=null){
-      $idFaq-> risposta =$request->input('risposta');
+        if ($request->input('risposta') != null){
+        $idFaq-> risposta =$request->input('risposta');
+        } else {
+            $idFaq->risposta = $idFaq->risposta;
+        }
 
-    }
-       $idFaq-> save(); 
-    
-     return redirect('admin')->with('success', 'faq modificata con successo!');
-       
+        $idFaq-> save();     
+        return redirect('admin')->with('success', 'faq modificata con successo!');
     }
 
     public function contaCoupon($user){
+
         //questa funzione riporta il numero di cupon acquisiti da un detereminato utente
-        $couponSpecifico = Coupon::where('user', $user)->get();
-        $coupon_count = count($couponSpecifico);
-        echo $user." ha acquisito ".$coupon_count." coupon.";
-        
+        //$coupon_count = DB::table('coupons')->where('user', $user)->count();
+        //return ( $user." ha acquisito ".$coupon_count." coupon.");
+
 
         // questa funzione riporta il numero totali di cupon acquisiti da tutti gli utenti
-        /*$couponList= Coupon::all();
-        $coupon_count = count($couponList);
-        echo "In totale sono stati acquisiti ".$coupon_count." coupon.";*/
+        //$couponList= Coupon::all()->count();
+        //echo "In totale sono stati acquisiti ".$couponList." coupon.";
        
     }
 

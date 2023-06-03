@@ -4,8 +4,7 @@
     <!-- Modifica FAQ section start -->
     <div class="mega_container">
         <p>Ciao, questa è la pagina di modifica delle faq</p>
-    </div>
-    <div class="container-contact">
+        <div class="container-contact">
         <h3>Modifica FAQ</h3>
         <div class="wrap-contact">
 
@@ -45,6 +44,7 @@
 
             {{ Form::close() }}
         </div>
+    </div>
     </div>
     <!-- Modifica FAQ section end -->
 
