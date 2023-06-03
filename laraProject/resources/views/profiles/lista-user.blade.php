@@ -11,7 +11,7 @@
                     <div class="prodotto_card">
                         <div class="carousel__item">
 
-                            <a href="{{route('contaCoupon', $user->username)}}">
+                            <!-- <a href="{{route('contaCoupon', $user->username)}}"> -->
                         
                             <div class="info">
                                 <h1 class="title_carousel_item">{{ $user->username }}</h1>

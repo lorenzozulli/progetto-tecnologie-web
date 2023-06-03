@@ -36,9 +36,14 @@ class ModifiedStaffController extends Controller {
         //dd($livellochemodifca);
         $datiStaff = DB::table('users')->where('username', $username)->first();
         $request->validate([
+            'username' => ['nullable', 'string', 'min:8', 'unique:users'],
             'nome' => ['nullable', 'string'],
             'cognome' => ['nullable', 'string', 'max:255'],
+            'eta' => ['nullable', 'integer'],
+            'genere' => ['nullable', 'string'],
             'password' => ['nullable', 'confirmed', Rules\Password::defaults()],
+            'telefono' => ['nullable', 'string','max:10'],
+            'email' => ['nullable', 'string', 'email', 'max:255', 'unique:users'],
         ]);
 
         if($livellochemodifca == 2){

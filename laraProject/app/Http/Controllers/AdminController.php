@@ -212,8 +212,8 @@ public function createFaq()
     public function storeFaqs(Request $request, $id)
     {   
         $request->validate([
-        'domanda' => ['nullable', 'string', 'max:255'],
-        'risposta' => ['nullable', 'string'],
+        'domanda' => ['nullable', 'string', 'max:255', 'unique:faqs'],
+        'risposta' => ['nullable', 'string', 'unique:faqs'],
         ]);
         
         $idFaq = Faq::where('id', $id)->first();

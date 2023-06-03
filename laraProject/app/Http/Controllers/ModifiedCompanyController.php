@@ -23,9 +23,9 @@ class ModifiedCompanyController extends Controller
         $datiCompany = DB::table('companies')->where('id', $id)->first();
         //dd($datiCompany->nome);
         $request->validate([ 
-            'nome' => ['nullable', 'string'],
+            'nome' => ['nullable', 'string', 'unique:companies'],
             'descrizione' => ['nullable', 'string', 'max:255'],
-            'ragioneSociale' => ['nullable', 'string'],
+            'ragioneSociale' => ['nullable', 'string', 'unique:companies'],
             'tipologia' => ['nullable', 'string'],
             'logo' => ['nullable', 'string'],   
         ]);
