@@ -4,12 +4,10 @@
     @endif
 
     <!-- script Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"> </script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
-    <script src="{{ asset('js/ajax.js') }}"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  
+    <script src="{{ asset('js/ajax.js') }}"></script>
     <!-- inizio logo -->
     <a href="{{ route('home') }}"><img src="{{ asset('images/scontastic_draft.png') }}"></a>
     <!-- fine logo -->

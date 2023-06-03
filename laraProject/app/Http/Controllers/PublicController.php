@@ -110,11 +110,21 @@ public function search(Request $request)
     }
 
 public function offerListAjax(){
-    $companies = Company::select('nome')->get()->first();
+    $offers = Offer::select('nome')->get();
     $data = [];
 
-    foreach($companies as $item){
-        $data[] = $item('nome');
+    foreach($offers as $offer){
+        $data[] = $offer->nome;
+    }
+    return $data;
+}
+
+public function companyListAjax(){
+    $companies = Company::select('nome')->get();
+    $data = [];
+
+    foreach($companies as $company){
+        $data[] = $company->nome;
     }
     return $data;
 }

@@ -52,6 +52,9 @@ Route::get('/lista-offerte', [PublicController::class, 'showListaOfferte'])
 Route::get('/lista-offerteajax', [PublicController::class, 'offerListAjax'])
     ->name('lista-offerteajax');
 
+    Route::get('/lista-aziendeajax', [PublicController::class, 'companyListAjax'])
+    ->name('lista-aziendeajax');
+
 // Mostra la pagina dell'azienda selezionata
 Route::get('/lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
     ->name('offerta');
