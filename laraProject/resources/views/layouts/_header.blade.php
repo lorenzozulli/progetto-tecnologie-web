@@ -4,24 +4,27 @@
     @endif
 
     <!-- script Javascript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"> </script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="{{ asset('js/ajax.js') }}"></script>
-
     <!-- inizio logo -->
     <a href="{{ route('home') }}"><img src="{{ asset('images/scontastic_draft.png') }}"></a>
     <!-- fine logo -->
 
     <!-- inizio searchbars -->
     <div class="search_menu">
-        <form action="{{ url('cerca-offerte') }}" method="GET">
+        <form action="{{ url('cerca-offerte') }}" method="GET" class="search_form">
             <input id="search_offer" type="text" name="search_offer" value="" placeholder="Cerca offerte per nome o descrizione..." class="search_bar" />
+            <span class="input-group-text" id="basic-addon1">_</span>
             <input id="search_company" type="text" name="search_company" value="" placeholder="Cerca offerte per azienda..." class="search_bar" />
-            <button type="submit" class="search_button" value="search">Search</button>
+            <span class="input-group-text" id="basic-addon1">_</span>
+            <button type="submit" class="search_button" value="search">Cerca</button>
         </form>
     </div>
-  
-        <!-- Contenuto dei risultati di ricerca qui -->
-    
+
+    <!-- Contenuto dei risultati di ricerca qui -->
+
     <!-- fine searchbars -->
 
     <!-- inizio link wrapper -->

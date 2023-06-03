@@ -1,0 +1,42 @@
+/* --- --- --- --- --- --- --- --- --- --- --- --- ---
+    --- table.css ---
+    
+    Contiene tutti gli elementi relativi alle tabelle
+--- --- --- --- --- --- --- --- --- --- --- --- --- */
+
+/* --- --- --- --- ---
+Table section START
+--- --- --- --- --- */
+
+/* Per gli elementi con il tag table */
+table {
+    border: 2px solid #262626; /*contorno tabella */
+    background-color: #262626; /*righe e colonne tabella */
+    margin-bottom: 12px;
+  }
+
+/* Per l'intestazione della tabella */
+th {
+    background-color: #ffc493; /*background header tabella*/ 
+    color: #262626;
+  }
+/* Per le righe con indice pari */
+tr:nth-child(even) {
+    background-color: #FAFAFA;
+  }
+
+/* Per tutte le righe */
+tr {
+    background-color: #ffecd0;
+  }
+
+/* Personalizza l'icona di modifica */
+.modifiche{
+    inline-size:50px;
+    block-size:50px;
+    display: block;
+  }
+
+/* --- --- --- --- ---
+Table section END
+--- --- --- --- --- */

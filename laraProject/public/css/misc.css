@@ -1,0 +1,317 @@
+/* --- --- --- --- --- --- --- --- --- --- --- --- ---
+    --- misc.css ---
+    
+    Contiene tutti gli elementi terzi del sito
+--- --- --- --- --- --- --- --- --- --- --- --- --- */
+
+/* --- --- --- --- ---
+General section START
+--- --- --- --- --- */
+
+/* Personalizza i titoli delle singole pagine */
+.page_title{
+  text-align: center;
+  bottom: 12px;
+  text-transform: uppercase;
+}
+
+/* --- --- --- --- ---
+General section END
+--- --- --- --- --- */
+
+/* --- --- --- --- ---
+banner section START
+--- --- --- --- --- */
+
+/* Per il contenitore */
+.frame{
+  width:50%;
+  margin: auto;
+  text-align: center;
+  color: #FAFAFA;
+  padding-top: 300px;
+}
+
+/* Per lo sfondo nella home */
+.banner_bg{
+  background-image: url(../images/banner_bg.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 700px;
+  margin: auto;
+}
+
+/* --- --- --- --- ---
+banner section END
+--- --- --- --- --- */
+
+
+/* --- --- --- --- ---
+Button section START
+--- --- --- --- --- */
+
+/* Decorazione del bottone */
+.bt {
+  width: 170px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+/* Decorazione del link all'interno del bottone */
+.bt a {
+  width: 100%;
+  float: left;
+  font-size: 16px;
+  color: #FAFAFA;
+  background-color: #262626;
+  text-align: center;
+  padding: 10px 0px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Decorazione del link quando si passa sopra il cursore */
+.bt a:hover {
+  text-decoration: none;
+  background-color: #f26522;
+  color: #FAFAFA;
+}
+
+/* --- --- --- --- ---
+Button section END
+--- --- --- --- --- */
+
+
+/* --- --- --- --- ---
+Spiegazione section START
+--- --- --- --- --- */
+
+/* Decorazione del blocco di testo nella home */
+.codes_explanation{
+  margin: auto;
+  width: 95%; /* Per fare in modo che non tocchi i bordi del container */
+}
+
+/*Decorazione del singolo paragrafo di testo */
+.codes_explanation p{
+  text-align: justify; /* Uso un'allineamento di tipo "justify" */
+}
+
+/* --- --- --- --- ---
+Spiegazione section END
+--- --- --- --- --- */
+
+/* --- --- --- --- ---
+Carousel section START
+--- --- --- --- --- */
+
+/* Per il posizionamento di tutto il carosello */
+.carousel {
+  position: relative;
+  margin: auto;
+}
+
+/* Per posizionare le immagini */
+.carousel_image {
+  width: 100%;
+  display: none; /* andiamo a visualizzarle con JS*/
+}
+
+/* Per l'effetto di transizione */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+/* Decora il wrapper dei dots*/
+.button_wrapper{
+  text-align: center;
+}
+
+/* I bottoni laterali per andare avanti e indietro */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #262626;
+  font-weight: bold;
+  font-size: 26px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Per fare in modo che il bottone next sia effettivamente a destra */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Decora gli elementi al passaggio del cursore */
+.prev:hover, .next:hover {
+  background-color: #F26522;
+}
+
+/* Personalizza i keyframes della transizione */
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Personalizza i dots del carosello */
+.carousel__button {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: #262626;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.6s ease;
+}
+
+/* Personalizza di dots al passaggio del cursore */
+.carousel__button:hover {
+  background: #F26522;
+}
+
+/* --- --- --- --- ---
+Carousel section END
+--- --- --- --- --- */
+
+
+/* --- --- --- --- ---
+Paginator section START
+--- --- --- --- --- */
+
+/* Personalizzazione del paginator */
+#pagination {
+	text-align :center;
+  width: 100%;
+  margin: 24px auto 24px auto;
+}
+
+/*Personalizzazione dei link del paginator */
+#pagination a {
+	border-bottom:none
+}
+
+/* --- --- --- --- ---
+Paginator section END
+--- --- --- --- --- */
+
+
+/* --- --- --- --- ---
+Dashboard section START
+--- --- --- --- --- */
+
+/* Personalizza la dashboard dei singoli profili*/
+.dashboard{
+  width: 50%;
+  margin: auto;
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 3px solid #F26522;
+  padding: 30px 30px;
+  position: relative;
+  top: -20px;
+}
+
+/* --- --- --- --- ---
+Dashboard section END
+--- --- --- --- --- */
+
+
+/* --- --- --- --- ---
+Domande FAQ section START
+--- --- --- --- --- */
+
+/* Personalizza la FAQ */
+.domanda_card{
+  width: 80%;
+  background-color: #FAFAFA;
+  border-color: #262626;
+  border: 3px solid;
+  border-radius: 20px;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 12px;
+}
+
+/* Personalizza la domanda */
+.domanda_card .domanda {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+/* Personalizza la risposta */
+.domanda_card .risposta {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* --- --- --- --- ---
+Domande FAQ section END
+--- --- --- --- --- */
+
+
+/* --- --- --- --- ---
+Card section START
+--- --- --- --- --- */
+
+/* Personalizza la card */
+.card{
+  float: left;
+}
+
+/* Personalizza tutti gli elementi interni alla card*/
+.card_inner {
+  width: auto;
+  max-width: 360px;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0px 0 3px 1px #f0f0f0;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+/* Personalizza i link nella card */
+.card_inner a {
+  color: #262626;
+  text-decoration: none;
+}
+
+/* personalizza la card al passaggio del cursore */
+.card_inner:hover {
+  width: auto;
+  background-color: #ffffff;
+  height: auto;
+  box-shadow: 0px 0 3px 1px #f0f0f0;
+  float: left;
+  position: relative;
+  top: -8px;
+}
+
+/* Personalizza l'immagine all'interno della card */
+.card_img{
+  width: 280px;
+  height:280px;
+  object-fit: scale-down;
+  margin-bottom: 18px;
+}
+
+/* Personalizza le informazioni nella card */
+.info{
+  max-width: 300px;
+}
+
+/* --- --- --- --- ---
+Card section END
+--- --- --- --- --- */

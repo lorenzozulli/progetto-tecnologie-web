@@ -4,7 +4,7 @@
         <!-- staff section start -->
         <div class="mega_container">
             <h1 class="page_title">Area Staff</h1>
-            <div class="page">
+            <div class="dashboard">
                 @if(Auth::user()->genere == 'M')
                 <h3>Benvenuto</h3><br>
                 @endif

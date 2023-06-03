@@ -354,19 +354,19 @@ class DatabaseSeeder extends Seeder
                 'id' => 1,
 
                 'domanda' => 'Come posso acquisire un Coupon?',
-                'risposta' => 'Acquisire un coupon è; semplicissimo: dalla lista delle offerte cerca l\' offerta che ti interessa di più,
-                               Dopodiché; clicca su "acquisici" e li avrai a disposizione il tuo coupon pronto ad essere riscattato dove
+                'risposta' => 'Acquisire un coupon è semplicissimo: dalla lista delle offerte cerca l\' offerta che ti interessa di più,
+                               Dopodiché clicca su "acquisici" e li avrai a disposizione il tuo coupon pronto ad essere riscattato dove
                                specificato dal luogo di fruizione.'
             ],
             [
                 'id' => 2,
-                'domanda' => 'Se ho gi&agrave; un coupon per un\'offerta posso acquisirlo di nuovo?',
+                'domanda' => 'Se ho già un coupon per un\'offerta posso acquisirlo di nuovo?',
                 'risposta' => 'No, un utente registrato può acquisire solo un coupon per offerta',
             ],
             [
                 'id' => 3,
                 'domanda' => 'I coupon durano all\'infinito?',
-                'risposta' => 'No, la data di scadenza è; specificata nella pagina stessa del coupon.'
+                'risposta' => 'No, la data di scadenza è specificata nella pagina stessa del coupon.'
             ],
             [
                 'id' => 4,

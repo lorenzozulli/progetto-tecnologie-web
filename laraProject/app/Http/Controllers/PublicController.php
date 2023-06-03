@@ -108,4 +108,24 @@ public function search(Request $request)
         // Restituisci solo i dati di ricerca come risposta JSON
         return response()->json($results);
     }
+
+public function offerListAjax(){
+    $offers = Offer::select('nome')->get();
+    $data = [];
+
+    foreach($offers as $offer){
+        $data[] = $offer->nome;
+    }
+    return $data;
+}
+
+public function companyListAjax(){
+    $companies = Company::select('nome')->get();
+    $data = [];
+
+    foreach($companies as $company){
+        $data[] = $company->nome;
+    }
+    return $data;
+}
 }

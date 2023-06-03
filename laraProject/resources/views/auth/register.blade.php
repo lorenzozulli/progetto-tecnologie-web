@@ -1,6 +1,7 @@
 <meta charset="utf-8">
 <title>"Scontastic: i migliori codici sconto in Italia</title>
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('css/base.css') }}">
+<link rel="stylesheet" href="{{ asset('css/form.css') }}">
 <div class="static">
 
     <div class="container-contact">
