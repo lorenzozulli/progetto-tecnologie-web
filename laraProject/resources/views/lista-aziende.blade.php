@@ -9,12 +9,12 @@
                 <div id="content">
                     @isset($companies)
                     @foreach ($companies as $company)
-                    <div class="prodotto_card">
-                    <div class="carousel__item">
+                    <div class="card">
+                    <div class="card_inner">
                         <a href="{{route('azienda', $company->nome )}}">
-                            <img class="carousel_img" src="{{ asset($company->logo) }}" alt="Immagine Azienda">
+                            <img class="card_img" src="{{ asset($company->logo) }}" alt="Immagine Azienda">
                             <div class="info">
-                                <h1 class="title_carousel_item">{{ $company->nome }}</h1>
+                                <h1>{{ $company->nome }}</h1>
                             </div>
                             @can('isAdmin')
                                 <a href="{{ route('modifica-azienda', $company->id) }}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
@@ -24,8 +24,7 @@
                                     @method('DELETE')
                                     <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questa azienda?')" ><img  class="modifiche" src="{{ asset('images/delete.png') }}"></button>
                                 </form>
-                            @endcan
-                            
+                            @endcan             
                         </a>
                         </div>                    
                     </div>               

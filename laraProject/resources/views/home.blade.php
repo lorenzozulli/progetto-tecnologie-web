@@ -12,8 +12,6 @@
       <!-- banner bg main end -->
       
         <!-- Aziende carousel section start -->
-        
-       
          <div class="carousel">
                <img class="carousel_image fade" src="{{ asset('images/carousel_pages/page_1.png') }}">
                <img class="carousel_image fade" src="{{ asset('images/carousel_pages/page_2.png') }}">
@@ -22,12 +20,13 @@
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
          </div>
       
-         <div class ="button_wrapper" style="text-align:center">
+         <div class ="button_wrapper">
             <span class="carousel__button" onclick="currentSlide(1)"></span>
             <span class="carousel__button" onclick="currentSlide(2)"></span>
             <span class="carousel__button" onclick="currentSlide(3)"></span>
          </div>
-         
+
+         <!-- per lo script del carosello -->
          <script src="js/carousel.js"></script>
 
          <div class="bt"><a href="{{ route('lista-aziende') }}">Tutte le aziende</a></div>

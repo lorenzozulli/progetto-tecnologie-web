@@ -9,12 +9,12 @@
                 <div id="content">
                     @isset($offers)
                     @foreach ($offers as $offer)
-                    <div class="prodotto_card">
-                        <div class="carousel__item">
+                    <div class="card">
+                        <div class="card_inner">
                             <a href="{{route('offerta', $offer->nome)}}">
-                                <img class="carousel_img" src="images/loghi-aziende/non_disponibile.png">
+                                <img class="card_img" src="images/loghi-aziende/non_disponibile.png">
                                     <div class="info">
-                                        <h3 class="title_carousel_item">{{ $offer->nome }}</h3>
+                                        <h3>{{ $offer->nome }}</h3>
                                         @can('isStaff')
                                             <a href="{{ route('modifica-offerta', $offer->id) }}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
                                      

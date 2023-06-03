@@ -6,7 +6,10 @@
         <title>"Scontastic: i migliori codici sconto in Italia"</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/base.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/misc.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/table.css') }}">
     </head>
     <body>
         <!-- header section start-->
