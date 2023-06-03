@@ -4,8 +4,7 @@
         <!-- modifica offerta section start -->
         <div class="mega_container">
             <p>ciao sono la pagina di modifica di una offerta</p>
-        </div>
-        <div class="container-contact">
+            <div class="container-contact">
         <h3>Modifica Offerta</h3>
             <div class="wrap-contact">
                 {{ Form::open(array('route' => ['modifica-offerta', $id], 'class' => 'contact-form')) }}
@@ -84,6 +83,8 @@
               
                 {{ Form::close() }}
             </div>
+        </div>
+        
         </div>        
         <!-- modifica offerta section end -->
         

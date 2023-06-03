@@ -84,7 +84,7 @@
                 <!-- Username -->
                 <div  class="wrap-input">
                     {{ Form::label('username', 'Username', ['class' => 'label-input']) }}
-                    {{ Form::text('username', '', ['class' => 'input','id' => 'username']) }}
+                    {{ Form::text('username', '', ['class' => 'input','id' => 'username', 'placeholder' => Auth::user()->username]) }}
                     @if ($errors->first('username'))
                     <ul class="errors">
                         @foreach ($errors->get('username') as $message)

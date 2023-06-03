@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
@@ -33,24 +34,35 @@ class ModifiedStaffController extends Controller {
     public function store(Request $request, $username, $livellochemodifca) {
         //dd($username);
         //dd($livellochemodifca);
+        $datiStaff = DB::table('users')->where('username', $username)->first();
         $request->validate([
-            'nome' => ['required', 'string'],
-            'cognome' => ['required', 'string', 'max:255'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'nome' => ['nullable', 'string'],
+            'cognome' => ['nullable', 'string', 'max:255'],
+            'password' => ['nullable', 'confirmed', Rules\Password::defaults()],
         ]);
 
         if($livellochemodifca == 2){
         $user = Auth::user();
+
         // Modifica delle informazioni dello staff
         if ($request->input('nome') != null) {
             $user->nome = $request->input('nome');
+        } else {
+            $user->nome = $datiStaff->nome;
         }
+
         if ($request->input('cognome') != null) {
             $user->cognome = $request->input('cognome');
+        } else {
+            $user->cognome = $datiStaff->cognome;
         }
+
         if ($request->input('password') != null) {
             $user->password = Hash::make($request->input('password'));
+        } else {
+            $user->password = $datiStaff->password;
         }
+
         $user->save();
 
         return redirect('staff')->with('success', 'Informazioni modificate con successo!');
@@ -62,28 +74,52 @@ class ModifiedStaffController extends Controller {
 
             if ($request->input('nome') != null) {
                 $user->nome = $request->input('nome');
-            }
+            } else {
+                $user->nome = $datiStaff->nome;
+            }    
+
             if ($request->input('cognome') != null) {
                 $user->cognome = $request->input('cognome');
-            }
+            } else {
+                $user->cognome = $datiStaff->cognome;
+            }   
+            
             if ($request->input('genere') != null) {
                 $user->genere = $request->input('genere');
-            }
+            } else {
+                $user->genere = $datiStaff->genere;
+            }   
+            
             if ($request->input('eta') != null) {
                 $user->eta = $request->input('eta');
-            }
+            } else {
+                $user->eta = $datiStaff->eta;
+            }   
+            
             if ($request->input('email') != null) {
                 $user->email = $request->input('email');
-            }
+            } else {
+                $user->email = $datiStaff->email;
+            }   
+            
             if ($request->input('telefono') != null) {
                 $user->telefono = $request->input('telefono');
-            }
+            } else {
+                $user->telefono = $datiStaff->telefono;
+            }   
+            
             if ($request->input('username') != null) {
                 $user->username = $request->input('username');
-            }
+            } else {
+                $user->username = $datiStaff->username;
+            }   
+            
             if ($request->input('password') != null) {
                 $user->password = Hash::make($request->input('password'));
-            }
+            } else {
+                $user->password = $datiStaff->password;
+            }   
+            
             $user->save();
 
         return redirect('admin')->with('success', 'Informazioni modificate con successo!');

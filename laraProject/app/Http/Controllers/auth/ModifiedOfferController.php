@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Offer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ModifiedOfferController extends Controller
 {
@@ -18,11 +19,11 @@ class ModifiedOfferController extends Controller
     public function store(Request $request, $id){
         //dd($id);
         $request->validate([ 
-            'nome' => ['required', 'string'],
-            'oggetto' => ['required', 'string'],
-            'modalitaFruizione' => ['required', 'string'],
-            'luogoFruizione' => ['required', 'string'],
-            'id_azienda' => ['required', 'integer'],
+            'nome' => ['nullable', 'string'],
+            'oggetto' => ['nullable', 'string'],
+            'modalitaFruizione' => ['nullable', 'string'],
+            'luogoFruizione' => ['nullable', 'string'],
+            'id_azienda' => ['nullable', 'integer'],
         ]);
 
         $offer = Offer::where('id', $id)->first();
@@ -31,19 +32,34 @@ class ModifiedOfferController extends Controller
         // Modifica delle informazioni dell'offerta
         if ($request->input('id_azienda') != null) {
             $offer->id_azienda = $request->input('id_azienda');
+        } else {
+            $offer->id_azienda = $offer->id_azienda;
         }
+
         if ($request->input('nome') != null) {
             $offer->nome = $request->input('nome');
+        } else {
+            $offer->nome = $offer->nome;
         }
+        
         if ($request->input('oggetto') != null) {
             $offer->oggetto = $request->input('oggetto');
+        } else {
+            $offer->oggetto = $offer->oggetto;
         }
+        
         if ($request->input('modalitaFruizione') != null) {
             $offer->modalitaFruizione = $request->input('modalitaFruizione');
+        } else {
+            $offer->modalitaFruizione = $offer->modalitaFruizione;
         }
+        
         if ($request->input('luogoFruizione') != null) {
             $offer->luogoFruizione = $request->input('luogoFruizione');
+        } else {
+            $offer->luogoFruizione = $offer->luogoFruizione;
         }   
+        
         //dd($offer);
         $offer->save();
         //dd($offer);

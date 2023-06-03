@@ -13,13 +13,15 @@
                     <div  class="wrap-input">
                         {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
                         {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome', 'placeholder'=>$id->nome]) }}
+                        
+                        <!-- 
                         @if ($errors->first('nome'))
                         <ul class="errors">
                             @foreach ($errors->get('nome') as $message)
                             <li>{{ $message }}</li>
                             @endforeach
                         </ul>
-                        @endif
+                        @endif -->
                     </div>
 
                     <!-- Descrizione -->
