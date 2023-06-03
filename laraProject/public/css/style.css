@@ -31,18 +31,25 @@ header{
 }
 
 /* per la form di ricerca */
+.search_form{
+  width: 100%;
+  display: flex;
+}
+
+/* per la form di ricerca */
 .search_bar{
     margin: auto;
     width: 75%;
     border: 3px solid #F26522;
     border-radius: 50px;
     padding: 10px;
+    display: flex;
 }
 
 /* per la form di ricerca */
 .search_button{
   margin: auto;
-  width: 120px;
+  width: 33%;
   border: 3px solid #F26522;
   border-radius: 50px;
   padding: 10px;
@@ -242,20 +249,7 @@ footer{
     text-align: center;
 }
 
-.faq a{
-    width: 100%;
-    float: left;
-    color: #FAFAFA;
-    text-align: center;
-    font-size: 20px;
-    margin: 20px 0px;
-}
-
-.faq a:hover{
-    text-decoration: underline;
-}
-
-.about{
+.footer_item{
   width: 100%;
   float: left;
   color: #FAFAFA;
@@ -264,14 +258,14 @@ footer{
   margin: 20px 0px;
 }
 
-.about a{
+.footer_item a{
   width: 100%;
   color: #FAFAFA;
   font-size: 20px;
   margin: 20px 0px;
 }
 
-.about a:hover{
+.footer_item a:hover{
   text-decoration: underline;
 }
 /* --- footer section end --- */
@@ -279,11 +273,6 @@ footer{
 /* --- carousel section start ---*/
 .carousel {
   position: relative;
-  color: #ffffff;
-  animation-name: fade;
-  animation-duration: 1.5s;
-  height: auto;
-  display: flex;
   margin: auto;
 }
 .carousel__item {
@@ -318,7 +307,7 @@ footer{
   margin-bottom: 18px;
 }
 .item_wrapper {
-  width: 75%;
+  width: 100%;
   margin: auto;
   transition: 0.6s ease;
 }
@@ -348,7 +337,7 @@ footer{
   border-radius: 50%;
   margin: 0 5px;
   cursor: pointer;
-  transition: background-color 0.6s ease;
+  transition: background-colaor 0.6s ease;
 }
 
 .carousel__button:hover {
@@ -386,6 +375,21 @@ footer{
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: #F26522;
+}
+
+.carousel_image {
+  width: 100%;
+  display: none;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
 @media (max-width: 1366px){
@@ -575,7 +579,7 @@ table {
 }
 
 th {
-  background-color: #ffc493; /*backgrounf header tabella*/ 
+  background-color: #ffc493; /*background header tabella*/ 
   color: #262626;
 }
 tr:nth-child(even) {

@@ -6,12 +6,19 @@
     <!-- fine logo -->
 
     <!-- inizio FAQ -->
-    <div class="faq">
+    <div class="footer_item">
         <p><a href="{{ route('faq') }}">Hai delle domande? clicca qui per vedere le nostre FAQ</a></p>
     </div>
     <!-- fine FAQ -->
+
+    <!-- Inizio sezione relazione -->
+    <div class="footer_item">
+        <a href="#">Clicca qui per accedere alla nostra relazione di progetto.</a>
+    </div>
+    <!-- Fine sezione relazione-->
+
     <!-- inizio about -->
-    <div class="about">
+    <div class="footer_item">
         <p>Progetto di Tecnologie Web di: 
             <a href="https://github.com/Maremmoide">Maicol Lanni</a>, 
             <a href="https://github.com/MarioMaio98">Mario Maio</a>, 

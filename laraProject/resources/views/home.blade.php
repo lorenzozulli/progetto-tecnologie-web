@@ -15,12 +15,11 @@
         
        
          <div class="carousel">
-            <div class="item_wrapper">
-               
-            </div>  
+               <img class="carousel_image fade" src="{{ asset('images/carousel_pages/page_1.png') }}">
+               <img class="carousel_image fade" src="{{ asset('images/carousel_pages/page_2.png') }}">
+               <img class="carousel_image fade" src="{{ asset('images/carousel_pages/page_3.png') }}">
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            
          </div>
       
          <div class ="button_wrapper" style="text-align:center">
