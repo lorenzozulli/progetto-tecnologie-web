@@ -1,4 +1,4 @@
-@extends('layouts/base')
+@extends('layouts.base')
 @section('content')
         <!-- lista utenti 1 section start -->
         <div class="mega_container">
