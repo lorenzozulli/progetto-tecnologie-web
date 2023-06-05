@@ -5,12 +5,12 @@
                 <h1 class="page_title">"Risultati di ricerca"</h1>
                 <div id="content">
                     @forelse($Offerte as $offer)
-                    <div class="prodotto_card">
-                        <div class="carousel__item">
+                    <div class="card">
+                        <div class="card_inner">
                             <a href="{{route('offerta', $offer->nome )}}">
-                                <img class="img" src="images/loghi-aziende/non_disponibile.png">
+                            <img class="card_img" src="{{ asset($offer->immagine) }}" alt="Immagine Offerta">
                                     <div class="info">
-                                        <h3 class="title_carousel_item">{{ $offer->nome }}</h3>
+                                        <h3>{{ $offer->nome }}</h3>
                                     </div>
                             </a>
                         </div>                      

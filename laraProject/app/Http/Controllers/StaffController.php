@@ -92,6 +92,7 @@ class StaffController extends Controller
             'luogoFruizione' => ['required', 'string'],
             'id_azienda' => ['required', 'integer'],
            ]);
+           
 
 
            Offer::where('id', $id)->update(
@@ -151,9 +152,19 @@ class StaffController extends Controller
      
     public function showtabellaOfferte()
     {   
-       $Offerte= Offer::all();
-       return view('profiles.management.tabella-offerte', compact('Offerte') );
+        $activeOffers = Offer::where('dataOraScadenza', '>', now())->get();
+        
+        return view('profiles.management.tabella-offerte', compact('activeOffers') );
     }
+
+
+    public function activeOffers()
+        {
+           $activeOffers = Offer::where('dataOraScadenza', '>', now())->get();
+    
+            return view('profiles.management.offerta', compact('activeOffers'));
+        }
+
 }
 
 

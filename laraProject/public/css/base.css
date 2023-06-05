@@ -181,6 +181,11 @@ header{
   padding: 8px 8px 8px 32px;
 }
 
+/* Fa in modo che i risultati di ricerca nella barra siano senza la barra di scorrimento */
+.ui-menu-item{
+  overflow-x: hidden;
+}
+
 /* --- --- --- --- ---
 Header section END
 --- --- --- --- --- */

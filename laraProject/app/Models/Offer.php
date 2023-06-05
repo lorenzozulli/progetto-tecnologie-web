@@ -24,4 +24,6 @@ class Offer extends Model
         'dataOraScadenza',
         'id_azienda',
     ];
+
+    protected $dates = ['dataOraScadenza'];
 }

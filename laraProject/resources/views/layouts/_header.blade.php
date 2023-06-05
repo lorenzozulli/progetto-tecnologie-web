@@ -19,7 +19,7 @@
     <div class="search_menu">
         <form action="{{ url('cerca-offerte') }}" method="GET" class="search_form">
             <input id="search_offer" type="text" name="search_offer" value="" placeholder="Cerca offerte per nome o descrizione..." class="search_bar" />
-            <span class="input-group-text" id="basic-addon1">_</span>
+            <span class="input-group-text" id="basic-addon0">_</span>
             <input id="search_company" type="text" name="search_company" value="" placeholder="Cerca offerte per azienda..." class="search_bar" />
             <span class="input-group-text" id="basic-addon1">_</span>
             <button type="submit" class="search_button" value="search">Cerca</button>

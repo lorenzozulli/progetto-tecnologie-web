@@ -3,8 +3,6 @@
 
     <!-- modifica Faq section start -->
     <div class="mega_container">
-        <p>ciao sono la pagina di aggiunta di una faq</p>
-    </div>
     <div class="container-contact">
     <h3>Aggiunta</h3>
         <div class="wrap-contact">
@@ -49,5 +47,5 @@
             
         </div>
     <!-- modifica User section end -->
-
+    </div>
 @endsection

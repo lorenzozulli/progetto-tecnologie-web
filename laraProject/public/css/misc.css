@@ -269,10 +269,13 @@ Card section START
 /* Personalizza la card */
 .card{
   float: left;
+  max-width: 360px;
+  height: 100%;
 }
 
 /* Personalizza tutti gli elementi interni alla card*/
 .card_inner {
+  height: 100%;
   width: auto;
   max-width: 360px;
   background-color: #ffffff;
@@ -286,6 +289,8 @@ Card section START
 .card_inner a {
   color: #262626;
   text-decoration: none;
+  width: 100%;
+  display: inline-block;
 }
 
 /* personalizza la card al passaggio del cursore */
@@ -309,7 +314,18 @@ Card section START
 
 /* Personalizza le informazioni nella card */
 .info{
-  max-width: 300px;
+  width: auto;
+  max-width: 280px;
+  min-height: 100px;
+}
+
+#lista_offerte{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
 }
 
 /* --- --- --- --- ---

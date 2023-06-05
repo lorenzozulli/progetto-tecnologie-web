@@ -124,8 +124,7 @@ class DatabaseSeeder extends Seeder
                                 nostra volontà di superare noi stessi realizzando i migliori prodotti al mondo. Tutto inizia nel 2007 con un pazzo in un garage che pensa di poter cambiare
                                  il mondo in meglio. In questo momento, siamo centinaia, andiamo da migliaia di persone pazze ma concentrate. La volontà è un\'abilità. C\'è un sacco di gente
                                 che vuole comprarci. Non abbiamo un cartellino del prezzo. Non si tratta di soldi. Riguarda la nostra missione. Fidati di noi. Nutriremo il tuo corpo 
-                                e la tua mente con tutto ciò di cui hai bisogno per superare te stesso. miguel milhao
-                2019',
+                                e la tua mente con tutto ciò di cui hai bisogno per superare te stesso. miguel milhao 2019',
                 'nome' => 'Prozis',
                 'ragioneSociale' => 'Prozis.com, S.A.',
                 'tipologia' => 'Nutrizione sportiva',
@@ -195,7 +194,7 @@ class DatabaseSeeder extends Seeder
                                 Microsoft è una delle più importanti al mondo nel settore, nonché una delle più grandi produttrici di software al mondo per fatturato, e anche una delle più grandi aziende per 
                                 capitalizzazione azionaria, circa 2288 miliardi di dollari nel 2022; attualmente sviluppa, produce, supporta e vende, o concede in licenza, computer software, elettronica di consumo,
                                  personal computer e servizi; i suoi prodotti software più noti sono la linea di sistemi operativi Microsoft Windows, la suite di produttività personale Microsoft Office e i browser 
-                                 Internet Explorer e Edge; in ambito hardware invece i suoi prodotti più conosciuti sono la famiglia di console Xbox e i prodotti Microsoft Surface. ',
+                                 Internet Explorer e Edge; in ambito hardware invece i suoi prodotti più conosciuti sono la famiglia di console Xbox e i prodotti Microsoft Surface.',
                 'nome' => 'Microsoft',
                 'ragioneSociale' => 'Microsoft Corporation',
                 'tipologia' => 'Informatica',
@@ -221,10 +220,11 @@ class DatabaseSeeder extends Seeder
                 'id_azienda' => 1,
                 'nome' => '30% di sconto per 2 ordini',
                 'oggetto' => 'Ottieni il 30% di sconto sul totale dei prossimi 2 ordini - Solo da Just Eat!',
-                'modalitaFruizione' => "Inserire il codice del coupon nella sezione Inserisci sconto al momento dell'ordine sull'app.",
+                'modalitaFruizione' => 'Inserire il codice del coupon nella sezione Inserisci sconto al momento dell\'ordine sull\'app.',
                 'luogoFruizione' => "Utilizzabile solo sull'app Just Eat.",
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
+                'immagine' => 'images/immagini-offerte/just_eat.png',
             ],
             [
                 'id' => 2,
@@ -235,6 +235,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Huawei.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
+                'immagine' => 'images/immagini-offerte/huawei_P60.png',
             ],
             [
                 'id' => 3,
@@ -245,6 +246,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Nike.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
+                'immagine' => 'images/immagini-offerte/nike_huarache.png',
             ],
             [
                 'id' => 4,
@@ -255,6 +257,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Xiaomi.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
+                'immagine' => 'images/immagini-offerte/xiaomi_13_ultra.jpg',
             ],
             [
                 'id' => 5,
@@ -265,16 +268,18 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Asus.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
+                'immagine' => 'images/immagini-offerte/rog_flow_z13.jpg',
             ],
             [
                 'id' => 6,
                 'id_azienda' => 6,
-                'nome' => 'Preparato per brownie Zero 400 g senza costi di spedizione!',
+                'nome' => 'Preparato per brownie Zero 400g senza costi di spedizione!',
                 'oggetto' => 'Ottieni il prodotto senza costi di spedizione!',
                 'modalitaFruizione' => 'Inserire il codice generato dal coupon al momento del pagamento.',
                 'luogoFruizione' => 'Sito prozis.com',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
+                'immagine' => 'images/immagini-offerte/prozis_preparato.png',
             ],
             [
                 'id' => 7,
@@ -285,6 +290,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Ikea.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
+                'immagine' => 'images/immagini-offerte/besta.png',
             ],
             [
                 'id' => 8,
@@ -295,6 +301,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Intel.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
+                'immagine' => 'images/immagini-offerte/i9-13900KS.png',
             ],
             [
                 'id' => 9,
@@ -305,6 +312,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Sito epicgames.com',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
+                'immagine' => 'images/immagini-offerte/v_bucks.jpg',
             ],
             [
                 'id' => 10,
@@ -315,16 +323,18 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Adidas.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
+                'immagine' => 'images/immagini-offerte/adidas_ultraboost.jpg',
             ],
             [
                 'id' => 11,
                 'id_azienda' => 11,
                 'nome' => 'Amazon Echo dot al 75% di sconto!',
-                'oggetto' => 'Ottieni Echo Dot (5ª generazione, modello 2022) | Altoparlante Bluetooth intelligente con integrazione Alexa | Antracite ad un prezzo stracciato!',
+                'oggetto' => 'Ottieni Echo Dot (5a generazione, modello 2022) | Altoparlante Bluetooth intelligente con integrazione Alexa | Antracite ad un prezzo stracciato!',
                 'modalitaFruizione' => 'Inserire il codice generato dal coupon al momento del pagamento.',
                 'luogoFruizione' => 'Sito amazon.com',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
+                'immagine' => 'images/immagini-offerte/echo_dot_5.jpg',
             ],
             [
                 'id' => 12,
@@ -335,6 +345,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Microsoft.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
+                'immagine' => 'images/immagini-offerte/surface_pro_9.png',
             ],
             [
                 'id' => 13,
@@ -345,6 +356,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Vans.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
+                'immagine' => 'images/immagini-offerte/vans_old_skool.jpg',
             ],
         ]);
         
@@ -376,6 +388,20 @@ class DatabaseSeeder extends Seeder
                                giorno lavoriamo per assicurarti il massimo del risparmio, ma qualcosa può sfuggirci. Segnalaci il problema tramite la richiesta
                                informazioni e cercheremo di risolverlo assieme a te!',
             ],
+        ]);
+
+        // Tabella coupons.
+        DB::table('coupons') -> insert([
+            [
+                'id' => 1,
+                'user' => 'useruser',
+                'codice' => 'E92VcCkZTv',               
+            ],
+            [
+                'id' => 2,
+                'user' => 'useruser',
+                'codice' => 'lWEseXhmv6',
+            ]
         ]);
     }
     }
