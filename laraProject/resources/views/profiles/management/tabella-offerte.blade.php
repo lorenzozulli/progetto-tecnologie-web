@@ -21,7 +21,7 @@
 
                 <tbody>
                
-                @foreach($Offerte as $offer)
+                @foreach($activeOffers as $offer)
                     <tr>
                         <td>{{$offer['id']}}</td>
                         <td>{{$offer['nome']}}</td>

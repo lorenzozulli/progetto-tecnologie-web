@@ -6,9 +6,9 @@
             @can('isStaff')
                 <h3><a href="{{ route('aggiunta-offerta') }}">Aggiungi Offerta</a></h3>
             @endcan
-                <div id="lista_offerte">
-                    @isset($offers)
-                    @foreach($offers as $offer)
+                <div id="content">
+                   
+                    @foreach ($activeOffers as $offer)
                     <div class="card">
                         <div class="card_inner">
                             <a href="{{route('offerta', $offer->nome)}}">
@@ -31,8 +31,8 @@
                     @endforeach
                         
                         <!--Paginazione-->
-                        @include('pagination.paginator', ['paginator' => $offers])
-                    @endisset()                   
+                        @include('pagination.paginator', ['paginator' => $activeOffers])
+                                    
                 </div>
             </div>
         <!-- lista offerte section end -->
