@@ -1,10 +1,8 @@
-@extends('layouts/base')
+@extends('layouts.base')
 @section('content')
 
     <!-- modifica User section start -->
     <div class="mega_container">
-        <p>ciao sono la pagina di aggiunta di una offerta</p>
-    </div>
     <div class="container-contact">
     <h3>Aggiunta</h3>
         <div class="wrap-contact">
@@ -97,5 +95,5 @@
         </div>
     </div>
     <!-- modifica User section end -->
-
+    </div>
 @endsection

@@ -1,7 +1,6 @@
-<meta charset="utf-8">
-<title>"Scontastic: i migliori codici sconto in Italia</title>
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-<div class="static">
+@extends('layouts.base')
+@section('content')
+<div class="mega_container">
 
     <div class="container-contact">
     <h3>Aggiunta Azienda</h3>
@@ -85,3 +84,4 @@
     </div>
 
 </div>
+@endsection

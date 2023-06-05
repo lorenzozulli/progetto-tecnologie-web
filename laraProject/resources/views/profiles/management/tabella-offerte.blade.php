@@ -1,4 +1,4 @@
-@extends('layouts/base')
+@extends('layouts.base')
 @section('content')
         <!-- tabella offerte section start -->
         <div class="mega_container">
@@ -21,7 +21,7 @@
 
                 <tbody>
                
-                @foreach($Offerte as $offer)
+                @foreach($activeOffers as $offer)
                     <tr>
                         <td>{{$offer['id']}}</td>
                         <td>{{$offer['nome']}}</td>

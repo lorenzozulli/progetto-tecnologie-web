@@ -1,4 +1,4 @@
-@extends('layouts/base')
+@extends('layouts.base')
 @section('content')
      <!-- AJAX script -->
      <script src="{{ asset('js/ajax.js') }}"></script>

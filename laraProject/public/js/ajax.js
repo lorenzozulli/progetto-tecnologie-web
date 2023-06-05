@@ -6,10 +6,10 @@
     url: "/lista-aziendeajax",
     success: (response)=>{
       
-        startAutoComplete(response);
+        startAutoComplete1(response);
     }
   });
-  function startAutoComplete(availableTags){
+  function startAutoComplete1(availableTags){
     $( "#search_company" ).autocomplete({
       source: availableTags
     });
