@@ -17,10 +17,12 @@ return new class extends Migration
             //FK
             $table->bigInteger('id')->unsigned();
 
-
+            $table->bigInteger('id_offerta')->unsigned(); 
             $table->string('codice')->primary()->unique();
             $table->string('user');
-            $table->foreign('id')->references('id')->on('offers')
+            
+            
+            $table->foreign('id_offerta')->references('id')->on('offers')
                 ->onDelete('cascade')->onUpdate('cascade');
         });
     }
