@@ -10,7 +10,7 @@
                 @if(Auth::user()->genere == 'F')
                 <h3>Benvenuta</h3><br>
                 @endif
-                @if(Auth::user()->genere == 'A')
+                @if(Auth::user()->genere == 'O')
                 <h3>Benvenut*</h3><br>
                 @endif
                     Username: {{ Auth::user()->username}}<br>

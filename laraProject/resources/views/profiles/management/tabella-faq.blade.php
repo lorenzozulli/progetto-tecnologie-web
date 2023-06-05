@@ -22,7 +22,7 @@
                 <td>{{ $faq->domanda}}</td>
                 <td>{{ $faq->risposta }}</td>
                 <td>
-                    <a href="{{route('modifica-faq', $faq['id'] )}}">Modifica</a>
+                    <a href="{{route('modifica-faq', $faq['id'] )}}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
 
 
                     <form action="{{route('delete-faq', $faq->id)}}" method="POST"> 

@@ -169,6 +169,12 @@ Route::middleware('can:isAdmin')->group(function(){
 
     Route::post('/modifica-faq/{id}', [AdminController::class, 'storeFaqs']);
 
+    Route::get('tabella-aziende', [AdminController::class, 'showTabellaAziende'])
+        ->name('tabella-aziende');
+
+    Route::get('tabella-utenti', [AdminController::class, 'showTabellaUtenti'])
+        ->name('tabella-utenti');
+
     // Permette di aggiungere un'azienda
     Route::get('/aggiunta-azienda', [AdminController::class, 'createAzienda'])
         ->name('aggiunta-azienda');

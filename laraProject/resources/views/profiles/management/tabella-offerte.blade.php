@@ -30,13 +30,11 @@
                         <td>{{$offer['luogoFruizione']}}</td>
                         <td>{{$offer['dataOraCreazione']}}</td>
                         <td>{{$offer['dataOraScadenza']}}</td>
-                        <td title="Clicca qui per AGGIORNARE la seguente offerta"><a class="btn-table-update" href="{{ route('modifica-offerta', $offer->id) }}">Modifica</a></td>
-                        <td title="Clicca qui per ELIMINARE la seguente offerta">
+                        <td><a class="btn-table-update" href="{{ route('modifica-offerta', $offer->id) }}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
                             <form class="delete-form" action="{{ route('delete-promo',  $offer['id']) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn-table-delete" onclick="return confirm('Sei sicuro di voler eliminare questa offerta?')">
-                                    Elimina</button>
+                                <button type="submit" class="btn-table-delete" onclick="return confirm('Sei sicuro di voler eliminare questa offerta?')"><img class="modifiche" src="{{ asset('images/delete.png') }}"></button>
                             </form>
                         </td>
                     </tr>

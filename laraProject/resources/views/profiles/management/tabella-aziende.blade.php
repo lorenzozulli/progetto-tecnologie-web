@@ -17,7 +17,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($companies as $company)
+        @foreach ($Companies as $company)
             <tr>
                 <td>{{ $company->id }}</td>
                 <td>{{ $company->descrizione}}</td>
@@ -25,7 +25,7 @@
                 <td>{{ $company->ragioneSociale }}</td>
                 <td>{{ $company->tipologia}}</th>
                 <td>
-                    <a href="{{-- --)}}">Modifica</a>
+                    <a href="{{ route('modifica-azienda', $company->id) }}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
                     <form action="{{route('delete-azienda', $company->id)}}" method="POST"> 
                          @csrf
                          @method('DELETE')

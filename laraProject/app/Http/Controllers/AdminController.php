@@ -109,6 +109,18 @@ class AdminController extends Controller {
        
     }
 
+    public function showtabellaAziende()
+    {   
+       $Companies= Company::all();
+       return view('profiles.management.tabella-aziende', compact('Companies') );
+    }
+
+    public function showtabellaUtenti()
+    {   
+       $Users= User::all();
+       return view('profiles.management.tabella-utenti', compact('Users') );
+    }
+
     //crea un membro dello staff
     public function createStaff()
     {   
