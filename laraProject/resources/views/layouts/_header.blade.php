@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="{{ asset('js/ajax.js') }}"></script>
+    <script src="{{ asset('js/ajax2.js') }}"></script>
     <!-- inizio logo -->
     <a href="{{ route('home') }}"><img src="{{ asset('images/scontastic_draft.png') }}"></a>
     <!-- fine logo -->
