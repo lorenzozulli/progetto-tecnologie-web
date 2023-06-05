@@ -17,7 +17,6 @@
                                         <h3>{{ $offer->nome }}</h3>
                                         @can('isStaff')
                                             <a href="{{ route('modifica-offerta', $offer->id) }}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
-                                     
                                         
                                             <form action="{{ route('delete-promo',  $offer['id'])}}" method="POST">
                                             @csrf
