@@ -15,16 +15,7 @@
                             <img class="card_img" src="{{ asset($company->logo) }}" alt="Immagine Azienda">
                             <div class="info">
                                 <h1>{{ $company->nome }}</h1>
-                            </div>
-                            @can('isAdmin')
-                                <a href="{{ route('modifica-azienda', $company->id) }}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
-                            
-                                <form action="{{ route('delete-azienda',  $company['id'])}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questa azienda?')" ><img  class="modifiche" src="{{ asset('images/delete.png') }}"></button>
-                                </form>
-                            @endcan             
+                            </div>       
                         </a>
                         </div>                    
                     </div>               

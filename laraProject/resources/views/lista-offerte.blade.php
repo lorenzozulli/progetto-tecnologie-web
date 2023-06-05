@@ -17,19 +17,9 @@
                         @can('isAdmin')
                             <a href="{{route('couponOfferta', $offer->id)}}">
                         @endcan
-
                             <img class="card_img" src="{{ asset($offer->immagine) }}" alt="Immagine Offerta">
                                     <div class="info">
-                                        <h3>{{ $offer->nome }}</h3>
-                                        @can('isStaff')
-                                            <a href="{{ route('modifica-offerta', $offer->id) }}"><img class="modifiche" src="{{ asset('images/edit.png') }}"></a>
-                                        
-                                            <form action="{{ route('delete-promo',  $offer['id'])}}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questa offerta?')" ><img class="modifiche" src="{{ asset('images/delete.png') }}"></button>
-                                            </form>
-                                        @endcan   
+                                        <h3>{{ $offer->nome }}</h3> 
                                     </div>
                             </a>
                         </div>                      
