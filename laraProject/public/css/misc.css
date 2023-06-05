@@ -270,13 +270,14 @@ Card section START
 .card{
   float: left;
   max-width: 360px;
+  height: 100%;
 }
 
 /* Personalizza tutti gli elementi interni alla card*/
 .card_inner {
+  height: 100%;
   width: auto;
   max-width: 360px;
-  max-height: max-content;
   background-color: #ffffff;
   padding: 20px;
   box-shadow: 0px 0 3px 1px #f0f0f0;
@@ -315,6 +316,16 @@ Card section START
 .info{
   width: auto;
   max-width: 280px;
+  min-height: 100px;
+}
+
+#lista_offerte{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
 }
 
 /* --- --- --- --- ---

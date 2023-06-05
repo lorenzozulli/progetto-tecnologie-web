@@ -29,11 +29,10 @@
                         </div>                      
                     </div>
                     @endforeach
-                        
+                    </div>    
                         <!--Paginazione-->
                         @include('pagination.paginator', ['paginator' => $offers])
                     @endisset()                   
-                </div>
             </div>
         <!-- lista offerte section end -->
 @endsection
