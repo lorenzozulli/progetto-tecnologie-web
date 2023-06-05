@@ -15,12 +15,14 @@ return new class extends Migration
     {
         Schema::create('coupons', function (Blueprint $table) {
             //FK
-            $table->bigInteger('id')->unsigned();
+            $table->bigIncrements('id')->unsigned();
 
-
-            $table->string('codice')->primary()->unique();
+            $table->bigInteger('id_offerta')->unsigned(); 
+            $table->string('codice')->unique();
             $table->string('user');
-            $table->foreign('id')->references('id')->on('offers')
+            
+            
+            $table->foreign('id_offerta')->references('id')->on('offers')
                 ->onDelete('cascade')->onUpdate('cascade');
         });
     }

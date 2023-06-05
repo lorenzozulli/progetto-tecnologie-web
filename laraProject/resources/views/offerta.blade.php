@@ -42,6 +42,11 @@
             @error('error')
             <span style="color: red">{{ $message }}</span>
             @enderror
+         
+            @error('errScaduto')
+            <span style="color: red">{{ $message }}</span>
+            @enderror
+            
     </div>
 </div>
 <!-- offerta section end -->

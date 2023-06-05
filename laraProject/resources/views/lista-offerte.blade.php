@@ -11,7 +11,13 @@
                     @foreach ($activeOffers as $offer)
                     <div class="card">
                         <div class="card_inner">
+                        @can('isUser')
                             <a href="{{route('offerta', $offer->nome)}}">
+                        @endcan
+                        @can('isAdmin')
+                            <a href="{{route('couponOfferta', $offer->id)}}">
+                        @endcan
+
                             <img class="card_img" src="{{ asset($offer->immagine) }}" alt="Immagine Offerta">
                                     <div class="info">
                                         <h3>{{ $offer->nome }}</h3>

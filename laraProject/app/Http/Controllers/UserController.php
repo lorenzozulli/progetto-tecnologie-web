@@ -33,15 +33,17 @@ class UserController extends Controller
     public function creaCoupon($id, $username)
     {
         $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        $randomString = substr(str_shuffle($characters), 0, 10);
-        $control = Offer::where('id', $id)->first();
-        $username = User::where('username', $username)->first();
+        $randomString = substr(str_shuffle($characters), 0, 10); //codice
+        $control = Offer::where('id', $id)->first();             //offerta
+        $username = User::where('username', $username)->first(); //user
+
+        //dd($control->id);
 
         $coupon = new Coupon;
         $coupon->user = $username->username;
-        $coupon->id = $control->id;
+        $coupon->id_offerta = $control->id;
         $coupon->codice = $randomString;
-
+        //dd($coupon);
         //controlla che l'username non abbia già un id offerta associato
         $existingCoupon = Coupon::where('user', $username->username)
             ->where('id', $control->id)
