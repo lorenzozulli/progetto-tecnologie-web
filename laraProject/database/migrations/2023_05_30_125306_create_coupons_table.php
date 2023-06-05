@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('coupons', function (Blueprint $table) {
             //FK
-            $table->bigInteger('id')->unsigned();
+            $table->bigIncrements('id')->unsigned();
 
             $table->bigInteger('id_offerta')->unsigned(); 
-            $table->string('codice')->primary()->unique();
+            $table->string('codice')->unique();
             $table->string('user');
             
             
