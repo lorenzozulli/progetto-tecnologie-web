@@ -394,11 +394,13 @@ class DatabaseSeeder extends Seeder
         DB::table('coupons') -> insert([
             [
                 'id' => 1,
+                'id_offerta' => '1',
                 'user' => 'useruser',
                 'codice' => 'E92VcCkZTv',               
             ],
             [
                 'id' => 2,
+                'id_offerta' => '2',
                 'user' => 'useruser',
                 'codice' => 'lWEseXhmv6',
             ]
