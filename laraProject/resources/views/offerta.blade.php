@@ -3,11 +3,8 @@
 <!-- offerta section start -->
 <div class="mega_container">
     <!-- immagine azienda section start -->
-    <div class="image_logo">
-        <img src="../images/loghi_aziende/}}">
-    </div>
+    <img class="card_img" src="{{$offer->immagine}}">
     <!-- immagine azienda section end -->
-
     <!-- coupon section start -->
     <div class="coupon">
         @guest
@@ -16,11 +13,7 @@
         <!-- collegamento con il coupon -->
     </div>
     <!-- coupon section end -->
-
- 
-
     <div class="the_other_stuff">
-
         @can('isUser')
         <div class="bt">
             <h1><a onclick="event.preventDefault(); document.getElementById('save-cp').submit();" href="">Acquisici
