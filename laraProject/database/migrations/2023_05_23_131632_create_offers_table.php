@@ -23,6 +23,7 @@ return new class extends Migration
 
             $table->text('modalitaFruizione');
             $table->text('luogoFruizione');
+            $table->string('immagine')->default('images/loghi-aziende/non_disponibile.png');
 
             // inserisco come data di default la data corrente, nel caso questo valore non dovesse essere riempito
             $table->dateTime('dataOraCreazione')->default(DB::raw('CURRENT_TIMESTAMP'));

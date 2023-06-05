@@ -1,18 +1,18 @@
-@extends('layouts/base')
+@extends('layouts.base')
 @section('content')
         <!-- lista offerte section start -->
             <div class="mega_container">
-            <h1 style="text-align:center"> LISTA OFFERTE </h1>
+            <h1 class="page_title">"LISTA OFFERTE"</h1>
             @can('isStaff')
                 <h3><a href="{{ route('aggiunta-offerta') }}">Aggiungi Offerta</a></h3>
             @endcan
-                <div id="content">
+                <div id="lista_offerte">
                     @isset($offers)
-                    @foreach ($offers as $offer)
+                    @foreach($offers as $offer)
                     <div class="card">
                         <div class="card_inner">
                             <a href="{{route('offerta', $offer->nome)}}">
-                                <img class="card_img" src="images/loghi-aziende/non_disponibile.png">
+                            <img class="card_img" src="{{ asset($offer->immagine) }}" alt="Immagine Offerta">
                                     <div class="info">
                                         <h3>{{ $offer->nome }}</h3>
                                         @can('isStaff')

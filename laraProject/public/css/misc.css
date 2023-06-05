@@ -269,12 +269,14 @@ Card section START
 /* Personalizza la card */
 .card{
   float: left;
+  max-width: 360px;
 }
 
 /* Personalizza tutti gli elementi interni alla card*/
 .card_inner {
   width: auto;
   max-width: 360px;
+  max-height: max-content;
   background-color: #ffffff;
   padding: 20px;
   box-shadow: 0px 0 3px 1px #f0f0f0;
@@ -286,6 +288,8 @@ Card section START
 .card_inner a {
   color: #262626;
   text-decoration: none;
+  width: 100%;
+  display: inline-block;
 }
 
 /* personalizza la card al passaggio del cursore */
@@ -309,7 +313,8 @@ Card section START
 
 /* Personalizza le informazioni nella card */
 .info{
-  max-width: 300px;
+  width: auto;
+  max-width: 280px;
 }
 
 /* --- --- --- --- ---
