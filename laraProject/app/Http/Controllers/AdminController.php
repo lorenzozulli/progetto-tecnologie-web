@@ -254,4 +254,17 @@ public function createFaq()
         return  $nCoupon;
 
     }
+
+    public function couponOfferta($offer){
+
+        //questa funzione riporta il numero di cupon acquisiti da un detereminato offerta
+        $coupon_count = DB::table('coupons')->where('id', $offer)->first();
+        dd($coupon_count);
+
+
+        // questa funzione riporta il numero totali di cupon acquisiti da tutti gli utenti
+        //$couponList= Coupon::all()->count();
+        //echo "In totale sono stati acquisiti ".$couponList." coupon.";
+       
+    }
 } 
