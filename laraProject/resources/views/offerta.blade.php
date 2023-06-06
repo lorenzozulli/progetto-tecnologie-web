@@ -2,6 +2,7 @@
 @section('content')
 <!-- offerta section start -->
 <div class="mega_container">
+
     <!-- immagine azienda section start -->
     
     <img class="card_img" src="{{asset($offer->immagine)}}">
@@ -46,8 +47,9 @@
             <span style="color: red">{{ $message }}</span>
             @enderror
 
-        <p id="coupon_count"></p>
-         
+            @can('isAdmin')
+                 <p id="coupon_count"> Per questa  offerta sono stati emessi {{$coupon_count}} coupon.</p>
+            @endcan
          
             
     </div>

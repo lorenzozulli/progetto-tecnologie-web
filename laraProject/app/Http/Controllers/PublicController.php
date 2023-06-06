@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Faq;
+use App\Models\Coupon;
 use App\Models\Offer;
 use App\Models\Company;
 use Illuminate\Support\Facades\DB;
@@ -42,10 +43,12 @@ class PublicController extends Controller
     }
 
     // Mostra la singola Offerta
-    public function showOffer($nome){
-        $offer = Offer::where('nome', $nome)->first();
-        //dd($offer);
-        return view ('offerta', ['offer'=>$offer]);
+    public function showOffer($id){
+        $offer = Offer::where('id', $id)->first();
+        $coupon_count = Coupon::where('id_offerta', $id)->count();
+       
+       // dd($coupon_count);
+        return view ('offerta', ['offer'=>$offer], compact('coupon_count'));
     }
 
     // Mostra la singola Azienda
