@@ -18,8 +18,8 @@ return new class extends Migration
              $table->bigIncrements('id');
 
              //$table->string('username')->unsigned();
-             $table->string('domanda')->unique();
-             $table->string('risposta')->unique();
+             $table->text('domanda')->unique();
+             $table->text('risposta')->unique();
  
              // definizione del vincolo di FK
              //$table->foreign('username')->references('username')->on('users');

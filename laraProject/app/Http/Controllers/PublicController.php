@@ -55,6 +55,12 @@ class PublicController extends Controller
         //dd($company);
         return view ('azienda', ['company'=>$company]);
     }
+
+    public function showTipologia(){
+        $companies = Company::all('tipologia');
+
+        dd($companies);
+    }
     
     // Mostra soltanto le Aziende della tipologia specificata
     public function showListaAziendePerTipologia($tipologia){

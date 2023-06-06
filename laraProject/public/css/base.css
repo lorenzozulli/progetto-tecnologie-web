@@ -175,15 +175,16 @@ header{
     .sidenav a {font-size: 18px;}
 }
 
-/* Decora i singoli elementi all'interno della sidenav */
-.category{
-  color: #FAFAFA;
-  padding: 8px 8px 8px 32px;
-}
-
 /* Fa in modo che i risultati di ricerca nella barra siano senza la barra di scorrimento */
 .ui-menu-item{
   overflow-x: hidden;
+}
+
+/* Decora i singoli elementi all'interno della sidenav */
+.sidenav_item{
+  color: #FAFAFA;
+  overflow-x: hidden;
+  padding: 8px 8px 8px 32px;
 }
 
 /* --- --- --- --- ---
