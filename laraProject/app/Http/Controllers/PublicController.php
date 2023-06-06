@@ -21,13 +21,11 @@ class PublicController extends Controller
 
 
         return view('lista-offerte', compact('activeOffers'));
-       
-      
     }
 
     // Mostra tutte le Aziende
     public function showListaAziende(){
-        $companies = Company::select()->paginate(12);
+        $companies = Company::select('*')->paginate(12);
 
         return view ('lista-aziende')
         ->with('companies', $companies);
@@ -54,16 +52,10 @@ class PublicController extends Controller
         //dd($company);
         return view ('azienda', ['company'=>$company]);
     }
-
-    public function showTipologia(){
-        $companies = Company::all('tipologia');
-
-        dd($companies);
-    }
     
     // Mostra soltanto le Aziende della tipologia specificata
     public function showListaAziendePerTipologia($tipologia){
-        $companies = Company::where('tipologia', $tipologia)->paginate(12);
+        $companies = Company::query()->where('tipologia','=', $tipologia)->paginate(12);
 
         return view('lista-aziende', compact('companies'));
     }
