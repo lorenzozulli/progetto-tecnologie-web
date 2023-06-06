@@ -7,7 +7,7 @@
                     @forelse($Offerte as $offer)
                     <div class="card">
                         <div class="card_inner">
-                            <a href="{{route('offerta', $offer->nome )}}">
+                            <a href="{{route('offerta', $offer->id )}}">
                             <img class="card_img" src="{{ asset($offer->immagine) }}" alt="Immagine Offerta">
                                     <div class="info">
                                         <h3>{{ $offer->nome }}</h3>

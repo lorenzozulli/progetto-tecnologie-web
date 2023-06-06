@@ -1,5 +1,6 @@
 @extends('layouts.base')
 @section('content')
+    <!-- visualizza a schermo i dati dello user selezionato-->
     <div class="mega_container">
         <h1 class="page_title">Dati Utente</h1>
         <div class="dashboard">
