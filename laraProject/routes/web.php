@@ -56,8 +56,8 @@ Route::get('/lista-offerteajax', [PublicController::class, 'offerListAjax'])
     ->name('lista-aziendeajax');
 
 // Mostra la pagina dell'azienda selezionata
-Route::get('/lista-offerte/{offerta}', [PublicController::class, 'showOffer'])
-    ->name('offerta');
+Route::get('/lista-offerte/{id}', [PublicController::class, 'showOffer'])
+    ->name('lista-offerte');
 
 // Effettua la ricerca delle offerte
 Route::get('/cerca-offerte', [PublicController::class, 'searchOffers'])
@@ -70,6 +70,8 @@ Route::get('faq', [PublicController::class, 'showFaq'])
 Route::get('/search', [PublicController::class, 'search'])
     ->name('search');
 
+/*Route::get('/lista-offerte/{offerta}', [AdminController::class, 'couponCount'])
+        ->name('offerta');*/
 
 
  /**
@@ -225,8 +227,7 @@ Route::middleware('can:isAdmin')->group(function(){
     Route::get('coupon-emessi', [AdminController::class, 'contatoreCoupon'])
         ->name('coupon-emessi');
 
-    Route::get('/couponOfferta/{offerta}', [AdminController::class, 'couponOfferta'])
-        ->name('couponOfferta');
+        
 });
 
 /**

@@ -45,6 +45,8 @@
             @error('error')
             <span style="color: red">{{ $message }}</span>
             @enderror
+
+        <p id="coupon_count"></p>
          
          
             
