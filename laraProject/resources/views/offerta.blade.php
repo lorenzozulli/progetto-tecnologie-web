@@ -3,7 +3,9 @@
 <!-- offerta section start -->
 <div class="mega_container">
     <!-- immagine azienda section start -->
+    @isset($offers)
     <img class="card_img" src="{{$offer->immagine}}">
+    @endisset()
     <!-- immagine azienda section end -->
     <!-- coupon section start -->
     <div class="coupon">

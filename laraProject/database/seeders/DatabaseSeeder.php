@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // Tabella utenti
-        DB::table('users') -> insert([
+        /*DB::table('users') -> insert([
             [
                 'username' => 'useruser',
                 'nome' => 'Mario',
@@ -358,7 +358,7 @@ class DatabaseSeeder extends Seeder
                 'dataOraScadenza' => '2024-01-01 10:15:00',
                 'immagine' => 'images/immagini-offerte/vans_old_skool.jpg',
             ],
-        ]);
+        ]);*/
         
         // Tabella FAQs.
         DB::table('faqs') -> insert([
@@ -391,7 +391,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Tabella coupons.
-        DB::table('coupons') -> insert([
+       /* DB::table('coupons') -> insert([
             [
                 'id' => 1,
                 'id_offerta' => 1,
@@ -404,6 +404,6 @@ class DatabaseSeeder extends Seeder
                 'user' => 'useruser',
                 'codice' => 'lWEseXhmv6',
             ]
-        ]);
+        ]);*/
     }
     }
