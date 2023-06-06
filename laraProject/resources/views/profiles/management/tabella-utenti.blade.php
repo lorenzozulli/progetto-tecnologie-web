@@ -3,6 +3,8 @@
         <!-- tabella utenti section start -->
         <div class="mega_container">
         <h1 class="page_title">"Tabella Utenti"</h1>
+
+        <h3><a href="{{ route('aggiunta-staff') }}">Aggiungi membro dello Staff</a></h3>
         
         <!-- tabella utenti-->    
 <table>
