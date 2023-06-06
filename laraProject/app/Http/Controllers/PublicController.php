@@ -17,9 +17,9 @@ class PublicController extends Controller
 
     //  Mostra tutte le Offerte
     public function showListaOfferte(){
-        $activeOffers = Offer::where('dataOraScadenza', '>', now())->get();
-        $activeOffers = Offer::paginate(12);
-
+        
+        $activeOffers = Offer::orderBy('id_azienda')->paginate(12);
+      
         $allCompanies = Company :: all();
         return view('lista-offerte', compact('activeOffers'), compact('allCompanies'));
        

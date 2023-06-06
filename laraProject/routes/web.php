@@ -221,11 +221,11 @@ Route::middleware('can:isAdmin')->group(function(){
     Route::post('/aggiunta-staff', [AdminController::class, 'storeStaff']);
 
     // ???
-    Route::get('(/staffView/{user}', [AdminController::class, 'viewStaff'])
+    Route::get('/staffView/{user}', [AdminController::class, 'viewStaff'])
         ->name('staffView');
 
-    Route::get('(/contaCoupon/{user}', [AdminController::class, 'contaCoupon'])
-        ->name('contaCoupon');
+    Route::get('/info-utente/{user}', [AdminController::class, 'contaCoupon'])
+        ->name('info-utente');
 
     Route::get('coupon-emessi', [AdminController::class, 'contatoreCoupon'])
         ->name('coupon-emessi');

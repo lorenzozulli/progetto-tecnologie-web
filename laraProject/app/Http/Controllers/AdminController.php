@@ -253,8 +253,8 @@ class AdminController extends Controller
     {
 
         //questa funzione riporta il numero di cupon acquisiti da un detereminato utente
-        //$coupon_count = DB::table('coupons')->where('user', $user)->count();
-        //return ( $user." ha acquisito ".$coupon_count." coupon.");
+        $coupon_user = DB::table('coupons')->where('user', $user)->count();
+        return view('profiles.management.info-utente', compact('user'),  compact('coupon_user'));
 
 
         // questa funzione riporta il numero totali di cupon acquisiti da tutti gli utenti
