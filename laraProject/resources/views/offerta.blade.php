@@ -16,20 +16,28 @@
     </div>
     <!-- coupon section end -->
     <div class="the_other_stuff">
+        @if ($offer->dataOraScadenza > date('Y-m-d H:i:s'))
         @can('isUser')
+       
         <div class="bt">
             <h1><a onclick="event.preventDefault(); document.getElementById('save-cp').submit();" href="">Acquisici
                     <form id="save-cp" action="{{ url('/coupon-acquisito/'.$offer['id'].'/'.Auth::user()->username) }}" method="GET">
                         {{ csrf_field() }}
         </div>
         </form></a> il coupon come</h1>
+        
         @endcan
+        @endif
         @auth
         <p> Nome: {{ Auth::user()->nome }} </p>
         <p> Cognome: {{ Auth::user()->cognome }} </p>
         @endauth
         <!-- da mettere il nome e il cognome dell'utente -->
+        @if ($offer->dataOraScadenza > date('Y-m-d H:i:s'))
         <h1>Il coupon scade il: {{$offer->dataOraScadenza}}</h1>
+        @else 
+            <span style="color: red"> IL CODICE è SCADUTO </span>
+        @endif
         <!-- inserire la data di scadenza -->
         <h1>Descrizione</h1>
         <p> {{$offer->modalitaFruizione}}
@@ -37,10 +45,10 @@
             @error('error')
             <span style="color: red">{{ $message }}</span>
             @enderror
+
+        <p id="coupon_count"></p>
          
-            @error('errScaduto')
-            <span style="color: red">{{ $message }}</span>
-            @enderror
+         
             
     </div>
 </div>

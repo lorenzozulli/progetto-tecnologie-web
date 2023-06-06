@@ -46,7 +46,7 @@ class UserController extends Controller
         //dd($coupon);
         //controlla che l'username non abbia già un id offerta associato
         $existingCoupon = Coupon::where('user', $username->username)
-            ->where('id', $control->id)
+            ->where('id_offerta', $control->id)
             ->first();
         if ($existingCoupon) {
             return redirect()->back()
