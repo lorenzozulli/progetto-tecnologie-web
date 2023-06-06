@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // Tabella utenti
-        /*DB::table('users') -> insert([
+        DB::table('users') -> insert([
             [
                 'username' => 'useruser',
                 'nome' => 'Mario',
@@ -101,7 +101,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Xiaomi',
                 'ragioneSociale' => 'Xiaomi Inc.',
                 'tipologia' => 'Informatica',
-                'logo' => 'images/loghi-aziende/xiaomi.png',
+                'logo' => '/images/loghi-aziende/xiaomi.png',
 
             ],
             [
@@ -111,7 +111,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Asus',
                 'ragioneSociale' => 'ASUSTeK Computer Inc.',
                 'tipologia' => 'Informatica',
-                'logo' => 'images/loghi-aziende/asus.png',
+                'logo' => '/images/loghi-aziende/asus.png',
 
             ],
             [
@@ -128,7 +128,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Prozis',
                 'ragioneSociale' => 'Prozis.com, S.A.',
                 'tipologia' => 'Nutrizione sportiva',
-                'logo' => 'images/loghi-aziende/prozis.png',
+                'logo' => '/images/loghi-aziende/prozis.png',
 
             ],
             [
@@ -139,7 +139,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'IKEA',
                 'ragioneSociale' => 'Inter IKEA Systems B.V.',
                 'tipologia' => 'Mobili',
-                'logo' => 'images/loghi-aziende/ikea.png'
+                'logo' => '/images/loghi-aziende/ikea.png'
 
             ],
             [
@@ -150,7 +150,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Intel',
                 'ragioneSociale' => 'Intel Corporation.',
                 'tipologia' => 'Informatica',
-                'logo' => 'images/loghi-aziende/intel.png'
+                'logo' => '/images/loghi-aziende/intel.png'
 
             ],
             [
@@ -161,7 +161,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Epic Games',
                 'ragioneSociale' => 'Epic Games, Inc.',
                 'tipologia' => 'Informatica',
-                'logo' => 'images/loghi-aziende/epic_games.jpg',
+                'logo' => '/images/loghi-aziende/epic_games.jpg',
 
             ],
             [
@@ -174,7 +174,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Adidas',
                 'ragioneSociale' => 'Adidas Italy S.P.A.',
                 'tipologia' => 'Abbigliamento',
-                'logo' => 'images/loghi-aziende/adidas.jpg',
+                'logo' => '/images/loghi-aziende/adidas.jpg',
 
             ],
             [
@@ -184,7 +184,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Amazon',
                 'ragioneSociale' => 'Amazon.com, Inc.',
                 'tipologia' => 'Informatica',
-                'logo' => 'images/loghi-aziende/amazon.png',
+                'logo' => '/images/loghi-aziende/amazon.png',
 
             ],
             [
@@ -198,7 +198,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Microsoft',
                 'ragioneSociale' => 'Microsoft Corporation',
                 'tipologia' => 'Informatica',
-                'logo' => 'images/loghi-aziende/microsoft.png',
+                'logo' => '/images/loghi-aziende/microsoft.png',
 
             ],
             [
@@ -208,7 +208,7 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Vans',
                 'ragioneSociale' => 'VF INTERNATIONAL S.A.G.L.',
                 'tipologia' => 'Abbigliamento',
-                'logo' => 'images/loghi-aziende/vans.png',
+                'logo' => '/images/loghi-aziende/vans.png',
 
             ],
         ]);
@@ -224,7 +224,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => "Utilizzabile solo sull'app Just Eat.",
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
-                'immagine' => 'images/immagini-offerte/just_eat.png',
+                'immagine' => '/images/immagini-offerte/just_eat.png',
             ],
             [
                 'id' => 2,
@@ -235,7 +235,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Huawei.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
-                'immagine' => 'images/immagini-offerte/huawei_P60.png',
+                'immagine' => '/images/immagini-offerte/huawei_P60.png',
             ],
             [
                 'id' => 3,
@@ -246,7 +246,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Nike.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
-                'immagine' => 'images/immagini-offerte/nike_huarache.png',
+                'immagine' => '/images/immagini-offerte/nike_huarache.png',
             ],
             [
                 'id' => 4,
@@ -257,7 +257,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Xiaomi.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
-                'immagine' => 'images/immagini-offerte/xiaomi_13_ultra.jpg',
+                'immagine' => '/images/immagini-offerte/xiaomi_13_ultra.jpg',
             ],
             [
                 'id' => 5,
@@ -268,7 +268,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Asus.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
-                'immagine' => 'images/immagini-offerte/rog_flow_z13.jpg',
+                'immagine' => '/images/immagini-offerte/rog_flow_z13.jpg',
             ],
             [
                 'id' => 6,
@@ -279,7 +279,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Sito prozis.com',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
-                'immagine' => 'images/immagini-offerte/prozis_preparato.png',
+                'immagine' => '/images/immagini-offerte/prozis_preparato.png',
             ],
             [
                 'id' => 7,
@@ -290,7 +290,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Ikea.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
-                'immagine' => 'images/immagini-offerte/besta.png',
+                'immagine' => '/images/immagini-offerte/besta.png',
             ],
             [
                 'id' => 8,
@@ -301,7 +301,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Intel.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
-                'immagine' => 'images/immagini-offerte/i9-13900KS.png',
+                'immagine' => '/images/immagini-offerte/i9-13900KS.png',
             ],
             [
                 'id' => 9,
@@ -312,7 +312,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Sito epicgames.com',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
-                'immagine' => 'images/immagini-offerte/v_bucks.jpg',
+                'immagine' => '/images/immagini-offerte/v_bucks.jpg',
             ],
             [
                 'id' => 10,
@@ -323,7 +323,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Adidas.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
-                'immagine' => 'images/immagini-offerte/adidas_ultraboost.jpg',
+                'immagine' => '/images/immagini-offerte/adidas_ultraboost.jpg',
             ],
             [
                 'id' => 11,
@@ -334,7 +334,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Sito amazon.com',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
-                'immagine' => 'images/immagini-offerte/echo_dot_5.jpg',
+                'immagine' => '/images/immagini-offerte/echo_dot_5.jpg',
             ],
             [
                 'id' => 12,
@@ -345,7 +345,7 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Microsoft.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
-                'immagine' => 'images/immagini-offerte/surface_pro_9.png',
+                'immagine' => '/images/immagini-offerte/surface_pro_9.png',
             ],
             [
                 'id' => 13,
@@ -356,9 +356,9 @@ class DatabaseSeeder extends Seeder
                 'luogoFruizione' => 'Presso negozi e punti vendita certificati Vans.',
                 'dataOraCreazione' => now(),
                 'dataOraScadenza' => '2024-01-01 10:15:00',
-                'immagine' => 'images/immagini-offerte/vans_old_skool.jpg',
+                'immagine' => '/images/immagini-offerte/vans_old_skool.jpg',
             ],
-        ]);*/
+        ]);
         
         // Tabella FAQs.
         DB::table('faqs') -> insert([
@@ -391,7 +391,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Tabella coupons.
-       /* DB::table('coupons') -> insert([
+       DB::table('coupons') -> insert([
             [
                 'id' => 1,
                 'id_offerta' => 1,
@@ -404,6 +404,6 @@ class DatabaseSeeder extends Seeder
                 'user' => 'useruser',
                 'codice' => 'lWEseXhmv6',
             ]
-        ]);*/
+        ]);
     }
     }
