@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Http\Requests\NewProductRequest;
 use App\Models\Faq;
+use App\Models\Offer;
 use App\Models\Coupon;
 use App\Models\User;
 use App\Models\Company;
