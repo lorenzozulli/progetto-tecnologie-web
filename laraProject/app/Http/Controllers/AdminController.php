@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers; 
+namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Http\Requests\NewProductRequest;
@@ -19,12 +19,14 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Symfony\Component\Mime\Message;
 
-class AdminController extends Controller {
+class AdminController extends Controller
+{
 
-   protected $_adminModel;
+    protected $_adminModel;
 
-   // Ritorna la dashboard di tipo Admin
-    public function index() {
+    // Ritorna la dashboard di tipo Admin
+    public function index()
+    {
         return view('profiles.admin');
     }
 
@@ -32,12 +34,14 @@ class AdminController extends Controller {
         $company->logo = $request->file('logo')->openFile()->fread($request->file('logo')->getSize());
     }*/
 
-    public function show() {
+    public function show()
+    {
         return view('profiles.lista-user');
     }
 
-    public function showStaff() {
-        
+    public function showStaff()
+    {
+
         $users = User::select()->paginate(12);
 
         return view('profiles.lista-staff')->with('users', $users);
@@ -59,13 +63,13 @@ class AdminController extends Controller {
         $company = Company::findOrFail($id);
         //dd($offer);
         $company->delete();
-       
+
         return redirect()->route('lista-aziende');
     }
 
     //creazione di un'azienda
     public function createAzienda()
-    {   
+    {
         return view('profiles.management.aggiunta-azienda');
     }
 
@@ -78,13 +82,13 @@ class AdminController extends Controller {
      * @throws \Illuminate\Validation\ValidationException
      */
     public function storeAzienda(Request $request)
-    {   
+    {
         $request->validate([
             'nome' => ['required', 'string'],
             'descrizione' => ['required', 'string', 'max:255'],
             'ragioneSociale' => ['required', 'string'],
             'tipologia' => ['required', 'string'],
-            'logo' => ['nullable', 'string'],   
+            'logo' => ['nullable', 'string'],
         ]);
         //dd($request);
 
@@ -100,30 +104,29 @@ class AdminController extends Controller {
             'descrizione' => $request->descrizione,
             'ragioneSociale' => $request->ragioneSociale,
             'tipologia' => $request->tipologia,
-            'logo' =>$logo,
-            
+            'logo' => $logo,
+
         ]);
 
         //dd($request);
         return redirect()->route('lista-aziende');
-       
     }
 
     public function showtabellaAziende()
-    {   
-       $Companies= Company::all();
-       return view('profiles.management.tabella-aziende', compact('Companies') );
+    {
+        $Companies = Company::all();
+        return view('profiles.management.tabella-aziende', compact('Companies'));
     }
 
     public function showtabellaUtenti()
-    {   
-       $Users= User::all();
-       return view('profiles.management.tabella-utenti', compact('Users') );
+    {
+        $Users = User::all();
+        return view('profiles.management.tabella-utenti', compact('Users'));
     }
 
     //crea un membro dello staff
     public function createStaff()
-    {   
+    {
         return view('profiles.management.aggiunta-staff');
     }
 
@@ -136,7 +139,7 @@ class AdminController extends Controller {
      * @throws \Illuminate\Validation\ValidationException
      */
     public function storeStaff(Request $request)
-    {   
+    {
 
         $request->validate([
             'username' => ['required', 'string', 'min:8', 'unique:users'],
@@ -146,11 +149,11 @@ class AdminController extends Controller {
             'genere' => ['required', 'string'],
             'livello' => ['integer'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'telefono' => ['required', 'string','max:10'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],   
+            'telefono' => ['required', 'string', 'max:10'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
         ]);
-        
-        $logo = 2;      
+
+        $logo = 2;
 
         $user = User::create([
             'username' => $request->username,
@@ -158,9 +161,9 @@ class AdminController extends Controller {
             'cognome' => $request->cognome,
             'eta' => $request->eta,
             'genere' => $request->genere,
-            'livello' =>$logo,
+            'livello' => $logo,
             'password' => Hash::make($request->password),
-            'telefono' =>$request->telefono,
+            'telefono' => $request->telefono,
             'email' => $request->email,
         ]);
 
@@ -168,85 +171,86 @@ class AdminController extends Controller {
 
 
         return redirect()->route('lista-staff');
-       
     }
 
-    public function viewStaff($username){
+    public function viewStaff($username)
+    {
         $user = User::where('username', $username)->first();
         //dd($user);
-        
-        return view ('staff-view', ['user'=>$user])->with('success');
+
+        return view('staff-view', ['user' => $user])->with('success');
     }
-    
-    
-//crea una FAQ
-public function createFaq()
-    {    
+
+
+    //crea una FAQ
+    public function createFaq()
+    {
         return view('profiles.management.aggiunta-faq');
     }
     public function storeFaq(Request $request)
 
-    {   
-            $request->validate([
+    {
+        $request->validate([
             'domanda' => ['required', 'string', 'max:255'],
             'risposta' => ['required', 'string'],
-           
-             ]);
-        
+
+        ]);
+
         Faq::create([
             'domanda' => $request->domanda,
             'risposta' => $request->risposta,
-            
+
         ]);
         return redirect()->route('aggiunta-faq');
     }
 
     public function deleteFaq($id)
-    {    
-        $faq= Faq::findOrFail($id);
+    {
+        $faq = Faq::findOrFail($id);
         $faq->delete();
         return redirect()->route('tabella-faq');
     }
-   
+
     public function showtabellaFaq()
-    {   
-       $Faqs= Faq::all();
-       return view('profiles.management.tabella-faq', compact('Faqs') );
+    {
+        $Faqs = Faq::all();
+        return view('profiles.management.tabella-faq', compact('Faqs'));
     }
 
     //modifica le FAQ
     public function updateFaq($id)
-    {       
+    {
         //$idFaq = Faq::where('id' == $id)->first();
-        return view('profiles.management.modifica-faq', ['id'=>$id]);
+        return view('profiles.management.modifica-faq', ['id' => $id]);
     }
 
     public function storeFaqs(Request $request, $id)
-    {   
+    {
         $request->validate([
-        'domanda' => ['nullable', 'string', 'max:255', 'unique:faqs'],
-        'risposta' => ['nullable', 'string', 'unique:faqs'],
+            'domanda' => ['nullable', 'string', 'max:255', 'unique:faqs'],
+            'risposta' => ['nullable', 'string', 'unique:faqs'],
         ]);
-        
+
         $idFaq = Faq::where('id', $id)->first();
 
         if ($request->input('domanda') != null) {
-        $idFaq-> domanda =$request->input('domanda');    
+            $idFaq->domanda = $request->input('domanda');
         } else {
             $idFaq->domanda = $idFaq->domanda;
         }
-        
-        if ($request->input('risposta') != null){
-        $idFaq-> risposta =$request->input('risposta');
+
+        if ($request->input('risposta') != null) {
+            $idFaq->risposta = $request->input('risposta');
         } else {
             $idFaq->risposta = $idFaq->risposta;
         }
 
-        $idFaq-> save();     
+        $idFaq->save();
         return redirect('admin')->with('success', 'faq modificata con successo!');
     }
 
-    public function contaCoupon($user){
+    public function contaCoupon($user)
+    {
 
         //questa funzione riporta il numero di cupon acquisiti da un detereminato utente
         //$coupon_count = DB::table('coupons')->where('user', $user)->count();
@@ -256,18 +260,19 @@ public function createFaq()
         // questa funzione riporta il numero totali di cupon acquisiti da tutti gli utenti
         //$couponList= Coupon::all()->count();
         //echo "In totale sono stati acquisiti ".$couponList." coupon.";
-       
+
     }
 
-    public function contatoreCoupon(){
+    public function contatoreCoupon()
+    {
         $coupons = Coupon::all();
-        $nCoupon = count($coupons); 
+        $nCoupon = count($coupons);
 
         return  $nCoupon;
-
     }
 
-    public function couponOfferta($offer){
+    public function couponOfferta($offer)
+    {
         //dd($offer);
         //questa funzione riporta il numero di cupon acquisiti da un detereminato offerta
         $coupon_count = DB::table('coupons')->where('id', $offer)->get();
@@ -277,6 +282,18 @@ public function createFaq()
         // questa funzione riporta il numero totali di cupon acquisiti da tutti gli utenti
         //$couponList= Coupon::all()->count();
         //echo "In totale sono stati acquisiti ".$couponList." coupon.";
-       
+
     }
-} 
+    // CouponController.php
+    public function getCouponCount($offerId)
+    {
+       
+        // Esegui la logica per ottenere il numero di coupon emessi per l'offerta con l'ID $offerId
+
+        
+        $offer = Offer::find($offerId);
+        $couponCount = $offer->coupon_count;
+
+        return $couponCount;
+    }
+}

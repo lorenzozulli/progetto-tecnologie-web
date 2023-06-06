@@ -8,7 +8,7 @@
     <!-- coupon section start -->
     <div class="coupon">
         @guest
-        <h3>Registrati per scoprire il codice</h3>
+        <h3><a href="{{route('login')}}"> Registrati o accedi</a> per scoprire il codice</h3>
         @endguest
         <!-- collegamento con il coupon -->
     </div>
