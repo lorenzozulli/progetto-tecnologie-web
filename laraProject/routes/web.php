@@ -42,8 +42,11 @@ Route::get('/lista-aziende/{azienda}', [PublicController::class, 'showCompany'])
     ->name('azienda');
 
 // Mostra le aziende per tipologia
-Route::get('/lista-azienda/{tipologia}', [PublicController::class, 'showTipologia'])
+Route::get('/lista-azienda/{tipologia}', [PublicController::class, 'showListaAziendePerTipologia'])
     ->name('tipologia');
+
+Route::get('categorie', [PublicController::class, 'showTipologia'])
+    ->name('showTipologia');
 
 // Mostra la pagina con la lista di tutte le offerte
 Route::get('/lista-offerte', [PublicController::class, 'showListaOfferte'])
