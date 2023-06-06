@@ -16,12 +16,11 @@ class PublicController extends Controller
 
     //  Mostra tutte le Offerte
     public function showListaOfferte(){
-        $activeOffers = Offer::where('dataOraScadenza', '>', now())->orderBy('id_azienda')->paginate(12);
-        
-        $allCompanies = Company::all(); //prende tutte le aziende
-        //$allCompanies = Company::paginate(12);
+        $activeOffers = Offer::where('dataOraScadenza', '>', now())->get();
+        $activeOffers = Offer::paginate(12);
 
-        return view('lista-offerte', compact('activeOffers'), compact('allCompanies'));
+
+        return view('lista-offerte', compact('activeOffers'));
        
       
     }
@@ -43,8 +42,8 @@ class PublicController extends Controller
     }
 
     // Mostra la singola Offerta
-    public function showOffer($id){
-        $offer = Offer::where('id', $id)->first();
+    public function showOffer($nome){
+        $offer = Offer::where('nome', $nome)->first();
         //dd($offer);
         return view ('offerta', ['offer'=>$offer]);
     }
