@@ -3,6 +3,10 @@
         <!-- tabella aziende section start -->
         <div class="mega_container">
         <h1 class="page_title">"Tabella Aziende"</h1>
+
+        @can('isAdmin')
+            <h3><a href="{{ route('aggiunta-azienda') }}">Aggiungi Azienda</a></h3>
+        @endcan
         
         <!-- tabella delle aziende -->    
 <table>

@@ -3,9 +3,6 @@
         <!-- lista utenti 1 section start -->
         <div class="mega_container">
         <h1 class="page_title">Lista Utenti di Livello 2</h1>
-
-        <h3><a href="{{ route('aggiunta-staff') }}">Aggiungi membro dello Staff</a></h3>
-           
                 <div id="content">
                     @isset($users)
                     @foreach ($users as $user)
