@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Faq;
+use App\Models\Coupon;
 use App\Models\Offer;
 use App\Models\Company;
 use Illuminate\Support\Facades\DB;
@@ -16,11 +17,10 @@ class PublicController extends Controller
 
     //  Mostra tutte le Offerte
     public function showListaOfferte(){
-        $activeOffers = Offer::where('dataOraScadenza', '>', now())->orderBy('id_azienda')->paginate(12);
         
-        $allCompanies = Company::all(); //prende tutte le aziende
-        //$allCompanies = Company::paginate(12);
-
+        $activeOffers = Offer::orderBy('id_azienda')->paginate(12);
+      
+        $allCompanies = Company :: all();
         return view('lista-offerte', compact('activeOffers'), compact('allCompanies'));
        
       
@@ -28,7 +28,7 @@ class PublicController extends Controller
 
     // Mostra tutte le Aziende
     public function showListaAziende(){
-        $companies = Company::select()->paginate(12);
+        $companies = Company::select('*')->paginate(12);
 
         return view ('lista-aziende')
         ->with('companies', $companies);
@@ -45,8 +45,10 @@ class PublicController extends Controller
     // Mostra la singola Offerta
     public function showOffer($id){
         $offer = Offer::where('id', $id)->first();
-        //dd($offer);
-        return view ('offerta', ['offer'=>$offer]);
+        $coupon_count = Coupon::where('id_offerta', $id)->count();
+       
+       // dd($coupon_count);
+        return view ('offerta', ['offer'=>$offer], compact('coupon_count'));
     }
 
     // Mostra la singola Azienda
@@ -55,16 +57,10 @@ class PublicController extends Controller
         //dd($company);
         return view ('azienda', ['company'=>$company]);
     }
-
-    public function showTipologia(){
-        $companies = Company::all('tipologia');
-
-        dd($companies);
-    }
     
     // Mostra soltanto le Aziende della tipologia specificata
     public function showListaAziendePerTipologia($tipologia){
-        $companies = Company::where('tipologia', $tipologia)->paginate(12);
+        $companies = Company::query()->where('tipologia','=', $tipologia)->paginate(12);
 
         return view('lista-aziende', compact('companies'));
     }

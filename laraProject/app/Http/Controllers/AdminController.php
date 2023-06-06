@@ -254,8 +254,8 @@ class AdminController extends Controller
     {
 
         //questa funzione riporta il numero di cupon acquisiti da un detereminato utente
-        //$coupon_count = DB::table('coupons')->where('user', $user)->count();
-        //return ( $user." ha acquisito ".$coupon_count." coupon.");
+        $coupon_user = DB::table('coupons')->where('user', $user)->count();
+        return view('profiles.management.info-utente', compact('user'),  compact('coupon_user'));
 
 
         // questa funzione riporta il numero totali di cupon acquisiti da tutti gli utenti
@@ -272,7 +272,7 @@ class AdminController extends Controller
         return  $nCoupon;
     }
 
-    public function couponOfferta($offer)
+   /* public function couponOfferta($offer)
     {
         //dd($offer);
         //questa funzione riporta il numero di cupon acquisiti da un detereminato offerta
@@ -280,17 +280,6 @@ class AdminController extends Controller
         dd($coupon_count);
         return $coupon_count;
        
-    }
-    // CouponController.php
-    public function getCouponCount($offerId)
-    {
-       
-        // Esegui la logica per ottenere il numero di coupon emessi per l'offerta con l'ID $offerId
-
-        
-        $offer = Offer::find($offerId);
-        $couponCount = $offer->coupon_count;
-
-        return $couponCount;
-    }
+    }*/
+ 
 }

@@ -42,8 +42,11 @@ Route::get('/lista-aziende/{azienda}', [PublicController::class, 'showCompany'])
     ->name('azienda');
 
 // Mostra le aziende per tipologia
-Route::get('/lista-azienda/{tipologia}', [PublicController::class, 'showTipologia'])
+Route::get('/lista-azienda/{tipologia}', [PublicController::class, 'showListaAziendePerTipologia'])
     ->name('tipologia');
+
+Route::get('categorie', [PublicController::class, 'showTipologia'])
+    ->name('showTipologia');
 
 // Mostra la pagina con la lista di tutte le offerte
 Route::get('/lista-offerte', [PublicController::class, 'showListaOfferte'])
@@ -70,6 +73,8 @@ Route::get('faq', [PublicController::class, 'showFaq'])
 Route::get('/search', [PublicController::class, 'search'])
     ->name('search');
 
+/*Route::get('/lista-offerte/{offerta}', [AdminController::class, 'couponCount'])
+        ->name('offerta');*/
 
 
  /**
@@ -216,17 +221,16 @@ Route::middleware('can:isAdmin')->group(function(){
     Route::post('/aggiunta-staff', [AdminController::class, 'storeStaff']);
 
     // ???
-    Route::get('(/staffView/{user}', [AdminController::class, 'viewStaff'])
+    Route::get('/staffView/{user}', [AdminController::class, 'viewStaff'])
         ->name('staffView');
 
-    Route::get('(/contaCoupon/{user}', [AdminController::class, 'contaCoupon'])
-        ->name('contaCoupon');
+    Route::get('/info-utente/{user}', [AdminController::class, 'contaCoupon'])
+        ->name('info-utente');
 
     Route::get('coupon-emessi', [AdminController::class, 'contatoreCoupon'])
         ->name('coupon-emessi');
 
-    Route::get('/couponOfferta/{offerta}', [AdminController::class, 'couponOfferta'])
-        ->name('couponOfferta');
+        
 });
 
 /**
