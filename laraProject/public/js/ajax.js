@@ -22,7 +22,7 @@
         success: function(response) {
             var couponEmessi = response.coupon_emessi;
             console.log(response)
-            $('#n_coupon').text("Totale coupon emessi:"+ response);
+            $('#n_coupon').text("Totale coupon emessi: "+ response);
         },
     });
 });

@@ -250,12 +250,16 @@ class AdminController extends Controller
         return redirect('admin')->with('success', 'faq modificata con successo!');
     }
 
+    //questa funzione conta i coupon acquisiti da un determinato utente
     public function contaCoupon($user)
     {
+        //dd($user);
 
         //questa funzione riporta il numero di cupon acquisiti da un detereminato utente
         $coupon_user = DB::table('coupons')->where('user', $user)->count();
-        return view('profiles.management.info-utente', compact('user'),  compact('coupon_user'));
+        $datiUtente = User::where('username', $user)->first();
+        //dd($datiUtente);
+        return view('profiles.management.info-utente', compact('datiUtente'),  compact('coupon_user'));
 
 
         // questa funzione riporta il numero totali di cupon acquisiti da tutti gli utenti

@@ -237,6 +237,13 @@ footer{
     text-decoration-color: #FAFAFA;
 }
 
+.orange_line {
+  height: 5px;
+  background-color: #F26522;
+  margin-top: 7px;
+  margin-bottom: 10px;
+}
+
 /*Per l'immagine dentro il footer*/
 .image_logo{
     padding-top: 20px;
