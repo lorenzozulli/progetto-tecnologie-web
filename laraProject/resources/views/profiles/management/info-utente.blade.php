@@ -8,6 +8,7 @@
             <p>Cognome: {{$datiUtente->cognome}}</p>
             <p>Età: {{$datiUtente->eta}}</p>
             <p>Genere: {{$datiUtente->genere}}</p>
+            <p>Telefono: {{$datiUtente->telefono}}</p>
             <p>E-mail: {{$datiUtente->email}}</p>
             <h3>Statistiche: {{$datiUtente->username}} ha acquisito {{$coupon_user}} coupon.</h3>
         </div>
