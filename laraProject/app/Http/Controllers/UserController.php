@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Offer;
 use App\Models\Coupon;
 use App\Models\User;
+use App\Models\Company;
 
 class UserController extends Controller
 {
@@ -13,7 +14,12 @@ class UserController extends Controller
     // Ritorna la dashboard dell'utente di tipo User
     public function index()
     {
-        return view('profiles.user');
+        
+        $coupons = Coupon::all();
+        $offers = Offer::all();
+        $companies = Company::all();
+        //dd($companies);
+        return view('profiles.user', compact('coupons', 'offers', 'companies'));
     }
 
     public function showUser()
@@ -37,28 +43,24 @@ class UserController extends Controller
         $control = Offer::where('id', $id)->first();             //offerta
         $username = User::where('username', $username)->first(); //user
 
-        //dd($control->id);
-
         $coupon = new Coupon;
         $coupon->user = $username->username;
         $coupon->id_offerta = $control->id;
         $coupon->codice = $randomString;
-        //dd($coupon);
         //controlla che l'username non abbia già un id offerta associato
         $existingCoupon = Coupon::where('user', $username->username)
             ->where('id_offerta', $control->id)
             ->first();
         if ($existingCoupon) {
             return redirect()->back()
-                ->withErrors(["error" => "Hai già un coupon per questa offerta!"]);
+                ->withErrors(["error" => "Hai già un coupon per questa offerta! vai nella tua dashboard per visualizzare tutti i tuoi coupon"]);
         }
         $coupon->save();
         return view('profiles.coupon-acquisito', ['coupon' => $coupon])->with('success');
     }
 
-    public function showCoupon($username){
-        $user = User::where('user', $username)->first();
-        $coupon = Coupon::all();
+    public function showCoupon($id){
+        $coupon = Coupon::where('id_offerta', $id);
 
         return;
     }

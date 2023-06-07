@@ -49,7 +49,7 @@
             <!-- Tipologia -->
             <div  class="wrap-input">
                 {{ Form::label('tipologia', 'Tipologia', ['class' => 'label-input']) }}
-                {{ Form::select('tipologia', array('Informatica', 'Cibo e Ristorazione', 'Abbligliamento', 'Mobili', 'Nutrizione Sportiva')) }}
+                {{ Form::select('tipologia', array('Informatica', 'Cibo e Ristorazione', 'Abbligliamento', 'Mobili', 'Nutrizione Sportiva','Sport e Fitness', 'Auto e Moto', 'Casa e Giardino', 'Giocattoli', 'Salute')) }}
                 @if ($errors->first('tipologia'))
                 <ul class="errors">
                     @foreach ($errors->get('tipologia') as $message)

@@ -28,7 +28,6 @@ class ModifiedUserController extends Controller {
     // Salva l'utente che ha fatto modifiche al profilo
     public function store(Request $request) {
         $user = Auth::user();
-        $datiUser = DB::table('users')->where('username', $user->username)->first();
 
         $request->validate([
             'username' => ['nullable', 'string', 'min:8', 'unique:users'],
@@ -37,7 +36,7 @@ class ModifiedUserController extends Controller {
             'eta' => ['nullable', 'integer'],
             'genere' => ['nullable', 'string'],
             //'livello' => ['integer'],
-            'password' => ['nullable', 'confirmed', Rules\Password::defaults()],
+            'password' => ['nullable', Rules\Password::defaults()],
             'telefono' => ['nullable', 'string','max:10'],
             'email' => ['nullable', 'string', 'email', 'max:255', 'unique:users'],     
         ]);
@@ -46,50 +45,34 @@ class ModifiedUserController extends Controller {
         // Modifica delle informazioni dell'utente
         if ($request->input('username') != null) {
             $user->username = $request->input('username');
-        } else {
-            $user->username = $datiUser->username;
         }
 
         if ($request->input('nome') != null) {
             $user->nome = $request->input('nome');
-        } else {
-            $user->nome = $datiUser->nome;
         }
 
         if ($request->input('cognome') != null) {
             $user->cognome = $request->input('cognome');
-        } else {
-            $user->cognome = $datiUser->cognome;
         }
 
         if ($request->input('eta') != null) {
             $user->eta = $request->input('eta');
-        } else {
-            $user->eta = $datiUser->eta;
         }
 
         if ($request->input('genere') != null) {
             $user->genere = $request->input('genere');
-        } else {
-            $user->genere = $datiUser->genere;
         }
 
         if ($request->input('password') != null) {
             $user->password = Hash::make($request->input('password'));
-        } else {
-            $user->password = $datiUser->password;
         }
 
         if ($request->input('telefono') != null) {
             $user->telefono = $request->input('telefono');
-        } else {
-            $user->telefono = $datiUser->telefono;
         }
 
         if ($request->input('email') != null) {
             $user->email = $request->input('email');
-        } else {
-            $user->email = $datiUser->email;
         }
          
         $user->save();

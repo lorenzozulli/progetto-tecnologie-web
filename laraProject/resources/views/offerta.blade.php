@@ -2,9 +2,8 @@
 @section('content')
 <!-- offerta section start -->
 <div class="mega_container">
-
+    <div class="mega_container_inner">
     <!-- immagine azienda section start -->
-    
     <img class="card_img" src="{{asset($offer->immagine)}}">
     
     <!-- immagine azienda section end -->
@@ -21,27 +20,30 @@
         @can('isUser')
        
         <div class="bt">
-            <h1><a onclick="event.preventDefault(); document.getElementById('save-cp').submit();" href="">Acquisici
+            <h1><a onclick="event.preventDefault(); document.getElementById('save-cp').submit();" href="">Acquisici</a></h1>
                     <form id="save-cp" action="{{ url('/coupon-acquisito/'.$offer['id'].'/'.Auth::user()->username) }}" method="GET">
                         {{ csrf_field() }}
         </div>
-        </form></a> il coupon come</h1>
-        
+        </form> 
         @endcan
         @endif
         @auth
-        <p> Nome: {{ Auth::user()->nome }} </p>
-        <p> Cognome: {{ Auth::user()->cognome }} </p>
+            <p> Nome: {{ Auth::user()->nome }} </p>
+            <p> Cognome: {{ Auth::user()->cognome }} </p>
         @endauth
         <!-- da mettere il nome e il cognome dell'utente -->
         @if ($offer->dataOraScadenza > date('Y-m-d H:i:s'))
-        <h1>Il coupon scade il: {{$offer->dataOraScadenza}}</h1>
-        @else 
-            <span style="color: red"> IL CODICE è SCADUTO </span>
+            <h1>Il coupon scade il: {{$offer->dataOraScadenza}}</h1>
+        @else
+            <span style="color: red"> L'OFFERTA È SCADUTA! </span>   
         @endif
+             
         <!-- inserire la data di scadenza -->
-        <h1>Descrizione</h1>
-        <p> {{$offer->modalitaFruizione}}
+        
+        <h3>Descrizione</h3>
+        <p>{{$offer->modalitaFruizione}}</p>
+        <h3>Luogo di fruizione</h3>
+        <p>{{$offer->luogoFruizione}}</p>
             <!-- da inserire la descrizione del coupon-->
             @error('error')
             <span style="color: red">{{ $message }}</span>
@@ -49,10 +51,9 @@
 
             @can('isAdmin')
                  <p id="coupon_count"> Per questa  offerta sono stati emessi {{$coupon_count}} coupon.</p>
-            @endcan
-         
-            
+            @endcan            
     </div>
+</div>
 </div>
 <!-- offerta section end -->
 @endsection

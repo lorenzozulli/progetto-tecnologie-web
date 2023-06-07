@@ -38,11 +38,11 @@ class RegisteredUserController extends Controller
             'username' => ['required', 'string', 'min:8', 'unique:users'],
             'nome' => ['required', 'string'],
             'cognome' => ['required', 'string', 'max:255'],
-            'eta' => ['required', 'integer'],
+            'eta' => ['required', 'integer', 'min:18'],
             'genere' => ['required', 'string'],
             //'livello' => ['integer'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'telefono' => ['required', 'string','max:10'],
+            'telefono' => ['required', 'string','min:10','max:10', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],     
         ]);
         $user = User::create([

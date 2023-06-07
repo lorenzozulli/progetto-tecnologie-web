@@ -25,6 +25,22 @@
                 @can('isUser')
                 <h3>Clicca <a href="{{ route('modifica-user') }}">qui</a> per modificare il tuo profilo</h3>
                 @endcan
+
+                <h3>I tuoi coupon</h3>
+
+                @foreach($coupons as $coupon)
+                    @foreach($offers as $offer)
+                        @foreach($companies as $company)
+                            @if($coupon->user == Auth::user()->username)
+                                @if($coupon->id_offerta == $offer->id)
+                                    @if($offer->id_azienda == $company->id)
+                                        <p>{{$company->nome}}: {{$offer->nome}}, <b>{{$coupon->codice}}</b></p>
+                                    @endif
+                                @endif
+                            @endif
+                        @endforeach
+                    @endforeach
+                @endforeach
             </div>
         </div>
         <!-- user section end -->

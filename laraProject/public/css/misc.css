@@ -216,7 +216,7 @@ Dashboard section START
 .dashboard{
   width: 50%;
   margin: auto;
-  background: #FFFFFF;
+  background: #ffc493;
   border-radius: 20px;
   border: 3px solid #F26522;
   padding: 30px 30px;
@@ -332,3 +332,21 @@ Card section START
 /* --- --- --- --- ---
 Card section END
 --- --- --- --- --- */
+
+.mega_container_inner{
+  margin: 18px auto 18px auto; /* Fa in modo che sia centrato */
+  min-height: 700px; /* Fa in modo che la sua altezza minima sia di 700px per avere il footer sempre in fondo alla pagina */
+  width: 80%;/* Introduce i bordi laterali bianchi */
+  background-color: #FAFAFA; /* Fa in modo che il colore sia diverso a quello di sfondo */
+}
+
+.coupon_acquisito{
+  width: 50%;
+  margin: auto;
+  background: #ffc493;
+  border-radius: 20px;
+  border: 3px solid #F26522;
+  padding: 30px 30px;
+  position: relative;
+  top: -20px;
+}
