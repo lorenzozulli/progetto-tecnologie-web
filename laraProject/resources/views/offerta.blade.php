@@ -50,7 +50,7 @@
             @enderror
 
             @can('isAdmin')
-                 <p id="coupon_count"> Per questa  offerta sono stati emessi {{$coupon_count}} coupon.</p>
+                 <p id="coupon_count"> Coupon emessi per questa offerta: <b>{{$coupon_count}}</b>.</p>
             @endcan            
     </div>
 </div>
