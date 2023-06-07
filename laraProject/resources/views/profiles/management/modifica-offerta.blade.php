@@ -1,11 +1,10 @@
 @extends('layouts.base')
 @section('content')
 
-        <!-- modifica offerta section start -->
-        <div class="mega_container">
-            <p>ciao sono la pagina di modifica di una offerta</p>
-            <div class="container-contact">
-        <h3>Modifica Offerta</h3>
+    <!-- modifica offerta section start -->
+    <div class="mega_container">
+        <div class="container-contact">
+            <h1 class="page_title">Modifica Offerta</h1>
             <div class="wrap-contact">
                 {{ Form::open(array('route' => ['modifica-offerta', $id], 'class' => 'contact-form')) }}
                 

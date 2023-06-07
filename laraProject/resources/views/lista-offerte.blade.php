@@ -5,10 +5,6 @@
             
             <div class="mega_container">
                 <h1 class="page_title">"LISTA OFFERTE"</h1>
-                <!-- permette allo staff di aggiungere delle offerte -->
-                @can('isStaff')
-                    <h3><a href="{{ route('aggiunta-offerta') }}">Aggiungi Offerta</a></h3>
-                @endcan
                 @foreach ($allCompanies as $company) <!-- prende tutte le aziende -->
                 <div id="content">
                     <div>

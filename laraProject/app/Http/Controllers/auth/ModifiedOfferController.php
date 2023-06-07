@@ -63,7 +63,7 @@ class ModifiedOfferController extends Controller
         //dd($offer);
         $offer->save();
         //dd($offer);
-        return redirect('staff')->with('success', 'Informazioni modificate con successo!');
+        return redirect('tabella-offerte');
     }
 
      

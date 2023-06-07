@@ -9,6 +9,7 @@
                 <thead>
                     <tr>
                         <th>id</th>
+                        <th>Azienda</th>
                         <th>Nome</th>
                         <th>Oggetto</th>
                         <th>Modalità fruizione</th>
@@ -24,6 +25,7 @@
                 @foreach($activeOffers as $offer)
                     <tr>
                         <td>{{$offer['id']}}</td>
+                        <td>{{$offer['id_azienda']}}</td>
                         <td>{{$offer['nome']}}</td>
                         <td>{{$offer['oggetto']}}</td>
                         <td>{{$offer['modalitaFruizione']}}</td>

@@ -54,8 +54,9 @@ class PublicController extends Controller
     // Mostra la singola Azienda
     public function showCompany($nome){
         $company = Company::where('nome', $nome)->first();
+        $offers = Offer::all();
         //dd($company);
-        return view ('azienda', ['company'=>$company]);
+        return view ('azienda', ['company'=>$company], compact('offers'));
     }
     
     // Mostra soltanto le Aziende della tipologia specificata

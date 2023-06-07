@@ -22,31 +22,6 @@ class StaffController extends Controller
     {
         return view('profiles.staff');
     }
-
-
-    /* public function showData(){
-    
-        $user = Auth::user();
-        if ($user->livello === 2){
-            $staffData = User::all();
-            return view('staff-data', ['user'=>$staffData]);
-        }
-    }
-
-    //la variabile $request viene passata come parametro al metodo e rappresenta la richiesta fatta al server
-   public function updateData(Request $request)
-    {
-      
-        $user  = Auth::user();
-
-        if ($user->livello === 2){
-        // except rimuove il campo "username" dalla richiesta di aggiornamento e prende tutto il resto 
-        $data = $request->except('username');
-
-        $user->update($data);
-
-        return redirect()->back()->with('staff', 'Dati staff aggiornati con successo.');}
-    }*/
      
     //aggiunta promozione
     public function addPromo()
@@ -64,7 +39,7 @@ class StaffController extends Controller
           //  'id_azienda' => ['required', 'int'],
             'modalitaFruizione' => ['required', 'string'],
             'luogoFruizione' => ['required', 'string'],
-            'dataOraScadenza' => ['required', 'string'],
+            'dataOraScadenza' => ['required', 'date'],
            
         ]);
     
@@ -80,7 +55,7 @@ class StaffController extends Controller
     
     
     
-        return redirect('/')->with('success', 'Nuova offerta memorizzata con successo!');
+        return redirect('tabella-offerte')->with('success', 'Nuova offerta memorizzata con successo!');
     }
 
     public function store(Request $request, $id){

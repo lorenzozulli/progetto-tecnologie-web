@@ -41,7 +41,7 @@ class ModifiedStaffController extends Controller {
             'cognome' => ['nullable', 'string', 'max:255'],
             'eta' => ['nullable', 'integer'],
             'genere' => ['nullable', 'string'],
-            'password' => ['nullable', 'confirmed', Rules\Password::defaults()],
+            'password' => ['nullable', Rules\Password::defaults()],
             'telefono' => ['nullable', 'string','max:10'],
             'email' => ['nullable', 'string', 'email', 'max:255', 'unique:users'],
         ]);

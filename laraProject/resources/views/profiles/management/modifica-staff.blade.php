@@ -49,14 +49,7 @@
                         </ul>
                         @endif
                     </div>
-
-                    <!-- Conferma Password -->
-                    <div  class="wrap-input">
-                        {{ Form::label('password-confirm', 'Conferma password', ['class' => 'label-input']) }}
-                        {{ Form::password('password_confirmation', ['class' => 'input', 'id' => 'password-confirm']) }}
-                    </div>
                     @endif
-
 
                     @if($livello->livello == 3)
 
@@ -156,12 +149,6 @@
                             @endforeach
                         </ul>
                         @endif
-                    </div>
-
-                    <!-- Conferma Password -->
-                    <div  class="wrap-input">
-                        {{ Form::label('password-confirm', 'Conferma password', ['class' => 'label-input']) }}
-                        {{ Form::password('password_confirmation', ['class' => 'input', 'id' => 'password-confirm']) }}
                     </div>
                     @endif
 

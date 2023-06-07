@@ -70,7 +70,7 @@
 
             <!-- dataOraScadenza -->
             <div  class="wrap-input">
-                {{ Form::label('dataOraScadenza', 'Data Ora Scadenza', ['class' => 'label-input']) }}
+                {{ Form::label('dataOraScadenza', 'Data Ora Scadenza (dd-mm-aaaa)', ['class' => 'label-input']) }}
                 {{ Form::text('dataOraScadenza', '', ['class' => 'input', 'id' => 'dataOraScadenza']) }}
                 @if ($errors->first('dataOraScadenza'))
                 <ul class="errors">
