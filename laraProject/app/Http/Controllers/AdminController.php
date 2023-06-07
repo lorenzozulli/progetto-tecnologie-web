@@ -181,14 +181,14 @@ class AdminController extends Controller
             'risposta' => $request->risposta,
 
         ]);
-        return redirect()->route('aggiunta-faq');
+        return redirect('tabella-faq');
     }
 
     public function deleteFaq($id)
     {
         $faq = Faq::findOrFail($id);
         $faq->delete();
-        return redirect()->route('tabella-faq');
+        return redirect('tabella-faq');
     }
 
     public function showtabellaFaq()
@@ -226,7 +226,7 @@ class AdminController extends Controller
         }
 
         $idFaq->save();
-        return redirect('admin')->with('success', 'faq modificata con successo!');
+        return redirect('tabella-faq')->with('success', 'faq modificata con successo!');
     }
 
     //questa funzione conta i coupon acquisiti da un determinato utente
