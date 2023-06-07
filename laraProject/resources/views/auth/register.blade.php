@@ -44,7 +44,7 @@
             
             <!-- Età -->
             <div  class="wrap-input">
-                {{ Form::label('eta', 'Età', ['class' => 'label-input']) }}
+                {{ Form::label('eta', 'Età (maggiore di 18)', ['class' => 'label-input']) }}
                 {{ Form::text('eta', '', ['class' => 'input','id' => 'eta']) }}
                 @if ($errors->first('eta'))
                 <ul class="errors">
