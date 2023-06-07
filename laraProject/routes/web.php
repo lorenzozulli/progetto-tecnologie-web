@@ -196,14 +196,6 @@ Route::middleware('can:isAdmin')->group(function(){
     Route::delete('/delete-azienda/{id}', [AdminController::class, 'deleteAzienda'])
         ->name('delete-azienda');
 
-    // Mostra la lista di tutti gli utenti di tipo User
-    Route::get('/lista-user', [UserController::class, 'showUser'])
-        ->name('lista-user');
-
-    // Mostra la lista di tutti gli utenti di tipo Staff
-    Route::get('/lista-staff', [AdminController::class, 'showStaff'])
-        ->name('lista-staff');
-
     // Permette di eliminare un utente di tipo User o Staff
     Route::delete('/elimina-utente/{username}', [AdminController::class, 'deleteUser'])
         ->name('elimina-utente');

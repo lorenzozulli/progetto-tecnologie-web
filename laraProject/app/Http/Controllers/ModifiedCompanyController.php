@@ -21,7 +21,7 @@ class ModifiedCompanyController extends Controller
     // Salva un'azienda modificata
     public function store(Request $request, $id){
         $datiCompany = DB::table('companies')->where('id', $id)->first();
-        //dd($datiCompany->nome);
+
         $request->validate([ 
             'nome' => ['nullable', 'string', 'unique:companies'],
             'descrizione' => ['nullable', 'string', 'max:255'],
@@ -29,12 +29,9 @@ class ModifiedCompanyController extends Controller
             'tipologia' => ['nullable', 'string'],
             'logo' => ['nullable', 'string'],   
         ]);
-        //dd($request->nome);
         
         
         $company = Company::where('id', $id)->first();
-        //dd($company);
-       // dd($request);
 
        if ($request->logo) {
             $logo = $request->logo;
@@ -42,9 +39,6 @@ class ModifiedCompanyController extends Controller
             $logo = 'images/loghi-aziende/non_disponibile.png';
         }
         $company->logo = $logo;
-        //dd($logo);
-        //dd($company->logo);
-        //dd($request->logo);
 
         // Modifica delle informazioni dell'azienda
         if ($request->input('nome') != null) {
@@ -79,14 +73,6 @@ class ModifiedCompanyController extends Controller
 
         $company->save();
 
-        return redirect('admin')->with('success', 'Informazioni modificate con successo!');
+        return redirect('tabella-aziende')->with('success', 'Informazioni modificate con successo!');
     }
-
-     
-    // Elimina un'Offerta esistente
-    public function deletePromo()
-    {
-        
-    }
-
 }

@@ -31,23 +31,6 @@ class AdminController extends Controller
         return view('profiles.admin');
     }
 
-    /*public function getGo(Request $request){
-        $company->logo = $request->file('logo')->openFile()->fread($request->file('logo')->getSize());
-    }*/
-
-    public function show()
-    {
-        return view('profiles.lista-user');
-    }
-
-    public function showStaff()
-    {
-
-        $users = User::select()->paginate(12);
-
-        return view('profiles.lista-staff')->with('users', $users);
-    }
-
     public function deleteUser($username)
     {
         //dd($username);
@@ -58,14 +41,13 @@ class AdminController extends Controller
         return redirect()->route('admin');
     }
 
+    // Questa funzione elimina un'azienda
     public function deleteAzienda($id)
     {
-        //dd($request);
         $company = Company::findOrFail($id);
-        //dd($offer);
         $company->delete();
 
-        return redirect()->route('lista-aziende');
+        return redirect('tabella-aziende');
     }
 
     //creazione di un'azienda
@@ -91,14 +73,12 @@ class AdminController extends Controller
             'tipologia' => ['required', 'string'],
             'logo' => ['nullable', 'string'],
         ]);
-        //dd($request);
 
         if ($request->logo) {
             $logo = $request->logo;
         } else {
             $logo = 'images/loghi-aziende/non_disponibile.png';
         }
-        //dd($logo);
 
         Company::create([
             'nome' => $request->nome,
@@ -109,8 +89,7 @@ class AdminController extends Controller
 
         ]);
 
-        //dd($request);
-        return redirect()->route('lista-aziende');
+        return redirect('tabella-aziende')->with('success', 'Nuova azienda memorizzata con successo!');
     }
 
     public function showtabellaAziende()
@@ -261,11 +240,6 @@ class AdminController extends Controller
         //dd($datiUtente);
         return view('profiles.management.info-utente', compact('datiUtente'),  compact('coupon_user'));
 
-
-        // questa funzione riporta il numero totali di cupon acquisiti da tutti gli utenti
-        //$couponList= Coupon::all()->count();
-        //echo "In totale sono stati acquisiti ".$couponList." coupon.";
-
     }
 
     public function contatoreCoupon()
@@ -275,15 +249,5 @@ class AdminController extends Controller
 
         return  $nCoupon;
     }
-
-   /* public function couponOfferta($offer)
-    {
-        //dd($offer);
-        //questa funzione riporta il numero di cupon acquisiti da un detereminato offerta
-        $coupon_count = DB::table('coupons')->where('id_offerta', $offer)->count();
-        dd($coupon_count);
-        return $coupon_count;
-       
-    }*/
  
 }
