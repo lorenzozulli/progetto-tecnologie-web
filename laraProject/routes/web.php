@@ -45,6 +45,12 @@ Route::get('/lista-aziende/{azienda}', [PublicController::class, 'showCompany'])
 Route::get('/lista-azienda/{tipologia}', [PublicController::class, 'showListaAziendePerTipologia'])
     ->name('tipologia');
 
+// Permette all'utente di modificare le credenziali di un membro dello staff
+Route::get('/modifica-staff/{username}/{livello}', [ModifiedStaffController::class, 'update'])
+    ->name('modifica-staff');
+
+    Route::post('modifica-staff/{username}/{livello}', [ModifiedStaffController::class, 'store']);
+
 Route::get('categorie', [PublicController::class, 'showTipologia'])
     ->name('showTipologia');
 
@@ -106,12 +112,6 @@ Route::middleware('can:isStaff')->group(function(){
     // Mostra la dashboard dell'utente di tipo Staff
     Route::get('/staff', [StaffController::class, 'index'])
         ->name('staff');
-
-    // Permette all'utente di modificare le proprie credenziali
-    Route::get('/modifica-staff/{username}/{livello}', [ModifiedStaffController::class, 'update'])
-        ->name('modifica-staff');
-
-    Route::post('modifica-staff/{username}/{livello}', [ModifiedStaffController::class, 'store']);
 
     // Permette la visualizzazione della tabella delle offerte
     Route::get('/tabella-offerte', [StaffController::class,'showTabellaOfferte' ])
@@ -203,12 +203,6 @@ Route::middleware('can:isAdmin')->group(function(){
     // Mostra la lista di tutti gli utenti di tipo Staff
     Route::get('/lista-staff', [AdminController::class, 'showStaff'])
         ->name('lista-staff');
-
-        // Permette all'utente di modificare le credenziali di un membro dello staff
-    Route::get('/modifica-staff/{username}/{livello}', [ModifiedStaffController::class, 'update'])
-        ->name('modifica-staff');
-
-    Route::post('modifica-staff/{username}/{livello}', [ModifiedStaffController::class, 'store']);
 
     // Permette di eliminare un utente di tipo User o Staff
     Route::delete('/elimina-utente/{username}', [AdminController::class, 'deleteUser'])

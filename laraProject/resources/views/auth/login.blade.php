@@ -1,3 +1,4 @@
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <meta charset="utf-8">
 <title>"Scontastic: i migliori codici sconto in Italia</title>
 <link rel="stylesheet" href="{{ asset('css/base.css') }}">
@@ -49,3 +50,4 @@
     </div>
 
 </div>
+</html>
