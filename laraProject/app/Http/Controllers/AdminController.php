@@ -38,7 +38,7 @@ class AdminController extends Controller
         //dd($user);
         $user->delete();
 
-        return redirect()->route('admin');
+        return redirect('tabella-utenti');
     }
 
     // Questa funzione elimina un'azienda
@@ -125,11 +125,11 @@ class AdminController extends Controller
             'username' => ['required', 'string', 'min:8', 'unique:users'],
             'nome' => ['required', 'string'],
             'cognome' => ['required', 'string', 'max:255'],
-            'eta' => ['required', 'integer'],
+            'eta' => ['required', 'integer', 'min:18'],
             'genere' => ['required', 'string'],
             'livello' => ['integer'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'telefono' => ['required', 'string', 'max:10'],
+            'telefono' => ['required', 'string','min:10','max:10', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
         ]);
 
@@ -150,7 +150,7 @@ class AdminController extends Controller
         event(new Registered($user));
 
 
-        return redirect()->route('lista-staff');
+        return redirect('tabella-utenti');
     }
 
     public function viewStaff($username)

@@ -33,11 +33,10 @@ class ModifiedUserController extends Controller {
             'username' => ['nullable', 'string', 'min:8', 'unique:users'],
             'nome' => ['nullable', 'string'],
             'cognome' => ['nullable', 'string', 'max:255'],
-            'eta' => ['nullable', 'integer'],
+            'eta' => ['nullable', 'integer', 'min:18'],
             'genere' => ['nullable', 'string'],
-            //'livello' => ['integer'],
             'password' => ['nullable', Rules\Password::defaults()],
-            'telefono' => ['nullable', 'string','max:10'],
+            'telefono' => ['nullable', 'string','min:10','max:10', 'unique:users'],
             'email' => ['nullable', 'string', 'email', 'max:255', 'unique:users'],     
         ]);
         

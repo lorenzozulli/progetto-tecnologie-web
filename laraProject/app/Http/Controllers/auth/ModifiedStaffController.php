@@ -39,10 +39,10 @@ class ModifiedStaffController extends Controller {
             'username' => ['nullable', 'string', 'min:8', 'unique:users'],
             'nome' => ['nullable', 'string'],
             'cognome' => ['nullable', 'string', 'max:255'],
-            'eta' => ['nullable', 'integer'],
+            'eta' => ['nullable', 'integer', 'min:18'],
             'genere' => ['nullable', 'string'],
             'password' => ['nullable', Rules\Password::defaults()],
-            'telefono' => ['nullable', 'string','max:10'],
+            'telefono' => ['nullable', 'string','min:10','max:10', 'unique:users'],
             'email' => ['nullable', 'string', 'email', 'max:255', 'unique:users'],
         ]);
 
@@ -127,7 +127,7 @@ class ModifiedStaffController extends Controller {
             
             $user->save();
 
-        return redirect('admin')->with('success', 'Informazioni modificate con successo!');
+        return redirect('tabella-utenti')->with('success', 'Informazioni modificate con successo!');
         }
                
         

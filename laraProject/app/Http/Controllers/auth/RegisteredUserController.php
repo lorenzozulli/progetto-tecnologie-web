@@ -40,7 +40,6 @@ class RegisteredUserController extends Controller
             'cognome' => ['required', 'string', 'max:255'],
             'eta' => ['required', 'integer', 'min:18'],
             'genere' => ['required', 'string'],
-            //'livello' => ['integer'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'telefono' => ['required', 'string','min:10','max:10', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],     
