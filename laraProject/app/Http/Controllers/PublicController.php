@@ -113,16 +113,21 @@ public function search(Request $request)
         return response()->json($results);
     }
 
-public function offerListAjax(){
+public function offerListAjax(){     
+    //Ottiene i dati richiesti
     $offers = Offer::select('nome')->get();
+    //crea array vuoto
     $data = [];
 
+    //per ogni offerta in offerte, va a riempire l'array con il nome dell'offerta
     foreach($offers as $offer){
         $data[] = $offer->nome;
     }
+    //ritorna l'array che verrà poi passato nella chiamata AJAX
     return $data;
 }
 
+//funziona allo stesso modo della funzione precedente 
 public function companyListAjax(){
     $companies = Company::select('nome')->get();
     $data = [];
