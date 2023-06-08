@@ -125,19 +125,6 @@
                         @endif
                     </div>
 
-                    <!-- Username -->
-                    <div  class="wrap-input">
-                        {{ Form::label('username', 'username', ['class' => 'label-input']) }}
-                        {{ Form::text('username', '', ['class' => 'input','id' => 'username', 'placeholder' => $username->username]) }}
-                        @if ($errors->first('username'))
-                            <ul class="errors">
-                            @foreach ($errors->get('username') as $message)
-                                <li>{{ $message }}</li>
-                            @endforeach
-                            </ul>
-                        @endif
-                    </div>
-
                     <!-- Password -->
                     <div  class="wrap-input">
                         {{ Form::label('password', 'Password', ['class' => 'label-input']) }}
