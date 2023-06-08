@@ -7,7 +7,7 @@
         <h3>Aggiunta</h3>
         <div class="wrap-contact">
             
-            {{ Form::open(['route' => 'aggiunta-offerta', $company]) }}
+            {{ Form::open(['route' => 'aggiunta-offerta', 'files' => 'true', $company]) }}
 
             <!-- Nome -->
             <div  class="wrap-input">
@@ -34,7 +34,7 @@
                     </ul>
                 @endif
             </div>
-            
+
             <!-- id_azienda-->
             <div class="wrap-input">
                 <label class="label-input" for="id_azienda">Azienda</label>
@@ -68,6 +68,19 @@
                 @if ($errors->first('luogoFruizione'))
                     <ul class="errors">
                     @foreach ($errors->get('luogoFruizione') as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                    </ul>
+                @endif
+            </div>
+
+            <!-- Immagine -->
+            <div  class="wrap-input">
+                {{ Form::label('immagine', 'Immagine', ['class' => 'label-input']) }}
+                {{ Form::file('immagine', ['class' => 'input', 'id' => 'immagine']) }}
+                @if ($errors->first('immagine'))
+                    <ul class="errors">
+                    @foreach ($errors->get('immagine') as $message)
                         <li>{{ $message }}</li>
                     @endforeach
                     </ul>
