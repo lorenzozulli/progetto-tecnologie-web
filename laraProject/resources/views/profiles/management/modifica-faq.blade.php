@@ -3,7 +3,6 @@
 
     <!-- Modifica FAQ section start -->
     <div class="mega_container">
-        <p>Ciao, questa è la pagina di modifica delle faq</p>
         <div class="container-contact">
             <h3>Modifica FAQ</h3>
             <div class="wrap-contact">
@@ -14,7 +13,7 @@
                 <!-- Domanda -->
                 <div class="wrap-input">
                     {{ Form::label('domanda', 'Domanda', ['class' => 'label-input']) }}
-                    {{ Form::text('domanda', '', ['class' => 'input', 'id' => 'domanda']) }}
+                    {{ Form::textarea('domanda', '', ['class' => 'input', 'id' => 'domanda']) }}
                     @if ($errors->first('domanda'))
                         <ul class="errors">
                         @foreach ($errors->get('domanda') as $message)

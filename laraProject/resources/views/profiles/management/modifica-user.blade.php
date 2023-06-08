@@ -4,7 +4,7 @@
     <!-- modifica User section start -->
     <div class="mega_container">
         <div class="container-contact">
-            <h3>Modifica</h3>
+            <h1 class="page_title">Modifica Utente</h1>
             <div class="wrap-contact">
                 
                 {{ Form::open(array('route' => ['modifica-user'], 'class' => 'contact-form')) }}

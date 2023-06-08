@@ -3,7 +3,7 @@
 
 <div class="mega_container">
     <div class="container-contact">
-        <h3>Aggiunta membro Staff</h3>
+        <h1 class="page_title">Aggiunta membro Staff</h1>
         <div class="wrap-contact">
             {{ Form::open(array('route' => 'aggiunta-staff', 'class' => 'contact-form')) }}
             @csrf
@@ -81,7 +81,7 @@
 
             <!-- Username -->
             <div  class="wrap-input">
-                {{ Form::label('username', 'username', ['class' => 'label-input']) }}
+                {{ Form::label('username', 'Username', ['class' => 'label-input']) }}
                 {{ Form::text('username', '', ['class' => 'input','id' => 'username']) }}
                 @if ($errors->first('username'))
                     <ul class="errors">

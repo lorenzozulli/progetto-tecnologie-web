@@ -4,7 +4,7 @@
         <!-- modifica azienda section start -->
         <div class="mega_container">
             <div class="container-contact">
-                <h3>Modifica Azienda</h3>
+                <h1 class="page_title">Modifica Azienda</h1>
                 <div class="wrap-contact">
                     
                     {{ Form::open(array('route' => ['modifica-azienda', $id], 'class' => 'contact-form')) }}

@@ -12,7 +12,7 @@
             <!-- Domanda -->
             <div  class="wrap-input">
                 {{ Form::label('domanda', 'Domanda', ['class' => 'label-input']) }}
-                {{ Form::text('domanda', '', ['class' => 'input', 'id' => 'domanda']) }}
+                {{ Form::textarea('domanda', '', ['class' => 'input', 'id' => 'domanda']) }}
                 @if ($errors->first('domanda'))
                     <ul class="errors">
                     @foreach ($errors->get('domanda') as $message)
@@ -25,7 +25,7 @@
             <!-- Risposta -->
             <div  class="wrap-input">   
                 {{ Form::label('risposta', 'Risposta', ['class' => 'label-input']) }}
-                {{ Form::text('risposta', '', ['class' => 'input', 'id' => 'oggetto']) }}
+                {{ Form::textarea('risposta', '', ['class' => 'input', 'id' => 'oggetto']) }}
                 @if ($errors->first('risposta'))
                     <ul class="errors">
                     @foreach ($errors->get('risposta') as $message)

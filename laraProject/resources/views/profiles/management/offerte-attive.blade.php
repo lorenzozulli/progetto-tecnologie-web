@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <!-- controllo scadenza offerte section start -->
-        <h1>Offerte Attive</h1>
+        <h1 class="page_title">Offerte Attive</h1>
             <div class="offers">
                 @if ($activeOffers->count() > 0)
                     @foreach ($activeOffers as $offer)

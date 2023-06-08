@@ -2,7 +2,7 @@
 @section('content')
     <!-- tabella faqs section start -->
         <div class="mega_container">
-        <h1 class="page_title">"Tabella FAQ"</h1>
+        <h1 class="page_title">Tabella FAQ</h1>
             <h3><a href="{{ route('aggiunta-faq') }}">Aggiungi Faqs</a></h3>
         <!-- tabella faqs -->    
             <table>
