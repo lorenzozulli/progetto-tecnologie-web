@@ -25,10 +25,18 @@ class ModifiedOfferController extends Controller
             'modalitaFruizione' => ['nullable', 'string'],
             'luogoFruizione' => ['nullable', 'string'],
             'id_azienda' => ['nullable', 'integer'],
+            'immagine' => ['nullable', 'string'],
             'dataOraScadenza' => ['nullable', 'date'],
         ]);
 
         $offer = Offer::where('id', $id)->first();
+
+        if ($request->immagine) {
+            $immagine = $request->immagine;
+        } else {
+            $immagine = 'images/loghi-aziende/non_disponibile.png';
+        }
+        $offer->immagine = $immagine;
 
         // Modifica delle informazioni dell'offerta
         if ($request->input('id_azienda') != null) {
@@ -60,6 +68,12 @@ class ModifiedOfferController extends Controller
         } else {
             $offer->luogoFruizione = $offer->luogoFruizione;
         }
+
+        if ($request->input('immagine') != null) {
+            $offer->immagine = $request->input('immagine');
+        } else {
+            $offer->immagine = $offer->immagine;
+        }  
 
         if ($request->input('dataOraScadenza') != null) {
             $offer->dataOraScadenza = $request->input('dataOraScadenza');
