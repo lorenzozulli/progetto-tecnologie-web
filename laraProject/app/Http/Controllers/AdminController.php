@@ -31,11 +31,10 @@ class AdminController extends Controller
         return view('profiles.admin');
     }
 
+    //funzione che permette di eliminare un utente di livello 1
     public function deleteUser($username)
     {
-        //dd($username);
         $user = User::FindOrFail($username);
-        //dd($user);
         $user->delete();
 
         return redirect('tabella-utenti');
@@ -64,6 +63,8 @@ class AdminController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
+
+    // salva i dati dell'azienda appena creata
     public function storeAzienda(Request $request)
     {
         $request->validate([
@@ -92,12 +93,15 @@ class AdminController extends Controller
         return redirect('tabella-aziende')->with('success', 'Nuova azienda memorizzata con successo!');
     }
 
+
+    //questa funzione permette di vedere la tabella delle aziende
     public function showtabellaAziende()
     {
         $Companies = Company::all();
         return view('profiles.management.tabella-aziende', compact('Companies'));
     }
 
+    //questa funzione permette di vedere la tabella degli utenti
     public function showtabellaUtenti()
     {
         $Users = User::all();
@@ -118,6 +122,8 @@ class AdminController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
+
+    //questa funzione salva i dati dell'utente di livello 2 appena creato
     public function storeStaff(Request $request)
     {
 
@@ -133,7 +139,7 @@ class AdminController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
         ]);
 
-        $logo = 2;
+        $livello = 2;
 
         $user = User::create([
             'username' => $request->username,
@@ -141,7 +147,7 @@ class AdminController extends Controller
             'cognome' => $request->cognome,
             'eta' => $request->eta,
             'genere' => $request->genere,
-            'livello' => $logo,
+            'livello' => $livello,
             'password' => Hash::make($request->password),
             'telefono' => $request->telefono,
             'email' => $request->email,
@@ -153,10 +159,10 @@ class AdminController extends Controller
         return redirect('tabella-utenti');
     }
 
+
     public function viewStaff($username)
     {
         $user = User::where('username', $username)->first();
-        //dd($user);
 
         return view('staff-view', ['user' => $user])->with('success');
     }
@@ -167,6 +173,8 @@ class AdminController extends Controller
     {
         return view('profiles.management.aggiunta-faq');
     }
+
+    //slava i dati della FAQ appena creata
     public function storeFaq(Request $request)
 
     {
@@ -184,6 +192,7 @@ class AdminController extends Controller
         return redirect('tabella-faq');
     }
 
+    //elimina una FAQ
     public function deleteFaq($id)
     {
         $faq = Faq::findOrFail($id);
@@ -191,6 +200,7 @@ class AdminController extends Controller
         return redirect('tabella-faq');
     }
 
+    //questa funzione permette di vedere la tabella delle FAQ
     public function showtabellaFaq()
     {
         $Faqs = Faq::all();
@@ -200,10 +210,10 @@ class AdminController extends Controller
     //modifica le FAQ
     public function updateFaq($id)
     {
-        //$idFaq = Faq::where('id' == $id)->first();
         return view('profiles.management.modifica-faq', ['id' => $id]);
     }
 
+    //salva i dati della FAQ appena modificata
     public function storeFaqs(Request $request, $id)
     {
         $request->validate([
@@ -232,16 +242,13 @@ class AdminController extends Controller
     //questa funzione conta i coupon acquisiti da un determinato utente
     public function contaCoupon($user)
     {
-        //dd($user);
-
-        //questa funzione riporta il numero di cupon acquisiti da un detereminato utente
         $coupon_user = DB::table('coupons')->where('user', $user)->count();
         $datiUtente = User::where('username', $user)->first();
-        //dd($datiUtente);
         return view('profiles.management.info-utente', compact('datiUtente'),  compact('coupon_user'));
 
     }
 
+    //questa funzione conta tutti i coupon
     public function contatoreCoupon()
     {
         $coupons = Coupon::all();

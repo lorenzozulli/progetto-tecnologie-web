@@ -1,10 +1,10 @@
 @extends('layouts.base')
 @section('content')
 
-    <!-- modifica Faq section start -->
-    <div class="mega_container">
+<!-- modifica Faq section start -->
+<div class="mega_container">
     <div class="container-contact">
-    <h3>Aggiunta</h3>
+        <h3>Aggiunta</h3>
         <div class="wrap-contact">
             
             {{ Form::open(['route' => 'aggiunta-faq']) }}
@@ -14,11 +14,11 @@
                 {{ Form::label('domanda', 'Domanda', ['class' => 'label-input']) }}
                 {{ Form::text('domanda', '', ['class' => 'input', 'id' => 'domanda']) }}
                 @if ($errors->first('domanda'))
-                <ul class="errors">
+                    <ul class="errors">
                     @foreach ($errors->get('domanda') as $message)
-                    <li>{{ $message }}</li>
+                        <li>{{ $message }}</li>
                     @endforeach
-                </ul>
+                    </ul>
                 @endif
             </div>
 
@@ -27,25 +27,23 @@
                 {{ Form::label('risposta', 'Risposta', ['class' => 'label-input']) }}
                 {{ Form::text('risposta', '', ['class' => 'input', 'id' => 'oggetto']) }}
                 @if ($errors->first('risposta'))
-                <ul class="errors">
+                    <ul class="errors">
                     @foreach ($errors->get('risposta') as $message)
-                    <li>{{ $message }}</li>
+                        <li>{{ $message }}</li>
                     @endforeach
-                </ul>
+                    </ul>
                 @endif
             </div>
              
             <!-- Bottone di aggiunta -->
             <div class="container-form-btn">    
-           
-
-           {{ Form::submit('Aggiungi', ['class' => 'form-btn1']) }}
-           </div>
+                {{ Form::submit('Aggiungi', ['class' => 'form-btn1']) }}
+            </div>
        
-           {{ Form::close() }}
-           
+           {{ Form::close() }}           
             
         </div>
     <!-- modifica User section end -->
     </div>
+</div>
 @endsection

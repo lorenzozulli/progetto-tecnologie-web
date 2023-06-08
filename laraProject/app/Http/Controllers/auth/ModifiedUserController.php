@@ -25,7 +25,7 @@ class ModifiedUserController extends Controller {
         return view('profiles.management.modifica-user');
     }
 
-    // Salva l'utente che ha fatto modifiche al profilo
+    // Salva i nuovi dati dell'utente di livello 1
     public function store(Request $request) {
         $user = Auth::user();
 
@@ -39,7 +39,6 @@ class ModifiedUserController extends Controller {
             'telefono' => ['nullable', 'string','min:10','max:10', 'unique:users'],
             'email' => ['nullable', 'string', 'email', 'max:255', 'unique:users'],     
         ]);
-        
         
         // Modifica delle informazioni dell'utente
         if ($request->input('username') != null) {

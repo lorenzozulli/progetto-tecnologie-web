@@ -22,19 +22,6 @@ class UserController extends Controller
         return view('profiles.user', compact('coupons', 'offers', 'companies'));
     }
 
-    public function showUser()
-    {
-        $users = User::select()->paginate(12);
-
-        return view('profiles.lista-user')->with('users', $users);
-    }
-
-    // Ritorna la vista per effettuare la modifica dei propri dati personali
-    public function updateData()
-    {
-        return view('profiles.management.modifica-user');
-    }
-
     //Creazione coupon
     public function creaCoupon($id, $username)
     {
@@ -47,7 +34,7 @@ class UserController extends Controller
         $coupon->user = $username->username;
         $coupon->id_offerta = $control->id;
         $coupon->codice = $randomString;
-        //controlla che l'username non abbia già un id offerta associato
+        //controlla che l'username non abbia già un id_offerta associato
         $existingCoupon = Coupon::where('user', $username->username)
             ->where('id_offerta', $control->id)
             ->first();
@@ -57,11 +44,5 @@ class UserController extends Controller
         }
         $coupon->save();
         return view('profiles.coupon-acquisito', ['coupon' => $coupon])->with('success');
-    }
-
-    public function showCoupon($id){
-        $coupon = Coupon::where('id_offerta', $id);
-
-        return;
     }
 }

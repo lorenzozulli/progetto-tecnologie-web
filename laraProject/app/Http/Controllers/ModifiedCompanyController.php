@@ -11,14 +11,12 @@ class ModifiedCompanyController extends Controller
 {
     // Modifica un'azienda già esistente
     public function updatePromo($company) {
-        //dd($company);
 
         $azienda = Company::where('id', $company)->first();
-        //dd($azienda);
         return view('profiles.management.modifica-azienda', ['id'=>$azienda]);
     }
 
-    // Salva un'azienda modificata
+    // Salva i dati di un'azienda modificata
     public function store(Request $request, $id){
         $datiCompany = DB::table('companies')->where('id', $id)->first();
 
@@ -29,7 +27,6 @@ class ModifiedCompanyController extends Controller
             'tipologia' => ['nullable', 'string'],
             'logo' => ['nullable', 'string'],   
         ]);
-        
         
         $company = Company::where('id', $id)->first();
 

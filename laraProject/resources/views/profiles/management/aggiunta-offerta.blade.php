@@ -1,10 +1,10 @@
 @extends('layouts.base')
 @section('content')
 
-    <!-- modifica User section start -->
-    <div class="mega_container">
+<!-- modifica User section start -->
+<div class="mega_container">
     <div class="container-contact">
-    <h3>Aggiunta</h3>
+        <h3>Aggiunta</h3>
         <div class="wrap-contact">
             
             {{ Form::open(['route' => 'aggiunta-offerta']) }}
@@ -14,11 +14,11 @@
                 {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
                 {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome']) }}
                 @if ($errors->first('nome'))
-                <ul class="errors">
+                    <ul class="errors">
                     @foreach ($errors->get('nome') as $message)
-                    <li>{{ $message }}</li>
+                        <li>{{ $message }}</li>
                     @endforeach
-                </ul>
+                    </ul>
                 @endif
             </div>
 
@@ -27,11 +27,11 @@
                 {{ Form::label('oggetto', 'Oggetto', ['class' => 'label-input']) }}
                 {{ Form::text('oggetto', '', ['class' => 'input', 'id' => 'oggetto']) }}
                 @if ($errors->first('oggetto'))
-                <ul class="errors">
+                    <ul class="errors">
                     @foreach ($errors->get('oggetto') as $message)
-                    <li>{{ $message }}</li>
+                        <li>{{ $message }}</li>
                     @endforeach
-                </ul>
+                    </ul>
                 @endif
             </div>
 
@@ -39,7 +39,6 @@
             <div  class="wrap-input">
                 {{ Form::label('id_azienda', 'ID Azienda', ['class' => 'label-input']) }}
                 {{ Form::text('id_azienda', '', ['class' => 'input','id' => 'id_azienda']) }}
-                
             </div>
             
             <!-- modalitaFruizione -->
@@ -47,11 +46,11 @@
                 {{ Form::label('modalitaFruizione', 'Modalità Fruizione', ['class' => 'label-input']) }}
                 {{ Form::text('modalitaFruizione', '', ['class' => 'input','id' => 'modalitaFruizione']) }}
                 @if ($errors->first('modalitaFruizione'))
-                <ul class="errors">
+                    <ul class="errors">
                     @foreach ($errors->get('modalitaFruizione') as $message)
-                    <li>{{ $message }}</li>
+                        <li>{{ $message }}</li>
                     @endforeach
-                </ul>
+                    </ul>
                 @endif
             </div>
 
@@ -60,11 +59,11 @@
                 {{ Form::label('luogoFruizione', 'Luogo Fruizione', ['class' => 'label-input']) }}
                 {{ Form::text('luogoFruizione', '', ['class' => 'input','id' => 'luogoFruizione']) }}
                 @if ($errors->first('luogoFruizione'))
-                <ul class="errors">
+                    <ul class="errors">
                     @foreach ($errors->get('luogoFruizione') as $message)
-                    <li>{{ $message }}</li>
+                        <li>{{ $message }}</li>
                     @endforeach
-                </ul>
+                    </ul>
                 @endif
             </div>
 
@@ -73,27 +72,23 @@
                 {{ Form::label('dataOraScadenza', 'Data Ora Scadenza (dd-mm-aaaa)', ['class' => 'label-input']) }}
                 {{ Form::text('dataOraScadenza', '', ['class' => 'input', 'id' => 'dataOraScadenza']) }}
                 @if ($errors->first('dataOraScadenza'))
-                <ul class="errors">
+                    <ul class="errors">
                     @foreach ($errors->get('dataOraScadenza') as $message)
-                    <li>{{ $message }}</li>
+                        <li>{{ $message }}</li>
                     @endforeach
-                </ul>
+                    </ul>
                 @endif
             </div>
             
             <!-- Bottone di aggiunta -->
             <div class="container-form-btn">    
-           
-
-                        
-            {{ Form::submit('Aggiungi', ['class' => 'form-btn1']) }}
+                {{ Form::submit('Aggiungi', ['class' => 'form-btn1']) }}
             </div>
         
             {{ Form::close() }}
-            
-            
+                        
         </div>
     </div>
     <!-- modifica User section end -->
-    </div>
+</div>
 @endsection

@@ -4,7 +4,7 @@
         <!-- modifica azienda section start -->
         <div class="mega_container">
             <div class="container-contact">
-            <h3>Modifica Azienda</h3>
+                <h3>Modifica Azienda</h3>
                 <div class="wrap-contact">
 
                     {{ Form::open(array('route' => ['modifica-azienda', $id], 'class' => 'contact-form')) }}
@@ -14,11 +14,11 @@
                         {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
                         {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome', 'placeholder'=>$id->nome]) }} 
                         @if ($errors->first('nome'))
-                        <ul class="errors">
+                            <ul class="errors">
                             @foreach ($errors->get('nome') as $message)
-                            <li>{{ $message }}</li>
+                                <li>{{ $message }}</li>
                             @endforeach
-                        </ul>
+                            </ul>
                         @endif   
                     </div>
 
@@ -27,11 +27,11 @@
                         {{ Form::label('descrizione', 'Descrizione', ['class' => 'label-input']) }}
                         {{ Form::text('descrizione', '', ['class' => 'input', 'id' => 'descrizione', 'placeholder'=>$id->descrizione]) }}
                         @if ($errors->first('descrizione'))
-                        <ul class="errors">
+                            <ul class="errors">
                             @foreach ($errors->get('descrizione') as $message)
-                            <li>{{ $message }}</li>
+                                <li>{{ $message }}</li>
                             @endforeach
-                        </ul>
+                            </ul>
                         @endif
                     </div>
 
@@ -40,11 +40,11 @@
                         {{ Form::label('ragioneSociale', 'Ragione Sociale', ['class' => 'label-input']) }}
                         {{ Form::text('ragioneSociale', '', ['class' => 'input', 'id' => 'ragioneSociale', 'placeholder'=>$id->ragioneSociale]) }}
                         @if ($errors->first('ragioneSociale'))
-                        <ul class="errors">
+                            <ul class="errors">
                             @foreach ($errors->get('ragioneSociale') as $message)
-                            <li>{{ $message }}</li>
+                                <li>{{ $message }}</li>
                             @endforeach
-                        </ul>
+                            </ul>
                         @endif
                     </div>
 
@@ -64,9 +64,9 @@
                         @if ($errors->first('tipologia'))
                             <ul class="errors">
                             @foreach ($errors->get('tipologia') as $message)
-                            <li>{{ $message }}</li>
+                                <li>{{ $message }}</li>
                             @endforeach
-                        </ul>
+                            </ul>
                         @endif
                     </div>
 
@@ -75,11 +75,11 @@
                         {{ Form::label('logo', 'Logo', ['class' => 'label-input']) }}
                         {{ Form::text('logo', '',['class' => 'input', 'id' => 'logo', 'placeholder'=>$id->logo]) }}
                         @if ($errors->first('logo'))
-                        <ul class="errors">
+                            <ul class="errors">
                             @foreach ($errors->get('logo') as $message)
-                            <li>{{ $message }}</li>
+                                <li>{{ $message }}</li>
                             @endforeach
-                        </ul>
+                            </ul>
                         @endif
                     </div>
 
@@ -91,6 +91,6 @@
 
                 </div>
             </div>
-            <!-- modifica azienda section end -->
-        </div>                
+        </div>    
+        <!-- modifica azienda section end -->            
 @endsection

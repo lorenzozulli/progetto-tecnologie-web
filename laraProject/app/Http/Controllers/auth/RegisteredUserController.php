@@ -18,6 +18,8 @@ class RegisteredUserController extends Controller
      *
      * @return \Illuminate\View\View
      */
+
+    // questa funzione crea un nuovo utente
     public function create()
     {   
         return view('auth.register');
@@ -31,6 +33,8 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
+
+     // questa funzione salva i deti del nuovo utente
     public function store(Request $request)
     {   
 

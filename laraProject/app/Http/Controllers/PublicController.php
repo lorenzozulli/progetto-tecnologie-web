@@ -47,7 +47,6 @@ class PublicController extends Controller
         $offer = Offer::where('id', $id)->first();
         $coupon_count = Coupon::where('id_offerta', $id)->count();
        
-       // dd($coupon_count);
         return view ('offerta', ['offer'=>$offer], compact('coupon_count'));
     }
 
@@ -55,7 +54,7 @@ class PublicController extends Controller
     public function showCompany($nome){
         $company = Company::where('nome', $nome)->first();
         $offers = Offer::all();
-        //dd($company);
+
         return view ('azienda', ['company'=>$company], compact('offers'));
     }
     
@@ -94,7 +93,6 @@ class PublicController extends Controller
             $viewData['offerQuery'] = $offerQuery;
         }
 
-        //$offerList = $query->where('dataOraScadenza', '>', now())->paginate(12);
         $offerList = $query->paginate(12);
         $viewData['Offerte'] = $offerList;
 

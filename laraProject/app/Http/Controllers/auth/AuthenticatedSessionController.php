@@ -25,6 +25,8 @@ class AuthenticatedSessionController extends Controller {
      * @param  \App\Http\Requests\Auth\LoginRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
+
+     // questa funzione esegue il login
     public function store(LoginRequest $request) {
         $request->authenticate();
 
@@ -50,6 +52,8 @@ class AuthenticatedSessionController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
+
+     // questa funzione esegue il logout
     public function destroy(Request $request) {
 
         Auth::guard('web')->logout();

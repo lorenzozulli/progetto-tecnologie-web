@@ -17,7 +17,6 @@ class ModifiedOfferController extends Controller
 
     // Salva un'Offerta modificata
     public function store(Request $request, $id){
-        //dd($id);
         $request->validate([ 
             'nome' => ['nullable', 'string'],
             'oggetto' => ['nullable', 'string'],
@@ -27,8 +26,7 @@ class ModifiedOfferController extends Controller
         ]);
 
         $offer = Offer::where('id', $id)->first();
-        //dd($id);
-       // dd($request);
+
         // Modifica delle informazioni dell'offerta
         if ($request->input('id_azienda') != null) {
             $offer->id_azienda = $request->input('id_azienda');
@@ -60,17 +58,8 @@ class ModifiedOfferController extends Controller
             $offer->luogoFruizione = $offer->luogoFruizione;
         }   
         
-        //dd($offer);
         $offer->save();
-        //dd($offer);
+        
         return redirect('tabella-offerte');
     }
-
-     
-    // Elimina un'Offerta esistente
-    public function deletePromo()
-    {
-        
-    }
-
 }

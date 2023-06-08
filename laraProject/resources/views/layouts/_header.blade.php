@@ -25,10 +25,7 @@
             <button type="submit" class="search_button" value="search">Cerca</button>
         </form>
     </div>
-
-    <!-- Contenuto dei risultati di ricerca qui -->
-
-    <!-- fine searchbars -->
+    <!-- fine searchbars -->  
 
     <!-- inizio link wrapper -->
     <div class="link_wrapper">

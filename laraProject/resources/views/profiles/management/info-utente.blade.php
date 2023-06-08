@@ -13,5 +13,5 @@
             <p>E-mail: {{$datiUtente->email}}</p>
             <h3>Statistiche: {{$datiUtente->username}} ha acquisito {{$coupon_user}} coupon.</h3>
         </div>
-
+    </div>
 @endsection

@@ -20,7 +20,7 @@ class ModifiedStaffController extends Controller {
       }
      */
 
-    // Modifica del profilo Staff
+    // questa funzione riporta ad una vista che permette fi inserire i nuovi dati del profilo Staff
     public function update($username, $livellochemodifca) {
         $staff = User::where('username', $username)->first();
         $admin = User::where('livello', $livellochemodifca)->first();
@@ -30,10 +30,8 @@ class ModifiedStaffController extends Controller {
         return view('profiles.management.modifica-staff', ['username'=>$staff], ['livello'=>$admin]);
     }
 
-    // Salva l'utente che ha fatto modifiche al profilo
+    // questa funzione salva il membro dello staff modificato
     public function store(Request $request, $username, $livellochemodifca) {
-        //dd($username);
-        //dd($livellochemodifca);
         $datiStaff = DB::table('users')->where('username', $username)->first();
         $request->validate([
             'username' => ['nullable', 'string', 'min:8', 'unique:users'],
@@ -46,10 +44,10 @@ class ModifiedStaffController extends Controller {
             'email' => ['nullable', 'string', 'email', 'max:255', 'unique:users'],
         ]);
 
+        // Modifica delle informazioni dello staff da parte di un utente di livello 2
         if($livellochemodifca == 2){
         $user = Auth::user();
 
-        // Modifica delle informazioni dello staff
         if ($request->input('nome') != null) {
             $user->nome = $request->input('nome');
         } else {
@@ -73,6 +71,7 @@ class ModifiedStaffController extends Controller {
         return redirect('staff')->with('success', 'Informazioni modificate con successo!');
         }
         
+        // Modifica delle informazioni dello staff da parte di un utente di livello 3
         if($livellochemodifca == 3){
 
             $user = User::where('username', $username)->first();
