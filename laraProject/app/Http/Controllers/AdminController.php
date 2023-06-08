@@ -69,9 +69,9 @@ class AdminController extends Controller
     public function storeAzienda(Request $request)
     {
         $request->validate([
-            'nome' => ['required', 'string'],
+            'nome' => ['required', 'string', 'unique:companies'],
             'descrizione' => ['required', 'string', 'max:255'],
-            'ragioneSociale' => ['required', 'string'],
+            'ragioneSociale' => ['required', 'string', 'unique:companies'],
             'tipologia' => ['required', 'string'],
             'logo' => ['nullable', 'string'],
         ]);
