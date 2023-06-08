@@ -24,7 +24,6 @@
         <tbody>
             @foreach ($Users as $user)
             <tr>
-
                 <td>
                     @if ($user->livello == '1')
                     <a href="{{route('info-utente', $user->username)}}">

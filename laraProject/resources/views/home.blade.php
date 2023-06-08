@@ -4,7 +4,7 @@
          <!-- banner section start -->
          <div class="banner_bg">
             <div class="frame">
-               <h1>LA TUA DESTINAZIONE <br>PER I MIGLIORI AFFARI</h1>
+               <h1>LA TUA DESTINAZIONE<br>PER I MIGLIORI AFFARI</h1>
                <!-- bottone che riporta alla lista di tutte le offerte olrganizzate per azienda -->
                <div class="bt"><a href="{{ route('lista-offerte') }}">Tutte le offerte</a></div>
             </div>
