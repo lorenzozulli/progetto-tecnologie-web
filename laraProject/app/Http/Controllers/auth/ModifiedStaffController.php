@@ -32,6 +32,7 @@ class ModifiedStaffController extends Controller {
 
     // questa funzione salva il membro dello staff modificato
     public function store(Request $request, $username, $livellochemodifca) {
+        
         $datiStaff = DB::table('users')->where('username', $username)->first();
         $request->validate([
             'username' => ['nullable', 'string', 'min:8', 'unique:users'],

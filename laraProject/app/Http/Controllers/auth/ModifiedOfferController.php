@@ -57,9 +57,9 @@ class ModifiedOfferController extends Controller
         } else {
             $offer->luogoFruizione = $offer->luogoFruizione;
         }   
-        
+
         $offer->save();
-        
+
         return redirect('tabella-offerte');
     }
 }

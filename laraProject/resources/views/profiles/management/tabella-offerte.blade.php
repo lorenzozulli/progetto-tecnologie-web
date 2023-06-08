@@ -19,9 +19,7 @@
                         <th>Azioni</th>
                     </tr>
                 </thead>
-
-                <tbody>
-               
+                <tbody>               
                 @foreach($activeOffers as $offer)
                     <tr>
                         <td>{{$offer['id']}}</td>
@@ -40,8 +38,7 @@
                             </form>
                         </td>
                     </tr>
-                @endforeach
-              
+                @endforeach              
             </tbody>
         </table>
 

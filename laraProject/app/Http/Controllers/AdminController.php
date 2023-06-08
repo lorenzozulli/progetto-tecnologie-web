@@ -34,6 +34,7 @@ class AdminController extends Controller
     //funzione che permette di eliminare un utente di livello 1
     public function deleteUser($username)
     {
+
         $user = User::FindOrFail($username);
         $user->delete();
 
