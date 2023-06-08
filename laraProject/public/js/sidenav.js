@@ -12,12 +12,18 @@ function removeDuplicates() {
     var links = document.getElementsByTagName('a') && document.getElementsByClassName('sidenav_item'); // Ottieni tutti gli elementi <a> e con la classe "sidenav_item"
 
     var uniqueContents = []; // Array per i contenuti unici dei tag
+    var uniqueUrls = [];
 
     // Itera attraverso i link e controlla se il contenuto è già presente nell'array unico
     for (var i = 0; i < links.length; i++) {
         var content = links[i].innerText;
         if (uniqueContents.indexOf(content) === -1) { // Verifica se il contenuto è già presente nell'array unico
             uniqueContents.push(content); // Aggiungi il contenuto all'array unico se non è duplicato
+        }
+
+        var url = links[i].href;
+        if (uniqueUrls.indexOf(url) === -1) { // Verifica se il contenuto è già presente nell'array unico
+            uniqueUrls.push(url); // Aggiungi il contenuto all'array unico se non è duplicato
         }
     }
 
@@ -27,12 +33,7 @@ function removeDuplicates() {
             for (var j = 0; j < uniqueContents.length; j++) { 
                 var linkElement = document.createElement('a');
 
-                var urls = links[j].href;
-                if (uniqueContents.indexOf(urls) === -1) { // Verifica se il contenuto è già presente nell'array unico
-                    uniqueContents.push(urls); // Aggiungi il contenuto all'array unico se non è duplicato
-                }
-
-                linkElement.href = urls;
+                linkElement.href = uniqueUrls[j];
 
                 var linkText = document.createTextNode(uniqueContents[j]);
                 linkElement.appendChild(linkText);
