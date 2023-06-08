@@ -9,10 +9,12 @@
 
         <div class="coupon">
             <!-- se sei un utente non registato oppure di lv-->
+            @if ($offer->dataOraScadenza > date('Y-m-d H:i:s'))
             @guest
             <h3><a href="{{route('login')}}"> Registrati o accedi</a> per scoprire il codice</h3>
             @endguest
-
+            @endif
+            
             @if ($offer->dataOraScadenza > date('Y-m-d H:i:s'))
                 @can('isUser')
                     <div class="bt">
