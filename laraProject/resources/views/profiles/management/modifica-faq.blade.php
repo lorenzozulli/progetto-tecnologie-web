@@ -9,7 +9,7 @@
             <div class="wrap-contact">
 
                 {{ Form::open(array('route' => ['modifica-faq', $id], 'class' => 'contact-form')) }}
-            
+                @csrf
 
                 <!-- Domanda -->
                 <div class="wrap-input">

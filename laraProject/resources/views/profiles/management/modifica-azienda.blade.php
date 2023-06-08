@@ -6,9 +6,9 @@
             <div class="container-contact">
                 <h3>Modifica Azienda</h3>
                 <div class="wrap-contact">
-
+                    
                     {{ Form::open(array('route' => ['modifica-azienda', $id], 'class' => 'contact-form')) }}
-                
+                    @csrf
                     <!-- Nome -->
                     <div  class="wrap-input">
                         {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}

@@ -6,7 +6,7 @@
         <h3>Aggiunta Azienda</h3>
         <div class="wrap-contact">
             {{ Form::open(array('route' => 'aggiunta-azienda', 'class' => 'contact-form', 'enctype'=>'multipart/form-data')) }}
-
+            @csrf
             <!-- Nome -->
             <div  class="wrap-input">
                 {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}

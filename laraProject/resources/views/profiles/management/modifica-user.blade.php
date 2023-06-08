@@ -8,7 +8,7 @@
             <div class="wrap-contact">
                 
                 {{ Form::open(array('route' => ['modifica-user'], 'class' => 'contact-form')) }}
-
+                @csrf
                 <!-- Nome -->
                 <div  class="wrap-input">
                     {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}

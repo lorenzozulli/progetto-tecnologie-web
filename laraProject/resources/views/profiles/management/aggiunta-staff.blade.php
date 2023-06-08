@@ -6,7 +6,7 @@
         <h3>Aggiunta membro Staff</h3>
         <div class="wrap-contact">
             {{ Form::open(array('route' => 'aggiunta-staff', 'class' => 'contact-form')) }}
-
+            @csrf
             <!-- Nome -->
             <div  class="wrap-input">
                 {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}

@@ -8,7 +8,7 @@
         <div class="wrap-contact">
             
             {{ Form::open(['route' => 'aggiunta-offerta', 'files' => 'true', $company]) }}
-
+            @csrf
             <!-- Nome -->
             <div  class="wrap-input">
                 {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}

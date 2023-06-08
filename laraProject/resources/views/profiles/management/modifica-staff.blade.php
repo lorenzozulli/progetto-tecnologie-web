@@ -6,7 +6,7 @@
                 <h3>Modifica</h3>
                 <div class="wrap-contact">
                     {{ Form::open(array('route' => ['modifica-staff', $username,  $livello->livello], 'class' => 'contact-form')) }}
-
+                    @csrf
                     <!-- Form che visualizzi se sei un membro dello Staff -->
                     @if($livello->livello == 2)
 

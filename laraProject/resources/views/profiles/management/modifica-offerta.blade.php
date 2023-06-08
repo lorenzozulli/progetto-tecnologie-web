@@ -7,7 +7,7 @@
             <h1 class="page_title">Modifica Offerta</h1>
             <div class="wrap-contact">
                 {{ Form::open(array('route' => ['modifica-offerta', $id], 'class' => 'contact-form')) }}
-                
+                @csrf
 
                 <!-- Nome -->
                 <div  class="wrap-input">

@@ -180,7 +180,7 @@ class AdminController extends Controller
 
     {
         $request->validate([
-            'domanda' => ['required', 'string', 'max:255'],
+            'domanda' => ['required', 'string', 'max:255', 'unique:faqs'],
             'risposta' => ['required', 'string'],
 
         ]);
