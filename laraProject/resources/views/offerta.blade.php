@@ -9,6 +9,7 @@
 
         <div class="coupon">
             <!-- se sei un utente non registato oppure di lv-->
+            
             @guest
             <h3><a href="{{route('login')}}"> Registrati o accedi</a> per scoprire il codice</h3>
             @endguest
