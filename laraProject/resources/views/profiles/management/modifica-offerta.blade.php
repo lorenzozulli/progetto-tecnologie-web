@@ -62,13 +62,25 @@
                     @endif
                 </div>
 
-                <!-- id azienda -->
+                <!-- id_azienda-->
+                <div class="wrap-input">
+                    <label class="label-input" for="id_azienda">Azienda</label>
+                        <p class="label-input"><em>Se non selezionato verrà inserita la prima azienda registrata</em></p>
+                            <select id="id_azienda" name="id_azienda" required>
+                                <option value="NULL">seleziona</option>
+                                    @foreach($company as $company)
+                                        <option value="{{ $company['id'] }}">{{$company['id']}}: {{ $company['nome'] }}</option>
+                                    @endforeach
+                            </select>
+                </div>
+
+                <!-- dataOraScadenza -->
                 <div  class="wrap-input">
-                    {{ Form::label('id_azienda', 'ID Azienda', ['class' => 'label-input']) }}
-                    {{ Form::text('id_azienda', '',['class' => 'input', 'id' => 'id_azienda', 'placeholder' => $id->id_azienda]) }}
-                    @if ($errors->first('id_azienda'))
+                    {{ Form::label('dataOraScadenza', 'Data Ora Scadenza', ['class' => 'label-input']) }}
+                    {{ Form::date('dataOraScadenza', '', ['class' => 'input', 'id' => 'dataOraScadenza']) }}
+                    @if ($errors->first('dataOraScadenza'))
                         <ul class="errors">
-                        @foreach ($errors->get('id_azienda') as $message)
+                        @foreach ($errors->get('dataOraScadenza') as $message)
                             <li>{{ $message }}</li>
                         @endforeach
                         </ul>

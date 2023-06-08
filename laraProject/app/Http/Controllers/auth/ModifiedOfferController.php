@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Offer;
+use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,7 +13,8 @@ class ModifiedOfferController extends Controller
     // Modifica un'Offerta già esistente
     public function updatePromo($idOfferta) {
         $id = Offer::where('id', $idOfferta)->first();
-        return view('profiles.management.modifica-offerta', ['id'=>$id]);
+        $company = Company::all();
+        return view('profiles.management.modifica-offerta', ['id'=>$id], compact('company'));
     }
 
     // Salva un'Offerta modificata
@@ -23,6 +25,7 @@ class ModifiedOfferController extends Controller
             'modalitaFruizione' => ['nullable', 'string'],
             'luogoFruizione' => ['nullable', 'string'],
             'id_azienda' => ['nullable', 'integer'],
+            'dataOraScadenza' => ['nullable', 'date'],
         ]);
 
         $offer = Offer::where('id', $id)->first();
@@ -56,7 +59,13 @@ class ModifiedOfferController extends Controller
             $offer->luogoFruizione = $request->input('luogoFruizione');
         } else {
             $offer->luogoFruizione = $offer->luogoFruizione;
-        }   
+        }
+
+        if ($request->input('dataOraScadenza') != null) {
+            $offer->dataOraScadenza = $request->input('dataOraScadenza');
+        } else {
+            $offer->dataOraScadenza = $offer->dataOraScadenza;
+        }  
 
         $offer->save();
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\NewProductRequest;
 
+use App\Models\Company;
 use App\Models\Offer;
 
 use App\Models\User;
@@ -25,7 +26,8 @@ class StaffController extends Controller
     // questa funzione aggiunge un'offerta
     public function addPromo()
     {
-        return view('profiles.management.aggiunta-offerta');
+        $company = Company::all();
+        return view('profiles.management.aggiunta-offerta', compact('company'));
     
     }
 
@@ -35,6 +37,7 @@ class StaffController extends Controller
         $request->validate([
             'nome' => ['required', 'string'],
             'oggetto' => ['required', 'string'],
+            'id_azienda' => ['required', 'integer'],
             'modalitaFruizione' => ['required', 'string'],
             'luogoFruizione' => ['required', 'string'],
             'dataOraScadenza' => ['required', 'date'],
