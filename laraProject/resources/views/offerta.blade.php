@@ -28,6 +28,7 @@
         </div>
         <!-- coupon section end -->
         <div class="the_other_stuff">
+
             <!-- visualizza il nome e il cognome dell'utente -->
             @auth
                 <p>Nome: {{ Auth::user()->nome }}</p>
@@ -41,6 +42,9 @@
                 <span style="color: red"> L'OFFERTA È SCADUTA! </span>   
             @endif
             
+            <h3>Descrizione</h3>
+            <p>{{$offer->oggetto}}</p>
+
             <!-- Visualizza la modalità di fruizione -->
             <h3>Modalità di fruizione</h3>
             <p>{{$offer->modalitaFruizione}}</p>
