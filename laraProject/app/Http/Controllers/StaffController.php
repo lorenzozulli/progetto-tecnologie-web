@@ -40,17 +40,17 @@ class StaffController extends Controller
             'id_azienda' => ['required', 'integer'],
             'modalitaFruizione' => ['required', 'string'],
             'luogoFruizione' => ['required', 'string'],
-            'immagine' => ['nullable', 'file'],
+            'immagine' => ['nullable', 'string'],
             'dataOraScadenza' => ['required', 'date'],
            
         ]);
-        dd($request->immagine);
+
         if ($request->immagine) {
             $immagine = $request->immagine;
         } else {
             $immagine = 'images/loghi-aziende/non_disponibile.png';
         }
-        dd($immagine);
+
         Offer::create([
             'nome' => $request->nome,
             'oggetto' => $request->oggetto,

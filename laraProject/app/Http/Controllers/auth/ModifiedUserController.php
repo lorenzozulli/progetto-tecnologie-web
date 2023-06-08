@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Coupon;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\DB;
@@ -16,15 +17,16 @@ class ModifiedUserController extends Controller {
 
     // Modifica del profilo User
     public function update() {
+        //dd($user); //username
         return view('profiles.management.modifica-user');
     }
 
     // Salva i nuovi dati dell'utente di livello 1
     public function store(Request $request) {
+        
         $user = Auth::user();
 
         $request->validate([
-            'username' => ['nullable', 'string', 'min:8', 'unique:users'],
             'nome' => ['nullable', 'string'],
             'cognome' => ['nullable', 'string', 'max:255'],
             'eta' => ['nullable', 'integer', 'min:18'],
@@ -33,12 +35,9 @@ class ModifiedUserController extends Controller {
             'telefono' => ['nullable', 'string','min:10','max:10', 'unique:users'],
             'email' => ['nullable', 'string', 'email', 'max:255', 'unique:users'],     
         ]);
-        
-        // Modifica delle informazioni dell'utente
-        if ($request->input('username') != null) {
-            $user->username = $request->input('username');
-        }
 
+        // Modifica delle informazioni dell'utente
+        
         if ($request->input('nome') != null) {
             $user->nome = $request->input('nome');
         }
@@ -66,10 +65,9 @@ class ModifiedUserController extends Controller {
         if ($request->input('email') != null) {
             $user->email = $request->input('email');
         }
-         
         $user->save();
          
-        return redirect('user')->with('success', 'Informazioni modificate con successo!');
+        return redirect('/user')->with('success', 'Informazioni modificate con successo!');
     }
 
 }

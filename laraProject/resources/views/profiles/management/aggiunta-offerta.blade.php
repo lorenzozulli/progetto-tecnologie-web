@@ -77,7 +77,7 @@
             <!-- Immagine -->
             <div  class="wrap-input">
                 {{ Form::label('immagine', 'Immagine', ['class' => 'label-input']) }}
-                {{ Form::file('immagine', ['class' => 'input', 'id' => 'immagine']) }}
+                {{ Form::file('immagine', ['class' => 'input', 'id' => 'immagine']) }} 
                 @if ($errors->first('immagine'))
                     <ul class="errors">
                     @foreach ($errors->get('immagine') as $message)

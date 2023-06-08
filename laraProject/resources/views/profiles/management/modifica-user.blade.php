@@ -7,7 +7,7 @@
             <h3>Modifica</h3>
             <div class="wrap-contact">
                 
-                {{ Form::open(array('route' => 'modifica-user', 'class' => 'contact-form')) }}
+                {{ Form::open(array('route' => ['modifica-user'], 'class' => 'contact-form')) }}
 
                 <!-- Nome -->
                 <div  class="wrap-input">
@@ -75,19 +75,6 @@
                     @if ($errors->first('telefono'))
                         <ul class="errors">
                         @foreach ($errors->get('telefono') as $message)
-                            <li>{{ $message }}</li>
-                        @endforeach
-                        </ul>
-                    @endif
-                </div>
-
-                <!-- Username -->
-                <div  class="wrap-input">
-                    {{ Form::label('username', 'Username', ['class' => 'label-input']) }}
-                    {{ Form::text('username', '', ['class' => 'input','id' => 'username', 'placeholder' => Auth::user()->username]) }}
-                    @if ($errors->first('username'))
-                        <ul class="errors">
-                        @foreach ($errors->get('username') as $message)
                             <li>{{ $message }}</li>
                         @endforeach
                         </ul>
