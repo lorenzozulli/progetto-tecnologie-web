@@ -68,6 +68,13 @@ class AdminController extends Controller
     // salva i dati dell'azienda appena creata
     public function storeAzienda(Request $request)
     {
+        if($request->hasFile('logo-azienda')) {
+            $logo_azienda = $request->file('logo-azienda');
+            $imageNome = $logo_azienda->getClientOriginalName();
+        } else {
+            $imageNome = NULL;
+        }
+
         $request->validate([
             'nome' => ['required', 'string', 'unique:companies'],
             'descrizione' => ['required', 'string', 'max:255'],
@@ -76,20 +83,19 @@ class AdminController extends Controller
             'logo' => ['nullable', 'string'],
         ]);
 
-        if ($request->logo) {
-            $logo = $request->logo;
-        } else {
-            $logo = 'images/loghi-aziende/non_disponibile.png';
-        }
-
         Company::create([
             'nome' => $request->nome,
             'descrizione' => $request->descrizione,
             'ragioneSociale' => $request->ragioneSociale,
             'tipologia' => $request->tipologia,
-            'logo' => $logo,
+            'logo' => '/images/loghi-aziende/'.$imageNome,
 
         ]);
+
+        if(!is_null($imageNome)){
+            $destination = public_path().'/images/loghi-aziende';
+            $logo_azienda->move($destination, $imageNome);
+        }
 
         return redirect('tabella-aziende')->with('success', 'Nuova azienda memorizzata con successo!');
     }

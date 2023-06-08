@@ -5,7 +5,7 @@
     <div class="container-contact">
         <h3>Aggiunta Azienda</h3>
         <div class="wrap-contact">
-            {{ Form::open(array('route' => 'aggiunta-azienda', 'class' => 'contact-form', 'enctype'=>'multipart/form-data')) }}
+            {{ Form::open(array('route' => 'aggiunta-azienda', 'files' => 'true', 'class' => 'contact-form', 'enctype'=>'multipart/form-data')) }}
             @csrf
             <!-- Nome -->
             <div  class="wrap-input">
@@ -71,7 +71,7 @@
             <!-- Logo -->
             <div  class="wrap-input">
                 {{ Form::label('logo', 'Logo', ['class' => 'label-input']) }}
-                {{ Form::text('logo', '', ['class' => 'input', 'id' => 'logo']) }}
+                {{ Form::file('logo-azienda') }}
                 @if ($errors->first('logo'))
                     <ul class="errors">
                     @foreach ($errors->get('logo') as $message)

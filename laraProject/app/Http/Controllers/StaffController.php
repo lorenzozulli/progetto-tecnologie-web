@@ -40,7 +40,6 @@ class StaffController extends Controller
             'modalitaFruizione' => ['required', 'string'],
             'luogoFruizione' => ['required', 'string'],
             'immagine' => ['nullable', 'string'],
-            'immagine' => ['nullable', 'string'],
             'dataOraScadenza' => ['required', 'date'],
            
         ]);
