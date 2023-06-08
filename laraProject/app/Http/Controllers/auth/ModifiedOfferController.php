@@ -31,13 +31,6 @@ class ModifiedOfferController extends Controller
 
         $offer = Offer::where('id', $id)->first();
 
-        if ($request->immagine) {
-            $immagine = $request->immagine;
-        } else {
-            $immagine = 'images/loghi-aziende/non_disponibile.png';
-        }
-        $offer->immagine = $immagine;
-
         // Modifica delle informazioni dell'offerta
         if ($request->input('id_azienda') != null) {
             $offer->id_azienda = $request->input('id_azienda');

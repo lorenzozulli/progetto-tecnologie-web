@@ -20,6 +20,7 @@ class Offer extends Model
         'oggetto',
         'modalitaFruizione',
         'luogoFruizione',
+        'immagine',
         'dataOraCreazione',
         'dataOraScadenza',
         'id_azienda',
