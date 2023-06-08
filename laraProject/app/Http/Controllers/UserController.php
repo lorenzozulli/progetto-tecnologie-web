@@ -18,7 +18,7 @@ class UserController extends Controller
         $coupons = Coupon::all();
         $offers = Offer::all();
         $companies = Company::all();
-        //dd($companies);
+        
         return view('profiles.user', compact('coupons', 'offers', 'companies'));
     }
 

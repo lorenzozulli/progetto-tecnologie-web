@@ -50,7 +50,6 @@ class RegisteredUserController extends Controller
             'cognome' => $request->cognome,
             'eta' => $request->eta,
             'genere' => $request->genere,
-            //'livello' =>$request->livello,
             'password' => Hash::make($request->password),
             'telefono' =>$request->telefono,
             'email' => $request->email,

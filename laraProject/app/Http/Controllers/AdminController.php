@@ -33,9 +33,8 @@ class AdminController extends Controller
 
     public function deleteUser($username)
     {
-        //dd($username);
+
         $user = User::FindOrFail($username);
-        //dd($user);
         $user->delete();
 
         return redirect('tabella-utenti');
@@ -156,7 +155,6 @@ class AdminController extends Controller
     public function viewStaff($username)
     {
         $user = User::where('username', $username)->first();
-        //dd($user);
 
         return view('staff-view', ['user' => $user])->with('success');
     }
@@ -200,7 +198,6 @@ class AdminController extends Controller
     //modifica le FAQ
     public function updateFaq($id)
     {
-        //$idFaq = Faq::where('id' == $id)->first();
         return view('profiles.management.modifica-faq', ['id' => $id]);
     }
 

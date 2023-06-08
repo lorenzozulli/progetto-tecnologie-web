@@ -59,18 +59,9 @@ class ModifiedOfferController extends Controller
         } else {
             $offer->luogoFruizione = $offer->luogoFruizione;
         }   
-        
-        //dd($offer);
+
         $offer->save();
-        //dd($offer);
+
         return redirect('tabella-offerte');
     }
-
-     
-    // Elimina un'Offerta esistente
-    public function deletePromo()
-    {
-        
-    }
-
 }

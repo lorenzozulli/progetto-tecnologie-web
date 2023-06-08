@@ -13,12 +13,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
 class ModifiedUserController extends Controller {
-    /*
-      public function __construct()
-      {
-      $this->middleware('auth');
-      }
-     */
 
     // Modifica del profilo User
     public function update() {

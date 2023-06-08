@@ -32,8 +32,7 @@ class ModifiedStaffController extends Controller {
 
     // Salva l'utente che ha fatto modifiche al profilo
     public function store(Request $request, $username, $livellochemodifca) {
-        //dd($username);
-        //dd($livellochemodifca);
+        
         $datiStaff = DB::table('users')->where('username', $username)->first();
         $request->validate([
             'username' => ['nullable', 'string', 'min:8', 'unique:users'],

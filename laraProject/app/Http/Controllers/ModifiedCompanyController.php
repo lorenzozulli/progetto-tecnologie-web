@@ -11,10 +11,8 @@ class ModifiedCompanyController extends Controller
 {
     // Modifica un'azienda già esistente
     public function updatePromo($company) {
-        //dd($company);
 
         $azienda = Company::where('id', $company)->first();
-        //dd($azienda);
         return view('profiles.management.modifica-azienda', ['id'=>$azienda]);
     }
 

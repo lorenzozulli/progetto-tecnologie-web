@@ -56,9 +56,7 @@ class StaffController extends Controller
     //questa funzione elimina un'offerta
     public function deletePromo($id)
     {
-        //dd($request);
         $offer = Offer::findOrFail($id);
-        //dd($offer);
         $offer->delete();
        
         return redirect()->route('tabella-offerte');
