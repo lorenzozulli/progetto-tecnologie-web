@@ -66,6 +66,7 @@ return [
         'string' => 'The :attribute must be greater than or equal to :value characters.',
     ],
     'image' => 'The :attribute must be an image.',
+    'immagine' => 'The :attribute must be an image.',
     'in' => 'The selected :attribute is invalid.',
     'in_array' => 'The :attribute field does not exist in :other.',
     'integer' => 'The :attribute must be an integer.',
@@ -166,6 +167,8 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+
+        'immagine-offerta' => 'The :attribute must be uploaded in the /images/immagini-offerte/ folder',
     ],
 
     /*
