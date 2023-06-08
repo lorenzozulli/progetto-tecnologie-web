@@ -217,14 +217,14 @@ class AdminController extends Controller
     //salva i dati della FAQ appena modificata
     public function storeFaqs(Request $request, $id)
     {
-        $request->validate([
+        $request->validate([                // validate mi permette di validare i campi riempiti 
             'domanda' => ['nullable', 'string', 'max:255', 'unique:faqs'],
             'risposta' => ['nullable', 'string', 'unique:faqs'],
         ]);
 
-        $idFaq = Faq::where('id', $id)->first();
+        $idFaq = Faq::where('id', $id)->first();            //ricerca la FAQ CON L'id passato come parametro, e prende il primo che trova 
 
-        if ($request->input('domanda') != null) {
+        if ($request->input('domanda') != null) {                          
             $idFaq->domanda = $request->input('domanda');
         } else {
             $idFaq->domanda = $idFaq->domanda;
@@ -250,12 +250,12 @@ class AdminController extends Controller
     }
 
     //questa funzione conta tutti i coupon
-    public function contatoreCoupon()
+    public function contatoreCoupon() // e li passa allo script Javascript 
     {
         $coupons = Coupon::all();
-        $nCoupon = count($coupons);
+        $nCoupon = count($coupons);             // conta i coupon totali...
 
-        return  $nCoupon;
+        return  $nCoupon;   // e passa la variabile ad AJAX
     }
  
 }
