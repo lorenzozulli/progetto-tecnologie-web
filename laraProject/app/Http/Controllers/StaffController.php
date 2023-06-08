@@ -2,18 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\NewProductRequest;
-
 use App\Models\Company;
 use App\Models\Offer;
-
-use App\Models\User;
-
-
-use Illuminate\Support\Facades\Auth;
-use Symfony\Component\HttpFoundation\Request;
-
-
+use Illuminate\Http\Request;
+use Symfony\Component\Console\Input\Input;
 
 class StaffController extends Controller
 {
@@ -34,6 +26,13 @@ class StaffController extends Controller
     //questa funzione valida un'offerta
     public function storePromo(Request $request)
     {   
+        if($request->hasFile('immagine-offerta')) {
+            $immagine_offerta = $request->file('immagine-offerta');
+            $imageNome = $immagine_offerta->getClientOriginalName();
+        } else {
+            $imageNome = NULL;
+        }
+
         $request->validate([
             'nome' => ['required', 'string'],
             'oggetto' => ['required', 'string'],
@@ -41,15 +40,10 @@ class StaffController extends Controller
             'modalitaFruizione' => ['required', 'string'],
             'luogoFruizione' => ['required', 'string'],
             'immagine' => ['nullable', 'string'],
+            'immagine' => ['nullable', 'string'],
             'dataOraScadenza' => ['required', 'date'],
            
         ]);
-
-        if ($request->immagine) {
-            $immagine = $request->immagine;
-        } else {
-            $immagine = 'images/loghi-aziende/non_disponibile.png';
-        }
 
         Offer::create([
             'nome' => $request->nome,
@@ -57,9 +51,14 @@ class StaffController extends Controller
             'id_azienda' => $request->id_azienda,
             'modalitaFruizione' => $request->modalitaFruizione,
             'luogoFruizione' => $request->luogoFruizione,
-            'immagine' => $immagine,
+            'immagine' => '/images/immagini-offerte/'.$imageNome,
             'dataOraScadenza' => $request->dataOraScadenza,
         ]);
+
+        if(!is_null($imageNome)){
+            $destination = public_path().'/images/immagini-offerte';
+            $immagine_offerta->move($destination, $imageNome);
+        }
     
         return redirect('tabella-offerte')->with('success', 'Nuova offerta memorizzata con successo!');
     }     
