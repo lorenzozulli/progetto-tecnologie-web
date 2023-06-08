@@ -14,10 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('coupons', function (Blueprint $table) {
-            //FK
+            
             $table->bigIncrements('id')->unsigned();
-
+            //FK
             $table->bigInteger('id_offerta')->unsigned(); 
+            
             $table->string('codice')->unique();
             $table->string('user');
             
