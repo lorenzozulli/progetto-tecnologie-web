@@ -7,6 +7,7 @@
         <div class="wrap-contact">
             {{ Form::open(array('route' => 'aggiunta-staff', 'class' => 'contact-form')) }}
             @csrf
+
             <!-- Nome -->
             <div  class="wrap-input">
                 {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
@@ -90,6 +91,9 @@
                     @endforeach
                     </ul>
                 @endif
+                @error('error')
+                    <span style="color: red">{{ $message }}</span>
+                @enderror
             </div>
 
             <!-- Password -->

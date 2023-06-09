@@ -113,12 +113,6 @@ class ModifiedStaffController extends Controller {
                 $user->telefono = $datiStaff->telefono;
             }   
             
-            if ($request->input('username') != null) {
-                $user->username = $request->input('username');
-            } else {
-                $user->username = $datiStaff->username;
-            }   
-            
             if ($request->input('password') != null) {
                 $user->password = Hash::make($request->input('password'));
             } else {

@@ -37,7 +37,6 @@ class ModifiedUserController extends Controller {
         ]);
 
         // Modifica delle informazioni dell'utente
-        
         if ($request->input('nome') != null) {
             $user->nome = $request->input('nome');
         }
@@ -65,6 +64,7 @@ class ModifiedUserController extends Controller {
         if ($request->input('email') != null) {
             $user->email = $request->input('email');
         }
+
         $user->save();
          
         return redirect('/user')->with('success', 'Informazioni modificate con successo!');

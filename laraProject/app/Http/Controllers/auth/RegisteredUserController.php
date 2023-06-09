@@ -48,16 +48,25 @@ class RegisteredUserController extends Controller
             'telefono' => ['required', 'string','min:10','max:10', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],     
         ]);
-        $user = User::create([
-            'username' => $request->username,
-            'nome' => $request->nome,
-            'cognome' => $request->cognome,
-            'eta' => $request->eta,
-            'genere' => $request->genere,
-            'password' => Hash::make($request->password),
-            'telefono' =>$request->telefono,
-            'email' => $request->email,
-        ]);
+
+        if($request->username != $request->email){
+            $user = User::create([
+                'username' => $request->username,
+                'nome' => $request->nome,
+                'cognome' => $request->cognome,
+                'eta' => $request->eta,
+                'genere' => $request->genere,
+                'password' => Hash::make($request->password),
+                'telefono' =>$request->telefono,
+                'email' => $request->email,
+            ]);
+        } else {
+            return redirect()->back()->withErrors(['error' => 'Lo username deve essere diverso dall\'e-mail']);
+        }
+
+        if(str_contains($request->username, '@')){
+            return redirect()->back()->withErrors(['error' => 'Lo username non può essere contenere carattere @']);
+        }
 
         event(new Registered($user));
 

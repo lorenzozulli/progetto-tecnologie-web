@@ -147,18 +147,27 @@ class AdminController extends Controller
         ]);
 
         $livello = 2;
+        //dd($request->username);
+        //dd($request->email);
+        if($request->username != $request->email){
+            $user = User::create([
+                'username' => $request->username,
+                'nome' => $request->nome,
+                'cognome' => $request->cognome,
+                'eta' => $request->eta,
+                'genere' => $request->genere,
+                'livello' => $livello,
+                'password' => Hash::make($request->password),
+                'telefono' => $request->telefono,
+                'email' => $request->email,
+            ]);
+        } else {
+            return redirect()->back()->withErrors(['error' => 'Lo username deve essere diverso dall\'e-mail']);
+        }
 
-        $user = User::create([
-            'username' => $request->username,
-            'nome' => $request->nome,
-            'cognome' => $request->cognome,
-            'eta' => $request->eta,
-            'genere' => $request->genere,
-            'livello' => $livello,
-            'password' => Hash::make($request->password),
-            'telefono' => $request->telefono,
-            'email' => $request->email,
-        ]);
+        if(str_contains($request->username, '@')){
+            return redirect()->back()->withErrors(['error' => 'Lo username non può essere contenere carattere @']);
+        }
 
         event(new Registered($user));
 

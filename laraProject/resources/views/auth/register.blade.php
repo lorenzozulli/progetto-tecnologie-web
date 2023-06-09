@@ -92,6 +92,9 @@
                     @endforeach
                     </ul>
                 @endif
+                @error('error')
+                    <span style="color: red">{{ $message }}</span>
+                @enderror
             </div>
 
             <!-- Password -->
