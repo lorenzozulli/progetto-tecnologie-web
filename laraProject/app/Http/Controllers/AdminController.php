@@ -146,9 +146,15 @@ class AdminController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
         ]);
 
+        //controlli email
+        if(str_contains($request->username, '@')){
+            return redirect()->back()->withErrors(['error' => 'Lo username non può essere contenere carattere @']);
+        }
+        if ($request->username == $request->email){
+            return redirect()->back()->withErrors(['error' => 'Lo username deve essere diverso dall\'e-mail']);
+        }
         $livello = 2;
-        //dd($request->username);
-        //dd($request->email);
+
         if($request->username != $request->email){
             $user = User::create([
                 'username' => $request->username,
@@ -161,20 +167,12 @@ class AdminController extends Controller
                 'telefono' => $request->telefono,
                 'email' => $request->email,
             ]);
-        } else {
-            return redirect()->back()->withErrors(['error' => 'Lo username deve essere diverso dall\'e-mail']);
-        }
-
-        if(str_contains($request->username, '@')){
-            return redirect()->back()->withErrors(['error' => 'Lo username non può essere contenere carattere @']);
-        }
-
-        event(new Registered($user));
-
+             
+            event(new Registered($user));
 
         return redirect('tabella-utenti');
+        }
     }
-
 
     public function viewStaff($username)
     {

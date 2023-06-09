@@ -35,7 +35,6 @@ class ModifiedStaffController extends Controller {
         
         $datiStaff = DB::table('users')->where('username', $username)->first();
         $request->validate([
-            'username' => ['nullable', 'string', 'min:8', 'unique:users'],
             'nome' => ['nullable', 'string'],
             'cognome' => ['nullable', 'string', 'max:255'],
             'eta' => ['nullable', 'integer', 'min:18', 'max:130'],
