@@ -18,7 +18,7 @@
 
     <!-- Inizio sezione relazione -->
     <div class="footer_item">
-        <a href="#">Clicca qui per accedere alla nostra relazione di progetto.</a>
+        <a href="https://drive.google.com/file/d/1ZIXik59-TBrbAS6Labvo3cW_mgfO7KBv/view?usp=sharing">Clicca qui per accedere alla nostra relazione di progetto.</a>
     </div>
     <!-- Fine sezione relazione-->
 
