@@ -138,7 +138,7 @@ class AdminController extends Controller
             'username' => ['required', 'string', 'min:8', 'unique:users'],
             'nome' => ['required', 'string'],
             'cognome' => ['required', 'string', 'max:255'],
-            'eta' => ['required', 'integer', 'min:18'],
+            'eta' => ['required', 'integer', 'min:18', 'max:130'],
             'genere' => ['required', 'string'],
             'livello' => ['integer'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],

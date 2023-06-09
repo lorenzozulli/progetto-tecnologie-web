@@ -5,7 +5,7 @@
 <div class="static">
 
     <div class="container-contact">
-        <h3>Registrazione</h3>
+        <h1 class="page_title">Registrazione</h1>
         <div class="wrap-contact">
             {{ Form::open(array('route' => 'register', 'class' => 'contact-form')) }}
 

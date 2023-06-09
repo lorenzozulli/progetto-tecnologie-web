@@ -73,7 +73,7 @@
                     <!-- Logo -->
                     <div  class="wrap-input">
                         {{ Form::label('logo', 'Logo', ['class' => 'label-input']) }}
-                        {{ Form::text('logo', '',['class' => 'input', 'id' => 'logo', 'placeholder'=>$id->logo]) }}
+                        {{ Form::text('logo', '', ['class' => 'input', 'id' => 'logo', 'placeholder' => $id->logo]) }}
                         @if ($errors->first('logo'))
                             <ul class="errors">
                             @foreach ($errors->get('logo') as $message)

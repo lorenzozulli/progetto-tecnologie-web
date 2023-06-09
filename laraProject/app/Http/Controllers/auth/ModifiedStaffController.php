@@ -38,7 +38,7 @@ class ModifiedStaffController extends Controller {
             'username' => ['nullable', 'string', 'min:8', 'unique:users'],
             'nome' => ['nullable', 'string'],
             'cognome' => ['nullable', 'string', 'max:255'],
-            'eta' => ['nullable', 'integer', 'min:18'],
+            'eta' => ['nullable', 'integer', 'min:18', 'max:130'],
             'genere' => ['nullable', 'string'],
             'password' => ['nullable', Rules\Password::defaults()],
             'telefono' => ['nullable', 'string','min:10','max:10', 'unique:users'],

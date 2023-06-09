@@ -4,7 +4,7 @@
 <!-- modifica User section start -->
 <div class="mega_container">
     <div class="container-contact">
-        <h1 class="page_title">Aggiunta Offerta</h1>
+        <h1 class="page_title">Nuova Offerta</h1>
         <div class="wrap-contact">
             
             {{ Form::open(['route' => 'aggiunta-offerta', 'files' => 'true', $company]) }}

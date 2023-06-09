@@ -25,16 +25,17 @@ class ModifiedCompanyController extends Controller
             'descrizione' => ['nullable', 'string', 'max:255'],
             'ragioneSociale' => ['nullable', 'string', 'unique:companies'],
             'tipologia' => ['nullable', 'string'],
-            'logo' => ['nullable', 'string'],   
+            'logo' => ['nullable', 'string'],
         ]);
-        
+
         $company = Company::where('id', $id)->first();
 
-       if ($request->logo) {
+        if($request->logo){
             $logo = $request->logo;
         } else {
-            $logo = 'images/loghi-aziende/non_disponibile.png';
+            $logo = '/images/loghi-aziende/non_disponibile.png';
         }
+
         $company->logo = $logo;
 
         // Modifica delle informazioni dell'azienda
@@ -67,6 +68,33 @@ class ModifiedCompanyController extends Controller
         } else {
             $company->logo = $datiCompany->logo;
         }
+
+        
+
+        /*if(!$request->hasFile('logo-azienda')){
+            Company::where('id', $id)->update([
+                    'nome'=>$request->input('nome'),
+                    'descrizione'=>$request->input('descrizione'),
+                    'ragioneSociale'=>$request->input('ragioneSociale'),
+                    'tipologia'=>$request->input('tipologia'),
+                ]);
+                dd($request->logo);
+        } else {
+            $immagine_azienda = $request->file('logo');
+            $logo = $immagine_azienda->getClientOriginalName();
+
+            $request->validate([
+                'logo' => ['required', 'string'],
+            ]);
+
+            Company::where('id', $id)->update([
+                'nome'=>$request->input('nome'),
+                'descrizione'=>$request->input('descrizione'),
+                'ragioneSociale'=>$request->input('ragioneSociale'),
+                'tipologia'=>$request->input('tipologia'),
+                'logo'=> '/images/loghi-aziende/'.$logo,
+            ]);
+        }*/
 
         $company->save();
 

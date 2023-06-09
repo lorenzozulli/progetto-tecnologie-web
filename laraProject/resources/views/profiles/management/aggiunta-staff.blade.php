@@ -3,7 +3,7 @@
 
 <div class="mega_container">
     <div class="container-contact">
-        <h1 class="page_title">Aggiunta membro Staff</h1>
+        <h1 class="page_title">Nuovo membro Staff</h1>
         <div class="wrap-contact">
             {{ Form::open(array('route' => 'aggiunta-staff', 'class' => 'contact-form')) }}
             @csrf
