@@ -23,6 +23,9 @@
                     <div>
                         <p id="n_coupon">-</p>
                     </div>
+                    <script>
+                        var couponEmessi = "{{ route('coupon-emessi') }}";
+                    </script>
                 </div>
             </div>
         <!-- admin section end -->

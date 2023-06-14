@@ -19,7 +19,7 @@
 
   $(document).ready(function() {            //quando la pagina è completamente caricata, parte la function
     $.ajax({
-        url: '/coupon-emessi',
+        url: couponEmessi,
         type: 'GET',
         success: function(response) {
            
