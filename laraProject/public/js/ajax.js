@@ -17,6 +17,22 @@
     });
   }
 
+  var availableTags = [];
+  $.ajax({
+    method: "GET",
+    url: offerteAjax,
+    success: (response)=>{
+        console.log(response)
+        startAutoComplete(response);
+    }
+  });
+  function startAutoComplete(availableTags){
+    $( "#search_offer" ).autocomplete({
+   
+      source: availableTags
+    });
+  }
+
   $(document).ready(function() {            //quando la pagina è completamente caricata, parte la function
     $.ajax({
         url: couponEmessi,

@@ -4,7 +4,7 @@
         <div class="mega_container">
             <div class="mega_container_inner">
                 <div class="azienda_card">
-                    <img class="card_img" src="{{$company->logo}}">
+                    <img class="card_img" src="{{ asset($company->logo) }}" alt="Immagine Azienda">
                         <h1>{{$company->nome}}</h1>
                         <h3>{{$company->ragioneSociale}}</h3>
                         <h3>{{$company->tipologia}}</h3>
