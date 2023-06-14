@@ -3,7 +3,7 @@
 
 <head>
     <script src="{{ asset('js/ajax.js') }}"></script>
-    <script src="{{ asset('js/ajax2.js') }}"></script>
+  
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>"Scontastic: i migliori codici sconto in Italia"</title>
