@@ -267,7 +267,7 @@ class AdminController extends Controller
     {
         $coupons = Coupon::all();
         $nCoupon = count($coupons);             // conta i coupon totali...
-        dd($nCoupon);
+        //dd($nCoupon);
         return  $nCoupon;   // e passa la variabile ad AJAX
     }
  
