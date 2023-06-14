@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Str;
 
-//require( __DIR__ . '/../../include/connect.php');
+require( __DIR__ . '/../../include/connect.php');
 
 return [
 
@@ -42,8 +42,8 @@ return [
             'url' => env('DATABASE_URL'),
             /* --- Credenziali per il server remoto --- */
             'host' => $HOST,
-            'database' => $DATABASE,
-            'username' => $USERNAME,
+            'database' => $DB,
+            'username' => $USER,
             'password' => $PASSWORD,
             
             /* --- Credenziali per lavorare in locale --- */
